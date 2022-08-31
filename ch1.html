@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1 - Simple population models &#8212; MAS377 Mathematical Biology</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2 - Bifurcations and introducing competition" href="ch2.html" />
+    <link rel="prev" title="MAS377 Mathematical Biology" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MAS377 Mathematical Biology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   MAS377 Mathematical Biology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1 - Simple population models
+   <a name="chapter1">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   2 - Bifurcations and introducing competition
+   <a name="chapter2">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch3.html">
+   3 - Competition continued
+   <a name="chapter3">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch4.html">
+   4 - Predator-Prey models
+   <a name="chapter4">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch5.html">
+   5 - Epidemics in human populations
+   <a name="chapter5">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   6 - The SIR model with demographics
+   <a name="chapter6">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   7 - Vaccination and disease in the wild
+   <a name="chapter7">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch8.html">
+   8 - A within-host Covid model
+   <a name="chapter8">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch9.html">
+   9 - A within-host HIV model
+   <a name="chapter9">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   11-12 Project Week
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-first-population-model">
+   A first population model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limits-to-population-growth-the-logistic-equation">
+   Limits to population growth: The logistic equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-useful-step-non-dimensionalisation">
+   A useful step: non-dimensionalisation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-study-spruce-budworm">
+   Case study: spruce budworm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>1 - Simple population models <a name="chapter1"></a></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-first-population-model">
+   A first population model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#limits-to-population-growth-the-logistic-equation">
+   Limits to population growth: The logistic equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-useful-step-non-dimensionalisation">
+   A useful step: non-dimensionalisation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-study-spruce-budworm">
+   Case study: spruce budworm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="simple-population-models-a-name-chapter1-a">
+<h1>1 - Simple population models <a name="chapter1"></a><a class="headerlink" href="#simple-population-models-a-name-chapter1-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-first-population-model">
+<h2>A first population model<a class="headerlink" href="#a-first-population-model" title="Permalink to this headline">¶</a></h2>
+<p>In these first lectures we will think about populations as collections of individuals. For example, we may consider the human population of Sheffield, or the tapir population of South America, or the maize crop population of a field in Nigeria. Later we shall start considering perhaps less intuitive definitions of populations, such as of cells in the body, or proteins within cells. However, a key message to take from this module is that we can consider all of these biological populations in the same way from a modelling perspective, and subject to the same sorts of biological processes.</p>
+<p>We might think we’d want to keep track of the number of individuals in a poulation as a key variable in any mdoel we make. However, as we will be using ordinary differential equations we need our variables to be continuous. We will therefore instead keep track of a population’s density and how this will vary over time. We might therefore call <span class="math notranslate nohighlight">\(N(t)\)</span> the density of individuals within our population at time <span class="math notranslate nohighlight">\(t\)</span>, and try to write down an ordinary differential equation that describes its dynamics, such as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-31007733-f38d-451b-b877-1cf0c7adceae">
+<span class="eqno">(1)<a class="headerlink" href="#equation-31007733-f38d-451b-b877-1cf0c7adceae" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{dN}{dt} &amp;= \textrm{births} -\textrm{deaths}.
+\end{align}\]</div>
+<p>An important modelling decision is what these terms on the right-hand side should look like, and this will depend on the specific biology. There are three main forms:</p>
+<ul class="simple">
+<li><p><em>constant rate</em>, <span class="math notranslate nohighlight">\(\textrm{births}=B\)</span>. This would be suitable when new individuals appear in the environment at some constant rate, for example due to migration, or production of cells by the body.</p></li>
+<li><p><em>per-capita rate</em>,  <span class="math notranslate nohighlight">\(\textrm{births}=bN\)</span>. This would be suitable when each individual produces offspring at a certain rate, such that there are more offspring produced when the population is larger.</p></li>
+<li><p><em>density-dependent rate</em>,  <span class="math notranslate nohighlight">\(\textrm{births}=b(N)N\)</span>. This would be suitable if the per-capita rate is not fixed but instead varies with the population size, for example if high density means more competition for resources and thus lower growth. The form of this function will again depend on the biology.</p></li>
+</ul>
+<p>For our basic model, per-capita rates for birth and death seem the most obvious choice. Our model is thus,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-752482f1-8c32-401f-9149-10b567ab87e6">
+<span class="eqno">(2)<a class="headerlink" href="#equation-752482f1-8c32-401f-9149-10b567ab87e6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{dN}{dt}&amp;= bN - dN \\
+&amp;= rN,
+\end{align}\]</div>
+<p>where the parameter <span class="math notranslate nohighlight">\(r=b-d\)</span> is the growth rate of our population.</p>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Either by <em>separation of variables</em> or <em>integrating factors</em> show that,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fb770f55-ae5d-4c10-9a07-166329e5746c">
+<span class="eqno">(3)<a class="headerlink" href="#equation-fb770f55-ae5d-4c10-9a07-166329e5746c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+N(t) = N(0)e^{rt},
+\end{equation}\]</div>
+<p>which predicts exponential growth of the population for <span class="math notranslate nohighlight">\(r&gt;0\)</span> and exponential decline for <span class="math notranslate nohighlight">\(r&lt;0\)</span>.</p>
+</div>
+</div>
+<div class="section" id="limits-to-population-growth-the-logistic-equation">
+<h2>Limits to population growth: The logistic equation<a class="headerlink" href="#limits-to-population-growth-the-logistic-equation" title="Permalink to this headline">¶</a></h2>
+<p>Here we have shown that, provided births are higher than deaths, our population will continue growing to infinity. What we failed to take into account in our model is that as the population grows the environment will become limiting in some way (for example, individuals need space and nutrients, which are both consumed by the growing population). So while our assumptions may hold at low population densities, they will break down at higher population densities. Our simple model has shown us that we need to take this into consideration if we are to understand population dynamics.</p>
+<p>Given the above, choosing a density-dependent growth rate is an obvious extension. An intuitive way to set a limit on population growth is to assume that there is a fixed <em>carrying capacity</em> for the population, for example due to the available space or nutrients. We can then assume that as the population approaches this carrying capacity, the overall growth rate tends to zero. The simplest implementation of this is to assume that <span class="math notranslate nohighlight">\(r\)</span> decreases linearly with <span class="math notranslate nohighlight">\(N\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+r(N) = r_0\left(1 - \frac{N}{K}\right),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_0\)</span> (the <em>basic reproductive rate</em>) and <span class="math notranslate nohighlight">\(K\)</span> (the carrying capacity) are positive constants. Our population equation is then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-729af2ba-61ba-4115-9466-7c2bf1f49b14">
+<span class="eqno">(4)<a class="headerlink" href="#equation-729af2ba-61ba-4115-9466-7c2bf1f49b14" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right).
+\end{equation}\]</div>
+<p>This equation is known as the <em>logistic growth equation</em> and is an example of <em>intra-specific competition</em>.</p>
+</div>
+<div class="section" id="a-useful-step-non-dimensionalisation">
+<h2>A useful step: non-dimensionalisation<a class="headerlink" href="#a-useful-step-non-dimensionalisation" title="Permalink to this headline">¶</a></h2>
+<p>Before continuing with our analysis we shall apply the useful technique of <em>non-dimensionalising</em> our model. This can both reduce the number of parameters and give us insight in to the scales at which biological processes operate. The technique involves combining variables and/or parameters from the model in biologically and mathematically helpful ways. For example, a natural scale for the population level is <span class="math notranslate nohighlight">\(K\)</span>, so we can define the non-dimensional population variable <span class="math notranslate nohighlight">\(n=N/K\)</span>. The equation then becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dn}{dt}=\frac{d(N/K)}{dt}=\frac{1}{K}\frac{dN}{dt}=r_0n(1 - n).
+\]</div>
+<p>We can also note that a natural time scale for the dynamics is <span class="math notranslate nohighlight">\(1/r_0\)</span>, such that we can take a new time variable, <span class="math notranslate nohighlight">\(\tau = r_0t\)</span>, and the final non-dimensional model equation is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-94b5ec61-ea51-44ba-a77c-1808ff2c92c8">
+<span class="eqno">(5)<a class="headerlink" href="#equation-94b5ec61-ea51-44ba-a77c-1808ff2c92c8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dn}{d\tau}=\frac{dn}{d(r_0t)}=\frac{1}{r_0}\frac{dn}{dt}=n(1 - n).\label{logeq}
+\end{equation}\]</div>
+<p>As you can see, by using two simple substitutions we have arrived at a very simple equation.</p>
+<p>This equation is one of the few you will see in this module that yields an explicit solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-048c1bf5-022e-4e38-bbdd-82eda7bead00">
+<span class="eqno">(6)<a class="headerlink" href="#equation-048c1bf5-022e-4e38-bbdd-82eda7bead00" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}},
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_0\)</span> is the initial population value. Examples of the dimensional solution for different values of <span class="math notranslate nohighlight">\(r_0\)</span> are shown in the figure.</p>
+<img src='log-tcourse.png' height="300" alt="Time-courses of the logistic model">
+<p><em>Figure: example time-courses of the logistic model, with <span class="math notranslate nohighlight">\(K=10\)</span> and different values of <span class="math notranslate nohighlight">\(r_0\)</span> and initial conditions.</em></p>
+<p>However, we can also gain a good deal of qualitative information about this model directly from  the equation. Specifically, we can see:</p>
+<ul class="simple">
+<li><p>for <span class="math notranslate nohighlight">\(0&lt;n&lt;1\)</span>, <span class="math notranslate nohighlight">\(dn/d\tau&gt;0\)</span></p></li>
+<li><p>for <span class="math notranslate nohighlight">\(n&gt;1\)</span>, <span class="math notranslate nohighlight">\(dn/d\tau&lt;0\)</span></p></li>
+</ul>
+<p>(note that it makes no biological sense to worry about <span class="math notranslate nohighlight">\(n&lt;0\)</span>). There are two values of <span class="math notranslate nohighlight">\(n\)</span> for which <span class="math notranslate nohighlight">\(dn/d\tau=0\)</span>, at <span class="math notranslate nohighlight">\(n=0\)</span> and <span class="math notranslate nohighlight">\(n=1\)</span>, which are the <em>equilibria</em> of the system. Therefore for any starting value of <span class="math notranslate nohighlight">\(n&gt;0\)</span> the population should move towards a final state of <span class="math notranslate nohighlight">\(n=1\)</span>, suggesting that the equilibrium at <span class="math notranslate nohighlight">\(n=0\)</span> is <em>unstable</em> and the equilibrium at <span class="math notranslate nohighlight">\(n=1\)</span> is <em>stable</em>. We can think about this more by sketching the curve <span class="math notranslate nohighlight">\(dn/d\tau\)</span> vs <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p><strong>Have a go</strong>: Sketch the curve <span class="math notranslate nohighlight">\(dn/d\tau\)</span> vs <span class="math notranslate nohighlight">\(n\)</span> and use it to identify the key aspects of the system.</p>
+<p>We can easily mark our equilibria at <span class="math notranslate nohighlight">\(n=0\)</span> and <span class="math notranslate nohighlight">\(n=1\)</span> and then consider the shape of <span class="math notranslate nohighlight">\(dn/d\tau\)</span>, which we can see is a quadratic. (We can also mark on the qualitative direction of trajectories on the x-axis, giving a <em>phase line</em>.) Considering the gradients of this curve at the two equilibria, we can see that these give us a good description of their local stability. In particular if we take <span class="math notranslate nohighlight">\(dn/d\tau=f(n)\)</span>, then if <span class="math notranslate nohighlight">\(df/dn&lt;0\)</span> at an equilibrium then it is stable, and if <span class="math notranslate nohighlight">\(df/dn&gt;0\)</span> at an equilibrium then it is unstable. This is known as {\em linearisation} around the equilibria. Notice, then, that we have fully described the possible behaviours of this system without having to explicitly solve the equation.</p>
+</div>
+<div class="section" id="case-study-spruce-budworm">
+<h2>Case study: spruce budworm<a class="headerlink" href="#case-study-spruce-budworm" title="Permalink to this headline">¶</a></h2>
+<p>Spruce budworm is an insect that lives in spruce and fir forests in the USA and Canada. While they mostly exist at low numbers, there are periodic explosions of budworms that devestate the forests. A particular feature of budworm dynamics is that they are predated by birds. We might then describe the dynamcis of budworm by the following equation,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f9a38fb7-1172-489e-a52a-ecd34c0cc420">
+<span class="eqno">(7)<a class="headerlink" href="#equation-f9a38fb7-1172-489e-a52a-ecd34c0cc420" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-p(N),
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(N)\)</span> describes the rate of predation (note that we do not explicitly consider the bird population dynamics). What should <span class="math notranslate nohighlight">\(p(N)\)</span> look like? Should it be constant, a fixed per-capita rate, or some other density-dependent fucntion? First, we might reasonably assume that as more food becomes available, the more the birds will eat, so predation should increase with budworm density. However, we should also note that birds cannot eat an infinite amount, and that the rate of predation should therefore saturate at high budworm densities. We might then give an explicit model as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ccbaf84f-eedb-47b5-a448-e11bd12609ee">
+<span class="eqno">(8)<a class="headerlink" href="#equation-ccbaf84f-eedb-47b5-a448-e11bd12609ee" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-\frac{\rho N}{N+A}
+\end{equation}\]</div>
+<p>What are the possible outcomes of this model? We might start by finding equilibria as before, but we will quickly find ourselves bogged down with tedious algebra. Instead, let’s use curve-sketching to explore the possible outcomes. The above model can be written as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7ecd99a6-aab4-4294-9e70-45e7d4d7fb6c">
+<span class="eqno">(9)<a class="headerlink" href="#equation-7ecd99a6-aab4-4294-9e70-45e7d4d7fb6c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dN}{dt}=N\left[r(N)-p(N)\right],
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r(N)=r_0(1-N/K)\)</span> and <span class="math notranslate nohighlight">\(p(N)=\rho/(N+A)\)</span>. We know that an equilibrium occurs where <span class="math notranslate nohighlight">\(r(N)-p(N)=0\)</span>, which will be when the two curves cross. There are three cases to consider:</p>
+<img src='budworms.png' height="300" alt="3 diagrams to assess stability of spruce budworm model">
+<p><em>Figure: Sketches of <span class="math notranslate nohighlight">\(r(N)\)</span> and <span class="math notranslate nohighlight">\(p(N)\)</span> to assess stability of spruce budworm model for three different cases.</em></p>
+<p>In case (1), where predation by the birds is very high, the two curves never cross, and <span class="math notranslate nohighlight">\(dN/dt&lt;0\)</span> for all <span class="math notranslate nohighlight">\(N&gt;0\)</span>. Therefore the insect population is expected to be wiped out, with <span class="math notranslate nohighlight">\(N=0\)</span> the stable equilibrium. In case (2), where predation has weakened somewhat, two new equilibria appear, one stable and one unstable. We now have bistability - where two different equilibria are stable, but which one we go to depends on the initial conditions. In case (3) where predation is very weak, we now only have one equilibrium for <span class="math notranslate nohighlight">\(N&gt;0\)</span>, at high budworm densities. We also see now that <span class="math notranslate nohighlight">\(N=0\)</span> is no longer stable, and the budworm population will always reach this high equilibrium density.</p>
+<p>What do these results tell us? That pest outbreaks such as the spruce budworm are likely to be driven by the pressure from predation. We can also see that, due to the bistability, sudden outbreaks can occur if there are relatively small changes to the environment.</p>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Use the <a class="reference external" href="https://colab.research.google.com/drive/1eNeeMymrZ5aGKg7OFT4V_4rYATuIBJaj#scrollTo=V_y6kEU5JfxP">budworm model python code</a> to explore the model. Start with a high value of <span class="math notranslate nohighlight">\(\rho\)</span> and gradually reduce the value to see how the behaviour changes. You can then alter other model parameters if you wish.</p>
+</div>
+</div>
+<div class="section" id="key-points">
+<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Parameters in model represent rates of change, and their functional form implies how that process works.</p></li>
+<li><p>The logistic equation goes to a long-term equilibrium, and we do not need to explicitly solve it to understand its key behaviours.</p></li>
+<li><p>Sudden outbreaks of spruce budworm can occur if there is a small change in the level of predation.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">MAS377 Mathematical Biology</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2 - Bifurcations and introducing competition <a name="chapter2"></a></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Alex Best<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

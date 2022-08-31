@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5 - Epidemics in human populations &#8212; MAS377 Mathematical Biology</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6 - The SIR model with demographics" href="ch6.html" />
+    <link rel="prev" title="4 - Predator-Prey models" href="ch4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MAS377 Mathematical Biology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   MAS377 Mathematical Biology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch1.html">
+   1 - Simple population models
+   <a name="chapter1">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   2 - Bifurcations and introducing competition
+   <a name="chapter2">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch3.html">
+   3 - Competition continued
+   <a name="chapter3">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch4.html">
+   4 - Predator-Prey models
+   <a name="chapter4">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5 - Epidemics in human populations
+   <a name="chapter5">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   6 - The SIR model with demographics
+   <a name="chapter6">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   7 - Vaccination and disease in the wild
+   <a name="chapter7">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch8.html">
+   8 - A within-host Covid model
+   <a name="chapter8">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch9.html">
+   9 - A within-host HIV model
+   <a name="chapter9">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   11-12 Project Week
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-the-sir-model">
+   Introducing the SIR model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epidemics">
+   Epidemics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-basic-reproductive-ratio-r-0">
+   The basic reproductive ratio,
+   <span class="math notranslate nohighlight">
+    \(R_0\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-epidemic-curve">
+   The epidemic curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>5 - Epidemics in human populations <a name="chapter5"></a></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introducing-the-sir-model">
+   Introducing the SIR model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#epidemics">
+   Epidemics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-basic-reproductive-ratio-r-0">
+   The basic reproductive ratio,
+   <span class="math notranslate nohighlight">
+    \(R_0\)
+   </span>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-epidemic-curve">
+   The epidemic curve
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="epidemics-in-human-populations-a-name-chapter5-a">
+<h1>5 - Epidemics in human populations <a name="chapter5"></a><a class="headerlink" href="#epidemics-in-human-populations-a-name-chapter5-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introducing-the-sir-model">
+<h2>Introducing the SIR model<a class="headerlink" href="#introducing-the-sir-model" title="Permalink to this headline">¶</a></h2>
+<p>I suspect that mathematical modelling of disease spread has never been as topical or well-known amongst the general public than in the last few years. Many modellers and scientists have been contributing to our understanding of the Covid-19 pandemic, from public-facing talks and twitter threads, to research being conducted and published to directly advising the government. In the next few lectures we will go through the fundamentals of the mathematical models that are the basis of most of this modelling work. The models that have been used to advise the government are of course rather more detailed than those you will see here (and we’ll discuss some extensions as we go along), but there is a common engine behind them all.</p>
+<p>So far we have assumed that every individual within each population is identical. Such a generalisation has the benefit of reducing our model to a low number of variables. But often certain individuals within a population are fundamentally distinct from one another. In this case, we might want to divide our population up in to different <em>compartments</em>. The choice of how to divide our population in to different compartments is often dictated by the biological question we are seeking to address. For the next few lectures we will focus on <em>epidemic models</em>, where we think about disease dynamics within populations of humans, animals or plants that act as <em>hosts</em> for diseases such as viruses or bacteria, often termed <em>parasites</em>. A key message to take away from these lectures is how simple many of the models are. Yet, these models are in fact used by researchers (including me!) to study the behaviour of many important real-world diseases.</p>
+<p>We will initially assume we are interested in infectious diseases of human populations. When thinking about the spread of disease through a human population, it is clearly not very helpful to consider all individuals as identical, as individuals will move through different stages over the course of an infection. Let’s draw a schematic diagram to picture this:</p>
+<img src='sir.png' height="300" alt="schematic of the SIR epidemic model">
+<p><em>Figure: Schematic of the SIR epidemic model.</em></p>
+<p>Before a disease emerges, all individuals in the population are <em>susceptible</em>. Once exposed to the disease, individuals may then become <em>infected</em> (and also <em>infectious</em>). Finally, individuals will eventually fight off the disease to become <em>recovered</em> and <em>immune</em>.</p>
+<p>This is the SIR model, and has been central to our understanding of disease dynamics in human populations since it was first proposed by Kermack and McKendrick in 1927. Disease is transmitted by ‘direct contact’ between infected and susceptible hosts and is a mass action process. When hosts have recovered, they gain immunity and cannot be infected again (this is a key aspect of vertebrate - and especially human - immune systems, but is not necessarily true of invertebrates, plants, etc. We will consider models more appropriate for such populations later). <span class="math notranslate nohighlight">\(\beta\)</span> controls the rate at which contacts between <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(I\)</span> hosts cause infection, and <span class="math notranslate nohighlight">\(\gamma\)</span> is the rate of recovery. In this initial example we have not included any birth or death processes, as we assume that infection happens at a much faster timescale than demography. By considering our schematic diagram above we can write down the dynamics of our system as a set of ODEs:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-88dc37f2-7df2-4a41-bd69-46ed66af2d09">
+<span class="eqno">(14)<a class="headerlink" href="#equation-88dc37f2-7df2-4a41-bd69-46ed66af2d09" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp;\frac{dS}{dt} = -\beta SI\label{si1}\\ 
+&amp;\frac{dI}{dt} = \beta SI - \gamma I\label{si2}\\
+&amp;\frac{dR}{dt} = \gamma I
+\end{align}\]</div>
+<p>with the total population, <span class="math notranslate nohighlight">\(N=S+I+R\)</span>. There are some useful definitions it is worth making at this point:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta I\)</span> is often called the force of infection;</p></li>
+<li><p><span class="math notranslate nohighlight">\(I/N\)</span> gives the prevalence of infection;</p></li>
+<li><p><span class="math notranslate nohighlight">\(1/\gamma\)</span> is the infectious period.</p></li>
+</ul>
+<p>Note that <span class="math notranslate nohighlight">\(dN/dt = dS/dt+dI/dt+dR/dt=0\)</span>, and so the total population stays at a constant size. This is a reasonable assumption for an epidemic outbreak in long-lived human populations. Because of this we can eliminate one variable, with <span class="math notranslate nohighlight">\(R=N-(S+I)\)</span> and ignore the <span class="math notranslate nohighlight">\(dR/dt\)</span> equation.</p>
+</div>
+<div class="section" id="epidemics">
+<h2>Epidemics<a class="headerlink" href="#epidemics" title="Permalink to this headline">¶</a></h2>
+<p>Again, despite the simplicity of this model (two variables and two parameters), there exists no explicit solution. However, we can explore the qualitative behaviour of the model by identifying {equilibria} of the system and their stability.</p>
+<p>Considering the model, the only steady-state is when <span class="math notranslate nohighlight">\(I=0\)</span> (and <span class="math notranslate nohighlight">\(S\)</span> may take any value <span class="math notranslate nohighlight">\(&lt;N\)</span>). This implies that in the long-run, we would expect the population to reach a point with no infected hosts i.e. the system will become <em>disease-free</em>. In the long-run this is often the case with emerging diseases - they will eventually burn out - but it is still important for us to know whether there can be an <em>epidemic</em>, when an initially small amount of infection causes a large outbreak of disease in the population (even if it eventually tends to zero).</p>
+<p>For an epidemic to occur, we need to have <span class="math notranslate nohighlight">\(dI/dt&gt;0\)</span> initially. Before an outbreak, the initial densities are <span class="math notranslate nohighlight">\(S(0)\approx N,I(0)\approx0\)</span>. This gives,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fbdaaaba-5b04-4280-a0aa-78d3cda9898b">
+<span class="eqno">(15)<a class="headerlink" href="#equation-fbdaaaba-5b04-4280-a0aa-78d3cda9898b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dI}{dt}=(\beta N-\gamma)I
+\end{equation}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta N-\gamma&lt;0\)</span> <span class="math notranslate nohighlight">\(\implies\)</span> disease dies out.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta N-\gamma&gt;0\)</span> <span class="math notranslate nohighlight">\(\implies\)</span> epidemic.</p></li>
+</ul>
+<p>Let’s draw phase portraits of our SIR model for the two scenarios we have found above.  To find the nullclines we take,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;\frac{dS}{dt} = 0 \implies S=0, I=0\\
+&amp;\frac{dI}{dt} =0 \implies S=\frac{\gamma}{\beta},I=0
+\end{align*}\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Draw the two qualitatively different phase portraits for this system.</p>
+</div>
+<p>Remember where two (different) nullclines intersect is necessarily an equilibrium, which means here we have a continuum of equilibria along the line <span class="math notranslate nohighlight">\(I=0\)</span>. Using our equations we can then find out in what regions <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(I\)</span> will be increasing or decreasing. Again, note it doesn’t matter that we can’t say precisely the direction of a trajectory anywhere on our plot; knowing the qualitative direction of travel gives us all the information that we need.</p>
+<img src='phase_sir.png' height="300" alt="2 phase portraits of SIR model">
+<p><em>Figure: Two sketches of the phase portrait for the SIR model, with <span class="math notranslate nohighlight">\(R_0&lt;1\)</span> and <span class="math notranslate nohighlight">\(R_0&gt;1\)</span>.</em></p>
+<p>Note that <span class="math notranslate nohighlight">\(\beta N-\gamma&gt;0 \implies \beta N/\gamma&gt;1\)</span>.</p>
+</div>
+<div class="section" id="the-basic-reproductive-ratio-r-0">
+<h2>The basic reproductive ratio, <span class="math notranslate nohighlight">\(R_0\)</span><a class="headerlink" href="#the-basic-reproductive-ratio-r-0" title="Permalink to this headline">¶</a></h2>
+<p>There is a very strong chance you have heard the terms <span class="math notranslate nohighlight">\(R\)</span> or <span class="math notranslate nohighlight">\(R_0\)</span> in discussions about the rate of spread of covid-19. We define <span class="math notranslate nohighlight">\(R_0=\beta N/\gamma\)</span> as the basic reproductive ratio of the disease: ‘The average number of secondary infections caused by one infected host in an otherwise disease-free population.’ Note that <span class="math notranslate nohighlight">\(\beta N\)</span> gives the total infections caused in a disease-free population, and <span class="math notranslate nohighlight">\(1/\gamma\)</span> is the infectious period. So <span class="math notranslate nohighlight">\(R_0\)</span> gives the number of infections caused by an individual in the time that it’s infected near the start of an epidemic. The more general term, <span class="math notranslate nohighlight">\(R=\beta S/\gamma\)</span> gives the number of new infections per case later in the epidemic when many individuals have already been infected and/or recovered.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Disease</p></th>
+<th class="head"><p>R_0</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Flu</p></td>
+<td><p>1-3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Covid-19</p></td>
+<td><p>2-4</p></td>
+</tr>
+<tr class="row-even"><td><p>SARS</p></td>
+<td><p>2-5</p></td>
+</tr>
+<tr class="row-odd"><td><p>HIV</p></td>
+<td><p>2-5</p></td>
+</tr>
+<tr class="row-even"><td><p>Smallpox</p></td>
+<td><p>5-7</p></td>
+</tr>
+<tr class="row-odd"><td><p>TB</p></td>
+<td><p>8-10</p></td>
+</tr>
+<tr class="row-even"><td><p>Measles</p></td>
+<td><p>12-18</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Estimates of <span class="math notranslate nohighlight">\(R_0\)</span> for some important human diseases.</em></p>
+</div>
+<div class="section" id="the-epidemic-curve">
+<h2>The epidemic curve<a class="headerlink" href="#the-epidemic-curve" title="Permalink to this headline">¶</a></h2>
+<p>The phase portraits demonstrate again that an epidemic should always burn out and the population return to being disease-free. Interestingly the phase portraits also suggest that not all of the population will get infected during an epidemic. As we have already said, due to the non-linearity of the system we are unable to find an exact solution and therefore cannot say precisely what the dynamics should look like. However, it is useful to understand what the epidemic curve - the number of perople infected over time - looks like. With some approximations it is possible to express this as a mathematical formula, but we shall just look at some numerical output as shown in the left-hand side of the figure. This gives a characteristic bell-shaped curve. This is in fact the sort of curve we see from data from many real-world epidemics. In the right-hand side we show how the reproductive ration <span class="math notranslate nohighlight">\(R\)</span> changes during the epidemic. Notice that the peak of the epidemic is precisely at <span class="math notranslate nohighlight">\(R=1\)</span>.</p>
+<img src='epicurve_shef.png' height="300" alt="An epidemic time-course from the SIR model with $R_0=3$">
+<img src='Rcurveshef.png' height="300" alt="Plot of the value of $R$ over the course of an epidemic with $R_0=3">
+<p><em>Figure: An epidemic curve based on a populaion of <span class="math notranslate nohighlight">\(N\)</span>=500,000 and <span class="math notranslate nohighlight">\(R_0=3\)</span> and how the value of <span class="math notranslate nohighlight">\(R\)</span> changes during the epidemic.</em></p>
+</div>
+<div class="section" id="key-points">
+<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>We can model diseases using a compartment framework called the SIR model.</p></li>
+<li><p>An epidemic will occur when <span class="math notranslate nohighlight">\(dI/dt\)</span> is initially positive, but will always reach an equilibrium where <span class="math notranslate nohighlight">\(I=0\)</span>.</p></li>
+<li><p>We can measure how quickly a disease initially spreads using <span class="math notranslate nohighlight">\(R_0\)</span>, and this tells us with there will be an epidemic or not.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch4.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">4 - Predator-Prey models <a name="chapter4"></a></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch6.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">6 - The SIR model with demographics <a name="chapter6"></a></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Alex Best<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
