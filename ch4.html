@@ -353,8 +353,8 @@
 <div class="section" id="a-first-model">
 <h2>A first model<a class="headerlink" href="#a-first-model" title="Permalink to this headline">¶</a></h2>
 <p>Of course, species in the natural world do not just engage in friendly competition for resources. Nature is ‘red in tooth and claw’, with many species relying on others as a primary food source: foxes and rabbits; lions and zebras; ladybirds and aphids. Such predator-prey interactions will have a similar structure to the competition models we considered above, but now one species benefits from the interaction. Calling the prey density <span class="math notranslate nohighlight">\(N\)</span> and the predator density <span class="math notranslate nohighlight">\(P\)</span>, the simplest model would look like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d6e20ff-4f26-4d16-bd75-1d5d55927d3f">
-<span class="eqno">(12)<a class="headerlink" href="#equation-4d6e20ff-4f26-4d16-bd75-1d5d55927d3f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-44413a7a-79c6-4e9f-a4ae-c25146d052ce">
+<span class="eqno">(12)<a class="headerlink" href="#equation-44413a7a-79c6-4e9f-a4ae-c25146d052ce" title="Permalink to this equation">¶</a></span>\[\begin{align}
  \frac{dN}{dt} &amp; =N(a-b P) \\
 \frac{dP}{dt} &amp; =P(-c+dN).
  \end{align}\]</div>
@@ -381,8 +381,8 @@ ad/b &amp; 0
 <div class="section" id="a-more-realistic-model">
 <h2>A more realistic model<a class="headerlink" href="#a-more-realistic-model" title="Permalink to this headline">¶</a></h2>
 <p>While it is nice to have demonstrated the existence of cycles, these are not structurally stable, which suggests something may not be quite right. From our previous models we might already think of two additions to make the model more realistic. One is that we ignored any density-dependence, meaning prey in particular could grow to infinite levels. Another is that we assumed predation was linearly dependent on prey density, whereas we previously argued it should be saturating. Including these assumptions modifies the model to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ae9b446c-2c1a-40db-b35e-6534c839af42">
-<span class="eqno">(13)<a class="headerlink" href="#equation-ae9b446c-2c1a-40db-b35e-6534c839af42" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c8860d65-4129-472b-8531-4bd91667d80e">
+<span class="eqno">(13)<a class="headerlink" href="#equation-c8860d65-4129-472b-8531-4bd91667d80e" title="Permalink to this equation">¶</a></span>\[\begin{align}
  \frac{dN}{dt} &amp; =N\left(a-\frac{b P}{N+A}-\alpha N\right) \\
 \frac{dP}{dt} &amp; =P\left(-c+\frac{dN}{N+A}\right).
  \end{align}\]</div>
