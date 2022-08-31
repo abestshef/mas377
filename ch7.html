@@ -359,40 +359,35 @@
 <li><p>We should include the fact that disease causes significant damage to hosts (something we have so far ignored). In particular, we shall assume that infected hosts suffer an additional mortality, or {\em virulence} at rate <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
 </ul>
 <p>Our new SIS model will then be given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-78c0b7c1-0a2b-45be-84e3-972cc926dab4">
-<span class="eqno">(18)<a class="headerlink" href="#equation-78c0b7c1-0a2b-45be-84e3-972cc926dab4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-29b832d4-1203-4634-b03b-347bac463ddf">
+<span class="eqno">(18)<a class="headerlink" href="#equation-29b832d4-1203-4634-b03b-347bac463ddf" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \end{align}\]</div>
 <p>Prior to European settlement, there were no rabbits in Australia. Initially bred for food, their numbers stayed low until a small number of rabbits were released for hunting purposes on an estate. Within 10 years rabbit numbers were well in to the millions. During this initial growth period, we might actually suppose that our very first population growth model provided a good approximation of rabbit dynamics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a25709c5-28a4-445f-90a5-070bbc31f5d5">
-<span class="eqno">(19)<a class="headerlink" href="#equation-a25709c5-28a4-445f-90a5-070bbc31f5d5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a88a047c-8e23-4042-8729-040306a55493">
+<span class="eqno">(19)<a class="headerlink" href="#equation-a88a047c-8e23-4042-8729-040306a55493" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt} = bN - dN=rN,\label{rabbit1}
 \end{equation}\]</div>
 <p>predicting exponential growth for <span class="math notranslate nohighlight">\(b&gt;d\)</span> (births greater than deaths).</p>
 <p>A number of control strategies were attempted through the late 19th- and early 20th-centuries targeting rabbits, from shooting to the rabbit-proof fence. In 1950, the myxoma virus was deliberately released in to the rabbit population. From a modelling perspective, the effect of this is to transform the system to the SIS model given above, that is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c60978d6-9f9e-4d7c-9fda-c2d4551c458a">
-<span class="eqno">(20)<a class="headerlink" href="#equation-c60978d6-9f9e-4d7c-9fda-c2d4551c458a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-93bd1b64-5cee-4c59-9011-5bd2b27aadac">
+<span class="eqno">(20)<a class="headerlink" href="#equation-93bd1b64-5cee-4c59-9011-5bd2b27aadac" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \label{rabbit2}
 \end{align}\]</div>
 <p>Our question is, will the introduction of the disease successfully control rabbit numbers? Initially we had exponential growth. What we then need to know is whether introducing the disease can limit this. What are the equilibria of this model? There is a trivial equilibrium at <span class="math notranslate nohighlight">\((S,I)=(0,0)\)</span>. Also, if <span class="math notranslate nohighlight">\(I=0\)</span> then we return to exponential growth when <span class="math notranslate nohighlight">\(b&gt;d\)</span>. But there is also an endemic equilibrium, at,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eb8caff8-1442-4464-a502-0f16d5e408cd">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eb8caff8-1442-4464-a502-0f16d5e408cd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-08374d0a-feb1-46c6-88a6-fe3e21d6827b">
+<span class="eqno">(21)<a class="headerlink" href="#equation-08374d0a-feb1-46c6-88a6-fe3e21d6827b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 S^*&amp;=\frac{d+\alpha+\gamma}{\beta},\\
 I^*&amp;=\frac{(b-d)S^* }{\beta S^*-b-\gamma}=\frac{(b-d)(d+\alpha+\gamma)}{\beta(\alpha-(b-d))}.
 \end{align}\]</div>
-<p>To determine whether this equilibrium is stable, and so whether the disease can indeed control the rabbit population to this equilibrium level, we need to look at the Jacobian,</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-J=&amp;\left(
-\begin{array}{cc}
-b-d-\beta I^* &amp; b-\beta S^*+\gamma\\
-\beta I^* &amp; \beta S^*-(d+\alpha+\gamma)
-\end{array}
-\right)
-\end{align*}\]</div>
+<p>To determine whether this equilibrium is stable, and so whether the disease can indeed control the rabbit population to this equilibrium level, we need to look at the Jacobian.</p>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Write out the general Jacobian for this system.</p>
+</div>
 <p>Substituting in our equilibrium values for <span class="math notranslate nohighlight">\(S^*\)</span> and <span class="math notranslate nohighlight">\(I^*\)</span> means that,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}

@@ -443,18 +443,18 @@
 <p>Populations rarely (if ever) exist in isolation. In reality, the growth rate of a given population depends not only on itself, but also on other populations. This can result from a range of ecological relationships, including competition for resources, predation, cooperation, etc.</p>
 <p>As an example of interacting populations, consider a model for the population levels of two species that compete for a common resource (sometimes known as the <em>Lotka-Volterra model</em>). We can think of our two species as grey and red squirrels (famous competitors in the UK), but we could equally consider sheep and rabbits, or any other suitable pair. As with our previous single population models, we begin by considering what factors might contribute to the birth and death processes that control the rates of changes of the two populations. We assume:</p>
 <ol class="simple">
-<li><p>There is only a limited supply of nuts for squirrels to eat. Thus, even in the absence of inter-species competition, the environment would have a limited carrying capacity (i.e.\ a maximum number of squirrels that it could support). The overall population for each species can be modelled using a logistic growth term with intra-specific competition, as we saw previously.</p></li>
-<li><p>The two types of squirrel compete at a rate proportional to the product of their populations (the more there are, the more likely they are to want to eat the same nuts). This is an example of \textit{inter-specific competition}.</p></li>
+<li><p>There is only a limited supply of nuts for squirrels to eat. Thus, even in the absence of inter-species competition, the environment would have a limited carrying capacity (i.e. a maximum number of squirrels that it could support). The overall population for each species can be modelled using a logistic growth term with intra-specific competition, as we saw previously.</p></li>
+<li><p>The two types of squirrel compete at a rate proportional to the product of their populations (the more there are, the more likely they are to want to eat the same nuts). This is an example of <em>inter-specific competition</em>.</p></li>
 </ol>
-<p>We also assume that the carrying capacity for the two types of squirrel can be different (e.g.\ one species will eat a wider variety of food than the other), and that the two species can have different susceptibilities to competition (e.g.\ one species is more timid than the other). Without inter-specific competition, we could model the two populations using two logistic growth equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61d3e196-223f-46e3-8f9a-f3355d48e284">
-<span class="eqno">(10)<a class="headerlink" href="#equation-61d3e196-223f-46e3-8f9a-f3355d48e284" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<p>We also assume that the carrying capacity for the two types of squirrel can be different (e.g. one species will eat a wider variety of food than the other), and that the two species can have different susceptibilities to competition (e.g. one species is more timid than the other). Without inter-specific competition, we could model the two populations using two logistic growth equations:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-01e5d04b-a1a5-46a4-9ded-04a19663df8c">
+<span class="eqno">(10)<a class="headerlink" href="#equation-01e5d04b-a1a5-46a4-9ded-04a19663df8c" title="Permalink to this equation">¶</a></span>\[\begin{align} 
  \frac{dR}{dt} &amp; =R(a-R) \\
  \frac{dG}{dt} &amp; =G(c-G),
  \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(G\)</span> represent the respective population levels of red and grey squirrels. Note that we have already done a little non-dimensionalising here, and that <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are thus the respective relative carrying capacities. To include competition between the species, we add an additional term to each equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-253fdc87-9d5f-4b45-be79-f1ead9576a59">
-<span class="eqno">(11)<a class="headerlink" href="#equation-253fdc87-9d5f-4b45-be79-f1ead9576a59" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5079a0f-cc3e-4a4c-893e-6ee252269ae2">
+<span class="eqno">(11)<a class="headerlink" href="#equation-e5079a0f-cc3e-4a4c-893e-6ee252269ae2" title="Permalink to this equation">¶</a></span>\[\begin{align}
  \frac{dR}{dt} &amp; =R(a-R-bG) \\
 \frac{dG}{dt} &amp; =G(c-dR-G), 
  \end{align}\]</div>
