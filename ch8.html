@@ -175,6 +175,28 @@
    11-12 Project Week
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13 - A model of cancer growth
+   <a name="chapter13">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14 - Regulation of expression in a single gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   15 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   16 - More modelling of an autoregulation gene
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -364,8 +386,8 @@
 <div class="section" id="case-study-covid-19">
 <h2>Case study: Covid-19<a class="headerlink" href="#case-study-covid-19" title="Permalink to this headline">¶</a></h2>
 <p>We will look at a relatively simple model of virus-cell dynamics that <em>loosely</em> describes the interaction between Covid-19 virus particules and a type of human immune cell callted the T-cell. The model is borrowed from works by Almocera et al. (2018) and Hernandez-Vargas &amp; Velasco-Hernandez (2021). We assume that the virus grows in the body according to classic logistic growth, that it decays at some background rate but is also killed by T-cells. T-cells themselves are produced by the body at some constant, background rate, but also proliferate when they sense virus present. Finally the T-cells also decay. We can write down our model as follows,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d8124848-17a8-4785-afee-687d12e381cb">
-<span class="eqno">(22)<a class="headerlink" href="#equation-d8124848-17a8-4785-afee-687d12e381cb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-216d6f48-3136-46ba-90a6-d3f437f193ce">
+<span class="eqno">(22)<a class="headerlink" href="#equation-216d6f48-3136-46ba-90a6-d3f437f193ce" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{dV}{dt} &amp;= pV(1-V/K)-\beta VT - \mu V\\
 \frac{dT}{dt} &amp;= s+rT\left(\frac{V^2}{V^2+c^2}\right)-\delta T
 \end{align}\]</div>
@@ -405,7 +427,7 @@
 </ol>
 <p>One additional thing to note is that the term, <span class="math notranslate nohighlight">\(V^2/(V^2+c^2)\)</span> remains small up to reasonably high values of <span class="math notranslate nohighlight">\(V\)</span>. Therefore this term will initially not effect the nullcline much as <span class="math notranslate nohighlight">\(V\)</span> increases, meaning our nullcline is initially quite flat. We can put all of this together to form our phase portrait.</p>
 <img src='whcovid.jpg' height="300" alt="Phase portrait of within-host Covid-19 model">
-<p>*Figure: Phase portraits of the within-host Covid-19 model.</p>
+<p><em>Figure: Phase portraits of the within-host Covid-19 model.</em></p>
 <p>What we see, then, is that there is only one equilibrium when the virus is present, and for the assumptions we have made about relative parameter values, it appears to be a stable spiral. We can additionally note that the initial dynamics are for a rapid rise in virus concentration but little change in T-cell density, before the virus becomes too prevalent and T-cell proliferation begins. We can also note that the virus density at the equilibrium is considerably lower thank it would be without T-cells. Examining the phase portrait, we might also conclude that the virus-free equilibrium will only become stable if we can move the <span class="math notranslate nohighlight">\(T\)</span> nullcline far enough upwards that the two non-zero nullclines no longer intersect. This would require <span class="math notranslate nohighlight">\(s/\delta&gt;(p-\mu)/\beta\)</span>. Let us see if we can confirm that with linear stability analysis.</p>
 </div>
 <div class="section" id="linear-stability-analysis">

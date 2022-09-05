@@ -175,6 +175,28 @@
    11-12 Project Week
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13 - A model of cancer growth
+   <a name="chapter13">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14 - Regulation of expression in a single gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   15 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   16 - More modelling of an autoregulation gene
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -364,8 +386,8 @@
 <h2>A first population model<a class="headerlink" href="#a-first-population-model" title="Permalink to this headline">¶</a></h2>
 <p>In these first lectures we will think about populations as collections of individuals. For example, we may consider the human population of Sheffield, or the tapir population of South America, or the maize crop population of a field in Nigeria. Later we shall start considering perhaps less intuitive definitions of populations, such as of cells in the body, or proteins within cells. However, a key message to take from this module is that we can consider all of these biological populations in the same way from a modelling perspective, and subject to the same sorts of biological processes.</p>
 <p>We might think we’d want to keep track of the number of individuals in a poulation as a key variable in any mdoel we make. However, as we will be using ordinary differential equations we need our variables to be continuous. We will therefore instead keep track of a population’s density and how this will vary over time. We might therefore call <span class="math notranslate nohighlight">\(N(t)\)</span> the density of individuals within our population at time <span class="math notranslate nohighlight">\(t\)</span>, and try to write down an ordinary differential equation that describes its dynamics, such as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b5626d3-56a7-415e-b511-21df96f16607">
-<span class="eqno">(1)<a class="headerlink" href="#equation-4b5626d3-56a7-415e-b511-21df96f16607" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-37dd93bb-1fed-4268-9713-54d6a6fcf650">
+<span class="eqno">(1)<a class="headerlink" href="#equation-37dd93bb-1fed-4268-9713-54d6a6fcf650" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{dN}{dt} &amp;= \textrm{births} -\textrm{deaths}.
 \end{align}\]</div>
 <p>An important modelling decision is what these terms on the right-hand side should look like, and this will depend on the specific biology. There are three main forms:</p>
@@ -375,8 +397,8 @@
 <li><p><em>density-dependent rate</em>,  <span class="math notranslate nohighlight">\(\textrm{births}=b(N)N\)</span>. This would be suitable if the per-capita rate is not fixed but instead varies with the population size, for example if high density means more competition for resources and thus lower growth. The form of this function will again depend on the biology.</p></li>
 </ul>
 <p>For our basic model, per-capita rates for birth and death seem the most obvious choice. Our model is thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7539f6e4-731c-424a-94b4-828bb3846859">
-<span class="eqno">(2)<a class="headerlink" href="#equation-7539f6e4-731c-424a-94b4-828bb3846859" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7968f247-b630-44ef-96ba-eac95d5d70af">
+<span class="eqno">(2)<a class="headerlink" href="#equation-7968f247-b630-44ef-96ba-eac95d5d70af" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{dN}{dt}&amp;= bN - dN \\
 &amp;= rN,
 \end{align}\]</div>
@@ -384,8 +406,8 @@
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Either by <em>separation of variables</em> or <em>integrating factors</em> show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-36b9f433-cd0d-4892-99f9-4778c8397e13">
-<span class="eqno">(3)<a class="headerlink" href="#equation-36b9f433-cd0d-4892-99f9-4778c8397e13" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9cb3304b-3b44-46fa-b56d-596037a02fcf">
+<span class="eqno">(3)<a class="headerlink" href="#equation-9cb3304b-3b44-46fa-b56d-596037a02fcf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 N(t) = N(0)e^{rt},
 \end{equation}\]</div>
 <p>which predicts exponential growth of the population for <span class="math notranslate nohighlight">\(r&gt;0\)</span> and exponential decline for <span class="math notranslate nohighlight">\(r&lt;0\)</span>.</p>
@@ -400,8 +422,8 @@ N(t) = N(0)e^{rt},
 r(N) = r_0\left(1 - \frac{N}{K}\right),
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(r_0\)</span> (the <em>basic reproductive rate</em>) and <span class="math notranslate nohighlight">\(K\)</span> (the carrying capacity) are positive constants. Our population equation is then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6820d842-fbeb-4a91-815b-cd2192ee7c40">
-<span class="eqno">(4)<a class="headerlink" href="#equation-6820d842-fbeb-4a91-815b-cd2192ee7c40" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9659cd58-6191-4b7f-a857-52afb1f6a82e">
+<span class="eqno">(4)<a class="headerlink" href="#equation-9659cd58-6191-4b7f-a857-52afb1f6a82e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right).
 \end{equation}\]</div>
 <p>This equation is known as the <em>logistic growth equation</em> and is an example of <em>intra-specific competition</em>.</p>
@@ -414,14 +436,14 @@ r(N) = r_0\left(1 - \frac{N}{K}\right),
 \frac{dn}{dt}=\frac{d(N/K)}{dt}=\frac{1}{K}\frac{dN}{dt}=r_0n(1 - n).
 \]</div>
 <p>We can also note that a natural time scale for the dynamics is <span class="math notranslate nohighlight">\(1/r_0\)</span>, such that we can take a new time variable, <span class="math notranslate nohighlight">\(\tau = r_0t\)</span>, and the final non-dimensional model equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61d8e7ac-7ef1-41a8-a2b9-c72738792c62">
-<span class="eqno">(5)<a class="headerlink" href="#equation-61d8e7ac-7ef1-41a8-a2b9-c72738792c62" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c77df2c1-e9f6-4654-ac64-a23c4baa742b">
+<span class="eqno">(5)<a class="headerlink" href="#equation-c77df2c1-e9f6-4654-ac64-a23c4baa742b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dn}{d\tau}=\frac{dn}{d(r_0t)}=\frac{1}{r_0}\frac{dn}{dt}=n(1 - n).\label{logeq}
 \end{equation}\]</div>
 <p>As you can see, by using two simple substitutions we have arrived at a very simple equation.</p>
 <p>This equation is one of the few you will see in this module that yields an explicit solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5bc62bab-e8c9-4ec8-9c6f-67fa64b64617">
-<span class="eqno">(6)<a class="headerlink" href="#equation-5bc62bab-e8c9-4ec8-9c6f-67fa64b64617" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6c390539-aff0-4768-83c9-3a3b4bbbd3e2">
+<span class="eqno">(6)<a class="headerlink" href="#equation-6c390539-aff0-4768-83c9-3a3b4bbbd3e2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n_0\)</span> is the initial population value. Examples of the dimensional solution for different values of <span class="math notranslate nohighlight">\(r_0\)</span> are shown in the figure.</p>
@@ -442,18 +464,18 @@ n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}},
 <div class="section" id="case-study-spruce-budworm">
 <h2>Case study: spruce budworm<a class="headerlink" href="#case-study-spruce-budworm" title="Permalink to this headline">¶</a></h2>
 <p>Spruce budworm is an insect that lives in spruce and fir forests in the USA and Canada. While they mostly exist at low numbers, there are periodic explosions of budworms that devestate the forests. A particular feature of budworm dynamics is that they are predated by birds. We might then describe the dynamcis of budworm by the following equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a0188e8e-e5d8-4a9b-ad54-2d95334f495b">
-<span class="eqno">(7)<a class="headerlink" href="#equation-a0188e8e-e5d8-4a9b-ad54-2d95334f495b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c3ba2566-7011-4462-b6a4-ca89655acd4d">
+<span class="eqno">(7)<a class="headerlink" href="#equation-c3ba2566-7011-4462-b6a4-ca89655acd4d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-p(N),
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(p(N)\)</span> describes the rate of predation (note that we do not explicitly consider the bird population dynamics). What should <span class="math notranslate nohighlight">\(p(N)\)</span> look like? Should it be constant, a fixed per-capita rate, or some other density-dependent fucntion? First, we might reasonably assume that as more food becomes available, the more the birds will eat, so predation should increase with budworm density. However, we should also note that birds cannot eat an infinite amount, and that the rate of predation should therefore saturate at high budworm densities. We might then give an explicit model as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26d244fc-97ef-4e07-b79d-85d80036f9eb">
-<span class="eqno">(8)<a class="headerlink" href="#equation-26d244fc-97ef-4e07-b79d-85d80036f9eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-327baecd-eb24-4c6d-9939-68c894fffea3">
+<span class="eqno">(8)<a class="headerlink" href="#equation-327baecd-eb24-4c6d-9939-68c894fffea3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-\frac{\rho N}{N+A}
 \end{equation}\]</div>
 <p>What are the possible outcomes of this model? We might start by finding equilibria as before, but we will quickly find ourselves bogged down with tedious algebra. Instead, let’s use curve-sketching to explore the possible outcomes. The above model can be written as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c28387c-dc2e-4992-8d4b-669cc45b381b">
-<span class="eqno">(9)<a class="headerlink" href="#equation-4c28387c-dc2e-4992-8d4b-669cc45b381b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9662a668-f1c0-437a-af31-34c5213360eb">
+<span class="eqno">(9)<a class="headerlink" href="#equation-9662a668-f1c0-437a-af31-34c5213360eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt}=N\left[r(N)-p(N)\right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r(N)=r_0(1-N/K)\)</span> and <span class="math notranslate nohighlight">\(p(N)=\rho/(N+A)\)</span>. We know that an equilibrium occurs where <span class="math notranslate nohighlight">\(r(N)-p(N)=0\)</span>, which will be when the two curves cross. There are three cases to consider:</p>

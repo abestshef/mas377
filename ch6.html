@@ -175,6 +175,28 @@
    11-12 Project Week
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13 - A model of cancer growth
+   <a name="chapter13">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14 - Regulation of expression in a single gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   15 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   16 - More modelling of an autoregulation gene
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -356,8 +378,8 @@
 <img src='sir2.png' height="300" alt="Schematic of the SIR model with demographics">
 <p><em>Figure: Schematic of the SIR model with births and deaths now included.</em></p>
 <p>We will make the simplifying assumption that the birth rate and death rate are equal, so that the population would be at equilibrium in the absence of disease (this is a rather questionable assumption for many ecological populations, but perhaps reasonable for modern human populations). This gives the equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-85e02b76-e1df-4fc1-aa6e-bebd08d43f88">
-<span class="eqno">(16)<a class="headerlink" href="#equation-85e02b76-e1df-4fc1-aa6e-bebd08d43f88" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7ab1cbb3-9f7f-4672-9307-a1b5f169497d">
+<span class="eqno">(16)<a class="headerlink" href="#equation-7ab1cbb3-9f7f-4672-9307-a1b5f169497d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = \mu N - \beta SI - \mu S\\
 &amp;\frac{dI}{dt} = \beta SI - (\gamma +\mu)I\\
 &amp;\frac{dR}{dt} = \gamma I-\mu R
@@ -377,8 +399,8 @@
 </ul>
 <p>Disease is <strong>endemic</strong>.</p>
 <p>Let’s look again at that last equilibrium,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fbc2b48e-dcc5-4e58-bc73-c89a56b839ad">
-<span class="eqno">(17)<a class="headerlink" href="#equation-fbc2b48e-dcc5-4e58-bc73-c89a56b839ad" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-96fc1d72-e20f-4668-9b8e-86798f6dd0ac">
+<span class="eqno">(17)<a class="headerlink" href="#equation-96fc1d72-e20f-4668-9b8e-86798f6dd0ac" title="Permalink to this equation">¶</a></span>\[\begin{equation}
  I^*=\frac{\mu}{\beta}\left(\dfrac{N}{S^*}-1\right)=\frac{\mu}{\beta}\left(\frac{\beta N}{\gamma+\mu}-1\right)=\frac{\mu}{\beta}\left(R_0-1\right).
  \end{equation}\]</div>
 <p>We now have two important terms from epidemiology. An <em>epidemic</em> occurs when a disease initially spreads through a population. A disease is <em>endemic</em> when it remains at a steady level within the population.</p>

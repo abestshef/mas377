@@ -175,6 +175,28 @@
    11-12 Project Week
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13 - A model of cancer growth
+   <a name="chapter13">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14 - Regulation of expression in a single gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   15 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   16 - More modelling of an autoregulation gene
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -359,27 +381,27 @@
 <li><p>We should include the fact that disease causes significant damage to hosts (something we have so far ignored). In particular, we shall assume that infected hosts suffer an additional mortality, or {\em virulence} at rate <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
 </ul>
 <p>Our new SIS model will then be given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29b832d4-1203-4634-b03b-347bac463ddf">
-<span class="eqno">(18)<a class="headerlink" href="#equation-29b832d4-1203-4634-b03b-347bac463ddf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c295ffd0-3674-442b-9202-1ef0fefcc65c">
+<span class="eqno">(18)<a class="headerlink" href="#equation-c295ffd0-3674-442b-9202-1ef0fefcc65c" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \end{align}\]</div>
 <p>Prior to European settlement, there were no rabbits in Australia. Initially bred for food, their numbers stayed low until a small number of rabbits were released for hunting purposes on an estate. Within 10 years rabbit numbers were well in to the millions. During this initial growth period, we might actually suppose that our very first population growth model provided a good approximation of rabbit dynamics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a88a047c-8e23-4042-8729-040306a55493">
-<span class="eqno">(19)<a class="headerlink" href="#equation-a88a047c-8e23-4042-8729-040306a55493" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b598a07e-2b44-44e7-89b2-2aa88b23cd25">
+<span class="eqno">(19)<a class="headerlink" href="#equation-b598a07e-2b44-44e7-89b2-2aa88b23cd25" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt} = bN - dN=rN,\label{rabbit1}
 \end{equation}\]</div>
 <p>predicting exponential growth for <span class="math notranslate nohighlight">\(b&gt;d\)</span> (births greater than deaths).</p>
 <p>A number of control strategies were attempted through the late 19th- and early 20th-centuries targeting rabbits, from shooting to the rabbit-proof fence. In 1950, the myxoma virus was deliberately released in to the rabbit population. From a modelling perspective, the effect of this is to transform the system to the SIS model given above, that is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93bd1b64-5cee-4c59-9011-5bd2b27aadac">
-<span class="eqno">(20)<a class="headerlink" href="#equation-93bd1b64-5cee-4c59-9011-5bd2b27aadac" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-baf64b95-8212-4c09-bc30-0159e6d6e182">
+<span class="eqno">(20)<a class="headerlink" href="#equation-baf64b95-8212-4c09-bc30-0159e6d6e182" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \label{rabbit2}
 \end{align}\]</div>
 <p>Our question is, will the introduction of the disease successfully control rabbit numbers? Initially we had exponential growth. What we then need to know is whether introducing the disease can limit this. What are the equilibria of this model? There is a trivial equilibrium at <span class="math notranslate nohighlight">\((S,I)=(0,0)\)</span>. Also, if <span class="math notranslate nohighlight">\(I=0\)</span> then we return to exponential growth when <span class="math notranslate nohighlight">\(b&gt;d\)</span>. But there is also an endemic equilibrium, at,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08374d0a-feb1-46c6-88a6-fe3e21d6827b">
-<span class="eqno">(21)<a class="headerlink" href="#equation-08374d0a-feb1-46c6-88a6-fe3e21d6827b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f5ab5b16-7ce1-4a96-85f9-c6f654708f36">
+<span class="eqno">(21)<a class="headerlink" href="#equation-f5ab5b16-7ce1-4a96-85f9-c6f654708f36" title="Permalink to this equation">¶</a></span>\[\begin{align}
 S^*&amp;=\frac{d+\alpha+\gamma}{\beta},\\
 I^*&amp;=\frac{(b-d)S^* }{\beta S^*-b-\gamma}=\frac{(b-d)(d+\alpha+\gamma)}{\beta(\alpha-(b-d))}.
 \end{align}\]</div>

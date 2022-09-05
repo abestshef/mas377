@@ -175,6 +175,28 @@
    11-12 Project Week
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13 - A model of cancer growth
+   <a name="chapter13">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14 - Regulation of expression in a single gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   15 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   16 - More modelling of an autoregulation gene
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -353,8 +375,8 @@
 <div class="section" id="a-first-model">
 <h2>A first model<a class="headerlink" href="#a-first-model" title="Permalink to this headline">¶</a></h2>
 <p>Of course, species in the natural world do not just engage in friendly competition for resources. Nature is ‘red in tooth and claw’, with many species relying on others as a primary food source: foxes and rabbits; lions and zebras; ladybirds and aphids. Such predator-prey interactions will have a similar structure to the competition models we considered above, but now one species benefits from the interaction. Calling the prey density <span class="math notranslate nohighlight">\(N\)</span> and the predator density <span class="math notranslate nohighlight">\(P\)</span>, the simplest model would look like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-44413a7a-79c6-4e9f-a4ae-c25146d052ce">
-<span class="eqno">(12)<a class="headerlink" href="#equation-44413a7a-79c6-4e9f-a4ae-c25146d052ce" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-146e521d-4fa5-4b1b-8f27-baa67e848f68">
+<span class="eqno">(12)<a class="headerlink" href="#equation-146e521d-4fa5-4b1b-8f27-baa67e848f68" title="Permalink to this equation">¶</a></span>\[\begin{align}
  \frac{dN}{dt} &amp; =N(a-b P) \\
 \frac{dP}{dt} &amp; =P(-c+dN).
  \end{align}\]</div>
@@ -376,13 +398,13 @@ ad/b &amp; 0
 \end{align*}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(T=0\)</span> and <span class="math notranslate nohighlight">\(D=ac&gt;0\)</span>. These conditions mean that the eigenvalues at this equilibrium have zero Real part and are purely Imaginary. The behaviour near the steady state is then for ‘centres’, a family of neutrally-stable closed orbits around the equilibrium (note, these are <em>not</em> limit cycles). We therefore predict that these two populations will constantly cycle: with low predation the prey density increases; this produces more food for predators, and so the predator numbers begin to rise; this in turn starts to push the prey numbers back down; finally, with their food supplies falling, the predator numbers also drop down. A phase portrait of these dynamics would look like this,</p>
 <img src='predpreycentre.png' height="300" alt="Phase portrait of predator-prey model showing a centre">
-<p>*Figure: Sketch of phase portrait for predator-prey model shopwing a centre.”</p>
+<p><em>Figure: Sketch of phase portrait for predator-prey model showing a centre.”</em></p>
 </div>
 <div class="section" id="a-more-realistic-model">
 <h2>A more realistic model<a class="headerlink" href="#a-more-realistic-model" title="Permalink to this headline">¶</a></h2>
 <p>While it is nice to have demonstrated the existence of cycles, these are not structurally stable, which suggests something may not be quite right. From our previous models we might already think of two additions to make the model more realistic. One is that we ignored any density-dependence, meaning prey in particular could grow to infinite levels. Another is that we assumed predation was linearly dependent on prey density, whereas we previously argued it should be saturating. Including these assumptions modifies the model to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8860d65-4129-472b-8531-4bd91667d80e">
-<span class="eqno">(13)<a class="headerlink" href="#equation-c8860d65-4129-472b-8531-4bd91667d80e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-df038742-02f1-415d-bb8f-bec85858cdab">
+<span class="eqno">(13)<a class="headerlink" href="#equation-df038742-02f1-415d-bb8f-bec85858cdab" title="Permalink to this equation">¶</a></span>\[\begin{align}
  \frac{dN}{dt} &amp; =N\left(a-\frac{b P}{N+A}-\alpha N\right) \\
 \frac{dP}{dt} &amp; =P\left(-c+\frac{dN}{N+A}\right).
  \end{align}\]</div>
