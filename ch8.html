@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 - A within-host Covid model &#8212; MAS377 Mathematical Biology</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9 - A within-host HIV model" href="ch9.html" />
+    <link rel="prev" title="7 - Vaccination and disease in the wild" href="ch7.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MAS377 Mathematical Biology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   MAS377 Mathematical Biology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch1.html">
+   1 - Simple population models
+   <a name="chapter1">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   2 - Bifurcations and introducing competition
+   <a name="chapter2">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch3.html">
+   3 - Competition continued
+   <a name="chapter3">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch4.html">
+   4 - Predator-Prey models
+   <a name="chapter4">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch5.html">
+   5 - Epidemics in human populations
+   <a name="chapter5">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   6 - The SIR model with demographics
+   <a name="chapter6">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   7 - Vaccination and disease in the wild
+   <a name="chapter7">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   8 - A within-host Covid model
+   <a name="chapter8">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch9.html">
+   9 - A within-host HIV model
+   <a name="chapter9">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   11-12 Project Week
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch8.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-study-covid-19">
+   Case study: Covid-19
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-graphical-analysis">
+   A graphical analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-stability-analysis">
+   Linear stability analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#treatment">
+   Treatment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>8 - A within-host Covid model <a name="chapter8"></a></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-study-covid-19">
+   Case study: Covid-19
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-graphical-analysis">
+   A graphical analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-stability-analysis">
+   Linear stability analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#treatment">
+   Treatment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-within-host-covid-model-a-name-chapter8-a">
+<h1>8 - A within-host Covid model <a name="chapter8"></a><a class="headerlink" href="#a-within-host-covid-model-a-name-chapter8-a" title="Permalink to this headline">¶</a></h1>
+<p>Earlier, we were thinking about the dynamics of disease at the scale of human or ecological populations. Often, though, we will be more concerned with the health of individual patients, particularly from a medical perspective. In these cases, we want to know how a virus or bacteria grows and develops inside the body, and how our immune system interacts with it. To study these dynamics we therefore require a <em>within-host model</em>. While the biology here may seem less intuitive, it is important to remember that we are still dealing with populations. But whereas we previously thought of populations as groups of humans or animals, we are now looking at populations of cells or virus particles.</p>
+<div class="section" id="case-study-covid-19">
+<h2>Case study: Covid-19<a class="headerlink" href="#case-study-covid-19" title="Permalink to this headline">¶</a></h2>
+<p>We will look at a relatively simple model of virus-cell dynamics that <em>loosely</em> describes the interaction between Covid-19 virus particules and a type of human immune cell callted the T-cell. The model is borrowed from works by Almocera et al. (2018) and Hernandez-Vargas &amp; Velasco-Hernandez (2021). We assume that the virus grows in the body according to classic logistic growth, that it decays at some background rate but is also killed by T-cells. T-cells themselves are produced by the body at some constant, background rate, but also proliferate when they sense virus present. Finally the T-cells also decay. We can write down our model as follows,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d8124848-17a8-4785-afee-687d12e381cb">
+<span class="eqno">(22)<a class="headerlink" href="#equation-d8124848-17a8-4785-afee-687d12e381cb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{dV}{dt} &amp;= pV(1-V/K)-\beta VT - \mu V\\
+\frac{dT}{dt} &amp;= s+rT\left(\frac{V^2}{V^2+c^2}\right)-\delta T
+\end{align}\]</div>
+<p>As usual, all the parameters are positive and we will also assume that <span class="math notranslate nohighlight">\(r&gt;\delta\)</span>. There are a few things to notice about this model:</p>
+<ul class="simple">
+<li><p>When a virus is killed by a T-cell, there is no corresponding killing of the cell itself.</p></li>
+<li><p>T-cell production is constant, not a per-capita rate.</p></li>
+<li><p>The proliferation function is sigmoidal - while virus density is small little proliferation occurs, but past a threshold value it rapidly increases. Quite a lot of the analysis is going to depend on knowledge of what this proliferation function looks like.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Sketch the curve <span class="math notranslate nohighlight">\(r\left(\frac{V^2}{V^2+c^2}\right)\)</span> and discuss its key features with your neighbours.</p>
+</div>
+<p>Let us consider the equilibria of this system. If we factorise the first equation we find two possible ways to make it equal zero:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(1-V/K)-\beta T - \mu =0 \implies T=(p(1-V/K)-\mu)/\beta\)</span></p></li>
+</ul>
+<p>Substituting <span class="math notranslate nohighlight">\(V=0\)</span> into the second equation, we can find that this requires <span class="math notranslate nohighlight">\(T=s/\delta\)</span> for an equilibrium. This will be the virus-free equilibrium, with no virus and T-cells present at their background density.</p>
+<p>For the second equilibrium we can see that the result is likely to be quite complicated. Indeed, there may even be more than one equilibrium produced. To save ourselves a lot of tedious algebra let us instead examine the phase portrait.</p>
+</div>
+<div class="section" id="a-graphical-analysis">
+<h2>A graphical analysis<a class="headerlink" href="#a-graphical-analysis" title="Permalink to this headline">¶</a></h2>
+<p>We have a two-dimensional system and both variables must be non-negative to make biological sense. We can use the workings we used when finding the equilibria to help us find the nullclines. The nullclines from the first equation give us:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V=0\)</span> - a straight vertical line.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T=p(1-V/K)-\mu)/\beta\)</span> - a decreasing line strating at <span class="math notranslate nohighlight">\((p-\mu)/\beta\)</span> and crossing 0 at <span class="math notranslate nohighlight">\(V=K(1-\mu/\beta)\)</span>.</p></li>
+</ul>
+<p>After a couple of lines of working we can find the nullcline from the second equation to be,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T=\frac{s}{\delta-r\left(\frac{V^2}{V^2+c^2}\right)}\)</span>.</p></li>
+</ul>
+<p>What does this nullcline look like? It starts at <span class="math notranslate nohighlight">\(T=s/\delta\)</span> when <span class="math notranslate nohighlight">\(V=0\)</span> and as <span class="math notranslate nohighlight">\(V\)</span> gets very large we find <span class="math notranslate nohighlight">\(T\to s/(\delta-r)\)</span>. In between these extremes we have this sigmoidal proliferation function to worry about. Note that <span class="math notranslate nohighlight">\(V^2/(V^2+c^2)\)</span> varies from 0 to 1 and is strictly increasing and that <span class="math notranslate nohighlight">\(r&gt;\delta\)</span>. This tells us two things:</p>
+<ol class="simple">
+<li><p>The nullcline is strictly increasing.</p></li>
+<li><p>At some point the denominator will pass through zero (some further work finds that techncially this happens twice, but one of the values occurs for <span class="math notranslate nohighlight">\(V&lt;0\)</span>).</p></li>
+</ol>
+<p>One additional thing to note is that the term, <span class="math notranslate nohighlight">\(V^2/(V^2+c^2)\)</span> remains small up to reasonably high values of <span class="math notranslate nohighlight">\(V\)</span>. Therefore this term will initially not effect the nullcline much as <span class="math notranslate nohighlight">\(V\)</span> increases, meaning our nullcline is initially quite flat. We can put all of this together to form our phase portrait.</p>
+<img src='whcovid.jpg' height="300" alt="Phase portrait of within-host Covid-19 model">
+<p>*Figure: Phase portraits of the within-host Covid-19 model.</p>
+<p>What we see, then, is that there is only one equilibrium when the virus is present, and for the assumptions we have made about relative parameter values, it appears to be a stable spiral. We can additionally note that the initial dynamics are for a rapid rise in virus concentration but little change in T-cell density, before the virus becomes too prevalent and T-cell proliferation begins. We can also note that the virus density at the equilibrium is considerably lower thank it would be without T-cells. Examining the phase portrait, we might also conclude that the virus-free equilibrium will only become stable if we can move the <span class="math notranslate nohighlight">\(T\)</span> nullcline far enough upwards that the two non-zero nullclines no longer intersect. This would require <span class="math notranslate nohighlight">\(s/\delta&gt;(p-\mu)/\beta\)</span>. Let us see if we can confirm that with linear stability analysis.</p>
+</div>
+<div class="section" id="linear-stability-analysis">
+<h2>Linear stability analysis<a class="headerlink" href="#linear-stability-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The general Jacobian for the system is given by,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+p-\frac{2pV^*}{K}-\beta T^*-\mu &amp; -\beta V^*\\
+rT^*\frac{2V^*c^2}{(V^{*2}+c^2)^2} &amp; r\frac{V^{*2}}{V^{*2}+c^2}-\delta
+\end{array}
+\right)
+\end{align*}\]</div>
+<p><strong>Virus-free equilibrium</strong> - <span class="math notranslate nohighlight">\(V=0,T=s/\delta\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(V^*=0\)</span> both the top-right and bottom-left entries are zero, meaning we can read off the eigenvalues as the two terms on the main diagonal:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1=p-\beta T^*-\mu\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_2=-\delta\)</span></p></li>
+</ul>
+<p>The second eigenvalue is negative, so everything depends on the first. Re-arranging we require <span class="math notranslate nohighlight">\(T^*&gt;(p-\mu)/\beta\)</span>. Recall that for the virus free equilibrium we have <span class="math notranslate nohighlight">\(T^*=s/\delta\)</span>. Therefore this equilibrium is only stable when <span class="math notranslate nohighlight">\(s/\delta&gt;(p-\mu)/\beta\)</span>, exactly as we surmised was the case from our phase porttrait.</p>
+<p><strong>Virus-present equilibrium</strong></p>
+<p>You will recall that we never wrote down an expression for this equilibrium. You might remember from previous lectures, however, that this does not necessarily stop us making conclusions about its stability. We know from the phase portrait that there is only one equilibrium to worry about. We also know from the equilibrium conditions that:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(1-V^*/K)-\beta T-\mu=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(rV^{*2}/(V^{*2}+c^2)-\delta = -s/T^*\)</span>.</p></li>
+</ul>
+<p>Substituting these values in to the Jacobian we now find,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+-\frac{pV^*}{K} &amp; -\beta V^*\\
+rT^*\frac{2V^*c^2}{(V^{*2}+c^2)^2} &amp; -s/T^*
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>Now we must assess stability based on the trade and determinant conditions. These are:</p>
+<p><span class="math notranslate nohighlight">\(tr(J)=-\frac{pV^*}{K}-\frac{s}{T^*} &lt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(det(J) = \frac{psV^*}{kT^*}+r\beta V^*T^*\left(\frac{2V^*c^2}{V^{*2}+c^2)}\right)&gt;0\)</span></p>
+<p>This means that whenever the equilibrium at <span class="math notranslate nohighlight">\(V^*,T^*&gt;0\)</span> exists, it must be stable. And we know from the phase portrait that the condition for it to exist is the exact opposite of the condition for stability of the virus-free equilibrium.</p>
+</div>
+<div class="section" id="treatment">
+<h2>Treatment<a class="headerlink" href="#treatment" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways we might think about a treatment working in this model. It might be something that reduces the growth rate of the virus, or that encourages T-cell proliferation.</p>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Taking the model above as your base, write out a model that includes some form of treatment. Explain to your neighbour what effect you would predict to have.</p>
+</div>
+</div>
+<div class="section" id="key-points">
+<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>We can build models of cell-virus interactions in much the same way as we did for interactions between whole organisms.</p></li>
+<li><p>The virus will reach a non-zero equilibrium provided it grows quickly and there is limited killing by T cells.</p></li>
+<li><p>The sigmoidal proliferation rate makes T cells initially slow to respond to an infection.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch7.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">7 - Vaccination and disease in the wild <a name="chapter7"></a></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch9.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">9 - A within-host HIV model <a name="chapter9"></a></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Alex Best<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
