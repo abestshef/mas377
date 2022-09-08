@@ -105,55 +105,41 @@
  <li class="toctree-l1">
   <a class="reference internal" href="ch1.html">
    1 - Simple population models
-   <a name="chapter1">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch2.html">
    2 - Bifurcations and introducing competition
-   <a name="chapter2">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch3.html">
    3 - Competition continued
-   <a name="chapter3">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch4.html">
    4 - Predator-Prey models
-   <a name="chapter4">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch5.html">
    5 - Epidemics in human populations
-   <a name="chapter5">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch6.html">
    6 - The SIR model with demographics
-   <a name="chapter6">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch7.html">
    7 - Vaccination and disease in the wild
-   <a name="chapter7">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 Adaptive dynamics
+   8 - Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
@@ -419,8 +405,8 @@ organisms often develop from a single cell through sequential rounds of cell div
 <li><p>The rate of translation is proportional to the mRNA concentration (i.e. translation is linear ).</p></li>
 </ol>
 <p>Then the general form of the models, written as a pair of ordinary differential equations, is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3f0740b8-553f-4866-865c-2ec70312412b">
-<span class="eqno">(50)<a class="headerlink" href="#equation-3f0740b8-553f-4866-865c-2ec70312412b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7517a5c2-bf62-4d07-876c-28331752f2cd">
+<span class="eqno">(50)<a class="headerlink" href="#equation-7517a5c2-bf62-4d07-876c-28331752f2cd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{dM}{dt} &amp;= R(t) - \mu M\\
 \frac{dP}{dt} &amp;= kM - \nu P.
 \end{align}\]</div>
@@ -429,78 +415,78 @@ organisms often develop from a single cell through sequential rounds of cell div
 <div class="section" id="time-courses">
 <h2>Time-courses<a class="headerlink" href="#time-courses" title="Permalink to this headline">¶</a></h2>
 <p>Starting with the dynamics of mRNA expression, we see that it is independent of <span class="math notranslate nohighlight">\(P\)</span>, so we can solve it in isolation by using an integrating factor. We have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a884641-ac8e-433d-965a-17148ae1cc75">
-<span class="eqno">(51)<a class="headerlink" href="#equation-0a884641-ac8e-433d-965a-17148ae1cc75" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-71703541-9c8a-468e-8446-c0dd43863997">
+<span class="eqno">(51)<a class="headerlink" href="#equation-71703541-9c8a-468e-8446-c0dd43863997" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dM}{dt} +\mu M = R(t)
 \end{equation}\]</div>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Using an integrating factor, show that the solution is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8fda4e00-09b0-4109-a9b0-ef0e3d715ea7">
-<span class="eqno">(52)<a class="headerlink" href="#equation-8fda4e00-09b0-4109-a9b0-ef0e3d715ea7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b6339e8c-dac0-4c42-b42f-5c5e660a5cfe">
+<span class="eqno">(52)<a class="headerlink" href="#equation-b6339e8c-dac0-4c42-b42f-5c5e660a5cfe" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 M(t) = e^{-\mu t}\int e^{\mu t}R(t)dt.
 \end{equation}\]</div>
 </div>
 <p>It looks like the function <span class="math notranslate nohighlight">\(R(t)\)</span> is going to be very important for how the time course plays out. Let us initially assume that <span class="math notranslate nohighlight">\(R(t)=r\)</span>, that is, it is constant. As such we can simplify the equation to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f0169d1-0005-45b2-86da-ac2aadc53d54">
-<span class="eqno">(53)<a class="headerlink" href="#equation-1f0169d1-0005-45b2-86da-ac2aadc53d54" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4eaddcf7-0145-443b-a1bb-ecf308c1467e">
+<span class="eqno">(53)<a class="headerlink" href="#equation-4eaddcf7-0145-443b-a1bb-ecf308c1467e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 M(t) = re^{-\mu t}\int e^{\mu t}dt.
 \end{equation}\]</div>
 <p>Recalling how we integrate exponenitals, we can then find,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cb4ab1e5-6e66-4cff-8b38-8cc573630387">
-<span class="eqno">(54)<a class="headerlink" href="#equation-cb4ab1e5-6e66-4cff-8b38-8cc573630387" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-527a7265-8921-4f1a-949f-adeb512d1e17">
+<span class="eqno">(54)<a class="headerlink" href="#equation-527a7265-8921-4f1a-949f-adeb512d1e17" title="Permalink to this equation">¶</a></span>\[\begin{align}
 M(t) &amp;= \frac{r}{\mu}e^{-\mu t}\left[e^{\mu t}+C\right],
 &amp;= \frac{r}{\mu}\left[1+Ce^{-\mu t}\right],
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration. Now let us assume we know the initial concentration of mRNA at time <span class="math notranslate nohighlight">\(t=0\)</span> is <span class="math notranslate nohighlight">\(M_0\)</span>. We can use this to find our constant of integration as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e90aacf-127c-449b-80f8-3258126c3dd4">
-<span class="eqno">(55)<a class="headerlink" href="#equation-2e90aacf-127c-449b-80f8-3258126c3dd4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b5f72e14-8e76-42fb-a8e1-71b1d9880fd1">
+<span class="eqno">(55)<a class="headerlink" href="#equation-b5f72e14-8e76-42fb-a8e1-71b1d9880fd1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 C=\frac{M_0\mu}{r}-1.
 \end{equation}\]</div>
 <p>Substituting back in allows us to reach the final expression of,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-497cbfff-9949-4b8a-8acb-8d91001cfdd9">
-<span class="eqno">(56)<a class="headerlink" href="#equation-497cbfff-9949-4b8a-8acb-8d91001cfdd9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ca0f89ce-b3a9-44c1-8e68-288427c6ea1b">
+<span class="eqno">(56)<a class="headerlink" href="#equation-ca0f89ce-b3a9-44c1-8e68-288427c6ea1b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 M(t) = \frac{r}{\mu}+\left[M_0 - \frac{r}{\mu}\right]e^{-\mu t}.
 \end{equation}\]</div>
 <p>From this we can see that as <span class="math notranslate nohighlight">\(t\to\infty\)</span> the concentration will tend towards an equilibrium value of <span class="math notranslate nohighlight">\(M=r/\mu\)</span>. Also, as the expression shows we have exponential decay or growth, we can get an idea of the speed at which the concentration approaches the equilibrium by finding its <em>half-life</em>. In particular, assume that <span class="math notranslate nohighlight">\(M_0=0\)</span> (i.e. there is no mRNA until time 0 when we “switch the gene on”). This means,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb361fa5-aaa9-4f0a-a381-cda29f96a8a6">
-<span class="eqno">(57)<a class="headerlink" href="#equation-bb361fa5-aaa9-4f0a-a381-cda29f96a8a6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-784c6d74-0a1d-4133-aeb0-b11f66166db2">
+<span class="eqno">(57)<a class="headerlink" href="#equation-784c6d74-0a1d-4133-aeb0-b11f66166db2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 M(t) = \frac{r}{\mu}(1-e^{-\mu t}).
 \end{equation}\]</div>
 <p>Half the equilibrium value will be <span class="math notranslate nohighlight">\(r/(2\mu)\)</span>. If we call the time at which this value is reached <span class="math notranslate nohighlight">\(\tau\)</span>, then we have,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa008d69-5a25-4273-be59-1a174a3e48c0">
-<span class="eqno">(58)<a class="headerlink" href="#equation-aa008d69-5a25-4273-be59-1a174a3e48c0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-319ffaa8-1798-4aa0-a3b3-62e6ee29d172">
+<span class="eqno">(58)<a class="headerlink" href="#equation-319ffaa8-1798-4aa0-a3b3-62e6ee29d172" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{r}{2\mu} = \frac{r}{\mu}(1-e^{-\mu \tau}).
 \end{equation}\]</div>
 <p>Some inspection finds that this requires <span class="math notranslate nohighlight">\(e^{-\mu\tau}=1/2\)</span>, meaning <span class="math notranslate nohighlight">\(\tau=\ln(2)/\mu\)</span>. Therefore the faster the degradation rate of the mRNA, the more slowly it reaches its equilibrium.</p>
 <p>What about the time-course of <span class="math notranslate nohighlight">\(P(t)\)</span>? Now that we have an expression for <span class="math notranslate nohighlight">\(M(t)\)</span> we can also turn the equation for <span class="math notranslate nohighlight">\(dP(t)/dt\)</span> into a linear ODE, and can again use an integrating factor.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26ee74cd-8575-42a6-a306-73d3881ae12a">
-<span class="eqno">(59)<a class="headerlink" href="#equation-26ee74cd-8575-42a6-a306-73d3881ae12a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-94cfa289-da6f-4b98-9282-b08a368c22cb">
+<span class="eqno">(59)<a class="headerlink" href="#equation-94cfa289-da6f-4b98-9282-b08a368c22cb" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dP}{dt}+\nu P = k M(t)\\
 \implies &amp;\frac{d}{dt}[Pe^{\nu t}]=kM(t)e^{\nu t}\\
 \implies &amp;P(t)=ke^{-\nu t}\int M(t)e^{\nu t}dt.
 \end{align}\]</div>
 <p>Let us again assume <span class="math notranslate nohighlight">\(M(0)=M_0=0\)</span> and also that <span class="math notranslate nohighlight">\(P(0)=P_0=0\)</span>. We just found that in this case <span class="math notranslate nohighlight">\(M(t)=r/\mu(1-e^{-\mu t})\)</span>. Therefore,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f473c677-dfbd-45cc-b844-32bd65a0513b">
-<span class="eqno">(60)<a class="headerlink" href="#equation-f473c677-dfbd-45cc-b844-32bd65a0513b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fc30026b-770a-4c4e-8492-561889a71de0">
+<span class="eqno">(60)<a class="headerlink" href="#equation-fc30026b-770a-4c4e-8492-561889a71de0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(t)&amp;=\frac{kr}{\mu}e^{-\nu t}\int (1-e^{-\mu t})e^{\nu t}dt,\\
 &amp;=\frac{kr}{\mu}e^{-\nu t}\int (e^{\nu t}-e^{(\nu-\mu) t})dt.
 \end{align}\]</div>
 <p>We need to consider the cases where <span class="math notranslate nohighlight">\(\nu=\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\neq\mu\)</span> separately.</p>
 <p><strong><span class="math notranslate nohighlight">\(\nu=\mu\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1151dbc-c26b-4289-b4db-20075fd2e447">
-<span class="eqno">(61)<a class="headerlink" href="#equation-f1151dbc-c26b-4289-b4db-20075fd2e447" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1c5c20a5-1344-4521-93fb-eeea125d7dd8">
+<span class="eqno">(61)<a class="headerlink" href="#equation-1c5c20a5-1344-4521-93fb-eeea125d7dd8" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(t)&amp;=\frac{kr}{\mu}e^{-\mu t}\int (e^{\mu t}-1)dt,\\
 &amp;=\frac{kr}{\mu}e^{-\mu t}\left(\frac{1}{\mu}(e^{\mu t}-1)-t+C\right)
 \end{align}\]</div>
 <p>With the initial condition <span class="math notranslate nohighlight">\(P(0)=0\)</span> we can find that <span class="math notranslate nohighlight">\(C=0\)</span>, and we can re-arrange slightly to give,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91edd98e-6015-4a32-921c-c44b6315f18f">
-<span class="eqno">(62)<a class="headerlink" href="#equation-91edd98e-6015-4a32-921c-c44b6315f18f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3b4c2817-2250-4a72-948a-2a6cb3c8e56e">
+<span class="eqno">(62)<a class="headerlink" href="#equation-3b4c2817-2250-4a72-948a-2a6cb3c8e56e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 P(t)=\frac{kr}{\mu^2}\left(1-(1+\mu t)e^{-\mu t}\right)
 \end{equation}\]</div>
 <p><strong><span class="math notranslate nohighlight">\(\nu\neq\mu\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-aaa8465f-45eb-4537-abe5-2f048afd51d4">
-<span class="eqno">(63)<a class="headerlink" href="#equation-aaa8465f-45eb-4537-abe5-2f048afd51d4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9a358514-3618-405b-9a6a-7e95499b12b3">
+<span class="eqno">(63)<a class="headerlink" href="#equation-9a358514-3618-405b-9a6a-7e95499b12b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(t)&amp;=\frac{kr}{\mu}e^{-\nu t}\int (e^{\nu t}-e^{(\nu-\mu) t})dt,\\
 &amp;=\frac{kr}{\mu}e^{-\nu t}\left(\frac{e^{\nu t}}{\nu}-\frac{e^{(\nu-\mu) t}}{\nu-\mu}+C\right).
 \end{align}\]</div>
@@ -508,8 +494,10 @@ P(t)&amp;=\frac{kr}{\mu}e^{-\nu t}\int (e^{\nu t}-e^{(\nu-\mu) t})dt,\\
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Substitue in the expression for <span class="math notranslate nohighlight">\(C\)</span> and rearrange to find the final solution,</p>
-<p>\begin{equation}
-P(t)=\frac{kr}{\mu\nu}\left(1+\frac{\mu}{\nu-\mu}e^{-nu t}-\frac{\nu}{\nu-\mu}e^{-\mu t}\right).</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0cf2e93c-620b-470d-af8e-2c1657df94eb">
+<span class="eqno">(64)<a class="headerlink" href="#equation-0cf2e93c-620b-470d-af8e-2c1657df94eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+P(t)=\frac{kr}{\mu\nu}\left(1+\frac{\mu}{\nu-\mu}e^{-nu t}-\frac{\nu}{\nu-\mu}e^{-\mu t}\right).
+\end{equation}\]</div>
 </div>
 <p>In either case we see that as <span class="math notranslate nohighlight">\(t\to\infty\)</span>, <span class="math notranslate nohighlight">\(P\to kr/(\mu\nu)\)</span>. The figure below shows the time-course of the system for some example parameter values.</p>
 <img src='singlegene.png' height="300" alt="Time-course of single gene model">
