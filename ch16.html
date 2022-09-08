@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>16 - More modelling of an autoregulation gene &#8212; MAS377 Mathematical Biology</title>
+    <title>16 - Modelling an autoregulatory gene &#8212; MAS377 Mathematical Biology</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,7 +56,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="15 - Modelling an autoregulatory gene" href="ch15.html" />
+    <link rel="next" title="17 - Computer lab" href="ch17.html" />
+    <link rel="prev" title="15 - Introducing gene models" href="ch15.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -152,15 +153,13 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   8 Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch9.html">
-   9 - A within-host HIV model
-   <a name="chapter9">
+   9 - A within-host Covid model
+   <a name="chapter8">
    </a>
   </a>
  </li>
@@ -176,24 +175,46 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A model of cancer growth
-   <a name="chapter13">
+   13 - A within-host HIV model
+   <a name="chapter9">
    </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   14 - Regulation of expression in a single gene
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Modelling an autoregulatory gene
+   15 - Introducing gene models
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   16 - More modelling of an autoregulation gene
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20 - A two gene toggle switch
   </a>
  </li>
 </ul>
@@ -301,19 +322,38 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#auto-activation-a-positive-feedback">
-   Auto-activation: a positive feedback
+  <a class="reference internal nav-link" href="#constructing-the-phase-portrait">
+   Constructing the phase portrait
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nullclines">
+     Nullclines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equilibria">
+     Equilibria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linearisation">
+     Linearisation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-phase-portraits">
-   The phase portraits
+  <a class="reference internal nav-link" href="#auto-repression-a-negative-feedback">
+   Auto-repression: a negative feedback
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-transcription-function">
-   An example transcription function
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sketching-the-phase-portrait">
+     Sketching the phase portrait
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-points">
@@ -330,7 +370,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>16 - More modelling of an autoregulation gene</h1>
+                <h1>16 - Modelling an autoregulatory gene</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -341,19 +381,38 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#auto-activation-a-positive-feedback">
-   Auto-activation: a positive feedback
+  <a class="reference internal nav-link" href="#constructing-the-phase-portrait">
+   Constructing the phase portrait
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nullclines">
+     Nullclines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equilibria">
+     Equilibria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linearisation">
+     Linearisation
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-phase-portraits">
-   The phase portraits
+  <a class="reference internal nav-link" href="#auto-repression-a-negative-feedback">
+   Auto-repression: a negative feedback
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#an-example-transcription-function">
-   An example transcription function
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sketching-the-phase-portrait">
+     Sketching the phase portrait
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-points">
@@ -369,25 +428,40 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="more-modelling-of-an-autoregulation-gene">
-<h1>16 - More modelling of an autoregulation gene<a class="headerlink" href="#more-modelling-of-an-autoregulation-gene" title="Permalink to this headline">¶</a></h1>
-<p>Last time we introduced the general model for an auto-regulatory circuit for mRNA and protein dynamics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f29b578-da0d-4a5c-be6e-af634fb1c418">
-<span class="eqno">(57)<a class="headerlink" href="#equation-5f29b578-da0d-4a5c-be6e-af634fb1c418" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  <div class="tex2jax_ignore mathjax_ignore section" id="modelling-an-autoregulatory-gene">
+<h1>16 - Modelling an autoregulatory gene<a class="headerlink" href="#modelling-an-autoregulatory-gene" title="Permalink to this headline">¶</a></h1>
+<p>In our first example, transcription of mRNA was due to some external resource. However, many genes encode transcription factors that directly regulate the rate of transcription of the coding gene. This produces a small feedback circuit. Representing the concentrations of mRNA and protein by <span class="math notranslate nohighlight">\(M(t)\)</span> and <span class="math notranslate nohighlight">\(P(t)\)</span> again, we can now write,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cc34b9c5-b992-45a3-a569-219deb56afdc">
+<span class="eqno">(64)<a class="headerlink" href="#equation-cc34b9c5-b992-45a3-a569-219deb56afdc" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{dM}{dt} &amp;= f(P) - \mu M\\
-\frac{dP}{dt} &amp;= kM - \nu P
+\frac{dP}{dt} &amp;= kM - \nu P.
 \end{align}\]</div>
-<p>and looked at the specific case of auto-repression where <span class="math notranslate nohighlight">\(f'(P)&lt;0\)</span>. We will look at two more examples of auoregulatory genetic networks in this lecture.</p>
-<div class="section" id="auto-activation-a-positive-feedback">
-<h2>Auto-activation: a positive feedback<a class="headerlink" href="#auto-activation-a-positive-feedback" title="Permalink to this headline">¶</a></h2>
-<p>If the protein product of a gene acts to increase the rate of transcription, we describe it as a <em>transcriptional activator</em>. The feedback circuit is described as <em>auto-activation</em>. In this case, <span class="math notranslate nohighlight">\(f'(P)\geq0\)</span>, i.e. <span class="math notranslate nohighlight">\(f(P)\)</span> is an increasing function.</p>
-<p>The equation for steady state values of <span class="math notranslate nohighlight">\(P\)</span> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71591c6f-79bb-4f87-bc5e-03cf50a971fb">
-<span class="eqno">(58)<a class="headerlink" href="#equation-71591c6f-79bb-4f87-bc5e-03cf50a971fb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{\mu\nu}{k}P=f(P)
+<p>The function <span class="math notranslate nohighlight">\(f(P)\)</span> must be bounded above, since transcription has a maximal rate. Furthermore <span class="math notranslate nohighlight">\(f(P) \geq 0\)</span> (the production rate cannot be negative!) Therefore <span class="math notranslate nohighlight">\(f(P)\)</span> must be non-linear, which makes the system defined by the equations above difficult, if not impossible, to solve.</p>
+<p>To gain insight into the possible dynamics of the system, we will use qualitative analysis based around the construction of the phase portraits and linear stability analysis.</p>
+<div class="section" id="constructing-the-phase-portrait">
+<h2>Constructing the phase portrait<a class="headerlink" href="#constructing-the-phase-portrait" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nullclines">
+<h3>Nullclines<a class="headerlink" href="#nullclines" title="Permalink to this headline">¶</a></h3>
+<p>The nullclines of the system are given by,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f8e496e4-c6f2-40e8-a8f4-a2621b6e3184">
+<span class="eqno">(65)<a class="headerlink" href="#equation-f8e496e4-c6f2-40e8-a8f4-a2621b6e3184" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp;\frac{dM}{dt}=0 \implies M=f(P)/\mu\\
+&amp; \frac{dP}{dt}=0\implies M=\nu P/k
+\end{align}\]</div>
+<p>These are both single lines/curves in the phase plane.</p>
+</div>
+<div class="section" id="equilibria">
+<h3>Equilibria<a class="headerlink" href="#equilibria" title="Permalink to this headline">¶</a></h3>
+<p>Putting the two nullcline equations equal to one another, we find a single equation for the possible equilibrium values of <span class="math notranslate nohighlight">\(P\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-57fcb59b-3671-476f-81e6-c42641873751">
+<span class="eqno">(66)<a class="headerlink" href="#equation-57fcb59b-3671-476f-81e6-c42641873751" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\mu\nu}{k}P^*=f(P^*).
 \end{equation}\]</div>
-<p>We know that <span class="math notranslate nohighlight">\(f(P)\)</span> is increasing and bounded above, so what can we conclude about the number of equilibrium? Depending on how weird and wonderful we make <span class="math notranslate nohighlight">\(f(P)\)</span>, there must be at least one, and there can be any odd number of equilibria, but realistically we’d expect one or three.</p>
-<p>As before, the Jacobian is given by,</p>
+<p>In that case we can then find <span class="math notranslate nohighlight">\(M^*=\nu P^*/k\)</span> to be the corresponding equilibrium for <span class="math notranslate nohighlight">\(M\)</span>. We can therefore focus our attention on determining the nature of any solutions for <span class="math notranslate nohighlight">\(P^*\)</span> for different forms of the function <span class="math notranslate nohighlight">\(f(P)\)</span>.</p>
+</div>
+<div class="section" id="linearisation">
+<h3>Linearisation<a class="headerlink" href="#linearisation" title="Permalink to this headline">¶</a></h3>
+<p>As in previous examples, we assess stability around an equilibrium by linearisation, through looking at the Jacobian. For this model our Jacobian is,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 J=&amp;\left(
@@ -395,62 +469,60 @@ J=&amp;\left(
 -\mu &amp; f'(P^*)\\
 k &amp; -\nu
 \end{array}
-\right),
+\right)
 \end{align*}\]</div>
-<p>but now <span class="math notranslate nohighlight">\(f'(P^*)&gt;0\)</span>. The trace remains <span class="math notranslate nohighlight">\(tr(J)=-\mu-\nu&lt;0\)</span>. The determinant is again given by <span class="math notranslate nohighlight">\(det(J)=\mu\nu-k\phi\)</span> (where <span class="math notranslate nohighlight">\(\phi=f'(P^*)\)</span>, but because <span class="math notranslate nohighlight">\(\phi&gt;0\)</span> it can be either positive or negative. We therefore have that,</p>
+<p>We then check the trace and determinant to assess stability:</p>
 <ul class="simple">
-<li><p>if <span class="math notranslate nohighlight">\(\phi &lt; \mu\nu/k\)</span>, the equilibrium is stable,</p></li>
-<li><p>if <span class="math notranslate nohighlight">\(\phi &gt; \mu\nu/k\)</span>, the equilibrium is a saddle.</p></li>
+<li><p><span class="math notranslate nohighlight">\(tr(J)=-\mu-\nu\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(det(J)=\mu\nu-kf'(P^*)\)</span></p></li>
 </ul>
-<p>We can go slightly further in the first case, by recalling that <span class="math notranslate nohighlight">\(tr^2-4det=(\mu-\nu)^2+4k\phi&gt;0\)</span>. Therefore if the equilibrium is stable it will definitely be a node and not a spiral.</p>
+<p>The trace is always negative, limiting stability to a stable spiral or node, or an unstable saddle. Which outcome we get depends on the determinant, which in turn depends on the gradient of our transcription function at the equilibrium, <span class="math notranslate nohighlight">\(f'(P^*)\)</span>. For the rest of this lecture and next time we will consider a few examples of what this function might look like.</p>
 </div>
-<div class="section" id="the-phase-portraits">
-<h2>The phase portraits<a class="headerlink" href="#the-phase-portraits" title="Permalink to this headline">¶</a></h2>
-<p>As it turns out, using this information, when we look at a phase portrait we can immediately spot whether an equilibrium is a stable node or a saddle. Consider the sketched nullclines in the figure below. This identifies three equilibria where the two nullclines cross in this case. The gradient of the blue line is <span class="math notranslate nohighlight">\(\nu/k\)</span> and the gradient of the red line is <span class="math notranslate nohighlight">\(f'(P)/\mu=\phi/\mu\)</span>. As we have just found, which of these two terms is greater - i.e. which is the steeper - controls the stability of each equilibrium. Therefore in the two cases where the blue line is steeper the equilibria are stable nodes, and in the case where the red line is steeper we have a saddle.</p>
-<img src='autoact1.jpg' height="300" alt="Nullclines of auto-regression model">
-<p><em>Figure: example of nullclines for auto-repression model.</em></p>
-<div class="tip admonition">
-<p class="admonition-title">Have a go</p>
-<p>Fill in the rest of the phase portrait, showing how trajectories behave in this system.</p>
 </div>
-<p>This system demonstrates <em>bistability</em> - there are two possible stable endpoints separated by an unstable saddle (we saw a similar case back when we looked at the competition model). This particular case is often called a <em>bistable switch</em> because the system can switch between high and low expression of the gene with small changes to the initial condiitons.</p>
-<p>It is worth noting that we could equally have drawn the phase portrait with just one equilibrium. These must result in a single stable node, but can be at high or low gene expression depending on quite how we draw the two nullclines (as we will see below).</p>
-</div>
-<div class="section" id="an-example-transcription-function">
-<h2>An example transcription function<a class="headerlink" href="#an-example-transcription-function" title="Permalink to this headline">¶</a></h2>
-<p>You will have noticed we sketched our <span class="math notranslate nohighlight">\(f(P)\)</span> nullclines in a sigmoidal shape. We saw something similar with the spruce budworm, predator-prey and within-host Covid-19 models. In this biological context they are often called Hill functions. The general formula for such a curve is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a95ba1c-c67a-4bcb-86d8-5ff84a0a4a81">
-<span class="eqno">(59)<a class="headerlink" href="#equation-1a95ba1c-c67a-4bcb-86d8-5ff84a0a4a81" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-f(P)=\alpha+\beta\frac{P^n}{\theta^n+P^n},
+<div class="section" id="auto-repression-a-negative-feedback">
+<h2>Auto-repression: a negative feedback<a class="headerlink" href="#auto-repression-a-negative-feedback" title="Permalink to this headline">¶</a></h2>
+<p>If the protein product of a gene acts to reduce the rate of transcription, we describe it as a <em>transcriptional repressor</em>. The feedback circuit is described as <em>auto-repression</em>. In this case, <span class="math notranslate nohighlight">\(f'(P)\leq 0\)</span>, i.e. <span class="math notranslate nohighlight">\(f(P)\)</span> is a decreasing function.</p>
+<p>Recall the equation for steady state values of <span class="math notranslate nohighlight">\(P^*\)</span> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bbd3923e-59aa-4bf9-96d1-db4ef13f5cea">
+<span class="eqno">(67)<a class="headerlink" href="#equation-bbd3923e-59aa-4bf9-96d1-db4ef13f5cea" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\mu\nu}{k}P^*=f(P^*).
 \end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are all positive constants. The curve has the following key features:</p>
+<p>Since <span class="math notranslate nohighlight">\(f(P)\)</span> is strictly decreasing, this has a unique solution for <span class="math notranslate nohighlight">\(P^*&gt; 0\)</span>, as shown graphically below.</p>
+<img src='autoregression.jpg' height="300" alt="Nullclines of auto-regression model">
+<p><em>Figure: example of nullclines for auto-repression model.</em></p>
+<p>We therefore have one unique equilibrium. Let us call the value of <span class="math notranslate nohighlight">\(f'(P^*)=\phi&lt;0\)</span> at the equilibrium. As such we can say that <span class="math notranslate nohighlight">\(det(J)=\mu\nu-k\phi\)</span> is positive, meaning the equilibrium is stable. Whether the equilibrium is a node or a spiral then depends on the value of,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c4b9bfb3-45e7-4527-8ebb-7552fb0ecb7d">
+<span class="eqno">(68)<a class="headerlink" href="#equation-c4b9bfb3-45e7-4527-8ebb-7552fb0ecb7d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+tr^2-4det &amp;= (\mu+\nu)^2-4\nu\mu+4k\phi\\
+&amp;=(\mu-\nu)^2+4k\phi.
+\end{align}\]</div>
+<p>Firstly, we can see in the special case that <span class="math notranslate nohighlight">\(\mu=\nu\)</span> (the two degradation rates are equal), we just have <span class="math notranslate nohighlight">\(4k\phi&lt;0\)</span>, meaning we will have a stable spiral. More generally, there is a critical value,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-120f7f24-725b-4c59-9fc2-99369d4c5f93">
+<span class="eqno">(69)<a class="headerlink" href="#equation-120f7f24-725b-4c59-9fc2-99369d4c5f93" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\phi_c=-\frac{(\mu-\nu)^2}{4k},
+\end{equation}\]</div>
+<p>such that,</p>
 <ul class="simple">
-<li><p>The curve starts at <span class="math notranslate nohighlight">\(f(0)=\alpha\)</span>,</p></li>
-<li><p>The gradient <span class="math notranslate nohighlight">\(f'(P)&gt;0\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(\theta\)</span> is the <em>half-saturation constant</em>, with <span class="math notranslate nohighlight">\(f(\theta)=\alpha+\beta/2\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(n\)</span> controls how strong the sigmoidal shape is, and we usually assume <span class="math notranslate nohighlight">\(n\geq2\)</span>,</p></li>
-<li><p>As <span class="math notranslate nohighlight">\(P\to\infty\)</span>, <span class="math notranslate nohighlight">\(f(P)\to\alpha+\beta\)</span>.</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(\phi&gt;\phi_c\)</span> then we have a stable node,</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(\phi&lt;\phi_c\)</span> then we have a stable spiral.</p></li>
 </ul>
-<p>Thinking more about the contribution of <span class="math notranslate nohighlight">\(n\)</span>, as this becomes larger, the transition from low to high transcription rates becomes more sudden and steep - we would describe this as increasing the <em>sensitivity</em> of the rate of transcription.</p>
-<p>To see how we can use the parameters of the Hill function to switch gene expression from a low to high state, consider the effect of increasing the value of <span class="math notranslate nohighlight">\(\alpha\)</span>. If we start with <span class="math notranslate nohighlight">\(\alpha = 0\)</span> and <span class="math notranslate nohighlight">\(\nu/k\)</span> large enough, then the only steady state is a stable node at <span class="math notranslate nohighlight">\(P = 0\)</span> as in the first figure below. We say the system is <em>monostable</em>. In terms of the biology of the system, the gene is turned off.</p>
-<p>If we now increase the value of <span class="math notranslate nohighlight">\(\alpha\)</span>, then provided the steepest part of the function has a gradient that is greater than <span class="math notranslate nohighlight">\(\nu/k\)</span> , there is a range of values of <span class="math notranslate nohighlight">\(\alpha\)</span> for which the system has three steady states. For this range of values of <span class="math notranslate nohighlight">\(\alpha\)</span>, the system is bistable, and has two possible stable steady state expression levels as shown in the second diagram.</p>
-<p>If we increase <span class="math notranslate nohighlight">\(\alpha\)</span> even further, then the system again has only one stable node steady state (monostability), but now it corresponds to a high level of expression of <span class="math notranslate nohighlight">\(P\)</span>, as in the final diagram. By increasing the value of <span class="math notranslate nohighlight">\(\alpha\)</span>, we have therefore switched the gene from a stable “off” state (<span class="math notranslate nohighlight">\(P = 0\)</span>) to a stable “on” state (<span class="math notranslate nohighlight">\(P\)</span> high).</p>
-<img src='autoact2.jpg' height="300" alt="Three example sets of nullclines for auto-activation model">
-<p><em>Figure: three cases of the auto activation model as he parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is increased.</em></p>
+<p>Recalling that <span class="math notranslate nohighlight">\(\phi &lt; 0\)</span>, we see that <span class="math notranslate nohighlight">\(f(P)\)</span> must be sufficiently steep at the equilibrium for it to be a spiral. The steepness of <span class="math notranslate nohighlight">\(f(P)\)</span> (i.e. the modulus of the derivative of <span class="math notranslate nohighlight">\(f(P)\)</span>) can be thought of as the “sensitivity” of the rate of transcription to changes in the protein concentration; high sensitivity means that a small change in the concentration of <span class="math notranslate nohighlight">\(P\)</span> results in a large change in the rate of transcription. So sensitive regulation is more likely to lead to a stable spiral.</p>
+<div class="section" id="sketching-the-phase-portrait">
+<h3>Sketching the phase portrait<a class="headerlink" href="#sketching-the-phase-portrait" title="Permalink to this headline">¶</a></h3>
+<p>We can now sketch the phase portrait for the case of an auto-repressive gene. Note that it is easiest to draw the phase portrait with the variable <span class="math notranslate nohighlight">\(P\)</span> on the x-axis, and <span class="math notranslate nohighlight">\(M\)</span> on the y-axis.</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
-<p>Using the three diagrams to guide you, sketch a bifurcation diagram of the system, showing the stable and unstable equilibria as <span class="math notranslate nohighlight">\(\alpha\)</span> is varied.</p>
+<p>Using the nullclines above as a starting point, sketch the phase portrait showing how trajectories behave in this system.</p>
 </div>
-<p><span class="math notranslate nohighlight">\(\alpha\)</span> can be considered as an external input to the system - a transcription rate that is independent of <span class="math notranslate nohighlight">\(P\)</span>. We sometimes refer to <span class="math notranslate nohighlight">\(\alpha\)</span> as a <em>basal transcription rate</em>. If the system is initially in the bistable region (with three steady states), but is in the low expression state (which is a stable node), then a transient increase in <span class="math notranslate nohighlight">\(\alpha\)</span> can push the system into the monostable region, where only a high stable steady state exists. In other words, expression of
-the gene is turned on. If <span class="math notranslate nohighlight">\(\alpha\)</span> is now returned to its original value, the system will remain in the steady state corresponding to a high level of expression. Thus, a transient externally-imposed impulse can stably switch the bistable system from a low to a high level of expression of an auto-activating gene. This is an example of <em>hysteresis</em> - the
-response of the system depends not only on its current input, but also on its history of past inputs. Whether or not such switching occurs depends on the speed and magnitude of the transient increase in <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>Note that if the equilibrium is a spiral, then trajectories spiral in a clockwise direction.  The time courses <span class="math notranslate nohighlight">\(M(t)\)</span> and <span class="math notranslate nohighlight">\(P(t)\)</span> will be damped oscillations about their equilirium values, with a peak in <span class="math notranslate nohighlight">\(P\)</span> following a peak in <span class="math notranslate nohighlight">\(M\)</span>. This makes sense biologically, since mRNA acts as a template for production of protein (by translation).</p>
+</div>
 </div>
 <div class="section" id="key-points">
 <h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>We can model auto-activation of a gene by having a transcription rate that is a positive function of <span class="math notranslate nohighlight">\(P\)</span>.</p></li>
-<li><p>This usually produces one stable equilibrium or three equilibria: an unstable saddle surrounded by two stable nodes.</p></li>
-<li><p>Using a Hill function to model transcription, we can see how a gene can be switched on and off by potentially small changes to the input.</p></li>
+<li><p>An autoregulatory gene network means transcription of mRNA is controlled by the concentration of protein.</p></li>
+<li><p>An auto-repressive gene can be modelled by the transcription being a decreasing function of protein concentration.</p></li>
+<li><p>An auto-repressive gene has a single equilibrium that can either be a stable node or spiral, depending on the model parameters.</p></li>
 </ol>
 </div>
 </div>
@@ -484,8 +556,15 @@ response of the system depends not only on its current input, but also on its hi
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">15 - Modelling an autoregulatory gene</p>
+            <p class="prev-next-title">15 - Introducing gene models</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="ch17.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">17 - Computer lab</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

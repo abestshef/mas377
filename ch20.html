@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20 - A two gene toggle switch &#8212; MAS377 Mathematical Biology</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="19 - Longer negative feedback circuits" href="ch19.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">MAS377 Mathematical Biology</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   MAS377 Mathematical Biology
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch1.html">
+   1 - Simple population models
+   <a name="chapter1">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   2 - Bifurcations and introducing competition
+   <a name="chapter2">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch3.html">
+   3 - Competition continued
+   <a name="chapter3">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch4.html">
+   4 - Predator-Prey models
+   <a name="chapter4">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch5.html">
+   5 - Epidemics in human populations
+   <a name="chapter5">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   6 - The SIR model with demographics
+   <a name="chapter6">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   7 - Vaccination and disease in the wild
+   <a name="chapter7">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch8.html">
+   8 Adaptive dynamics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch9.html">
+   9 - A within-host Covid model
+   <a name="chapter8">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   11-12 Project Week
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13 - A within-host HIV model
+   <a name="chapter9">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   15 - Introducing gene models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   20 - A two gene toggle switch
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch20.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch20.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch20.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-model-form">
+   General model form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-analysis">
+   Stability analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linking-to-the-equilibria">
+   Linking to the equilibria
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#biological-significance">
+   Biological significance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>20 - A two gene toggle switch</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-model-form">
+   General model form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stability-analysis">
+   Stability analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linking-to-the-equilibria">
+   Linking to the equilibria
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#biological-significance">
+   Biological significance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-points">
+   3 key points
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-two-gene-toggle-switch">
+<h1>20 - A two gene toggle switch<a class="headerlink" href="#a-two-gene-toggle-switch" title="Permalink to this headline">¶</a></h1>
+<p>In the previous models we have assumed that one gene exists in isolation and its expression is controlled by its ‘own’ mRNA and protein concentrations. Now we will extend our model to look at two interacting genes. The central property of the circuit is that of cross-repression: the product of gene 1 represses the transcription of gene 2, and vice versa.</p>
+<div class="section" id="general-model-form">
+<h2>General model form<a class="headerlink" href="#general-model-form" title="Permalink to this headline">¶</a></h2>
+<p>If we assume (for simplicity) that the two mRNAs have the same degradation rate as each other, that the two proteins have the same degradation rate as each other, and that the functions describing the two transcription and translation terms are identical, then we can represent the cross-repression circuit by the following four ODEs:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-faabdc54-d244-4ac7-a453-c7663e0a45bd">
+<span class="eqno">(78)<a class="headerlink" href="#equation-faabdc54-d244-4ac7-a453-c7663e0a45bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{dm_1}{dt} &amp;= f(p_2)-\mu m_1\\
+\frac{dp_1}{dt} &amp;= km_1- \nu p_1\\
+\frac{dm_2}{dt} &amp;= f(p_1)-\mu m_2\\
+\frac{dp_2}{dt} &amp;= km_2- \nu p_2.
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span> are the degradation rates of the mRNA and protein, respectively, <span class="math notranslate nohighlight">\(k\)</span> is the per capita translation rate, and <span class="math notranslate nohighlight">\(f(p)\)</span> is a monotonic decreasing function representing regulated transcription. Note that we have assumed such a high degree of symmetry in the equations only for notational and algebraic simplicity; the behaviour that we will study applies also to non-symmetrical models. Even with these simplifications, we are still faced with a 4-dimensional system to analyse! As we will see below, however, if we think about the problem in the right ways we can still gain considerable insight.</p>
+</div>
+<div class="section" id="stability-analysis">
+<h2>Stability analysis<a class="headerlink" href="#stability-analysis" title="Permalink to this headline">¶</a></h2>
+<p>One particular issue with having a four-dimensional system is that it is impossible to sketch out a phase portrait. Instead we will proceed by linearising around equilibria to assess stability. If we set each of the four ODEs to 0, we reach the following expresisons for equilibria,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-14321209-3249-4e4d-bca6-5003190f3b2f">
+<span class="eqno">(79)<a class="headerlink" href="#equation-14321209-3249-4e4d-bca6-5003190f3b2f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp;\frac{\mu\nu}{k}p_1=f(p_2)\\
+&amp;\frac{\mu\nu}{k}p_2=f(p_1).
+\end{align}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(k\)</span> are positive constants, we can think of this as roughly giving us two expressions, <span class="math notranslate nohighlight">\(p_1=cf(p_2)\)</span> and <span class="math notranslate nohighlight">\(p_2=cf(p_1)\)</span>. Since <span class="math notranslate nohighlight">\(f(p_i)\)</span> is positive and decreasing, if we take our standard shape of regulation function, we have two general scenarios that can occur here. Below we plot the curves these produce with <span class="math notranslate nohighlight">\(p_2\)</span> as a function of <span class="math notranslate nohighlight">\(p_1\)</span>.</p>
+<img src='twogene_1.jpg' height="300" alt="Possible orientations of equilibria curves">
+<p><em>Figure: Two general scenarios for the equilibria curves.</em></p>
+<p>Each curve is a continuum of points along which two of the ODEs are zero. Therefore equilibria of our system occur where these two curves intersect. As such we either have just one equilibrium (where <span class="math notranslate nohighlight">\(p_1=p_2\)</span> - and <span class="math notranslate nohighlight">\(m_1=m_2\)</span> - because of the symmetry we’ve assumed) or three equilibria (one at <span class="math notranslate nohighlight">\(p_1=p_2\)</span> and another two either side of this). As ever, we assess the stability of this system by considering the Jacobian matrix.</p>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Write out the 4x4 Jacobian matrix for this system, letting <span class="math notranslate nohighlight">\(\phi_i=df(p_i)/dp_i\)</span> at the equilibrium.</p>
+</div>
+<p>Last time we saw that with a 3x3 Jacobian, if it is not too complicated, we can still assess stability by writing out the characteristic equation. The same holds here with our 4x4 Jacobian. Thankfully we have a large number of 0s, and we can find that the characteristic equation reduces to,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7795c1bb-057c-45ac-847d-d59e1d4949a6">
+<span class="eqno">(80)<a class="headerlink" href="#equation-7795c1bb-057c-45ac-847d-d59e1d4949a6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+det(J-\lambda I)=(\nu+\lambda)^2(\mu+\lambda)^2-k^2\phi_1\phi_2.
+\end{equation}\]</div>
+<p>Similarly to last time let us take <span class="math notranslate nohighlight">\(\chi=\sqrt{\phi_1\phi_2}\)</span>. Then we are looking for solutions of,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8610c378-a6a8-4402-aec4-46846dd5aaff">
+<span class="eqno">(81)<a class="headerlink" href="#equation-8610c378-a6a8-4402-aec4-46846dd5aaff" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp;(\nu+\lambda)(\mu+\lambda)=\pm k\chi,\\
+\implies &amp; \lambda^2+(\mu+\nu)\lambda+\mu\nu\pm k\chi=0
+\end{align}\]</div>
+<p>We are therefore reduced to a quadratic equation, which we can solve in the standard way, finding,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c3b67d0f-598b-4737-adc0-d6d64702beda">
+<span class="eqno">(82)<a class="headerlink" href="#equation-c3b67d0f-598b-4737-adc0-d6d64702beda" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\lambda = \frac{-(\mu+\nu)\pm\sqrt{(\mu+\nu)^2-4\mu\nu\pm 4k\chi}}{2}
+\end{equation}\]</div>
+<p>These eigevalues may or may not be complex. The important aspect for stabiltiy is what happens to the real parts of the eigenvalues. Provided <span class="math notranslate nohighlight">\(k\chi&lt;\mu\nu\)</span>, we must have negative real parts for all four eigenvalues (because the square root is definitely no bigger than <span class="math notranslate nohighlight">\(\mu+\nu\)</span>). However, if <span class="math notranslate nohighlight">\(k\chi&gt;\mu\nu\)</span> and we take the ‘+’ term outside the square root and the ‘+’ term inside the square root, the eigenvalue will be positive (and entirely real).</p>
+<p>We can try and understand what is going on here a bit more by sketching out the equation <span class="math notranslate nohighlight">\((\nu+\lambda)(\nu+\lambda)=\pm k\chi\)</span>, as below. In each case we plot <span class="math notranslate nohighlight">\((\mu+\lambda)(\nu+\lambda)\)</span> as a function of <span class="math notranslate nohighlight">\(\lambda\)</span> and look for where it intersects the line <span class="math notranslate nohighlight">\(k\chi\)</span>, which will be solutions to our characteristic equation. Notice that <span class="math notranslate nohighlight">\((\mu+\lambda)(\nu+\lambda)\)</span> intersects the vertical axis at <span class="math notranslate nohighlight">\(\mu\nu\)</span>. We have three cases:</p>
+<ol class="simple">
+<li><p>The two curves intersect twice, once for <span class="math notranslate nohighlight">\(\lambda&lt;0\)</span> and once for <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. We can see from the plot that in this case <span class="math notranslate nohighlight">\(\mu\nu&lt;k\chi\)</span>. The other two eigenvalues must be complex (but we know they have negative real part from above).</p></li>
+<li><p>The two curves again intersect twice, but now <span class="math notranslate nohighlight">\(\lambda&lt;0\)</span> at both crossing points. We can see that in this case <span class="math notranslate nohighlight">\(\mu\nu&gt;k\chi\)</span>. Again, the other two eigenvalue smust be complex but we know they have negative real part.</p></li>
+<li><p>The two curves intersect four times, and in each case <span class="math notranslate nohighlight">\(\lambda&lt;0\)</span>. We therefore have 4 purley real eigenvalues. Some further work can reval that the transiiton between cases 2 and 3 occurs at <span class="math notranslate nohighlight">\(k\chi=(\mu-\nu)^2/4\)</span>.</p></li>
+</ol>
+<img src='twogene_2.jpg' height="300" alt="3 cases of stability from characteristic equation">
+<p><em>Figure: 3 cases of stability for the equilibria, plotting the characteristic equation as a function of <span class="math notranslate nohighlight">\(\lambda\)</span>.</em></p>
+<p>Putting this all together, then, we can either have 4 eigenvalues with negative real parts and so a stable equilibrium (when <span class="math notranslate nohighlight">\(\mu\nu&gt;k\chi\)</span>), or 3 eigenvalues with negative real parts but one with positive real part and so an unstable equilibrium (when <span class="math notranslate nohighlight">\(\mu\nu&lt;k\chi\)</span>).</p>
+</div>
+<div class="section" id="linking-to-the-equilibria">
+<h2>Linking to the equilibria<a class="headerlink" href="#linking-to-the-equilibria" title="Permalink to this headline">¶</a></h2>
+<p>The challenge now is to work out how each of these cases for stability links to the equilibria we identified earlier. Consider the curves we sketched out in the first figure. Let us think about the respective slopes of the red and blue curves,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7d5d8f45-9e43-4080-83cf-3dbd56fe2f34">
+<span class="eqno">(83)<a class="headerlink" href="#equation-7d5d8f45-9e43-4080-83cf-3dbd56fe2f34" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp;\frac{dp_2}{dp_1}=\frac{\mu\nu}{k\phi_2}\\
+&amp;\frac{dp_2}{dp_1}=\frac{k\phi_1}{\mu\nu}.
+\end{align}\]</div>
+<p>In our first case (one equilibrium), we see the red curve is steeper (more negative) at the crossing point, meaning,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-504de4e3-0c2a-4495-8703-d7ad97cb0b8d">
+<span class="eqno">(84)<a class="headerlink" href="#equation-504de4e3-0c2a-4495-8703-d7ad97cb0b8d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{\mu\nu}{k\phi}&lt;\frac{k\phi}{\mu\nu}\implies(\mu\nu)^2&gt;(k\phi)^2\implies\mu\nu&gt;k\chi.
+\end{equation}\]</div>
+<p>(Notice we know that <span class="math notranslate nohighlight">\(\phi_1=\phi_2=\phi\)</span> at this equilibrium because of the symmetry. We also change the sign in the inequality because <span class="math notranslate nohighlight">\(\phi&lt;0\)</span>.) We know from above that <span class="math notranslate nohighlight">\(\mu\nu&gt;k\chi\)</span> means that the equilibrium is stable.</p>
+<p>We can see that in the second case (three equilibria), at the two non-central equilibria the red line is again steeper. By the same arguments we can conclude that these two cases will both be stable (although <span class="math notranslate nohighlight">\(\phi_1\neq\phi_2\)</span>, our definition of <span class="math notranslate nohighlight">\(\chi=\sqrt{\phi_1\phi_2}\)</span> is enough). At the central equilibrium we now have that the blue line is steeper. This means our inequalities all reverse and we find that now <span class="math notranslate nohighlight">\(\mu\nu&lt;k\chi\)</span>. As we found above, this means that this central equilibrium is unstable.</p>
+</div>
+<div class="section" id="biological-significance">
+<h2>Biological significance<a class="headerlink" href="#biological-significance" title="Permalink to this headline">¶</a></h2>
+<p>We often find mutually repressing genes in cells. Our modelling shows that if the cross-regulation is weak, or the gene products are stable, then the first case holds, and the two genes weakly hold each other in check, resulting in steady, intermediate expression of both genes.</p>
+<p>However, if for some reason either (a) the cross-regulation becomes stronger (<span class="math notranslate nohighlight">\(\phi\)</span> increases), or (b) the gene products become destabilised (<span class="math notranslate nohighlight">\(\mu\)</span> and/or <span class="math notranslate nohighlight">\(\nu\)</span> decrease), then the stalemate state can become unstable, and the second case holds. Now the stalemate state behaves locally like a saddle point, and the state of the system is driven to one of the two new equilibria. In these states, one or the other of the two genes “wins”, and becomes expressed strongly, while expression of the other gene reduces to a low level. The cell has thus switched its gene expression state to either (A ON, B OFF) or (A OFF, B ON). Once one of these states is reached, the system is stable to perturbations.</p>
+<p>Such switching of gene expression underlies the basic “fate” decisions that cells have to make during processes such as embryonic development. Since the two protein products of the genes are transcription factors, they can regulate other genes. In this way, a single toggle switch can result in the switching on or off of large collections of genes in a cell, giving coherent choices between different cell fates.</p>
+</div>
+<div class="section" id="key-points">
+<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>We can model a two-gene system with a 4 dimensional model.</p></li>
+<li><p>We can still find equilibria and determine their stability by finding the characteristic equation and using some graphical methods and reasoning.</p></li>
+<li><p>The two gene system can produce a “switch” whereby the cell reaches one of two possible “fates”.</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="ch19.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">19 - Longer negative feedback circuits</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Alex Best<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

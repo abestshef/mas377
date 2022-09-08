@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>9 - A within-host HIV model &#8212; MAS377 Mathematical Biology</title>
+    <title>9 - A within-host Covid model &#8212; MAS377 Mathematical Biology</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="10 - Computer lab" href="ch10.html" />
-    <link rel="prev" title="8 - A within-host Covid model" href="ch8.html" />
+    <link rel="prev" title="8 Adaptive dynamics" href="ch8.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -153,15 +153,13 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   8 Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   9 - A within-host HIV model
-   <a name="chapter9">
+   9 - A within-host Covid model
+   <a name="chapter8">
    </a>
   </a>
  </li>
@@ -177,24 +175,46 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A model of cancer growth
-   <a name="chapter13">
+   13 - A within-host HIV model
+   <a name="chapter9">
    </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   14 - Regulation of expression in a single gene
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Modelling an autoregulatory gene
+   15 - Introducing gene models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   16 - More modelling of an autoregulation gene
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20 - A two gene toggle switch
   </a>
  </li>
 </ul>
@@ -302,13 +322,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#case-study-hiv">
-   Case study: HIV
+  <a class="reference internal nav-link" href="#case-study-covid-19">
+   Case study: Covid-19
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pre-treatment-model">
-   A (pre-treatment) model
+  <a class="reference internal nav-link" href="#a-graphical-analysis">
+   A graphical analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-stability-analysis">
+   Linear stability analysis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -331,7 +356,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>9 - A within-host HIV model <a name="chapter9"></a></h1>
+                <h1>9 - A within-host Covid model <a name="chapter8"></a></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -342,13 +367,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#case-study-hiv">
-   Case study: HIV
+  <a class="reference internal nav-link" href="#case-study-covid-19">
+   Case study: Covid-19
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pre-treatment-model">
-   A (pre-treatment) model
+  <a class="reference internal nav-link" href="#a-graphical-analysis">
+   A graphical analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-stability-analysis">
+   Linear stability analysis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -370,88 +400,110 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="a-within-host-hiv-model-a-name-chapter9-a">
-<h1>9 - A within-host HIV model <a name="chapter9"></a><a class="headerlink" href="#a-within-host-hiv-model-a-name-chapter9-a" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="case-study-hiv">
-<h2>Case study: HIV<a class="headerlink" href="#case-study-hiv" title="Permalink to this headline">¶</a></h2>
-<p>Human immunodeficiency virus (HIV) infects immune cells called ‘CD4<span class="math notranslate nohighlight">\(^+\)</span> T-cells’, which form an important part of the human immune system. HIV enters these T-cells, begins to replicate and then releases new virus particles in to the bloodstream. Immediately after infection, the virus grows rapidly and produces flu-like symptoms in the patient. After a few months, these symptoms disappear and the virus concentration reduces to a lower, but steady, level. This ‘asymptomatic period’ can last for years, with the virus density staying roughly constant, and the concentration of T-cells very slowly dropping. Eventually, the T-cell density becomes so low that the patient’s immune system is no longer effective, a condition called aquired immunodeficiency syndrome (AIDS). The patient is then at risk from life-threatening opportunistic infections. In the mid-1990s, much work was being done to explore the dynamics of HIV and to produce potential treatments, including the development of mathematical models led by Perelson and Nelson.</p>
-</div>
-<div class="section" id="a-pre-treatment-model">
-<h2>A (pre-treatment) model<a class="headerlink" href="#a-pre-treatment-model" title="Permalink to this headline">¶</a></h2>
-<p>As with the epidemic models, let’s start by establishing our variables and drawing a schematic of what is happening in this system. The variables that we want to keep track of (before treatment, at least), are:</p>
-<ul class="simple">
-<li><p>Healthy T-cells (<span class="math notranslate nohighlight">\(T\)</span>)</p></li>
-<li><p>Infected T-cells (<span class="math notranslate nohighlight">\(T^*\)</span>)</p></li>
-<li><p>Virus particles (<span class="math notranslate nohighlight">\(V\)</span>)</p></li>
-</ul>
-<p>We will only keep track of the concentration of virus particles in the bloodstream, not the ‘intracellular’ concentrations. Our schematic should look like this:</p>
-<p>Healthy T-cells are produced at some constant rate <span class="math notranslate nohighlight">\(s\)</span> by the body, but also decay at some rate <span class="math notranslate nohighlight">\(d\)</span>. These healthy cells become infected through contact with virus, in a mass-action manner, with coefficient <span class="math notranslate nohighlight">\(k\)</span>. These infected T-cells then decay at some rate <span class="math notranslate nohighlight">\(\delta\)</span>. New virus particles are produced when infected T-cells die, with <span class="math notranslate nohighlight">\(N\)</span> giving the average number of virus particles produced by each cell. The virus then also decays at some rate <span class="math notranslate nohighlight">\(c\)</span>. The system can therefore be expressed with the following set of ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a3d2ed1e-a01a-4028-b081-165a71183b4f">
-<span class="eqno">(23)<a class="headerlink" href="#equation-a3d2ed1e-a01a-4028-b081-165a71183b4f" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{dT}{dt} &amp;= s-dT-kVT\label{hiv1}\\
-\frac{dT^*}{dt} &amp;= kVT-\delta T^*\label{hiv2}\\
-\frac{dV}{dt} &amp;= N\delta T^*-cV\label{hiv3}
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-within-host-covid-model-a-name-chapter8-a">
+<h1>9 - A within-host Covid model <a name="chapter8"></a><a class="headerlink" href="#a-within-host-covid-model-a-name-chapter8-a" title="Permalink to this headline">¶</a></h1>
+<p>Earlier, we were thinking about the dynamics of disease at the scale of human or ecological populations. Often, though, we will be more concerned with the health of individual patients, particularly from a medical perspective. In these cases, we want to know how a virus or bacteria grows and develops inside the body, and how our immune system interacts with it. To study these dynamics we therefore require a <em>within-host model</em>. While the biology here may seem less intuitive, it is important to remember that we are still dealing with populations. But whereas we previously thought of populations as groups of humans or animals, we are now looking at populations of cells or virus particles.</p>
+<div class="section" id="case-study-covid-19">
+<h2>Case study: Covid-19<a class="headerlink" href="#case-study-covid-19" title="Permalink to this headline">¶</a></h2>
+<p>We will look at a relatively simple model of virus-cell dynamics that <em>loosely</em> describes the interaction between Covid-19 virus particules and a type of human immune cell callted the T-cell. The model is borrowed from works by Almocera et al. (2018) and Hernandez-Vargas &amp; Velasco-Hernandez (2021). We assume that the virus grows in the body according to classic logistic growth, that it decays at some background rate but is also killed by T-cells. T-cells themselves are produced by the body at some constant, background rate, but also proliferate when they sense virus present. Finally the T-cells also decay. We can write down our model as follows,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ac214c50-fcaa-456b-907e-9950e3665c18">
+<span class="eqno">(35)<a class="headerlink" href="#equation-ac214c50-fcaa-456b-907e-9950e3665c18" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{dV}{dt} &amp;= pV(1-V/K)-\beta VT - \mu V\\
+\frac{dT}{dt} &amp;= s+rT\left(\frac{V^2}{V^2+c^2}\right)-\delta T
 \end{align}\]</div>
-<p>It is easy to see that there is an HIV-free equilibrium for <span class="math notranslate nohighlight">\((T,T^*,V)=(s/d,0,0)\)</span>. We have not covered how to assess stability in a three-dimensional system in this module. In fact, the trace-determinant conditions we have used in previous models are a special case of stability criteria called <em>Routh-Hurwitz conditions</em>. We will not cover these here, but using them we can find that the HIV-free equilibrium is stable if <span class="math notranslate nohighlight">\(c&gt;kNs/d\)</span>. In other words, the decay rate of the virus must be high, and the infection rate and production rate (i.e. <span class="math notranslate nohighlight">\(N\)</span>) must be low.</p>
-<p>Of course, when a patient is to undergo treatment, they will not be HIV-free! We are therefore more interested in the pre-treatment infected steady-state. Setting the equations for <span class="math notranslate nohighlight">\(dT^*/dt\)</span> and <span class="math notranslate nohighlight">\(dV/dt\)</span> to zero, yields,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2375f7bb-5095-46bf-94f9-d9f3aa776d7e">
-<span class="eqno">(24)<a class="headerlink" href="#equation-2375f7bb-5095-46bf-94f9-d9f3aa776d7e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-N\delta T^*_0=cV_0 \text{ and } kV_0T_0=\delta T^*_0 \implies T_0=\frac{c}{Nk} 
-\end{equation}\]</div>
-<p>Solving dT/dt=0, then gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34b1a421-8124-44c6-95ec-7deb5b65a90b">
-<span class="eqno">(25)<a class="headerlink" href="#equation-34b1a421-8124-44c6-95ec-7deb5b65a90b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-V_0=\frac{sN}{c}-\frac{d}{k} 
-\end{equation}\]</div>
-<p>and, by substituting back in,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08aed077-5feb-4484-b89d-8a534b2c3003">
-<span class="eqno">(26)<a class="headerlink" href="#equation-08aed077-5feb-4484-b89d-8a534b2c3003" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-T^*_0=\frac{kV_0T_0}{\delta} 
-\end{equation}\]</div>
+<p>As usual, all the parameters are positive and we will also assume that <span class="math notranslate nohighlight">\(r&gt;\delta\)</span>. There are a few things to notice about this model:</p>
+<ul class="simple">
+<li><p>When a virus is killed by a T-cell, there is no corresponding killing of the cell itself.</p></li>
+<li><p>T-cell production is constant, not a per-capita rate.</p></li>
+<li><p>The proliferation function is sigmoidal - while virus density is small little proliferation occurs, but past a threshold value it rapidly increases. Quite a lot of the analysis is going to depend on knowledge of what this proliferation function looks like.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Have a go</p>
+<p>Sketch the curve <span class="math notranslate nohighlight">\(r\left(\frac{V^2}{V^2+c^2}\right)\)</span> and discuss its key features with your neighbours.</p>
+</div>
+<p>Let us consider the equilibria of this system. If we factorise the first equation we find two possible ways to make it equal zero:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(p(1-V/K)-\beta T - \mu =0 \implies T=(p(1-V/K)-\mu)/\beta\)</span></p></li>
+</ul>
+<p>Substituting <span class="math notranslate nohighlight">\(V=0\)</span> into the second equation, we can find that this requires <span class="math notranslate nohighlight">\(T=s/\delta\)</span> for an equilibrium. This will be the virus-free equilibrium, with no virus and T-cells present at their background density.</p>
+<p>For the second equilibrium we can see that the result is likely to be quite complicated. Indeed, there may even be more than one equilibrium produced. To save ourselves a lot of tedious algebra let us instead examine the phase portrait.</p>
+</div>
+<div class="section" id="a-graphical-analysis">
+<h2>A graphical analysis<a class="headerlink" href="#a-graphical-analysis" title="Permalink to this headline">¶</a></h2>
+<p>We have a two-dimensional system and both variables must be non-negative to make biological sense. We can use the workings we used when finding the equilibria to help us find the nullclines. The nullclines from the first equation give us:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V=0\)</span> - a straight vertical line.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T=p(1-V/K)-\mu)/\beta\)</span> - a decreasing line strating at <span class="math notranslate nohighlight">\((p-\mu)/\beta\)</span> and crossing 0 at <span class="math notranslate nohighlight">\(V=K(1-\mu/\beta)\)</span>.</p></li>
+</ul>
+<p>After a couple of lines of working we can find the nullcline from the second equation to be,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T=\frac{s}{\delta-r\left(\frac{V^2}{V^2+c^2}\right)}\)</span>.</p></li>
+</ul>
+<p>What does this nullcline look like? It starts at <span class="math notranslate nohighlight">\(T=s/\delta\)</span> when <span class="math notranslate nohighlight">\(V=0\)</span> and as <span class="math notranslate nohighlight">\(V\)</span> gets very large we find <span class="math notranslate nohighlight">\(T\to s/(\delta-r)\)</span>. In between these extremes we have this sigmoidal proliferation function to worry about. Note that <span class="math notranslate nohighlight">\(V^2/(V^2+c^2)\)</span> varies from 0 to 1 and is strictly increasing and that <span class="math notranslate nohighlight">\(r&gt;\delta\)</span>. This tells us two things:</p>
+<ol class="simple">
+<li><p>The nullcline is strictly increasing.</p></li>
+<li><p>At some point the denominator will pass through zero (some further work finds that techncially this happens twice, but one of the values occurs for <span class="math notranslate nohighlight">\(V&lt;0\)</span>).</p></li>
+</ol>
+<p>One additional thing to note is that the term, <span class="math notranslate nohighlight">\(V^2/(V^2+c^2)\)</span> remains small up to reasonably high values of <span class="math notranslate nohighlight">\(V\)</span>. Therefore this term will initially not effect the nullcline much as <span class="math notranslate nohighlight">\(V\)</span> increases, meaning our nullcline is initially quite flat. We can put all of this together to form our phase portrait.</p>
+<img src='whcovid.jpg' height="300" alt="Phase portrait of within-host Covid-19 model">
+<p><em>Figure: Phase portraits of the within-host Covid-19 model.</em></p>
+<p>What we see, then, is that there is only one equilibrium when the virus is present, and for the assumptions we have made about relative parameter values, it appears to be a stable spiral. We can additionally note that the initial dynamics are for a rapid rise in virus concentration but little change in T-cell density, before the virus becomes too prevalent and T-cell proliferation begins. We can also note that the virus density at the equilibrium is considerably lower thank it would be without T-cells. Examining the phase portrait, we might also conclude that the virus-free equilibrium will only become stable if we can move the <span class="math notranslate nohighlight">\(T\)</span> nullcline far enough upwards that the two non-zero nullclines no longer intersect. This would require <span class="math notranslate nohighlight">\(s/\delta&gt;(p-\mu)/\beta\)</span>. Let us see if we can confirm that with linear stability analysis.</p>
+</div>
+<div class="section" id="linear-stability-analysis">
+<h2>Linear stability analysis<a class="headerlink" href="#linear-stability-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The general Jacobian for the system is given by,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+p-\frac{2pV^*}{K}-\beta T^*-\mu &amp; -\beta V^*\\
+rT^*\frac{2V^*c^2}{(V^{*2}+c^2)^2} &amp; r\frac{V^{*2}}{V^{*2}+c^2}-\delta
+\end{array}
+\right)
+\end{align*}\]</div>
+<p><strong>Virus-free equilibrium</strong> - <span class="math notranslate nohighlight">\(V=0,T=s/\delta\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(V^*=0\)</span> both the top-right and bottom-left entries are zero, meaning we can read off the eigenvalues as the two terms on the main diagonal:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1=p-\beta T^*-\mu\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_2=-\delta\)</span></p></li>
+</ul>
+<p>The second eigenvalue is negative, so everything depends on the first. Re-arranging we require <span class="math notranslate nohighlight">\(T^*&gt;(p-\mu)/\beta\)</span>. Recall that for the virus free equilibrium we have <span class="math notranslate nohighlight">\(T^*=s/\delta\)</span>. Therefore this equilibrium is only stable when <span class="math notranslate nohighlight">\(s/\delta&gt;(p-\mu)/\beta\)</span>, exactly as we surmised was the case from our phase porttrait.</p>
+<p><strong>Virus-present equilibrium</strong></p>
+<p>You will recall that we never wrote down an expression for this equilibrium. You might remember from previous lectures, however, that this does not necessarily stop us making conclusions about its stability. We know from the phase portrait that there is only one equilibrium to worry about. We also know from the equilibrium conditions that:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p(1-V^*/K)-\beta T-\mu=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(rV^{*2}/(V^{*2}+c^2)-\delta = -s/T^*\)</span>.</p></li>
+</ul>
+<p>Substituting these values in to the Jacobian we now find,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+-\frac{pV^*}{K} &amp; -\beta V^*\\
+rT^*\frac{2V^*c^2}{(V^{*2}+c^2)^2} &amp; -s/T^*
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>Now we must assess stability based on the trade and determinant conditions. These are:</p>
+<p><span class="math notranslate nohighlight">\(tr(J)=-\frac{pV^*}{K}-\frac{s}{T^*} &lt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(det(J) = \frac{psV^*}{kT^*}+r\beta V^*T^*\left(\frac{2V^*c^2}{V^{*2}+c^2)}\right)&gt;0\)</span></p>
+<p>This means that whenever the equilibrium at <span class="math notranslate nohighlight">\(V^*,T^*&gt;0\)</span> exists, it must be stable. And we know from the phase portrait that the condition for it to exist is the exact opposite of the condition for stability of the virus-free equilibrium.</p>
 </div>
 <div class="section" id="treatment">
 <h2>Treatment<a class="headerlink" href="#treatment" title="Permalink to this headline">¶</a></h2>
-<p>Assume a patient arrives with their virus and T-cell concentrations at the pre-treatment steady state. We then wish to put them on a course of treatment. One of the most effective early treatments for HIV was using ‘protease inhibitors’. These drugs did not prevent infection, but meant that any new virus produced inside infected T-cells were non-infectious. The system therefore becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4f5e3fc-348b-459d-8c43-87bd2dbbf9c0">
-<span class="eqno">(27)<a class="headerlink" href="#equation-e4f5e3fc-348b-459d-8c43-87bd2dbbf9c0" title="Permalink to this equation">¶</a></span>\[\begin{align}
-&amp;\frac{dT}{dt} = s-dT-kV_IT\label{hiv11}\\
-&amp;\frac{dT^*}{dt} = kV_IT-\delta T^*\label{hiv12}\\
-&amp;\frac{dV_I}{dt} = -cV_I\label{hiv13}\\
-&amp;\frac{dV_{NI}}{dt} = N\delta T^*-cV_{NI}\label{hiv14}
-\end{align}\]</div>
-<p>In the early stages of treatment, it is reasonable for us to assume that the number of healthy T-cells stays roughly constant at it’s pre-treatment level <span class="math notranslate nohighlight">\(T(t)=T_0\)</span>, so dT/dt can be ignored. We also know that before treatment, all virus particles were of the infective type, such that <span class="math notranslate nohighlight">\(V_I(0)=V_0\)</span> and <span class="math notranslate nohighlight">\(V_{NI}(0)=0\)</span>. Given this, it is easy to show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eaa5be02-9640-45ef-ac46-a38dd8c903d0">
-<span class="eqno">(28)<a class="headerlink" href="#equation-eaa5be02-9640-45ef-ac46-a38dd8c903d0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-V_I(t)=V_0e^{-ct}\label{vt}
-\end{equation}\]</div>
-<p>Given that <span class="math notranslate nohighlight">\(T(t)=T_0\)</span>, we now find we have a linear equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-395984be-254d-4616-927b-e97d0db74f1f">
-<span class="eqno">(29)<a class="headerlink" href="#equation-395984be-254d-4616-927b-e97d0db74f1f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{dT^*}{dt} +\delta T^*= kV_IT_0
-\end{equation}\]</div>
-<p>This can be solved using the standard method of an integrating factor:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4ae0004-97a9-4198-8e5d-5fdee33e4b98">
-<span class="eqno">(30)<a class="headerlink" href="#equation-d4ae0004-97a9-4198-8e5d-5fdee33e4b98" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-T^*(t)=\frac{kT_0V_0}{\delta(\delta-c)}\left(\delta e^{-ct}-ce^{-\delta t}\right)
-\end{equation}\]</div>
+<p>There are many ways we might think about a treatment working in this model. It might be something that reduces the growth rate of the virus, or that encourages T-cell proliferation.</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
-<p>Using similar methods show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e986203b-f4a1-4474-9880-7a50b7433498">
-<span class="eqno">(31)<a class="headerlink" href="#equation-e986203b-f4a1-4474-9880-7a50b7433498" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-V_{NI}(t)=\frac{cV_0}{c-\delta}\left(\frac{c}{c-\delta}\left(e^{-\delta t}-e^{-ct}\right)-\delta te^{-ct}\right)
-\end{equation}\]</div>
+<p>Taking the model above as your base, write out a model that includes some form of treatment. Explain to your neighbour what effect you would predict to have.</p>
 </div>
-<p>This can be added to the soluion for <span class="math notranslate nohighlight">\(V_I(t)\)</span> to find the overall density of virus particles in the bloodstream at any time point after treatment has begun. After estimating the values of each of the model parameters, Perelson and his colleagues plotted the model’s predictions against data of individual patient’s virus concentrations. The figure below shows that the model provides a remarkably good fit.</p>
-<img src='perelson.jpg' height="300" alt="Plots of HIV concentrations from patients and model predictions.">
-<p><em>Figure: Virus concentrations in the bloodstream of three patients compared to the model predictions. Taken from Perelson &amp; Nelson (1999).</em></p>
 </div>
 <div class="section" id="key-points">
 <h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>A patient will only be disease-free if the virus decay rate is high, and its infection rate and burst size is low.</p></li>
-<li><p>Under a simplifying assumption the treatment model becomes linear, so we can solve the model explicitly.</p></li>
-<li><p>The treatment model predicts exponential decay of the virus, and matches well to real data.</p></li>
+<li><p>We can build models of cell-virus interactions in much the same way as we did for interactions between whole organisms.</p></li>
+<li><p>The virus will reach a non-zero equilibrium provided it grows quickly and there is limited killing by T cells.</p></li>
+<li><p>The sigmoidal proliferation rate makes T cells initially slow to respond to an infection.</p></li>
 </ol>
 </div>
 </div>
@@ -485,7 +537,7 @@ V_{NI}(t)=\frac{cV_0}{c-\delta}\left(\frac{c}{c-\delta}\left(e^{-\delta t}-e^{-c
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">8 - A within-host Covid model <a name="chapter8"></a></p>
+            <p class="prev-next-title">8 Adaptive dynamics</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch10.html" title="next page">

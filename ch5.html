@@ -105,63 +105,47 @@
  <li class="toctree-l1">
   <a class="reference internal" href="ch1.html">
    1 - Simple population models
-   <a name="chapter1">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch2.html">
    2 - Bifurcations and introducing competition
-   <a name="chapter2">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch3.html">
    3 - Competition continued
-   <a name="chapter3">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch4.html">
    4 - Predator-Prey models
-   <a name="chapter4">
-   </a>
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    5 - Epidemics in human populations
-   <a name="chapter5">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch6.html">
    6 - The SIR model with demographics
-   <a name="chapter6">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch7.html">
    7 - Vaccination and disease in the wild
-   <a name="chapter7">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   8 - Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch9.html">
-   9 - A within-host HIV model
-   <a name="chapter9">
+   9 - A within-host Covid model
+   <a name="chapter8">
    </a>
   </a>
  </li>
@@ -177,24 +161,46 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A model of cancer growth
-   <a name="chapter13">
+   13 - A within-host HIV model
+   <a name="chapter9">
    </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   14 - Regulation of expression in a single gene
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Modelling an autoregulatory gene
+   15 - Introducing gene models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   16 - More modelling of an autoregulation gene
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20 - A two gene toggle switch
   </a>
  </li>
 </ul>
@@ -339,7 +345,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>5 - Epidemics in human populations <a name="chapter5"></a></h1>
+                <h1>5 - Epidemics in human populations</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -386,8 +392,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="epidemics-in-human-populations-a-name-chapter5-a">
-<h1>5 - Epidemics in human populations <a name="chapter5"></a><a class="headerlink" href="#epidemics-in-human-populations-a-name-chapter5-a" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="epidemics-in-human-populations">
+<h1>5 - Epidemics in human populations<a class="headerlink" href="#epidemics-in-human-populations" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introducing-the-sir-model">
 <h2>Introducing the SIR model<a class="headerlink" href="#introducing-the-sir-model" title="Permalink to this headline">¶</a></h2>
 <p>I suspect that mathematical modelling of disease spread has never been as topical or well-known amongst the general public than in the last few years. Many modellers and scientists have been contributing to our understanding of the Covid-19 pandemic, from public-facing talks and twitter threads, to research being conducted and published to directly advising the government. In the next few lectures we will go through the fundamentals of the mathematical models that are the basis of most of this modelling work. The models that have been used to advise the government are of course rather more detailed than those you will see here (and we’ll discuss some extensions as we go along), but there is a common engine behind them all.</p>
@@ -397,8 +403,8 @@
 <p><em>Figure: Schematic of the SIR epidemic model.</em></p>
 <p>Before a disease emerges, all individuals in the population are <em>susceptible</em>. Once exposed to the disease, individuals may then become <em>infected</em> (and also <em>infectious</em>). Finally, individuals will eventually fight off the disease to become <em>recovered</em> and <em>immune</em>.</p>
 <p>This is the SIR model, and has been central to our understanding of disease dynamics in human populations since it was first proposed by Kermack and McKendrick in 1927. Disease is transmitted by ‘direct contact’ between infected and susceptible hosts and is a mass action process. When hosts have recovered, they gain immunity and cannot be infected again (this is a key aspect of vertebrate - and especially human - immune systems, but is not necessarily true of invertebrates, plants, etc. We will consider models more appropriate for such populations later). <span class="math notranslate nohighlight">\(\beta\)</span> controls the rate at which contacts between <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(I\)</span> hosts cause infection, and <span class="math notranslate nohighlight">\(\gamma\)</span> is the rate of recovery. In this initial example we have not included any birth or death processes, as we assume that infection happens at a much faster timescale than demography. By considering our schematic diagram above we can write down the dynamics of our system as a set of ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-49c1047d-7029-4a5e-a86d-c589643e9e91">
-<span class="eqno">(14)<a class="headerlink" href="#equation-49c1047d-7029-4a5e-a86d-c589643e9e91" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-57c1fa33-6eda-4a9f-9a4f-bb44116f73cd">
+<span class="eqno">(14)<a class="headerlink" href="#equation-57c1fa33-6eda-4a9f-9a4f-bb44116f73cd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = -\beta SI\label{si1}\\ 
 &amp;\frac{dI}{dt} = \beta SI - \gamma I\label{si2}\\
 &amp;\frac{dR}{dt} = \gamma I
@@ -416,8 +422,8 @@
 <p>Again, despite the simplicity of this model (two variables and two parameters), there exists no explicit solution. However, we can explore the qualitative behaviour of the model by identifying {equilibria} of the system and their stability.</p>
 <p>Considering the model, the only steady-state is when <span class="math notranslate nohighlight">\(I=0\)</span> (and <span class="math notranslate nohighlight">\(S\)</span> may take any value <span class="math notranslate nohighlight">\(&lt;N\)</span>). This implies that in the long-run, we would expect the population to reach a point with no infected hosts i.e. the system will become <em>disease-free</em>. In the long-run this is often the case with emerging diseases - they will eventually burn out - but it is still important for us to know whether there can be an <em>epidemic</em>, when an initially small amount of infection causes a large outbreak of disease in the population (even if it eventually tends to zero).</p>
 <p>For an epidemic to occur, we need to have <span class="math notranslate nohighlight">\(dI/dt&gt;0\)</span> initially. Before an outbreak, the initial densities are <span class="math notranslate nohighlight">\(S(0)\approx N,I(0)\approx0\)</span>. This gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79251117-1b85-4c16-914b-af86bb02167c">
-<span class="eqno">(15)<a class="headerlink" href="#equation-79251117-1b85-4c16-914b-af86bb02167c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-634abed3-9e2d-4d9f-820c-c869a9b53c3d">
+<span class="eqno">(15)<a class="headerlink" href="#equation-634abed3-9e2d-4d9f-820c-c869a9b53c3d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dI}{dt}=(\beta N-\gamma)I
 \end{equation}\]</div>
 <ul class="simple">
@@ -520,13 +526,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">4 - Predator-Prey models <a name="chapter4"></a></p>
+            <p class="prev-next-title">4 - Predator-Prey models</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch6.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">6 - The SIR model with demographics <a name="chapter6"></a></p>
+        <p class="prev-next-title">6 - The SIR model with demographics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
