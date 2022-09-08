@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14 - Regulation of expression in a single gene &#8212; MAS377 Mathematical Biology</title>
+    <title>14 - A model of cancer growth &#8212; MAS377 Mathematical Biology</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,8 +56,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15 - Modelling an autoregulatory gene" href="ch15.html" />
-    <link rel="prev" title="13 - A model of cancer growth" href="ch13.html" />
+    <link rel="next" title="15 - Introducing gene models" href="ch15.html" />
+    <link rel="prev" title="13 - A within-host HIV model" href="ch13.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -153,15 +153,13 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   8 Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch9.html">
-   9 - A within-host HIV model
-   <a name="chapter9">
+   9 - A within-host Covid model
+   <a name="chapter8">
    </a>
   </a>
  </li>
@@ -177,24 +175,46 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A model of cancer growth
-   <a name="chapter13">
+   13 - A within-host HIV model
+   <a name="chapter9">
    </a>
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   14 - Regulation of expression in a single gene
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Modelling an autoregulatory gene
+   15 - Introducing gene models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   16 - More modelling of an autoregulation gene
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20 - A two gene toggle switch
   </a>
  </li>
 </ul>
@@ -302,18 +322,13 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quick-guide-to-cells-and-genetic-networks">
-   A quick guide to cells and genetic networks
+  <a class="reference internal nav-link" href="#anaylsis">
+   Anaylsis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-first-model">
-   A first model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-courses">
-   Time-courses
+  <a class="reference internal nav-link" href="#treatment">
+   Treatment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -331,7 +346,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>14 - Regulation of expression in a single gene</h1>
+                <h1>14 - A model of cancer growth <a name="chapter13"></a></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -342,18 +357,13 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quick-guide-to-cells-and-genetic-networks">
-   A quick guide to cells and genetic networks
+  <a class="reference internal nav-link" href="#anaylsis">
+   Anaylsis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-first-model">
-   A first model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-courses">
-   Time-courses
+  <a class="reference internal nav-link" href="#treatment">
+   Treatment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -370,138 +380,116 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="regulation-of-expression-in-a-single-gene">
-<h1>14 - Regulation of expression in a single gene<a class="headerlink" href="#regulation-of-expression-in-a-single-gene" title="Permalink to this headline">¶</a></h1>
-<p>In the next part of the module, we will look at models for the regulation of gene expression in cells, and how simple feedback loops underlie some of the basic dynamics that cells exhibit: regulation, switching, and oscillation. Before we do this, it is important to have at least a basic idea of what it is we are trying to model.</p>
-<div class="section" id="a-quick-guide-to-cells-and-genetic-networks">
-<h2>A quick guide to cells and genetic networks<a class="headerlink" href="#a-quick-guide-to-cells-and-genetic-networks" title="Permalink to this headline">¶</a></h2>
-<p>All living things are made of cells - self-contained structures bounded by a cell membrane (and sometimes also a cell wall). Many organisms exist predominantly as single cells (unicellular, e.g. bacteria, amoebae), while others exist as patterned collections of cells (multicellular, e.g. animals, most plants). While different cells possess and maintain a well-defined identity (which is how we can name them), they are far from static structures, and depend on balanced dynamical processes. Mathematical modelling plays an important role in understanding these dynamical processes and how they are regulated in cells.</p>
-<p>Unicellular organisms encounter variable environments, and therefore need to be able to adapt their behaviour. For example, a bacterium living in your gut will have to adapt its metabolism to whatever food you present it with. Adaptability often requires a cell to switch between different behaviours (e.g. between metabolising different types of sugar). Multicellular
-organisms often develop from a single cell through sequential rounds of cell division (the process in which a cell duplicates its contents and then splits to make two cells). However, the cells in multicellular organisms do not remain identical to each other, but take on stable and well-defined characteristics, so we can talk about skin cells, liver cells,muscle cell, blood cells, etc. in a meaningful way. This adoption of distinct well-defined characters is called <em>differentiation</em>, and again requires cells to be able to switch their behaviour.</p>
-<p>How do cells manage to change or switch their state in a coherent way? They use a combination of information from their environment and internal mechanisms. Central to the internal mechanisms are what we call genetic regulatory networks (or gene networks). Almost all cells contain large structures centred on DNA (deoxyribonucleic acid). For our purposes, DNA can be viewed as a set of long, linear sequences of letters (A, C, G and T). This sequence is highly stable, is accurately copied during cell division, and is identical in all cells of a multicellular organism. The full DNA sequence in a cell is referred to as the genome.</p>
-<p>How is the genome involved in the regulation of the state of a cell (either stably maintaining it or switching it)? A key concept is that of the gene, and the basic unit of dynamics that we will concern ourselves with in this module is the <em>expression</em> of a gene. For our purposes, a gene is a defined subset of the DNA sequence that can code for (i.e. be copied, or <em>transcribed</em> to) an mRNA molecule. In turn the mRNA produced from the gene codes for (i.e. can be <em>translated</em> into) a particular protein molecule. We will refer to the regulated production and degradation of the mRNA and protein corresponding to a gene as the expression of that gene. The amount of the gene itself does not change, and so the dependent variables of our models will be the concentrations of mRNA and protein in a cell.</p>
-<p>In the next section, we will consider the regulated expression of a single gene. In later sections, we will consider how genes can interact by regulating each others’ expression. We will again focus exclusively on differential equation models, in which the concentrations/amounts of mRNA and protein are represented by continuous variables. These are essentially population models, just like the ones in the module so far.</p>
-</div>
-<div class="section" id="a-first-model">
-<h2>A first model<a class="headerlink" href="#a-first-model" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we consider the dynamics of gene expression in two scenarios:</p>
-<ol class="simple">
-<li><p>The expression of the gene is regulated by a transcription factor whose concentration is given as a function of time.</p></li>
-<li><p>The expression of the gene is regulated by its own protein product (which is therefore a transcription factor).</p></li>
-</ol>
-<p>The models have two dependent variables:</p>
-<p><span class="math notranslate nohighlight">\(M(t)\)</span> : the concentration of mRNA.</p>
-<p><span class="math notranslate nohighlight">\(P(t)\)</span> : the concentration of protein.</p>
-<p>The dynamics of <span class="math notranslate nohighlight">\(M(t)\)</span> and <span class="math notranslate nohighlight">\(P(t)\)</span> are regulated by production and degradation. In this context, the molecular processes underlying the production of mRNA and protein are called transcription and translation, respectively (see above).</p>
-<p>We will make the following assumptions:</p>
-<ol class="simple">
-<li><p>The rates of mRNA and protein degradation are proportional to their concentration (i.e. degradation is linear ).</p></li>
-<li><p>The rate of translation is proportional to the mRNA concentration (i.e. translation is linear ).</p></li>
-</ol>
-<p>Then the general form of the models, written as a pair of ordinary differential equations, is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4854604e-1a3d-4d57-98b0-d85f8b9464e0">
-<span class="eqno">(37)<a class="headerlink" href="#equation-4854604e-1a3d-4d57-98b0-d85f8b9464e0" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{dM}{dt} &amp;= R(t) - \mu M\\
-\frac{dP}{dt} &amp;= kM - \nu P.
-\end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the degradation rate of mRNA, <span class="math notranslate nohighlight">\(\nu\)</span> is the degradation rate of protein,  <span class="math notranslate nohighlight">\(k\)</span> is the translation rate, and <span class="math notranslate nohighlight">\(R(t)\)</span> is the transcription rate. Note that for the model to make sense biologically, <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(k\)</span> must be positive  constants, and <span class="math notranslate nohighlight">\(R(t) \geq 0\)</span>. Note also that if <span class="math notranslate nohighlight">\(R(t)\)</span> is not constant, then the model will not go to an equilibrium.</p>
-</div>
-<div class="section" id="time-courses">
-<h2>Time-courses<a class="headerlink" href="#time-courses" title="Permalink to this headline">¶</a></h2>
-<p>Starting with the dynamics of mRNA expression, we see that it is independent of <span class="math notranslate nohighlight">\(P\)</span>, so we can solve it in isolation by using an integrating factor. We have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a696b8ca-0592-4bd9-98bd-e8569474855c">
-<span class="eqno">(38)<a class="headerlink" href="#equation-a696b8ca-0592-4bd9-98bd-e8569474855c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{dM}{dt} +\mu M = R(t)
+  <div class="tex2jax_ignore mathjax_ignore section" id="a-model-of-cancer-growth-a-name-chapter13-a">
+<h1>14 - A model of cancer growth <a name="chapter13"></a><a class="headerlink" href="#a-model-of-cancer-growth-a-name-chapter13-a" title="Permalink to this headline">¶</a></h1>
+<p>More than one in three people will develop some form of cancer during their lifetime. Given this, it is no surprise that cancer research is a hugely active field, and, relevant to this course, that there are a great many researchers interested in modelling the dynamics of cancer growth and its treatments. These models focus on a variety of important questions. We will focus on one particular model (loosely based on work by Hanhfeldt et al. (1999)).</p>
+<p>We can model the size of a tumour by the number of cancer cells that make it up. These dynamics may actually be well represented by the logistic growth model we studied in the very first lecture (other forms, such as the Gompertz model, are often used instead, but the logistic model will do for our purposes). That is because tumours tend to be slow growing at first, then rapidly grow and finally saturate to a finite size due to resource limitations such as physical space and blood supply. Therefore, the number of cancer cells, <span class="math notranslate nohighlight">\(c\)</span>, in a tumour may be expected to obey the dynamics,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2d4d884c-6e8c-47c0-bf66-dbcd58ece5a3">
+<span class="eqno">(45)<a class="headerlink" href="#equation-2d4d884c-6e8c-47c0-bf66-dbcd58ece5a3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dc}{dt}=r_0c\left(1-\frac{c}{K}\right)
 \end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_0\)</span> is the basic growth rate and <span class="math notranslate nohighlight">\(K\)</span> the carrying capacity.</p>
+<p>An important feature of tumour growth, however, is that they can change their environment as they grow through ‘angiogenic’ factors, such that they can both stimulate and inhibit their own growth. For example, as the tumour grows it can physically create more space to grow in to, as well as secrete chemicals that encourage blood vessels to grow. On the other hand as the tumour grows it may cause damage to the blood supply. By affecting their environment in this way, cancer cells are effectively changing their own carrying capacity. Therefore, while we previously assumed a fixed carrying capacity, <span class="math notranslate nohighlight">\(K\)</span>, it now makes sense to treat this is a dynamic variable that may grow or shrink over time depending on these angiogenic processes. The model that is proposed for these dynamics is,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-89598a7f-9a39-40d5-98a5-2cdc1a3d915d">
+<span class="eqno">(46)<a class="headerlink" href="#equation-89598a7f-9a39-40d5-98a5-2cdc1a3d915d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dK}{dt}=\phi c - \theta Kc^{2/3}=c\left[\phi-\theta Kc^{-1/3}\right].
+\end{equation}\]</div>
+<p>Cells stimulate the growth of blood vessels, and hence the carrying capacity, at per-capita (cell) rate <span class="math notranslate nohighlight">\(\phi\)</span>. The inhibition rate, <span class="math notranslate nohighlight">\(\theta\)</span>, is rather more complicated and comes from an argument about how an increasing volume of tumour will destroy local blood vessel networks.</p>
+<div class="section" id="anaylsis">
+<h2>Anaylsis<a class="headerlink" href="#anaylsis" title="Permalink to this headline">¶</a></h2>
+<p>As usual, we will proceed by finding possible equilibria, classifying their stability and drawing phase portraits.</p>
+<p>We already know from our previous work that,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e854b8cb-f7e4-416b-a894-d101ef339485">
+<span class="eqno">(47)<a class="headerlink" href="#equation-e854b8cb-f7e4-416b-a894-d101ef339485" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dc}{dt}=0\implies c=0 \textrm{ or } c=K.
+\end{equation}\]</div>
+<p>Substituting these values in to our second equation, we find that,</p>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(c=0\)</span>, <span class="math notranslate nohighlight">\(dK/dt\)</span>=0 for any <span class="math notranslate nohighlight">\(K\)</span>, and therefore there are a continuum of equilibria with no tumour but a positive carrying capacity.</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(c=K\)</span>, <span class="math notranslate nohighlight">\(dK/dt=0\implies c[\phi-\theta K^{2/3}]=0\)</span>. There are two different cases here. Firstly we could have <span class="math notranslate nohighlight">\(c=K=0\)</span> or we could have <span class="math notranslate nohighlight">\(c=K=(\phi/\theta)^{3/2}\)</span>.</p></li>
+</ul>
+<p>There are therefore two qualitatively different long-term solutions: either the tumour is absent (with the carrying capacity possibly at zero) or it is maintained. We should now look at the stability of these equilibria. The Jacobian of the system can be found to be,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+r\left(1-2\frac{c}{K}\right) &amp; \frac{rc^2}{K^2}\\
+\phi-\frac{2}{3}\theta Kc^{-1/3} &amp; \theta c^{2/3}
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>The general case of <span class="math notranslate nohighlight">\(c=0,K&gt;0\)</span> is problematic because of the lower-left entry. Of course this was already a boundary case, being a line of fixed points. We will look at this again when we draw the phase portrait. Let us first focus on the special case of <span class="math notranslate nohighlight">\(c=K=0\)</span> and first substitute <span class="math notranslate nohighlight">\(c=K\)</span> in, which leads to a number of simplifications,</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
-<p>Using an integrating factor, show that the solution is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-731ccbc2-cb69-4ddf-b921-f35c7510fe5e">
-<span class="eqno">(39)<a class="headerlink" href="#equation-731ccbc2-cb69-4ddf-b921-f35c7510fe5e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-M(t) = e^{-\mu t}\int e^{\mu t}R(t)dt.
-\end{equation}\]</div>
+<p>Write out the general Jacobian for this system with <span class="math notranslate nohighlight">\(c=K\)</span>.</p>
 </div>
-<p>It looks like the function <span class="math notranslate nohighlight">\(R(t)\)</span> is going to be very important for how the time course plays out. Let us initially assume that <span class="math notranslate nohighlight">\(R(t)=r\)</span>, that is, it is constant. As such we can simplify the equation to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-daa6b297-45bc-434c-938e-499220758674">
-<span class="eqno">(40)<a class="headerlink" href="#equation-daa6b297-45bc-434c-938e-499220758674" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-M(t) = re^{-\mu t}\int e^{\mu t}dt.
-\end{equation}\]</div>
-<p>Recalling how we integrate exponenitals, we can then find,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82e5a0f9-7a43-477a-880f-f67a743a113d">
-<span class="eqno">(41)<a class="headerlink" href="#equation-82e5a0f9-7a43-477a-880f-f67a743a113d" title="Permalink to this equation">¶</a></span>\[\begin{align}
-M(t) &amp;= \frac{r}{\mu}e^{-\mu t}\left[e^{\mu t}+C\right],
-&amp;= \frac{r}{\mu}\left[1+Ce^{-\mu t}\right],
-\end{align}\]</div>
-<p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration. Now let us assume we know the initial concentration of mRNA at time <span class="math notranslate nohighlight">\(t=0\)</span> is <span class="math notranslate nohighlight">\(M_0\)</span>. We can use this to find our constant of integration as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e033017b-87be-44d8-a926-94789cb4ee90">
-<span class="eqno">(42)<a class="headerlink" href="#equation-e033017b-87be-44d8-a926-94789cb4ee90" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-C=\frac{M_0\mu}{r}-1.
-\end{equation}\]</div>
-<p>Substituting back in allows us to reach the final expression of,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4fdeead5-b91f-4cc3-9121-2edee35881ee">
-<span class="eqno">(43)<a class="headerlink" href="#equation-4fdeead5-b91f-4cc3-9121-2edee35881ee" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-M(t) = \frac{r}{\mu}+\left[M_0 - \frac{r}{\mu}\right]e^{-\mu t}.
-\end{equation}\]</div>
-<p>From this we can see that as <span class="math notranslate nohighlight">\(t\to\infty\)</span> the concentration will tend towards an equilibrium value of <span class="math notranslate nohighlight">\(M=r/\mu\)</span>. Also, as the expression shows we have exponential decay or growth, we can get an idea of the speed at which the concentration approaches the equilibrium by finding its <em>half-life</em>. In particular, assume that <span class="math notranslate nohighlight">\(M_0=0\)</span> (i.e. there is no mRNA until time 0 when we “switch the gene on”). This means,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0aeb5dd3-c09e-4bbc-9cca-45b2e8690091">
-<span class="eqno">(44)<a class="headerlink" href="#equation-0aeb5dd3-c09e-4bbc-9cca-45b2e8690091" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-M(t) = \frac{r}{\mu}(1-e^{-\mu t}).
-\end{equation}\]</div>
-<p>Half the equilibrium value will be <span class="math notranslate nohighlight">\(r/(2\mu)\)</span>. If we call the time at which this value is reached <span class="math notranslate nohighlight">\(\tau\)</span>, then we have,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02166b5d-9a84-4420-9396-10c92460b2eb">
-<span class="eqno">(45)<a class="headerlink" href="#equation-02166b5d-9a84-4420-9396-10c92460b2eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{r}{2\mu} = \frac{r}{\mu}(1-e^{-\mu \tau}).
-\end{equation}\]</div>
-<p>Some inspection finds that this requires <span class="math notranslate nohighlight">\(e^{-\mu\tau}=1/2\)</span>, meaning <span class="math notranslate nohighlight">\(\tau=\ln(2)/\mu\)</span>. Therefore the faster the degradation rate of the mRNA, the more slowly it reaches its equilibrium.</p>
-<p>What about the time-course of <span class="math notranslate nohighlight">\(P(t)\)</span>? Now that we have an expression for <span class="math notranslate nohighlight">\(M(t)\)</span> we can also turn the equation for <span class="math notranslate nohighlight">\(dP(t)/dt\)</span> into a linear ODE, and can again use an integrating factor.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd399bc0-48d0-44e3-a955-fafbed35abff">
-<span class="eqno">(46)<a class="headerlink" href="#equation-cd399bc0-48d0-44e3-a955-fafbed35abff" title="Permalink to this equation">¶</a></span>\[\begin{align}
-&amp;\frac{dP}{dt}+\nu P = k M(t)\\
-\implies &amp;\frac{d}{dt}[Pe^{\nu t}]=kM(t)e^{\nu t}\\
-\implies &amp;P(t)=ke^{-\nu t}\int M(t)e^{\nu t}dt.
-\end{align}\]</div>
-<p>Let us again assume <span class="math notranslate nohighlight">\(M(0)=M_0=0\)</span> and also that <span class="math notranslate nohighlight">\(P(0)=P_0=0\)</span>. We just found that in this case <span class="math notranslate nohighlight">\(M(t)=r/\mu(1-e^{-\mu t})\)</span>. Therefore,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d96d9a0b-a02c-4ea0-af48-8191f29e6dc1">
-<span class="eqno">(47)<a class="headerlink" href="#equation-d96d9a0b-a02c-4ea0-af48-8191f29e6dc1" title="Permalink to this equation">¶</a></span>\[\begin{align}
-P(t)&amp;=\frac{kr}{\mu}e^{-\nu t}\int (1-e^{-\mu t})e^{\nu t}dt,\\
-&amp;=\frac{kr}{\mu}e^{-\nu t}\int (e^{\nu t}-e^{(\nu-\mu) t})dt.
-\end{align}\]</div>
-<p>We need to consider the cases where <span class="math notranslate nohighlight">\(\nu=\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\neq\mu\)</span> separately.</p>
-<p><strong><span class="math notranslate nohighlight">\(\nu=\mu\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-48ee156e-e71b-4b5a-8800-9162ab080c61">
-<span class="eqno">(48)<a class="headerlink" href="#equation-48ee156e-e71b-4b5a-8800-9162ab080c61" title="Permalink to this equation">¶</a></span>\[\begin{align}
-P(t)&amp;=\frac{kr}{\mu}e^{-\mu t}\int (e^{\mu t}-1)dt,\\
-&amp;=\frac{kr}{\mu}e^{-\mu t}\left(\frac{1}{\mu}(e^{\mu t}-1)-t+C\right)
-\end{align}\]</div>
-<p>With the initial condition <span class="math notranslate nohighlight">\(P(0)=0\)</span> we can find that <span class="math notranslate nohighlight">\(C=0\)</span>, and we can re-arrange slightly to give,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ffe83d1-5339-4437-a3ac-5ce33223d1a2">
-<span class="eqno">(49)<a class="headerlink" href="#equation-9ffe83d1-5339-4437-a3ac-5ce33223d1a2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-P(t)=\frac{kr}{\mu^2}\left(1-(1+\mu t)e^{-\mu t}\right)
-\end{equation}\]</div>
-<p><strong><span class="math notranslate nohighlight">\(\nu\neq\mu\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-e350fb66-e750-46c8-bb59-fb1adcfad8e4">
-<span class="eqno">(50)<a class="headerlink" href="#equation-e350fb66-e750-46c8-bb59-fb1adcfad8e4" title="Permalink to this equation">¶</a></span>\[\begin{align}
-P(t)&amp;=\frac{kr}{\mu}e^{-\nu t}\int (e^{\nu t}-e^{(\nu-\mu) t})dt,\\
-&amp;=\frac{kr}{\mu}e^{-\nu t}\left(\frac{e^{\nu t}}{\nu}-\frac{e^{(\nu-\mu) t}}{\nu-\mu}+C\right).
-\end{align}\]</div>
-<p>Hopefully you can see from this expression why we needed to take the case <span class="math notranslate nohighlight">\(\nu=\mu\)</span> separately. Recalling we set <span class="math notranslate nohighlight">\(P(0)=0\)</span> we can calculate the constant of integration <span class="math notranslate nohighlight">\(C=\mu/(\nu(\nu-\mu))\)</span>.</p>
+<p>If we now look specifically at <span class="math notranslate nohighlight">\(c=K=0\)</span> we find,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+-r &amp; r\\
+\phi  &amp; 0
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>Here we have <span class="math notranslate nohighlight">\(T=-r&lt;0\)</span> and <span class="math notranslate nohighlight">\(D=-r\phi&lt;0\)</span>, meaning this equilibrium is always unstable. For the full equilibrium, since we know that <span class="math notranslate nohighlight">\(K=(\phi/\theta)^{3/2}\)</span>, this simplifies to,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+-r &amp; r\\
+\frac{1}{3}\phi  &amp; -\phi
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>We therefore have, <span class="math notranslate nohighlight">\(T=-r-\phi&lt;0\)</span> and <span class="math notranslate nohighlight">\(D=\frac{2}{3}r\phi&gt;0\)</span>, meaning the equilibrium is always stable. Together, then, these results suggest that the tumour will always grow to a fixed size and ,even with very low growth, low stimulation and high inhibition, the tumour will not be removed.</p>
+<p>We can explore the behaviour further through plotting the phase portrait. As ever, we need to find the nullclines, determine the qualitative direction of flow, and sketch some trajectories.</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
-<p>Substitue in the expression for <span class="math notranslate nohighlight">\(C\)</span> and rearrange to find the final solution,</p>
-<p>\begin{equation}
-P(t)=\frac{kr}{\mu\nu}\left(1+\frac{\mu}{\nu-\mu}e^{-nu t}-\frac{\nu}{\nu-\mu}e^{-\mu t}\right).</p>
+<p>Sketch the two qualitatively different phase portraits.</p>
 </div>
-<p>In either case we see that as <span class="math notranslate nohighlight">\(t\to\infty\)</span>, <span class="math notranslate nohighlight">\(P\to kr/(\mu\nu)\)</span>. The figure below shows the time-course of the system for some example parameter values.</p>
-<img src='singlegene.png' height="300" alt="Time-course of single gene model">
-*Figure: Time-course of single gene model, with $r=1$, $\mu=0.5$, $\nu=0.25$, $k=0.1$ and $M(0)=P(0)=0$.*
-<p>So, in this model, even when we started with 0 concentrations of both mRNA and protein, both eventually tend towards equilibrium values, with the speed of that approach largely dictated by the mRNA degradation rate.</p>
+</div>
+<div class="section" id="treatment">
+<h2>Treatment<a class="headerlink" href="#treatment" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to treat cancer, most commonly through forms of chemotherapy and radiotherapy. Suppose we administered an anti-angiogenic drug, that reduces the carrying capacity of the tumour by limiting the blood supply. We will take a simple assumption that the drug causes a constant per-capita reduction in the carrying capacity (in reality it would be rather more complicated than this). We can model this by updating the second equation to include an additional mortality term, <span class="math notranslate nohighlight">\(\mu\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6da27375-2fbd-4ca6-84dd-5f76d21a9273">
+<span class="eqno">(48)<a class="headerlink" href="#equation-6da27375-2fbd-4ca6-84dd-5f76d21a9273" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dK}{dt}=\phi c - \theta Kc^{2/3}-\mu K.
+\end{equation}\]</div>
+<p>After a few lines of working we can find that this changes the equilibrium values to be,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7619976b-4958-4a8f-94ca-8b5ff569e638">
+<span class="eqno">(49)<a class="headerlink" href="#equation-7619976b-4958-4a8f-94ca-8b5ff569e638" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+c^*=K^*=\left(\frac{\phi-\mu}{\theta}\right)^{3/2}.
+\end{equation}\]</div>
+<p>Similarly the Jacobian changes to,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+-r &amp; r\\
+\phi-\frac{2}{3}\theta K^{2/3}  &amp; -\theta K^{2/3}-\mu
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>and after substituting in the equilibrium yields,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{cc}
+-r &amp; r\\
+\frac{1}{3}\phi+\frac{2}{3}\mu  &amp; -\phi
+\end{array}
+\right)
+\end{align*}\]</div>
+<p>As before we have <span class="math notranslate nohighlight">\(T=-r-\phi&lt;0\)</span>, but we now have <span class="math notranslate nohighlight">\(D=r\frac{2}{3}[\phi-\mu]\)</span>. It is now clear that if we can give a high enough treatment we can completely kill the tumour. We can also demonstrate this by re-plotting the phase portrait.</p>
 </div>
 <div class="section" id="key-points">
 <h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>We can model the dynamics of cells, genes and proteins in much the same way as we modelled larger populations.</p></li>
-<li><p>In a simple model of gene expression, the equations are linear and can be solved with integrating factors.</p></li>
-<li><p>Even when both concentrations start at 0, they will approach a non-zero equilibrium.</p></li>
+<li><p>This model of cancer growth looks a lot like the logistic model, but with the carrying capacity also dynamic.</p></li>
+<li><p>Without treatment a tumour will always grow to fill its space.</p></li>
+<li><p>With treatment, the tumour can be eradicated provided the effect is strong enough.</p></li>
 </ol>
 </div>
 </div>
@@ -535,13 +523,13 @@ P(t)=\frac{kr}{\mu\nu}\left(1+\frac{\mu}{\nu-\mu}e^{-nu t}-\frac{\nu}{\nu-\mu}e^
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">13 - A model of cancer growth <a name="chapter13"></a></p>
+            <p class="prev-next-title">13 - A within-host HIV model <a name="chapter9"></a></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch15.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">15 - Modelling an autoregulatory gene</p>
+        <p class="prev-next-title">15 - Introducing gene models</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

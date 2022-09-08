@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13 - A within-host HIV model &#8212; MAS377 Mathematical Biology</title>
+    <title>19 - Longer negative feedback circuits &#8212; MAS377 Mathematical Biology</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,8 +56,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="14 - A model of cancer growth" href="ch14.html" />
-    <link rel="prev" title="11-12 Project Week" href="ch11.html" />
+    <link rel="next" title="20 - A two gene toggle switch" href="ch20.html" />
+    <link rel="prev" title="18 - More modelling of an autoregulation gene" href="ch18.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -173,8 +173,8 @@
    11-12 Project Week
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
    13 - A within-host HIV model
    <a name="chapter9">
    </a>
@@ -207,8 +207,8 @@
    18 - More modelling of an autoregulation gene
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch19.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    19 - Longer negative feedback circuits
   </a>
  </li>
@@ -258,7 +258,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ch13.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/ch19.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -278,7 +278,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch13.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch19.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -299,7 +299,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch13.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch19.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -322,19 +322,16 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#case-study-hiv">
-   Case study: HIV
+  <a class="reference internal nav-link" href="#a-simplified-3-variable-model">
+   A simplified 3-variable model
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pre-treatment-model">
-   A (pre-treatment) model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#treatment">
-   Treatment
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-stability-analysis">
+     Linear stability analysis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-points">
@@ -351,7 +348,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>13 - A within-host HIV model <a name="chapter9"></a></h1>
+                <h1>19 - Longer negative feedback circuits</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -362,19 +359,16 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#case-study-hiv">
-   Case study: HIV
+  <a class="reference internal nav-link" href="#a-simplified-3-variable-model">
+   A simplified 3-variable model
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pre-treatment-model">
-   A (pre-treatment) model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#treatment">
-   Treatment
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-stability-analysis">
+     Linear stability analysis
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#key-points">
@@ -390,88 +384,87 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="a-within-host-hiv-model-a-name-chapter9-a">
-<h1>13 - A within-host HIV model <a name="chapter9"></a><a class="headerlink" href="#a-within-host-hiv-model-a-name-chapter9-a" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="case-study-hiv">
-<h2>Case study: HIV<a class="headerlink" href="#case-study-hiv" title="Permalink to this headline">¶</a></h2>
-<p>Human immunodeficiency virus (HIV) infects immune cells called ‘CD4<span class="math notranslate nohighlight">\(^+\)</span> T-cells’, which form an important part of the human immune system. HIV enters these T-cells, begins to replicate and then releases new virus particles in to the bloodstream. Immediately after infection, the virus grows rapidly and produces flu-like symptoms in the patient. After a few months, these symptoms disappear and the virus concentration reduces to a lower, but steady, level. This ‘asymptomatic period’ can last for years, with the virus density staying roughly constant, and the concentration of T-cells very slowly dropping. Eventually, the T-cell density becomes so low that the patient’s immune system is no longer effective, a condition called aquired immunodeficiency syndrome (AIDS). The patient is then at risk from life-threatening opportunistic infections. In the mid-1990s, much work was being done to explore the dynamics of HIV and to produce potential treatments, including the development of mathematical models led by Perelson and Nelson.</p>
-</div>
-<div class="section" id="a-pre-treatment-model">
-<h2>A (pre-treatment) model<a class="headerlink" href="#a-pre-treatment-model" title="Permalink to this headline">¶</a></h2>
-<p>As with the epidemic models, let’s start by establishing our variables and drawing a schematic of what is happening in this system. The variables that we want to keep track of (before treatment, at least), are:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="longer-negative-feedback-circuits">
+<h1>19 - Longer negative feedback circuits<a class="headerlink" href="#longer-negative-feedback-circuits" title="Permalink to this headline">¶</a></h1>
+<p>We saw in the previous section that a two-component negative feedback circuit (the auto-repressive gene system) possesses a unique steady state, which is always stable. This underlies homeostasis; the tendency of a negative feedback system to return to its “set point” when perturbed (for small perturbations, at least).</p>
+<p>However, negative feedback circuits can also generate sustained oscillations. One way this can occur is if we extend our two-variable model to a model including at least three variables. This was first proposed in the context of regulated gene expression by the theoretical biologist Brian Goodwin in the 1960s, and the prototype three-component model is often referred to as the Goodwin oscillator. There are a number of ways of thinking about what might underlie a model of auto-regulatory gene expression that would contain more than two variables. One example would be that in fact the protein product of the gene is translated/produced in one place - the cytoplasm - but regulates transcription in another - the nucleus. We could therefore consider three variables: mRNA, cytoplasmic protein and nuclear protein.</p>
+<div class="section" id="a-simplified-3-variable-model">
+<h2>A simplified 3-variable model<a class="headerlink" href="#a-simplified-3-variable-model" title="Permalink to this headline">¶</a></h2>
+<p>Here, we will look at a slightly different model to Goodwin’s original, but the principles remain the same. Rather than focusing on a specific model of gene expression, we will consider a simple model of three interacting components, <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Y\)</span> , and <span class="math notranslate nohighlight">\(Z\)</span>, which form a negative feedback loop by regulating each other. In particular:</p>
 <ul class="simple">
-<li><p>Healthy T-cells (<span class="math notranslate nohighlight">\(T\)</span>)</p></li>
-<li><p>Infected T-cells (<span class="math notranslate nohighlight">\(T^*\)</span>)</p></li>
-<li><p>Virus particles (<span class="math notranslate nohighlight">\(V\)</span>)</p></li>
+<li><p>Increasing <span class="math notranslate nohighlight">\(X\)</span> leads to increased production of <span class="math notranslate nohighlight">\(Y\)</span>,</p></li>
+<li><p>Increasing <span class="math notranslate nohighlight">\(Y\)</span> leads to increased production of <span class="math notranslate nohighlight">\(Z\)</span>,</p></li>
+<li><p>Increasing <span class="math notranslate nohighlight">\(Z\)</span> leads to <em>decreased</em> production of <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
 </ul>
-<p>We will only keep track of the concentration of virus particles in the bloodstream, not the ‘intracellular’ concentrations. Our schematic should look like this:</p>
-<p>Healthy T-cells are produced at some constant rate <span class="math notranslate nohighlight">\(s\)</span> by the body, but also decay at some rate <span class="math notranslate nohighlight">\(d\)</span>. These healthy cells become infected through contact with virus, in a mass-action manner, with coefficient <span class="math notranslate nohighlight">\(k\)</span>. These infected T-cells then decay at some rate <span class="math notranslate nohighlight">\(\delta\)</span>. New virus particles are produced when infected T-cells die, with <span class="math notranslate nohighlight">\(N\)</span> giving the average number of virus particles produced by each cell. The virus then also decays at some rate <span class="math notranslate nohighlight">\(c\)</span>. The system can therefore be expressed with the following set of ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9b0d8d4-5b5a-47e0-a94b-a7a7f94fd55e">
-<span class="eqno">(36)<a class="headerlink" href="#equation-a9b0d8d4-5b5a-47e0-a94b-a7a7f94fd55e" title="Permalink to this equation">¶</a></span>\[\begin{align}
-\frac{dT}{dt} &amp;= s-dT-kVT\label{hiv1}\\
-\frac{dT^*}{dt} &amp;= kVT-\delta T^*\label{hiv2}\\
-\frac{dV}{dt} &amp;= N\delta T^*-cV\label{hiv3}
+<p>Put together there is therefore a negative feedback in the system (since increasing <span class="math notranslate nohighlight">\(X\)</span> ultimately leads to decreased production of <span class="math notranslate nohighlight">\(X\)</span>). For simplicity we will assume that the degradation rates of all three components are the same, so our model can be written as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e85fc763-3624-4124-bdd1-2c71c066b3fe">
+<span class="eqno">(73)<a class="headerlink" href="#equation-e85fc763-3624-4124-bdd1-2c71c066b3fe" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{dX}{dt} &amp;= f_1(Z) - \mu X\\
+\frac{dY}{dt} &amp;= f_2(X) - \mu Y\\
+\frac{dZ}{dt} &amp;= f_3(Y) - \mu Z.
 \end{align}\]</div>
-<p>It is easy to see that there is an HIV-free equilibrium for <span class="math notranslate nohighlight">\((T,T^*,V)=(s/d,0,0)\)</span>. We have not covered how to assess stability in a three-dimensional system in this module. In fact, the trace-determinant conditions we have used in previous models are a special case of stability criteria called <em>Routh-Hurwitz conditions</em>. We will not cover these here, but using them we can find that the HIV-free equilibrium is stable if <span class="math notranslate nohighlight">\(c&gt;kNs/d\)</span>. In other words, the decay rate of the virus must be high, and the infection rate and production rate (i.e. <span class="math notranslate nohighlight">\(N\)</span>) must be low.</p>
-<p>Of course, when a patient is to undergo treatment, they will not be HIV-free! We are therefore more interested in the pre-treatment infected steady-state. Setting the equations for <span class="math notranslate nohighlight">\(dT^*/dt\)</span> and <span class="math notranslate nohighlight">\(dV/dt\)</span> to zero, yields,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2f213f8-671b-42d8-9768-90b5b9fa7274">
-<span class="eqno">(37)<a class="headerlink" href="#equation-f2f213f8-671b-42d8-9768-90b5b9fa7274" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-N\delta T^*_0=cV_0 \text{ and } kV_0T_0=\delta T^*_0 \implies T_0=\frac{c}{Nk} 
-\end{equation}\]</div>
-<p>Solving dT/dt=0, then gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c8a64dd-389f-4688-9eb5-73bc517cac7b">
-<span class="eqno">(38)<a class="headerlink" href="#equation-3c8a64dd-389f-4688-9eb5-73bc517cac7b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-V_0=\frac{sN}{c}-\frac{d}{k} 
-\end{equation}\]</div>
-<p>and, by substituting back in,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d32b84e5-0b8a-4b1c-b6df-0acc12056096">
-<span class="eqno">(39)<a class="headerlink" href="#equation-d32b84e5-0b8a-4b1c-b6df-0acc12056096" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-T^*_0=\frac{kV_0T_0}{\delta} 
-\end{equation}\]</div>
-</div>
-<div class="section" id="treatment">
-<h2>Treatment<a class="headerlink" href="#treatment" title="Permalink to this headline">¶</a></h2>
-<p>Assume a patient arrives with their virus and T-cell concentrations at the pre-treatment steady state. We then wish to put them on a course of treatment. One of the most effective early treatments for HIV was using ‘protease inhibitors’. These drugs did not prevent infection, but meant that any new virus produced inside infected T-cells were non-infectious. The system therefore becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-959f2c0a-f109-40f0-841e-5e5b36d487f8">
-<span class="eqno">(40)<a class="headerlink" href="#equation-959f2c0a-f109-40f0-841e-5e5b36d487f8" title="Permalink to this equation">¶</a></span>\[\begin{align}
-&amp;\frac{dT}{dt} = s-dT-kV_IT\label{hiv11}\\
-&amp;\frac{dT^*}{dt} = kV_IT-\delta T^*\label{hiv12}\\
-&amp;\frac{dV_I}{dt} = -cV_I\label{hiv13}\\
-&amp;\frac{dV_{NI}}{dt} = N\delta T^*-cV_{NI}\label{hiv14}
+<p>Each of the functions <span class="math notranslate nohighlight">\(f_i\)</span> are non-negative and bounded as we assumed before. Given our assumptions in the bullet points we also have that <span class="math notranslate nohighlight">\(df_1/dZ&lt;0\)</span>, <span class="math notranslate nohighlight">\(df_2/dX&gt;0\)</span> and <span class="math notranslate nohighlight">\(df_3/dY&gt;0\)</span>.</p>
+<p>Equilibria of this system occur where the following three conditions are simultaneously satisfied:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ab0ea09e-19eb-4ae6-8be7-5345957365b6">
+<span class="eqno">(74)<a class="headerlink" href="#equation-ab0ea09e-19eb-4ae6-8be7-5345957365b6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp; \mu X = f_1(Z)\\
+&amp; \mu Y = f_2(X)\\
+&amp; \mu Z = f_3(Y).
 \end{align}\]</div>
-<p>In the early stages of treatment, it is reasonable for us to assume that the number of healthy T-cells stays roughly constant at it’s pre-treatment level <span class="math notranslate nohighlight">\(T(t)=T_0\)</span>, so dT/dt can be ignored. We also know that before treatment, all virus particles were of the infective type, such that <span class="math notranslate nohighlight">\(V_I(0)=V_0\)</span> and <span class="math notranslate nohighlight">\(V_{NI}(0)=0\)</span>. Given this, it is easy to show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ce098fb-cd9f-4164-a89b-171df793a4be">
-<span class="eqno">(41)<a class="headerlink" href="#equation-4ce098fb-cd9f-4164-a89b-171df793a4be" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-V_I(t)=V_0e^{-ct}\label{vt}
+<p>How many equilibria can we expect? If we let <span class="math notranslate nohighlight">\(F_i=f_i/\mu\)</span>, then we have <span class="math notranslate nohighlight">\(X=F_1(F_3(F_2(X)))=G(X)\)</span>. We know that <span class="math notranslate nohighlight">\(G(X)\)</span> must be a decreasing function of <span class="math notranslate nohighlight">\(X\)</span> (intuitively it must be because we know we have a negative feedback loop, but we can also show it by the chain rule). By the same argument as in the two-component auto-repression model, then, we can say that there must be a single equilibrium (because <span class="math notranslate nohighlight">\(X\)</span> is an increasing straight line and <span class="math notranslate nohighlight">\(G(X)\)</span> is some decreasing function, they can only cross once).</p>
+<div class="section" id="linear-stability-analysis">
+<h3>Linear stability analysis<a class="headerlink" href="#linear-stability-analysis" title="Permalink to this headline">¶</a></h3>
+<p>The Jacobian for this system may be 3 dimensional but doesn’t look too horrid,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{ccc}
+-\mu &amp; 0 &amp; \phi_1\\
+\phi_2 &amp; -\mu &amp; 0 \\
+0 &amp; \phi_3 &amp;-\mu \\
+\end{array}
+\right),
+\end{align*}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_i\)</span> are the derivatives of <span class="math notranslate nohighlight">\(f_i\)</span> at the equilibrium point. We have seen before that 3-dimensional Jacobians cannot be solved as easily with trace and determinant conditions (reminder: if you want to look into this more, look up the <em>Routh-Hurwitz criteria</em>). However, because we kept this system <em>relatively</em> simple we can actually solve it from first principles, as it were. To do this we find the characteristic equation of the Jacobian,,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46811669-977f-46ff-ac53-7c28dcb175fb">
+<span class="eqno">(75)<a class="headerlink" href="#equation-46811669-977f-46ff-ac53-7c28dcb175fb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+det(J-\lambda I)=(-\mu-\lambda)^3+\phi_1\phi_2\phi_3.
 \end{equation}\]</div>
-<p>Given that <span class="math notranslate nohighlight">\(T(t)=T_0\)</span>, we now find we have a linear equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41e46bd8-6ae6-4422-a802-673f244decf3">
-<span class="eqno">(42)<a class="headerlink" href="#equation-41e46bd8-6ae6-4422-a802-673f244decf3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{dT^*}{dt} +\delta T^*= kV_IT_0
+<p>We then look for solutions for <span class="math notranslate nohighlight">\(\lambda\)</span> to where this equation equals 0. That is,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4bf1e88e-019b-4fae-987b-4f4fa6ee7cd0">
+<span class="eqno">(76)<a class="headerlink" href="#equation-4bf1e88e-019b-4fae-987b-4f4fa6ee7cd0" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+(\mu+\lambda)^3=\phi_1\phi_2\phi_3=-\chi^3&lt;0.
 \end{equation}\]</div>
-<p>This can be solved using the standard method of an integrating factor:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a96fc777-3c92-45e4-b1c4-b1b9d46b13cf">
-<span class="eqno">(43)<a class="headerlink" href="#equation-a96fc777-3c92-45e4-b1c4-b1b9d46b13cf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-T^*(t)=\frac{kT_0V_0}{\delta(\delta-c)}\left(\delta e^{-ct}-ce^{-\delta t}\right)
+<p>Here we have made the product of our three gradients equal to a new parameter <span class="math notranslate nohighlight">\(-\chi^3\)</span>. The minus sign is to remind us that this product is negative (so in fact <span class="math notranslate nohighlight">\(\chi&gt;0\)</span>) and the cubed is to remind us that this is really the composite of three parameters. The solution to this is then,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1cb63396-06f4-4eac-8a23-27529d12c128">
+<span class="eqno">(77)<a class="headerlink" href="#equation-1cb63396-06f4-4eac-8a23-27529d12c128" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\lambda=(-1)^{1/3}\chi-\mu.
 \end{equation}\]</div>
+<p>Somewhat susprisingly then, we find ourselves needing to find the cubed root of -1 in order to understand a real-world biological problem. Recalling that we can write <span class="math notranslate nohighlight">\(e^{-i\pi}=-1\)</span> (I bet you didn’t expect to see Euler’s relation during this course!), we have that the three possible solutions are,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 = -\chi-\mu\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_2 = e^{i\pi/3}\chi-\mu\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda_3 = e^{-i\pi/3}\chi-\mu\)</span>.</p></li>
+</ul>
+<p>We can see that <span class="math notranslate nohighlight">\(\lambda_1\)</span> is definitley negative. However the other two eigenvalues are complex, and we can find that they have real part <span class="math notranslate nohighlight">\(Re(\lambda_{2,3})=-\mu+\chi/2\)</span>. Putting this all together we find that,</p>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(\chi&lt;2\mu\)</span>, all the eigenvalues have negative real part and the equilibrium is a stable spiral (we know it is a sprial because two of the eigenvalues are complex),</p></li>
+<li><p>if <span class="math notranslate nohighlight">\(\chi&gt;2\mu\)</span>, two of the eigenvalues have positive real part and the equilibrium is an unstable spiral.</p></li>
+</ul>
+<p>We have seen a case before where stability moves from a stable spiral to an unstable spiral, when we looked at the predator-prey model. You may recall this produced a <em>Hopf bifurcation</em>, where a <em>limit cycle</em> emerges. The same phenomenon occurs here, with sustained oscillations in the expression of the gene arising.</p>
+<p>The three-component feedback loop we have considered here demonstrates that negative feedbacks can do more than homeostasis (stability of a system around a set point). It can also result in sustained oscillations. Such oscillations are a central feature of many biological systems. A prominent example is the roughly 24-hour period circadian oscillatory gene expression that occurs in both plants and animals. These oscillations, which are critical for coordinating metabolic activity, etc. with the rotation of the Earth, are generated by a slight elaboration of the mechanism we have studied here. Indeed, the Goodwin oscillator provided an early model for studying the properties of circadian oscillations. Other oscillations, with a wide range of oscillatory periods, are also generated by negative feedbacks.</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
-<p>Using similar methods show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e650e644-56bf-4246-a92e-83309d825763">
-<span class="eqno">(44)<a class="headerlink" href="#equation-e650e644-56bf-4246-a92e-83309d825763" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-V_{NI}(t)=\frac{cV_0}{c-\delta}\left(\frac{c}{c-\delta}\left(e^{-\delta t}-e^{-ct}\right)-\delta te^{-ct}\right)
-\end{equation}\]</div>
+<p>Use the <a class="reference external" href="https://colab.research.google.com/drive/1-IvZuFV-jKeTjv6EyIWxmc9twI-gYlPC#scrollTo=pm0srRNqI4ey">interactive python code</a> for this 3 variable negative feedback loop to explore how the limit cycles can emerge.</p>
 </div>
-<p>This can be added to the soluion for <span class="math notranslate nohighlight">\(V_I(t)\)</span> to find the overall density of virus particles in the bloodstream at any time point after treatment has begun. After estimating the values of each of the model parameters, Perelson and his colleagues plotted the model’s predictions against data of individual patient’s virus concentrations. The figure below shows that the model provides a remarkably good fit.</p>
-<img src='perelson.jpg' height="300" alt="Plots of HIV concentrations from patients and model predictions.">
-<p><em>Figure: Virus concentrations in the bloodstream of three patients compared to the model predictions. Taken from Perelson &amp; Nelson (1999).</em></p>
+</div>
 </div>
 <div class="section" id="key-points">
 <h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>A patient will only be disease-free if the virus decay rate is high, and its infection rate and burst size is low.</p></li>
-<li><p>Under a simplifying assumption the treatment model becomes linear, so we can solve the model explicitly.</p></li>
-<li><p>The treatment model predicts exponential decay of the virus, and matches well to real data.</p></li>
+<li><p>We can create a 3 vairable negative feedback circuit with two positive regulatory functions and one negative.</p></li>
+<li><p>In a simplified system we can calculate the eigenvalues by finding solutions to the characteristic equation of the Jacobian.</p></li>
+<li><p>We find limit cycles can emerge for steep enough regulation funcions, such that gene expression regularly oscillates.</p></li>
 </ol>
 </div>
 </div>
@@ -501,17 +494,17 @@ V_{NI}(t)=\frac{cV_0}{c-\delta}\left(\frac{c}{c-\delta}\left(e^{-\delta t}-e^{-c
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ch11.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="ch18.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">11-12 Project Week</p>
+            <p class="prev-next-title">18 - More modelling of an autoregulation gene</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="ch14.html" title="next page">
+    <a class='right-next' id="next-link" href="ch20.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">14 - A model of cancer growth <a name="chapter13"></a></p>
+        <p class="prev-next-title">20 - A two gene toggle switch</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

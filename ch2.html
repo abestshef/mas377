@@ -105,63 +105,47 @@
  <li class="toctree-l1">
   <a class="reference internal" href="ch1.html">
    1 - Simple population models
-   <a name="chapter1">
-   </a>
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    2 - Bifurcations and introducing competition
-   <a name="chapter2">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch3.html">
    3 - Competition continued
-   <a name="chapter3">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch4.html">
    4 - Predator-Prey models
-   <a name="chapter4">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch5.html">
    5 - Epidemics in human populations
-   <a name="chapter5">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch6.html">
    6 - The SIR model with demographics
-   <a name="chapter6">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch7.html">
    7 - Vaccination and disease in the wild
-   <a name="chapter7">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   8 - Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch9.html">
-   9 - A within-host HIV model
-   <a name="chapter9">
+   9 - A within-host Covid model
+   <a name="chapter8">
    </a>
   </a>
  </li>
@@ -177,24 +161,46 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A model of cancer growth
-   <a name="chapter13">
+   13 - A within-host HIV model
+   <a name="chapter9">
    </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   14 - Regulation of expression in a single gene
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Modelling an autoregulatory gene
+   15 - Introducing gene models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   16 - More modelling of an autoregulation gene
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20 - A two gene toggle switch
   </a>
  </li>
 </ul>
@@ -360,7 +366,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>2 - Bifurcations and introducing competition <a name="chapter2"></a></h1>
+                <h1>2 - Bifurcations and introducing competition</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -428,8 +434,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="bifurcations-and-introducing-competition-a-name-chapter2-a">
-<h1>2 - Bifurcations and introducing competition <a name="chapter2"></a><a class="headerlink" href="#bifurcations-and-introducing-competition-a-name-chapter2-a" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="bifurcations-and-introducing-competition">
+<h1>2 - Bifurcations and introducing competition<a class="headerlink" href="#bifurcations-and-introducing-competition" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introducing-bifurcations">
 <h2>Introducing bifurcations<a class="headerlink" href="#introducing-bifurcations" title="Permalink to this headline">¶</a></h2>
 <p>In the previous model, looking at spruce budworm, we saw that we could get a number of qualitatively different outcomes depending on the parameters. The plots we made show how these equilibria and their stability vary as we change the predation rate. We clearly see points where equilibria collide, appear and change stability. These are important transitions known as ‘bifurcations’ and are one of the most important aspects of a dynamical system. Bifurcations tell you when and how you can expect discrete shifts in behaviour as you change one or more parameters.</p>
@@ -469,14 +475,14 @@
 <li><p>The two types of squirrel compete at a rate proportional to the product of their populations (the more there are, the more likely they are to want to eat the same nuts). This is an example of <em>inter-specific competition</em>.</p></li>
 </ol>
 <p>We also assume that the carrying capacity for the two types of squirrel can be different (e.g. one species will eat a wider variety of food than the other), and that the two species can have different susceptibilities to competition (e.g. one species is more timid than the other). Without inter-specific competition, we could model the two populations using two logistic growth equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ba70d5a-5636-4a8b-8df0-cbb5139cf8a8">
-<span class="eqno">(10)<a class="headerlink" href="#equation-9ba70d5a-5636-4a8b-8df0-cbb5139cf8a8" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-78369541-5e8d-4828-8c33-6bf0fe889883">
+<span class="eqno">(10)<a class="headerlink" href="#equation-78369541-5e8d-4828-8c33-6bf0fe889883" title="Permalink to this equation">¶</a></span>\[\begin{align} 
  \frac{dR}{dt} &amp; =R(a-R) \\
  \frac{dG}{dt} &amp; =G(c-G),
  \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(G\)</span> represent the respective population levels of red and grey squirrels. Note that we have already done a little non-dimensionalising here, and that <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are thus the respective relative carrying capacities. To include competition between the species, we add an additional term to each equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9c27b7a9-8834-430b-901e-f7a527111ef1">
-<span class="eqno">(11)<a class="headerlink" href="#equation-9c27b7a9-8834-430b-901e-f7a527111ef1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-29c25ada-fe43-4e37-94e3-2028879ca2ca">
+<span class="eqno">(11)<a class="headerlink" href="#equation-29c25ada-fe43-4e37-94e3-2028879ca2ca" title="Permalink to this equation">¶</a></span>\[\begin{align}
  \frac{dR}{dt} &amp; =R(a-R-bG) \\
 \frac{dG}{dt} &amp; =G(c-dR-G), 
  \end{align}\]</div>
@@ -553,13 +559,13 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">1 - Simple population models <a name="chapter1"></a></p>
+            <p class="prev-next-title">1 - Simple population models</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch3.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">3 - Competition continued <a name="chapter3"></a></p>
+        <p class="prev-next-title">3 - Competition continued</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

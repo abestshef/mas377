@@ -56,7 +56,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8 - A within-host Covid model" href="ch8.html" />
+    <link rel="next" title="8 - Adaptive dynamics" href="ch8.html" />
     <link rel="prev" title="6 - The SIR model with demographics" href="ch6.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -105,63 +105,47 @@
  <li class="toctree-l1">
   <a class="reference internal" href="ch1.html">
    1 - Simple population models
-   <a name="chapter1">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch2.html">
    2 - Bifurcations and introducing competition
-   <a name="chapter2">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch3.html">
    3 - Competition continued
-   <a name="chapter3">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch4.html">
    4 - Predator-Prey models
-   <a name="chapter4">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch5.html">
    5 - Epidemics in human populations
-   <a name="chapter5">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch6.html">
    6 - The SIR model with demographics
-   <a name="chapter6">
-   </a>
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    7 - Vaccination and disease in the wild
-   <a name="chapter7">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   8 - Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch9.html">
-   9 - A within-host HIV model
-   <a name="chapter9">
+   9 - A within-host Covid model
+   <a name="chapter8">
    </a>
   </a>
  </li>
@@ -177,24 +161,46 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A model of cancer growth
-   <a name="chapter13">
+   13 - A within-host HIV model
+   <a name="chapter9">
    </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   14 - Regulation of expression in a single gene
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Modelling an autoregulatory gene
+   15 - Introducing gene models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   16 - More modelling of an autoregulation gene
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20 - A two gene toggle switch
   </a>
  </li>
 </ul>
@@ -326,7 +332,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>7 - Vaccination and disease in the wild <a name="chapter7"></a></h1>
+                <h1>7 - Vaccination and disease in the wild</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -360,8 +366,8 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vaccination-and-disease-in-the-wild-a-name-chapter7-a">
-<h1>7 - Vaccination and disease in the wild <a name="chapter7"></a><a class="headerlink" href="#vaccination-and-disease-in-the-wild-a-name-chapter7-a" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="vaccination-and-disease-in-the-wild">
+<h1>7 - Vaccination and disease in the wild<a class="headerlink" href="#vaccination-and-disease-in-the-wild" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="vaccination">
 <h2>Vaccination<a class="headerlink" href="#vaccination" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we want to prevent a disease spreading through a vaccination programme. What proportion, <span class="math notranslate nohighlight">\(p\)</span>, of the population do we need to vaccinate to succeed? If our vaccine works perfectly then the pre-infection density of susceptibles reduces from <span class="math notranslate nohighlight">\(N\)</span> to <span class="math notranslate nohighlight">\(N(1-p)\)</span>. Recall that for the disease to die out we want <span class="math notranslate nohighlight">\(R_0=\beta N/(\gamma+\mu)&lt;1\)</span>. After vaccination this becomes,</p>
@@ -381,27 +387,27 @@
 <li><p>We should include the fact that disease causes significant damage to hosts (something we have so far ignored). In particular, we shall assume that infected hosts suffer an additional mortality, or {\em virulence} at rate <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
 </ul>
 <p>Our new SIS model will then be given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c295ffd0-3674-442b-9202-1ef0fefcc65c">
-<span class="eqno">(18)<a class="headerlink" href="#equation-c295ffd0-3674-442b-9202-1ef0fefcc65c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-71f3cfeb-b5e8-47e0-babe-76d2b71cc1a4">
+<span class="eqno">(18)<a class="headerlink" href="#equation-71f3cfeb-b5e8-47e0-babe-76d2b71cc1a4" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \end{align}\]</div>
 <p>Prior to European settlement, there were no rabbits in Australia. Initially bred for food, their numbers stayed low until a small number of rabbits were released for hunting purposes on an estate. Within 10 years rabbit numbers were well in to the millions. During this initial growth period, we might actually suppose that our very first population growth model provided a good approximation of rabbit dynamics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b598a07e-2b44-44e7-89b2-2aa88b23cd25">
-<span class="eqno">(19)<a class="headerlink" href="#equation-b598a07e-2b44-44e7-89b2-2aa88b23cd25" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-56598341-aed2-47c7-bc6f-537396fc0b04">
+<span class="eqno">(19)<a class="headerlink" href="#equation-56598341-aed2-47c7-bc6f-537396fc0b04" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt} = bN - dN=rN,\label{rabbit1}
 \end{equation}\]</div>
 <p>predicting exponential growth for <span class="math notranslate nohighlight">\(b&gt;d\)</span> (births greater than deaths).</p>
 <p>A number of control strategies were attempted through the late 19th- and early 20th-centuries targeting rabbits, from shooting to the rabbit-proof fence. In 1950, the myxoma virus was deliberately released in to the rabbit population. From a modelling perspective, the effect of this is to transform the system to the SIS model given above, that is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-baf64b95-8212-4c09-bc30-0159e6d6e182">
-<span class="eqno">(20)<a class="headerlink" href="#equation-baf64b95-8212-4c09-bc30-0159e6d6e182" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-907f72e0-1445-456a-a826-bfe18142dafd">
+<span class="eqno">(20)<a class="headerlink" href="#equation-907f72e0-1445-456a-a826-bfe18142dafd" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \label{rabbit2}
 \end{align}\]</div>
 <p>Our question is, will the introduction of the disease successfully control rabbit numbers? Initially we had exponential growth. What we then need to know is whether introducing the disease can limit this. What are the equilibria of this model? There is a trivial equilibrium at <span class="math notranslate nohighlight">\((S,I)=(0,0)\)</span>. Also, if <span class="math notranslate nohighlight">\(I=0\)</span> then we return to exponential growth when <span class="math notranslate nohighlight">\(b&gt;d\)</span>. But there is also an endemic equilibrium, at,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5ab5b16-7ce1-4a96-85f9-c6f654708f36">
-<span class="eqno">(21)<a class="headerlink" href="#equation-f5ab5b16-7ce1-4a96-85f9-c6f654708f36" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fff50eb5-58c1-4cb7-8342-9819a0454db6">
+<span class="eqno">(21)<a class="headerlink" href="#equation-fff50eb5-58c1-4cb7-8342-9819a0454db6" title="Permalink to this equation">¶</a></span>\[\begin{align}
 S^*&amp;=\frac{d+\alpha+\gamma}{\beta},\\
 I^*&amp;=\frac{(b-d)S^* }{\beta S^*-b-\gamma}=\frac{(b-d)(d+\alpha+\gamma)}{\beta(\alpha-(b-d))}.
 \end{align}\]</div>
@@ -462,13 +468,13 @@ b-d-\frac{(b-d)(d+\alpha+\gamma)}{(\alpha-(b-d))} &amp; b-d-\alpha\\
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">6 - The SIR model with demographics <a name="chapter6"></a></p>
+            <p class="prev-next-title">6 - The SIR model with demographics</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch8.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">8 - A within-host Covid model <a name="chapter8"></a></p>
+        <p class="prev-next-title">8 - Adaptive dynamics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

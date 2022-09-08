@@ -105,63 +105,47 @@
  <li class="toctree-l1">
   <a class="reference internal" href="ch1.html">
    1 - Simple population models
-   <a name="chapter1">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch2.html">
    2 - Bifurcations and introducing competition
-   <a name="chapter2">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch3.html">
    3 - Competition continued
-   <a name="chapter3">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch4.html">
    4 - Predator-Prey models
-   <a name="chapter4">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch5.html">
    5 - Epidemics in human populations
-   <a name="chapter5">
-   </a>
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    6 - The SIR model with demographics
-   <a name="chapter6">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch7.html">
    7 - Vaccination and disease in the wild
-   <a name="chapter7">
-   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   8 - Adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch9.html">
-   9 - A within-host HIV model
-   <a name="chapter9">
+   9 - A within-host Covid model
+   <a name="chapter8">
    </a>
   </a>
  </li>
@@ -177,24 +161,46 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A model of cancer growth
-   <a name="chapter13">
+   13 - A within-host HIV model
+   <a name="chapter9">
    </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   14 - Regulation of expression in a single gene
+   14 - A model of cancer growth
+   <a name="chapter13">
+   </a>
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Modelling an autoregulatory gene
+   15 - Introducing gene models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   16 - More modelling of an autoregulation gene
+   16 - Modelling an autoregulatory gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17 - Computer lab
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18 - More modelling of an autoregulation gene
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19 - Longer negative feedback circuits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20 - A two gene toggle switch
   </a>
  </li>
 </ul>
@@ -331,7 +337,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>6 - The SIR model with demographics <a name="chapter6"></a></h1>
+                <h1>6 - The SIR model with demographics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -370,16 +376,16 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-sir-model-with-demographics-a-name-chapter6-a">
-<h1>6 - The SIR model with demographics <a name="chapter6"></a><a class="headerlink" href="#the-sir-model-with-demographics-a-name-chapter6-a" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="the-sir-model-with-demographics">
+<h1>6 - The SIR model with demographics<a class="headerlink" href="#the-sir-model-with-demographics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="updating-the-model">
 <h2>Updating the model<a class="headerlink" href="#updating-the-model" title="Permalink to this headline">¶</a></h2>
 <p>Let us now add some increased detail in to the model by including birth and death processes. Let’s begin by drawing a schematic of the system again:</p>
 <img src='sir2.png' height="300" alt="Schematic of the SIR model with demographics">
 <p><em>Figure: Schematic of the SIR model with births and deaths now included.</em></p>
 <p>We will make the simplifying assumption that the birth rate and death rate are equal, so that the population would be at equilibrium in the absence of disease (this is a rather questionable assumption for many ecological populations, but perhaps reasonable for modern human populations). This gives the equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ab1cbb3-9f7f-4672-9307-a1b5f169497d">
-<span class="eqno">(16)<a class="headerlink" href="#equation-7ab1cbb3-9f7f-4672-9307-a1b5f169497d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d3611ff3-7448-425a-a998-af6763aec54b">
+<span class="eqno">(16)<a class="headerlink" href="#equation-d3611ff3-7448-425a-a998-af6763aec54b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = \mu N - \beta SI - \mu S\\
 &amp;\frac{dI}{dt} = \beta SI - (\gamma +\mu)I\\
 &amp;\frac{dR}{dt} = \gamma I-\mu R
@@ -399,8 +405,8 @@
 </ul>
 <p>Disease is <strong>endemic</strong>.</p>
 <p>Let’s look again at that last equilibrium,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96fc1d72-e20f-4668-9b8e-86798f6dd0ac">
-<span class="eqno">(17)<a class="headerlink" href="#equation-96fc1d72-e20f-4668-9b8e-86798f6dd0ac" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4577fd8b-1a20-4b45-b3fe-c54eedb95fbb">
+<span class="eqno">(17)<a class="headerlink" href="#equation-4577fd8b-1a20-4b45-b3fe-c54eedb95fbb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
  I^*=\frac{\mu}{\beta}\left(\dfrac{N}{S^*}-1\right)=\frac{\mu}{\beta}\left(\frac{\beta N}{\gamma+\mu}-1\right)=\frac{\mu}{\beta}\left(R_0-1\right).
  \end{equation}\]</div>
 <p>We now have two important terms from epidemiology. An <em>epidemic</em> occurs when a disease initially spreads through a population. A disease is <em>endemic</em> when it remains at a steady level within the population.</p>
@@ -507,13 +513,13 @@ J=\left(
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">5 - Epidemics in human populations <a name="chapter5"></a></p>
+            <p class="prev-next-title">5 - Epidemics in human populations</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch7.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">7 - Vaccination and disease in the wild <a name="chapter7"></a></p>
+        <p class="prev-next-title">7 - Vaccination and disease in the wild</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
