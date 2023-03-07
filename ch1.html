@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1 - Simple population models &#8212; MAS377 Mathematical Biology</title>
+    <title>1 - Single population models &#8212; Introducing mathematical biology - an open education resource</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -56,8 +56,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2 - Bifurcations and introducing competition" href="ch2.html" />
-    <link rel="prev" title="MAS377 Mathematical Biology" href="intro.html" />
+    <link rel="next" title="2 - Competition between two species" href="ch2.html" />
+    <link rel="prev" title="Introducing Mathematical Biology: An Open Education Resource" href="ch0.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -86,7 +86,7 @@
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">MAS377 Mathematical Biology</h1>
+      <h1 class="site-logo" id="site-title">Introducing mathematical biology - an open education resource</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -96,111 +96,110 @@
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   MAS377 Mathematical Biology
+  <a class="reference internal" href="ch0.html">
+   Introducing Mathematical Biology: An Open Education Resource
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1 - Simple population models
+   1 - Single population models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch2.html">
-   2 - Bifurcations and introducing competition
+   2 - Competition between two species
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch3.html">
-   3 - Competition continued
+   3 - Predator-Prey models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch4.html">
-   4 - Predator-Prey models
+   4 - Epidemics in human populations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch5.html">
-   5 - Epidemics in human populations
+   5 - The SIR model with demographics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch6.html">
-   6 - The SIR model with demographics
+   6 - Diseases of wildlife populations
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch7.html">
-   7 - Vaccination and disease in the wild
+   7 - Evolution and adaptive dynamics
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch8.html">
-   8 - Adaptive dynamics
+   8 - A within-host Covid model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch9.html">
-   9 - A within-host Covid model
-   <a name="chapter8">
-   </a>
+   9 - A within-host HIV model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch10.html">
-   10 - Computer lab
+   10 - A model of cancer growth
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch11.html">
-   11-12 Project Week
+   11 - Introducing gene models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch12.html">
+   12 - Modelling an autoregulatory gene
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch13.html">
-   13 - A within-host HIV model
-   <a name="chapter9">
-   </a>
+   13 - More modelling of an autoregulation gene
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch14.html">
-   14 - A model of cancer growth
-   <a name="chapter13">
-   </a>
+   14 - Longer negative feedback circuits
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch15.html">
-   15 - Introducing gene models
+   15 - A two gene toggle switch
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch16.html">
-   16 - Modelling an autoregulatory gene
+   16 - A two gene toggle switch
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch17.html">
-   17 - Computer lab
+   17 - Introducing pharmacokinetic models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch18.html">
-   18 - More modelling of an autoregulation gene
+   18 - Repeated intravenous bolus doses
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch19.html">
-   19 - Longer negative feedback circuits
+   19 - Oral doses
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ch20.html">
-   20 - A two gene toggle switch
+   20 - A two-compartment bolus model
   </a>
  </li>
 </ul>
@@ -323,6 +322,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-analysis">
+   Model analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#case-study-spruce-budworm">
    Case study: spruce budworm
   </a>
@@ -342,7 +346,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>1 - Simple population models</h1>
+                <h1>1 - Single population models</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -368,6 +372,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#model-analysis">
+   Model analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#case-study-spruce-budworm">
    Case study: spruce budworm
   </a>
@@ -386,76 +395,123 @@
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="simple-population-models">
-<h1>1 - Simple population models<a class="headerlink" href="#simple-population-models" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="single-population-models">
+<h1>1 - Single population models<a class="headerlink" href="#single-population-models" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="a-first-population-model">
 <h2>A first population model<a class="headerlink" href="#a-first-population-model" title="Permalink to this headline">¶</a></h2>
-<p>In these first lectures we will think about populations as collections of individuals. For example, we may consider the human population of Sheffield, or the tapir population of South America, or the maize crop population of a field in Nigeria. Later we shall start considering perhaps less intuitive definitions of populations, such as of cells in the body, or proteins within cells. However, a key message to take from this module is that we can consider all of these biological populations in the same way from a modelling perspective, and subject to the same sorts of biological processes.</p>
-<p>We might think we’d want to keep track of the number of individuals in a poulation as a key variable in any mdoel we make. However, as we will be using ordinary differential equations we need our variables to be continuous. We will therefore instead keep track of a population’s density and how this will vary over time. We might therefore call <span class="math notranslate nohighlight">\(N(t)\)</span> the density of individuals within our population at time <span class="math notranslate nohighlight">\(t\)</span>, and try to write down an ordinary differential equation that describes its dynamics, such as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-353b2ee4-6042-4ddb-938b-1f3f9990f2ef">
-<span class="eqno">(1)<a class="headerlink" href="#equation-353b2ee4-6042-4ddb-938b-1f3f9990f2ef" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<p>Our aim in this course is to model the dynamics of populations over time. By ‘population’ we simply mean some collection of individuals that are subject to the same underlying mechanisms. For example, we may consider the human population of Sheffield, or the tapir population of South America, or the maize crop population of a field in Nigeria. In later chapters we will move to smaller biological scales, considering perhaps less intuitive definitions of populations, such as of cells in the body, or proteins within cells. However, a key message to take from this course is that we can consider any and all biological populations in the same way from a modelling perspective, and subject to the same fundamental of biological mechanisms.</p>
+<p>We will model these dynamics using <em>oridnary differential equations</em>, and our focus will be purely on how the size of a population varies over time. We will not consider where individuals are in space - this would likely require extending our methods to <em>partial differential equation</em> models, and plenty of excellent courses and textbooks can be found to explore such systems. When we talk about the ‘size’ of a population, we might think we mean the number of individuals in the population. However, as we will be using ordinary differential equations we need our variables to be continuous, not discrete. We will therefore instead keep track of a population’s <em>density</em> - the number of individuals within some unit area.</p>
+<p>Introducing our mathematical notation, we might call <span class="math notranslate nohighlight">\(N(t)\)</span> the density of individuals within our population at time <span class="math notranslate nohighlight">\(t\)</span>. We now wish to write down an ordinary differential equation that describes its dynamics - that is what causes the population to increase or decrease. Our first modelling challenge, then, is to decide what mechanisms we should include. Using some biological intuition for the simplest possible population we can think of, we might expect our model to look something like,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ff428179-2309-4093-abf3-c759f1880089">
+<span class="eqno">(1)<a class="headerlink" href="#equation-ff428179-2309-4093-abf3-c759f1880089" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{dN}{dt} &amp;= \textrm{births} -\textrm{deaths}.
 \end{align}\]</div>
-<p>An important modelling decision is what these terms on the right-hand side should look like, and this will depend on the specific biology. There are three main forms:</p>
+<p>Now to make any mathematical progress we will need to decide on functional forms for each of these mechanisms. This is another important modelling decision, and will depend on the specific biology. There are three main forms we might use:</p>
 <ul class="simple">
 <li><p><em>constant rate</em>, <span class="math notranslate nohighlight">\(\textrm{births}=B\)</span>. This would be suitable when new individuals appear in the environment at some constant rate, for example due to migration, or production of cells by the body.</p></li>
 <li><p><em>per-capita rate</em>,  <span class="math notranslate nohighlight">\(\textrm{births}=bN\)</span>. This would be suitable when each individual produces offspring at a certain rate, such that there are more offspring produced when the population is larger.</p></li>
-<li><p><em>density-dependent rate</em>,  <span class="math notranslate nohighlight">\(\textrm{births}=b(N)N\)</span>. This would be suitable if the per-capita rate is not fixed but instead varies with the population size, for example if high density means more competition for resources and thus lower growth. The form of this function will again depend on the biology.</p></li>
+<li><p><em>density-dependent rate</em>,  <span class="math notranslate nohighlight">\(\textrm{births}=b(N)N\)</span>. This would be suitable if the per-capita rate is not fixed but instead varies with the population size, for example if high density means more competition for resources and thus lower growth. The form of this function will again depend on the biology, though there are common functions we tend to use.</p></li>
 </ul>
 <p>For our basic model, per-capita rates for birth and death seem the most obvious choice. Our model is thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec824aa7-27ef-45c2-88eb-ecb63112d128">
-<span class="eqno">(2)<a class="headerlink" href="#equation-ec824aa7-27ef-45c2-88eb-ecb63112d128" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-913ebaea-0d52-430e-bd2d-60d182f7407e">
+<span class="eqno">(2)<a class="headerlink" href="#equation-913ebaea-0d52-430e-bd2d-60d182f7407e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \frac{dN}{dt}&amp;= bN - dN \\
 &amp;= rN,
 \end{align}\]</div>
-<p>where the parameter <span class="math notranslate nohighlight">\(r=b-d\)</span> is the growth rate of our population.</p>
+<p>where the parameter <span class="math notranslate nohighlight">\(r=b-d\)</span> is the growth rate of our population. We therefore have a first-order, linear ordinary differential equation. Such ODEs are readily solved using either separation of variables or integrating factors. If you are not familiar with these methods, first look at the review chapter on single, linear ODEs. Once ready, have a go at the exercise.</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Either by <em>separation of variables</em> or <em>integrating factors</em> show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30caf74b-a425-4793-beee-a62901a895a1">
-<span class="eqno">(3)<a class="headerlink" href="#equation-30caf74b-a425-4793-beee-a62901a895a1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6e85084f-8cf7-4085-99a1-aec5c1be6805">
+<span class="eqno">(3)<a class="headerlink" href="#equation-6e85084f-8cf7-4085-99a1-aec5c1be6805" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 N(t) = N(0)e^{rt},
 \end{equation}\]</div>
-<p>which predicts exponential growth of the population for <span class="math notranslate nohighlight">\(r&gt;0\)</span> and exponential decline for <span class="math notranslate nohighlight">\(r&lt;0\)</span>.</p>
 </div>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Click for solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">First we gather all the terms with <span class="math notranslate nohighlight">\(N\)</span> to the left-hand side and everything else on the right-hand side, giving,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e14d4bea-cdc8-4596-ac4c-2ac3861cc2e7">
+<span class="eqno">(4)<a class="headerlink" href="#equation-e14d4bea-cdc8-4596-ac4c-2ac3861cc2e7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dN}{N} = rdt.
+\end{equation}\]</div>
+<p class="card-text">Then we integrate both sides, giving,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1174500a-e87e-4637-88fe-b6f9a71f6180">
+<span class="eqno">(5)<a class="headerlink" href="#equation-1174500a-e87e-4637-88fe-b6f9a71f6180" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\ln(N) = rt+C,
+\end{equation}\]</div>
+<p class="card-text">where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration. If we then take the exponential of both sides we get,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-64a8a169-6618-461f-be57-069d8c3e75d3">
+<span class="eqno">(6)<a class="headerlink" href="#equation-64a8a169-6618-461f-be57-069d8c3e75d3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+N(t) = e^{rt+C}=C_1e^{rt},
+\end{equation}\]</div>
+<p class="card-text">where <span class="math notranslate nohighlight">\(C_1=e^{C}\)</span>. To replace this constant we use the initial condition that at time <span class="math notranslate nohighlight">\(t=0\)</span> we have a density of <span class="math notranslate nohighlight">\(N(0)\)</span>. Substituting these values in we find that <span class="math notranslate nohighlight">\(C_1=N(0)\)</span>, leaving us with the final solution,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-75c5dae2-7fa3-4469-90f0-b882584eebc8">
+<span class="eqno">(7)<a class="headerlink" href="#equation-75c5dae2-7fa3-4469-90f0-b882584eebc8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+N(t) = N(0)e^{rt},
+\end{equation}\]</div>
+<p class="card-text">as required.</p>
+</div>
+</details><p>This predicts exponential growth of the population for <span class="math notranslate nohighlight">\(r&gt;0\)</span> and exponential decline for <span class="math notranslate nohighlight">\(r&lt;0\)</span>.</p>
 </div>
 <div class="section" id="limits-to-population-growth-the-logistic-equation">
 <h2>Limits to population growth: The logistic equation<a class="headerlink" href="#limits-to-population-growth-the-logistic-equation" title="Permalink to this headline">¶</a></h2>
-<p>Here we have shown that, provided births are higher than deaths, our population will continue growing to infinity. What we failed to take into account in our model is that as the population grows the environment will become limiting in some way (for example, individuals need space and nutrients, which are both consumed by the growing population). So while our assumptions may hold at low population densities, they will break down at higher population densities. Our simple model has shown us that we need to take this into consideration if we are to understand population dynamics.</p>
-<p>Given the above, choosing a density-dependent growth rate is an obvious extension. An intuitive way to set a limit on population growth is to assume that there is a fixed <em>carrying capacity</em> for the population, for example due to the available space or nutrients. We can then assume that as the population approaches this carrying capacity, the overall growth rate tends to zero. The simplest implementation of this is to assume that <span class="math notranslate nohighlight">\(r\)</span> decreases linearly with <span class="math notranslate nohighlight">\(N\)</span>:</p>
+<p>In that last exercise we found that if <span class="math notranslate nohighlight">\(r&gt;0\)</span> - meaning births are greater than deaths - our population will continue growing to infinitely large densities. This is, we can hopefully agree, a tad unrealistic. We should not lose heart at this point, though. A model that produces unrealistic results is still helpful to us, because it will point the way towards how we can develop an improved version.</p>
+<p>What might we have failed to take into account in our model? One answer is that as the population grows the environment will become limiting in some way. For example, individuals need space and nutrients to live and reproduce. These resources will be consumed by the population more and more as the population grows, likely leading to reduced birth and/or death rates. So while our assumptions may hold at low population densities, they will break down at higher densities. Our simple model has shown us that we need to take this into consideration if we are to understand the population dynamics.</p>
+<p>Given this, choosing a density-dependent growth rate starts to look like a better assumption. A relatively simple and intuitive way to set a limit on population growth is to assume that there is a fixed <em>carrying capacity</em> for the population, for example due to the available space or nutrients. We assume that as the population approaches this carrying capacity, the overall growth rate approaches zero, and once the population goes above this value the growth rate becomes negative. The simplest implementation of this is to assume that <span class="math notranslate nohighlight">\(r\)</span> decreases linearly with <span class="math notranslate nohighlight">\(N\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 r(N) = r_0\left(1 - \frac{N}{K}\right),
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(r_0\)</span> (the <em>basic reproductive rate</em>) and <span class="math notranslate nohighlight">\(K\)</span> (the carrying capacity) are positive constants. Our population equation is then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3000ee21-296b-45e6-bf84-4d1b6499f771">
-<span class="eqno">(4)<a class="headerlink" href="#equation-3000ee21-296b-45e6-bf84-4d1b6499f771" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>where <span class="math notranslate nohighlight">\(r_0\)</span> (the <em>basic reproductive rate</em>) and <span class="math notranslate nohighlight">\(K\)</span> (the carrying capacity) are positive constants. Our ordinary differential equation for the dynamics of our population is then</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fa96cd87-f8b7-44a8-9164-1b8766cc7dc8">
+<span class="eqno">(8)<a class="headerlink" href="#equation-fa96cd87-f8b7-44a8-9164-1b8766cc7dc8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right).
 \end{equation}\]</div>
 <p>This equation is known as the <em>logistic growth equation</em> and is an example of <em>intra-specific competition</em>.</p>
 </div>
 <div class="section" id="a-useful-step-non-dimensionalisation">
 <h2>A useful step: non-dimensionalisation<a class="headerlink" href="#a-useful-step-non-dimensionalisation" title="Permalink to this headline">¶</a></h2>
-<p>Before continuing with our analysis we shall apply the useful technique of <em>non-dimensionalising</em> our model. This can both reduce the number of parameters and give us insight in to the scales at which biological processes operate. The technique involves combining variables and/or parameters from the model in biologically and mathematically helpful ways. For example, a natural scale for the population level is <span class="math notranslate nohighlight">\(K\)</span>, so we can define the non-dimensional population variable <span class="math notranslate nohighlight">\(n=N/K\)</span>. The equation then becomes</p>
+<p>We can continue our analysis with the model in this form using methods for solving single ordinary differential equations. However, before continuing with our analysis we shall introduce the useful technique of <em>non-dimensionalising</em> our model. This is often - though not always - done to models to simplify some of the later working. It can both reduce the number of parameters in the model and give us insight in to the scales at which biological processes operate.</p>
+<p>Non-dimensionalisation involves combining variables and/or parameters from the model in biologically and mathematically helpful ways. For example, a natural scale for the population level is <span class="math notranslate nohighlight">\(K\)</span>, so we can define the non-dimensional population variable <span class="math notranslate nohighlight">\(n=N/K\)</span> (<span class="math notranslate nohighlight">\(n\)</span> is non-dimensional becaus eboth <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(K\)</span> have units 1/[density], so <span class="math notranslate nohighlight">\(n\)</span> is a dimensionless number). The equation then becomes</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{dn}{dt}=\frac{d(N/K)}{dt}=\frac{1}{K}\frac{dN}{dt}=r_0n(1 - n).
 \]</div>
-<p>We can also note that a natural time scale for the dynamics is <span class="math notranslate nohighlight">\(1/r_0\)</span>, such that we can take a new time variable, <span class="math notranslate nohighlight">\(\tau = r_0t\)</span>, and the final non-dimensional model equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68af0cef-b9c6-4a3b-aee9-2bab33a2dcbc">
-<span class="eqno">(5)<a class="headerlink" href="#equation-68af0cef-b9c6-4a3b-aee9-2bab33a2dcbc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>We can also note that a natural time scale for the dynamics is <span class="math notranslate nohighlight">\(1/r_0\)</span>, such that we can take a new non-dimensional time variable, <span class="math notranslate nohighlight">\(\tau = r_0t\)</span>, and the final non-dimensional model equation is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8b2d52ba-0911-4c53-bec3-3454886ebeae">
+<span class="eqno">(9)<a class="headerlink" href="#equation-8b2d52ba-0911-4c53-bec3-3454886ebeae" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dn}{d\tau}=\frac{dn}{d(r_0t)}=\frac{1}{r_0}\frac{dn}{dt}=n(1 - n).\label{logeq}
 \end{equation}\]</div>
 <p>As you can see, by using two simple substitutions we have arrived at a very simple equation.</p>
-<p>This equation is one of the few you will see in this module that yields an explicit solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1932d2e3-44f5-4252-a02d-72b9a5a24c81">
-<span class="eqno">(6)<a class="headerlink" href="#equation-1932d2e3-44f5-4252-a02d-72b9a5a24c81" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}},
+</div>
+<div class="section" id="model-analysis">
+<h2>Model analysis<a class="headerlink" href="#model-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Even though this equation is non-linear (we have an <span class="math notranslate nohighlight">\(n^2\)</span> term), we can still find an explicit solution for it. By separation of variables, we can write this as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d21cf7ae-2094-4539-bc93-e6b9ae52043a">
+<span class="eqno">(10)<a class="headerlink" href="#equation-d21cf7ae-2094-4539-bc93-e6b9ae52043a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\int\frac{dn}{n(1-n)} = \int r_0 d\tau,
 \end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(n_0\)</span> is the initial population value. Examples of the dimensional solution for different values of <span class="math notranslate nohighlight">\(r_0\)</span> are shown in the figure.</p>
+<p>If we use <em>partial fractions</em> to rewrite the fraction on the left-hand side as the sum of two terms, we reach an initial solution of,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e6b44757-b757-4c78-a537-8cd3db83c9b8">
+<span class="eqno">(11)<a class="headerlink" href="#equation-e6b44757-b757-4c78-a537-8cd3db83c9b8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+&amp;\ln(n)-\ln(1-n) = r_0\tau+C,\\
+\implies &amp;\frac{n}{1-n}=e^Ce^{r_0\tau},
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration and <span class="math notranslate nohighlight">\(\ln\)</span> denotes the <em>natural logarithm</em>. Letting the initial condition be <span class="math notranslate nohighlight">\(n(0)=n_0\)</span> and rearranging, we arrive at the final solution,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a8ba3057-bdf5-4248-abb1-49b6ec10dc9f">
+<span class="eqno">(12)<a class="headerlink" href="#equation-a8ba3057-bdf5-4248-abb1-49b6ec10dc9f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}}.
+\end{equation}\]</div>
+<p>(Alternatively a suitable substitution can be chosen to evaluate the integrals. It is often true in mathematical mdoelling that there are multiple ways to arrive at a solution, and embracing this diversity of approach can be very useful).</p>
+<p>Examples of the dimensional solution for different values of <span class="math notranslate nohighlight">\(r_0\)</span> are shown in the figure.</p>
 <img src='log-tcourse.png' height="300" alt="Time-courses of the logistic model">
 <p><em>Figure: example time-courses of the logistic model, with <span class="math notranslate nohighlight">\(K=10\)</span> and different values of <span class="math notranslate nohighlight">\(r_0\)</span> and initial conditions.</em></p>
-<p>However, we can also gain a good deal of qualitative information about this model directly from  the equation. Specifically, we can see:</p>
+<p>However, we can in fact gain a good deal of <em>qualitative</em> information about this model directly from the equation without having to spend the few minutes invovled in deriving that explicit solution. Again, please see the review chapter on single ordinary differential equations if needed. Specifically, we can see:</p>
 <ul class="simple">
 <li><p>for <span class="math notranslate nohighlight">\(0&lt;n&lt;1\)</span>, <span class="math notranslate nohighlight">\(dn/d\tau&gt;0\)</span></p></li>
 <li><p>for <span class="math notranslate nohighlight">\(n&gt;1\)</span>, <span class="math notranslate nohighlight">\(dn/d\tau&lt;0\)</span></p></li>
@@ -465,30 +521,49 @@ n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}},
 <p class="admonition-title">Have a go</p>
 <p>Sketch the curve <span class="math notranslate nohighlight">\(dn/d\tau\)</span> vs <span class="math notranslate nohighlight">\(n\)</span> and use it to identify the key aspects of the system.</p>
 </div>
-<p>We can easily mark our equilibria at <span class="math notranslate nohighlight">\(n=0\)</span> and <span class="math notranslate nohighlight">\(n=1\)</span> and then consider the shape of <span class="math notranslate nohighlight">\(dn/d\tau\)</span>, which we can see is a quadratic. (We can also mark on the qualitative direction of trajectories on the x-axis, giving a <em>phase line</em>.) Considering the gradients of this curve at the two equilibria, we can see that these give us a good description of their local stability. In particular if we take <span class="math notranslate nohighlight">\(dn/d\tau=f(n)\)</span>, then if <span class="math notranslate nohighlight">\(df/dn&lt;0\)</span> at an equilibrium then it is stable, and if <span class="math notranslate nohighlight">\(df/dn&gt;0\)</span> at an equilibrium then it is unstable. This is known as <em>linearisation</em> around the equilibria. Notice, then, that we have fully described the possible behaviours of this system without having to explicitly solve the equation.</p>
+<details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
+Click for solution<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<img src='logistic_pline.png' height="300" alt="Sketch of $dn/d\tau$ vs $n$">
+<p class="card-text">On this sketch we can mark our equilibria at <span class="math notranslate nohighlight">\(n=0\)</span> and <span class="math notranslate nohighlight">\(n=1\)</span> and then consider the wider behaviour by considering the curve <span class="math notranslate nohighlight">\(dn/d\tau\)</span>. For convenience let us call <span class="math notranslate nohighlight">\(dn/d\tau=f(n)\)</span>, and then look at what happens nearby the equilibria by <em>linearisation</em>.</p>
+<ul class="simple">
+<li><p class="card-text">At <span class="math notranslate nohighlight">\(n=0\)</span>, the gradient of the curve <span class="math notranslate nohighlight">\(df/dn\)</span> is positive, meaning <span class="math notranslate nohighlight">\(dn/d\tau&lt;0\)</span> for <span class="math notranslate nohighlight">\(n&lt;0\)</span> (we don’t really mind about the actual values here since <span class="math notranslate nohighlight">\(n&lt;0\)</span> is biologically meaningless, but it is still useful mathematically) and <span class="math notranslate nohighlight">\(dn/d\tau&gt;0\)</span> for <span class="math notranslate nohighlight">\(n&gt;0\)</span>. As such if we start with a population density a small distance away from <span class="math notranslate nohighlight">\(n=0\)</span> we will always end up moving further away from it - it is unstable.</p></li>
+<li><p class="card-text">At <span class="math notranslate nohighlight">\(n=1\)</span>, we have <span class="math notranslate nohighlight">\(df/dn\)</span> negative, meaning <span class="math notranslate nohighlight">\(dn/d\tau&gt;0\)</span> for <span class="math notranslate nohighlight">\(n&lt;1\)</span> and <span class="math notranslate nohighlight">\(dn/d\tau&lt;0\)</span> for <span class="math notranslate nohighlight">\(n&gt;1\)</span>, As such if we start with a population density a small distance away from <span class="math notranslate nohighlight">\(n=1\)</span> we will always move in towards this equilibrium - it is stable.</p></li>
+</ul>
+<p class="card-text">We can also mark on the qualitative direction of trajectories on the x-axis, giving a <em>phase line</em>. Notice, then, that we have fully described the possible behaviours of this system without having to explicitly solve the equation.</p>
 </div>
+</details></div>
 <div class="section" id="case-study-spruce-budworm">
 <h2>Case study: spruce budworm<a class="headerlink" href="#case-study-spruce-budworm" title="Permalink to this headline">¶</a></h2>
-<p>Spruce budworm is an insect that lives in spruce and fir forests in the USA and Canada. While they mostly exist at low numbers, there are periodic explosions of budworms that devestate the forests. A particular feature of budworm dynamics is that they are predated by birds. We might then describe the dynamcis of budworm by the following equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1db03a4d-6209-45d5-b933-531503c489d3">
-<span class="eqno">(7)<a class="headerlink" href="#equation-1db03a4d-6209-45d5-b933-531503c489d3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-\frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-p(N),
+<p>Spruce budworm is an insect that lives in spruce and fir forests in the USA and Canada. (This example is borrowed from the classic Mathematical Biology textbook by J. D. Murray, with a few tweaks). While they mostly exist at low numbers, there are periodic explosions of budworm populations that devestate the forests. Let us assume that on their own, the budworm populaitons follow the logistic growth model we have just studied. An additional feature of budworm dynamics is that they are predated by birds. We might then describe the dynamcis of budworm by the following equation,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6f2d6393-827a-4c96-9d63-949c3642a6c7">
+<span class="eqno">(13)<a class="headerlink" href="#equation-6f2d6393-827a-4c96-9d63-949c3642a6c7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-P(N),
 \end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(p(N)\)</span> describes the rate of predation (note that we do not explicitly consider the bird population dynamics). What should <span class="math notranslate nohighlight">\(p(N)\)</span> look like? Should it be constant, a fixed per-capita rate, or some other density-dependent fucntion? First, we might reasonably assume that as more food becomes available, the more the birds will eat, so predation should increase with budworm density. However, we should also note that birds cannot eat an infinite amount, and that the rate of predation should therefore saturate at high budworm densities. We might then give an explicit model as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66211144-41af-4de9-8d2c-08b53a0ac975">
-<span class="eqno">(8)<a class="headerlink" href="#equation-66211144-41af-4de9-8d2c-08b53a0ac975" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>where <span class="math notranslate nohighlight">\(P(N)\)</span> describes the rate of predation (note that we do not explicitly consider the bird population dynamics). What should <span class="math notranslate nohighlight">\(P(N)\)</span> look like? Should it be constant, a fixed per-capita rate, or some other density-dependent fucntion? First, we might reasonably assume that as more food becomes available, the more the birds will eat, so predation should increase with budworm density. However, we should also note that birds cannot eat an infinite amount, and that the rate of predation should therefore saturate at high budworm densities. We therefore need a density-dependent function. We might then give an explicit model as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5869f0ee-6a08-429e-92f4-4ceba813acb2">
+<span class="eqno">(14)<a class="headerlink" href="#equation-5869f0ee-6a08-429e-92f4-4ceba813acb2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-\frac{\rho N}{N+A}
 \end{equation}\]</div>
-<p>What are the possible outcomes of this model? We might start by finding equilibria as before, but we will quickly find ourselves bogged down with tedious algebra. Instead, let’s use curve-sketching to explore the possible outcomes. The above model can be written as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79317be1-79f6-4bf3-a21d-13a51407b5c9">
-<span class="eqno">(9)<a class="headerlink" href="#equation-79317be1-79f6-4bf3-a21d-13a51407b5c9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>This form for the predation function is a very commonly used one in mathematical biology models. What are the possible outcomes of this model? We might start by finding equilibria as before, but we will quickly find ourselves bogged down. Instead, let’s take a qualitative approach and use curve-sketching to explore the possible outcomes. The above model can be written as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c6391f23-a1c1-4d35-b17a-a5f940897db8">
+<span class="eqno">(15)<a class="headerlink" href="#equation-c6391f23-a1c1-4d35-b17a-a5f940897db8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{dN}{dt}=N\left[r(N)-p(N)\right],
 \end{equation}\]</div>
-<p>where <span class="math notranslate nohighlight">\(r(N)=r_0(1-N/K)\)</span> and <span class="math notranslate nohighlight">\(p(N)=\rho/(N+A)\)</span>. We know that an equilibrium occurs where <span class="math notranslate nohighlight">\(r(N)-p(N)=0\)</span>, which will be when the two curves cross. There are three cases to consider:</p>
+<p>where <span class="math notranslate nohighlight">\(r(N)=r_0(1-N/K)\)</span> and <span class="math notranslate nohighlight">\(p(N)=\rho/(N+A)\)</span>. We know that an equilibrium occurs where <span class="math notranslate nohighlight">\(r(N)-p(N)=0\)</span>, which will be when the two curves cross. Below we sketch these two curves, <span class="math notranslate nohighlight">\(r(N)\)</span> and <span class="math notranslate nohighlight">\(p(N)\)</span>, in the three possible combinations,</p>
 <img src='budworms.png' height="300" alt="3 diagrams to assess stability of spruce budworm model">
 <p><em>Figure: Sketches of <span class="math notranslate nohighlight">\(r(N)\)</span> and <span class="math notranslate nohighlight">\(p(N)\)</span> to assess stability of spruce budworm model for three different cases.</em></p>
-<p>In case (1), where predation by the birds is very high, the two curves never cross, and <span class="math notranslate nohighlight">\(dN/dt&lt;0\)</span> for all <span class="math notranslate nohighlight">\(N&gt;0\)</span>. Therefore the insect population is expected to be wiped out, with <span class="math notranslate nohighlight">\(N=0\)</span> the stable equilibrium. In case (2), where predation has weakened somewhat, two new equilibria appear, one stable and one unstable. We now have bistability - where two different equilibria are stable, but which one we go to depends on the initial conditions. In case (3) where predation is very weak, we now only have one equilibrium for <span class="math notranslate nohighlight">\(N&gt;0\)</span>, at high budworm densities. We also see now that <span class="math notranslate nohighlight">\(N=0\)</span> is no longer stable, and the budworm population will always reach this high equilibrium density.</p>
-<p>What do these results tell us? That pest outbreaks such as the spruce budworm are likely to be driven by the pressure from predation. We can also see that, due to the bistability, sudden outbreaks can occur if there are relatively small changes to the environment.</p>
+<p>What happens in each case?</p>
+<ol class="simple">
+<li><p>Predation by the birds is very high and the two curves never cross, and <span class="math notranslate nohighlight">\(dN/dt&lt;0\)</span> for all <span class="math notranslate nohighlight">\(N&gt;0\)</span>. Therefore the insect population is always reducing until it reaches extinction, with <span class="math notranslate nohighlight">\(N=0\)</span> a stable equilibrium.</p></li>
+<li><p>Predation has weakened somewhat and two new equilibria appear, one stable and one unstable. We now have bistability - where two different equilibria are stable, but which one we go to depends on the initial conditions.</p></li>
+<li><p>Predation is very weak and we now only have one equilibrium for <span class="math notranslate nohighlight">\(N&gt;0\)</span>, at high budworm densities. We also see now that <span class="math notranslate nohighlight">\(N=0\)</span> is no longer stable, and the budworm population will always reach this high equilibrium density.</p></li>
+</ol>
+<p>What do these results tell us? That pest outbreaks such as the spruce budworm are likely to be driven by the pressure from predation. We can also see that, due to the bistability, sudden outbreaks can occur if there are relatively small changes to the environment. We have achieved this insight without having to do any detailed mathematical derivations, but by applying mathematical reasoning and biological interpretation - these are two key skills we will develop over this course.</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Use the <a class="reference external" href="https://colab.research.google.com/drive/1eNeeMymrZ5aGKg7OFT4V_4rYATuIBJaj#scrollTo=V_y6kEU5JfxP">budworm model python code</a> to explore the model. Start with a high value of <span class="math notranslate nohighlight">\(\rho\)</span> and gradually reduce the value to see how the behaviour changes. You can then alter other model parameters if you wish.</p>
@@ -529,17 +604,17 @@ n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}},
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="ch0.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">MAS377 Mathematical Biology</p>
+            <p class="prev-next-title">Introducing Mathematical Biology: An Open Education Resource</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ch2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2 - Bifurcations and introducing competition</p>
+        <p class="prev-next-title">2 - Competition between two species</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
