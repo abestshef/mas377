@@ -1,397 +1,409 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>15 - Introducing gene models &#8212; MAS377 Mathematical Biology</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch15';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="16 - Modelling an autoregulatory gene" href="ch16.html" />
+    <link rel="next" title="16 - Oscillating transcription and autoregulation" href="ch16.html" />
     <link rel="prev" title="14 - A model of cancer growth" href="ch14.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">MAS377 Mathematical Biology</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   MAS377 Mathematical Biology
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ch1.html">
-   1 - Simple population models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch2.html">
-   2 - Bifurcations and introducing competition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch3.html">
-   3 - Competition continued
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch4.html">
-   4 - Predator-Prey models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch5.html">
-   5 - Epidemics in human populations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch6.html">
-   6 - The SIR model with demographics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch7.html">
-   7 - Vaccination and disease in the wild
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch8.html">
-   8 - Adaptive dynamics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch9.html">
-   9 - A within-host Covid model
-   <a name="chapter8">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch10.html">
-   10 - Computer lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch11.html">
-   11-12 Project Week
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch13.html">
-   13 - A within-host HIV model
-   <a name="chapter9">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch14.html">
-   14 - A model of cancer growth
-   <a name="chapter13">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   15 - Introducing gene models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch16.html">
-   16 - Modelling an autoregulatory gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch17.html">
-   17 - Computer lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch18.html">
-   18 - More modelling of an autoregulation gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch19.html">
-   19 - Longer negative feedback circuits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch20.html">
-   20 - A two gene toggle switch
-  </a>
- </li>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Topics in Mathematical Biology
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">1 - Single population models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">2 - Bifurcations and introducing competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">3 - Competition continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">4 - Predator-Prey models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">5 - Epidemics in human populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">6 - The SIR model with demographics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch14.html">14 - A model of cancer growth <a name="chapter13"></a></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">15 - Introducing gene models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch16.html">16 - Oscillating transcription and autoregulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch18.html">17 - More modelling of an autoregulation gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch17.html">18 - Computer lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch19.html">19 - Longer negative feedback circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch20.html">20 - A two gene toggle switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="level4.html">4th year information</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ch15.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch15.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch15.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch15.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch15.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>15 - Introducing gene models</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quick-guide-to-cells-and-genetic-networks">
-   A quick guide to cells and genetic networks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-first-model">
-   A first model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-courses">
-   Time-courses
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-points">
-   3 key points
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-guide-to-cells-and-genetic-networks">A quick guide to cells and genetic networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-model">A first model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-courses">Time-courses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">3 key points</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>15 - Introducing gene models</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quick-guide-to-cells-and-genetic-networks">
-   A quick guide to cells and genetic networks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-first-model">
-   A first model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#time-courses">
-   Time-courses
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-points">
-   3 key points
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="introducing-gene-models">
-<h1>15 - Introducing gene models<a class="headerlink" href="#introducing-gene-models" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introducing-gene-models">
+<h1>15 - Introducing gene models<a class="headerlink" href="#introducing-gene-models" title="Permalink to this heading">#</a></h1>
 <p>In the next part of the module, we will look at models for the regulation of gene expression in cells, and how simple feedback loops underlie some of the basic dynamics that cells exhibit: regulation, switching, and oscillation. Before we do this, it is important to have at least a basic idea of what it is we are trying to model.</p>
-<div class="section" id="a-quick-guide-to-cells-and-genetic-networks">
-<h2>A quick guide to cells and genetic networks<a class="headerlink" href="#a-quick-guide-to-cells-and-genetic-networks" title="Permalink to this headline">¶</a></h2>
+<section id="a-quick-guide-to-cells-and-genetic-networks">
+<h2>A quick guide to cells and genetic networks<a class="headerlink" href="#a-quick-guide-to-cells-and-genetic-networks" title="Permalink to this heading">#</a></h2>
 <p>All living things are made of cells - self-contained structures bounded by a cell membrane (and sometimes also a cell wall). Many organisms exist predominantly as single cells (unicellular, e.g. bacteria, amoebae), while others exist as patterned collections of cells (multicellular, e.g. animals, most plants). While different cells possess and maintain a well-defined identity (which is how we can name them), they are far from static structures, and depend on balanced dynamical processes. Mathematical modelling plays an important role in understanding these dynamical processes and how they are regulated in cells.</p>
 <p>Unicellular organisms encounter variable environments, and therefore need to be able to adapt their behaviour. For example, a bacterium living in your gut will have to adapt its metabolism to whatever food you present it with. Adaptability often requires a cell to switch between different behaviours (e.g. between metabolising different types of sugar). Multicellular
 organisms often develop from a single cell through sequential rounds of cell division (the process in which a cell duplicates its contents and then splits to make two cells). However, the cells in multicellular organisms do not remain identical to each other, but take on stable and well-defined characteristics, so we can talk about skin cells, liver cells,muscle cell, blood cells, etc. in a meaningful way. This adoption of distinct well-defined characters is called <em>differentiation</em>, and again requires cells to be able to switch their behaviour.</p>
 <p>How do cells manage to change or switch their state in a coherent way? They use a combination of information from their environment and internal mechanisms. Central to the internal mechanisms are what we call genetic regulatory networks (or gene networks). Almost all cells contain large structures centred on DNA (deoxyribonucleic acid). For our purposes, DNA can be viewed as a set of long, linear sequences of letters (A, C, G and T). This sequence is highly stable, is accurately copied during cell division, and is identical in all cells of a multicellular organism. The full DNA sequence in a cell is referred to as the genome.</p>
 <p>How is the genome involved in the regulation of the state of a cell (either stably maintaining it or switching it)? A key concept is that of the gene, and the basic unit of dynamics that we will concern ourselves with in this module is the <em>expression</em> of a gene. For our purposes, a gene is a defined subset of the DNA sequence that can code for (i.e. be copied, or <em>transcribed</em> to) an mRNA molecule. In turn the mRNA produced from the gene codes for (i.e. can be <em>translated</em> into) a particular protein molecule. We will refer to the regulated production and degradation of the mRNA and protein corresponding to a gene as the expression of that gene. The amount of the gene itself does not change, and so the dependent variables of our models will be the concentrations of mRNA and protein in a cell.</p>
 <p>In the next section, we will consider the regulated expression of a single gene. Later, we will consider how genes can interact by regulating each others’ expression. We will again focus exclusively on differential equation models, in which the concentrations/amounts of mRNA and protein are represented by continuous variables. These are essentially population models, just like the ones in the module so far.</p>
-</div>
-<div class="section" id="a-first-model">
-<h2>A first model<a class="headerlink" href="#a-first-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-first-model">
+<h2>A first model<a class="headerlink" href="#a-first-model" title="Permalink to this heading">#</a></h2>
 <p>In this section, we consider the dynamics of gene expression in two scenarios:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The expression of the gene is regulated by some external transcription factor (whose concentration may or may not be a function of time).</p></li>
 <li><p>The expression of the gene is regulated by its own protein product (which is therefore a transcription factor).</p></li>
 </ol>
@@ -400,119 +412,146 @@ organisms often develop from a single cell through sequential rounds of cell div
 <p><span class="math notranslate nohighlight">\(P(t)\)</span> : the concentration of protein.</p>
 <p>The dynamics of <span class="math notranslate nohighlight">\(M(t)\)</span> and <span class="math notranslate nohighlight">\(P(t)\)</span> are regulated by production and degradation. In this context, the molecular processes underlying the production of mRNA and protein are called transcription and translation, respectively (see above).</p>
 <p>We will make the following assumptions:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The rates of mRNA and protein degradation are proportional to their concentration (i.e. degradation is linear ).</p></li>
 <li><p>The rate of translation is proportional to the mRNA concentration (i.e. translation is linear ).</p></li>
 </ol>
 <p>Then the general form of the models, written as a pair of ordinary differential equations, is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7517a5c2-bf62-4d07-876c-28331752f2cd">
-<span class="eqno">(50)<a class="headerlink" href="#equation-7517a5c2-bf62-4d07-876c-28331752f2cd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6b0d5454-69ad-4a8b-b841-93fff486a148">
+<span class="eqno">(66)<a class="headerlink" href="#equation-6b0d5454-69ad-4a8b-b841-93fff486a148" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dM}{dt} &amp;= R(t) - \mu M\\
 \frac{dP}{dt} &amp;= kM - \nu P.
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu\)</span> is the degradation rate of mRNA, <span class="math notranslate nohighlight">\(\nu\)</span> is the degradation rate of protein,  <span class="math notranslate nohighlight">\(k\)</span> is the translation rate, and <span class="math notranslate nohighlight">\(R(t)\)</span> is the transcription rate. Note that for the model to make sense biologically, <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span> and <span class="math notranslate nohighlight">\(k\)</span> must be positive  constants, and <span class="math notranslate nohighlight">\(R(t) \geq 0\)</span>. Note also that if <span class="math notranslate nohighlight">\(R(t)\)</span> is not constant, then the model will not go to an equilibrium.</p>
-</div>
-<div class="section" id="time-courses">
-<h2>Time-courses<a class="headerlink" href="#time-courses" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="time-courses">
+<h2>Time-courses<a class="headerlink" href="#time-courses" title="Permalink to this heading">#</a></h2>
 <p>Starting with the dynamics of mRNA expression, we see that it is independent of <span class="math notranslate nohighlight">\(P\)</span>, so we can solve it in isolation by using an integrating factor. We have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71703541-9c8a-468e-8446-c0dd43863997">
-<span class="eqno">(51)<a class="headerlink" href="#equation-71703541-9c8a-468e-8446-c0dd43863997" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-133bddd5-a279-42fa-a0ed-2307235ce37d">
+<span class="eqno">(67)<a class="headerlink" href="#equation-133bddd5-a279-42fa-a0ed-2307235ce37d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dM}{dt} +\mu M = R(t)
 \end{equation}\]</div>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Using an integrating factor, show that the solution is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6339e8c-dac0-4c42-b42f-5c5e660a5cfe">
-<span class="eqno">(52)<a class="headerlink" href="#equation-b6339e8c-dac0-4c42-b42f-5c5e660a5cfe" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-265bb49e-0b08-4603-9246-d0d85f7ad217">
+<span class="eqno">(68)<a class="headerlink" href="#equation-265bb49e-0b08-4603-9246-d0d85f7ad217" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M(t) = e^{-\mu t}\int e^{\mu t}R(t)dt.
 \end{equation}\]</div>
 </div>
-<p>It looks like the function <span class="math notranslate nohighlight">\(R(t)\)</span> is going to be very important for how the time course plays out. Let us initially assume that <span class="math notranslate nohighlight">\(R(t)=r\)</span>, that is, it is constant. As such we can simplify the equation to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4eaddcf7-0145-443b-a1bb-ecf308c1467e">
-<span class="eqno">(53)<a class="headerlink" href="#equation-4eaddcf7-0145-443b-a1bb-ecf308c1467e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Click for solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The integrating factor will be <span class="math notranslate nohighlight">\( e^{\mu t}\)</span>. We now multiply both sides by this integrating factor to find,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp; e^{\mu t}\frac{dM}{dt} +e^{\mu t}\mu M = e^{\mu t}R(t)\\
+\implies &amp; \frac{d}{dt}e^{\mu t}M=e^{\mu t}R(t),
+\end{align*}\]</div>
+<p class="sd-card-text">since the left-hand side is the inverse of the product rule for differentiation. The form of the left-hand side is one that we can readily integrate (that is the whole purpose of using an integrating factor after all). However, because <span class="math notranslate nohighlight">\( R(t)\)</span> is some (as yet) unknown function of time we cannot yet compute that integral. This means we can write down the solution as,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;e^{\mu t}M=\int e^{\mu t}R(t)dt\\
+\implies &amp;M(t)=e^{-\mu t} \int e^{\mu t}R(t)dt.
+\end{align*}\]</div>
+<p class="sd-card-text">Note that we didn’t account for the constant of integration when we integrated the left-hand side; we will deal with this if/when we integrate the term on the right-hand side.</p>
+</div>
+</details><p>It looks like the function <span class="math notranslate nohighlight">\(R(t)\)</span> is going to be very important for how the time course plays out. Let us initially assume that <span class="math notranslate nohighlight">\(R(t)=r\)</span>, that is, it is constant. As such we can simplify the equation to,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-840ccaf6-7190-47d0-9ce7-36c5ec3e0657">
+<span class="eqno">(69)<a class="headerlink" href="#equation-840ccaf6-7190-47d0-9ce7-36c5ec3e0657" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M(t) = re^{-\mu t}\int e^{\mu t}dt.
 \end{equation}\]</div>
 <p>Recalling how we integrate exponenitals, we can then find,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-527a7265-8921-4f1a-949f-adeb512d1e17">
-<span class="eqno">(54)<a class="headerlink" href="#equation-527a7265-8921-4f1a-949f-adeb512d1e17" title="Permalink to this equation">¶</a></span>\[\begin{align}
-M(t) &amp;= \frac{r}{\mu}e^{-\mu t}\left[e^{\mu t}+C\right],
+<div class="amsmath math notranslate nohighlight" id="equation-38138042-9511-48b2-a3ad-e7ef726a2c66">
+<span class="eqno">(70)<a class="headerlink" href="#equation-38138042-9511-48b2-a3ad-e7ef726a2c66" title="Permalink to this equation">#</a></span>\[\begin{align}
+M(t) &amp;= \frac{r}{\mu}e^{-\mu t}\left[e^{\mu t}+C\right],\\
 &amp;= \frac{r}{\mu}\left[1+Ce^{-\mu t}\right],
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration. Now let us assume we know the initial concentration of mRNA at time <span class="math notranslate nohighlight">\(t=0\)</span> is <span class="math notranslate nohighlight">\(M_0\)</span>. We can use this to find our constant of integration as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5f72e14-8e76-42fb-a8e1-71b1d9880fd1">
-<span class="eqno">(55)<a class="headerlink" href="#equation-b5f72e14-8e76-42fb-a8e1-71b1d9880fd1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-75894b6f-beee-4c75-bccf-9595db133a51">
+<span class="eqno">(71)<a class="headerlink" href="#equation-75894b6f-beee-4c75-bccf-9595db133a51" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C=\frac{M_0\mu}{r}-1.
 \end{equation}\]</div>
 <p>Substituting back in allows us to reach the final expression of,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca0f89ce-b3a9-44c1-8e68-288427c6ea1b">
-<span class="eqno">(56)<a class="headerlink" href="#equation-ca0f89ce-b3a9-44c1-8e68-288427c6ea1b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-89eeaff9-36fd-4521-9c84-ca4fad48ba84">
+<span class="eqno">(72)<a class="headerlink" href="#equation-89eeaff9-36fd-4521-9c84-ca4fad48ba84" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M(t) = \frac{r}{\mu}+\left[M_0 - \frac{r}{\mu}\right]e^{-\mu t}.
 \end{equation}\]</div>
 <p>From this we can see that as <span class="math notranslate nohighlight">\(t\to\infty\)</span> the concentration will tend towards an equilibrium value of <span class="math notranslate nohighlight">\(M=r/\mu\)</span>. Also, as the expression shows we have exponential decay or growth, we can get an idea of the speed at which the concentration approaches the equilibrium by finding its <em>half-life</em>. In particular, assume that <span class="math notranslate nohighlight">\(M_0=0\)</span> (i.e. there is no mRNA until time 0 when we “switch the gene on”). This means,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-784c6d74-0a1d-4133-aeb0-b11f66166db2">
-<span class="eqno">(57)<a class="headerlink" href="#equation-784c6d74-0a1d-4133-aeb0-b11f66166db2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a17fdd83-a37d-4378-8fff-bc8189a3479e">
+<span class="eqno">(73)<a class="headerlink" href="#equation-a17fdd83-a37d-4378-8fff-bc8189a3479e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M(t) = \frac{r}{\mu}(1-e^{-\mu t}).
 \end{equation}\]</div>
 <p>Half the equilibrium value will be <span class="math notranslate nohighlight">\(r/(2\mu)\)</span>. If we call the time at which this value is reached <span class="math notranslate nohighlight">\(\tau\)</span>, then we have,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-319ffaa8-1798-4aa0-a3b3-62e6ee29d172">
-<span class="eqno">(58)<a class="headerlink" href="#equation-319ffaa8-1798-4aa0-a3b3-62e6ee29d172" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d3d8c4b9-e95c-4327-94d9-16e242544054">
+<span class="eqno">(74)<a class="headerlink" href="#equation-d3d8c4b9-e95c-4327-94d9-16e242544054" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{r}{2\mu} = \frac{r}{\mu}(1-e^{-\mu \tau}).
 \end{equation}\]</div>
 <p>Some inspection finds that this requires <span class="math notranslate nohighlight">\(e^{-\mu\tau}=1/2\)</span>, meaning <span class="math notranslate nohighlight">\(\tau=\ln(2)/\mu\)</span>. Therefore the faster the degradation rate of the mRNA, the more slowly it reaches its equilibrium.</p>
 <p>What about the time-course of <span class="math notranslate nohighlight">\(P(t)\)</span>? Now that we have an expression for <span class="math notranslate nohighlight">\(M(t)\)</span> we can also turn the equation for <span class="math notranslate nohighlight">\(dP(t)/dt\)</span> into a linear ODE, and can again use an integrating factor.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94cfa289-da6f-4b98-9282-b08a368c22cb">
-<span class="eqno">(59)<a class="headerlink" href="#equation-94cfa289-da6f-4b98-9282-b08a368c22cb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a1b6fdd2-ae19-420e-a52b-b5b3df81e92e">
+<span class="eqno">(75)<a class="headerlink" href="#equation-a1b6fdd2-ae19-420e-a52b-b5b3df81e92e" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dP}{dt}+\nu P = k M(t)\\
 \implies &amp;\frac{d}{dt}[Pe^{\nu t}]=kM(t)e^{\nu t}\\
 \implies &amp;P(t)=ke^{-\nu t}\int M(t)e^{\nu t}dt.
 \end{align}\]</div>
 <p>Let us again assume <span class="math notranslate nohighlight">\(M(0)=M_0=0\)</span> and also that <span class="math notranslate nohighlight">\(P(0)=P_0=0\)</span>. We just found that in this case <span class="math notranslate nohighlight">\(M(t)=r/\mu(1-e^{-\mu t})\)</span>. Therefore,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc30026b-770a-4c4e-8492-561889a71de0">
-<span class="eqno">(60)<a class="headerlink" href="#equation-fc30026b-770a-4c4e-8492-561889a71de0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-558cae2a-3137-42c1-961d-a58f2cb0734d">
+<span class="eqno">(76)<a class="headerlink" href="#equation-558cae2a-3137-42c1-961d-a58f2cb0734d" title="Permalink to this equation">#</a></span>\[\begin{align}
 P(t)&amp;=\frac{kr}{\mu}e^{-\nu t}\int (1-e^{-\mu t})e^{\nu t}dt,\\
 &amp;=\frac{kr}{\mu}e^{-\nu t}\int (e^{\nu t}-e^{(\nu-\mu) t})dt.
 \end{align}\]</div>
 <p>We need to consider the cases where <span class="math notranslate nohighlight">\(\nu=\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\neq\mu\)</span> separately.</p>
+<hr class="docutils" />
 <p><strong><span class="math notranslate nohighlight">\(\nu=\mu\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c5c20a5-1344-4521-93fb-eeea125d7dd8">
-<span class="eqno">(61)<a class="headerlink" href="#equation-1c5c20a5-1344-4521-93fb-eeea125d7dd8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-10b29d59-cf99-4075-900d-84f3206a74a5">
+<span class="eqno">(77)<a class="headerlink" href="#equation-10b29d59-cf99-4075-900d-84f3206a74a5" title="Permalink to this equation">#</a></span>\[\begin{align}
 P(t)&amp;=\frac{kr}{\mu}e^{-\mu t}\int (e^{\mu t}-1)dt,\\
 &amp;=\frac{kr}{\mu}e^{-\mu t}\left(\frac{1}{\mu}(e^{\mu t}-1)-t+C\right)
 \end{align}\]</div>
 <p>With the initial condition <span class="math notranslate nohighlight">\(P(0)=0\)</span> we can find that <span class="math notranslate nohighlight">\(C=0\)</span>, and we can re-arrange slightly to give,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3b4c2817-2250-4a72-948a-2a6cb3c8e56e">
-<span class="eqno">(62)<a class="headerlink" href="#equation-3b4c2817-2250-4a72-948a-2a6cb3c8e56e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ff072d8a-4ef9-4300-ab1c-c99f2d8be6c7">
+<span class="eqno">(78)<a class="headerlink" href="#equation-ff072d8a-4ef9-4300-ab1c-c99f2d8be6c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(t)=\frac{kr}{\mu^2}\left(1-(1+\mu t)e^{-\mu t}\right)
 \end{equation}\]</div>
+<hr class="docutils" />
 <p><strong><span class="math notranslate nohighlight">\(\nu\neq\mu\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a358514-3618-405b-9a6a-7e95499b12b3">
-<span class="eqno">(63)<a class="headerlink" href="#equation-9a358514-3618-405b-9a6a-7e95499b12b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-453b222a-aca7-487a-923c-fa51ee2591c7">
+<span class="eqno">(79)<a class="headerlink" href="#equation-453b222a-aca7-487a-923c-fa51ee2591c7" title="Permalink to this equation">#</a></span>\[\begin{align}
 P(t)&amp;=\frac{kr}{\mu}e^{-\nu t}\int (e^{\nu t}-e^{(\nu-\mu) t})dt,\\
 &amp;=\frac{kr}{\mu}e^{-\nu t}\left(\frac{e^{\nu t}}{\nu}-\frac{e^{(\nu-\mu) t}}{\nu-\mu}+C\right).
 \end{align}\]</div>
 <p>Hopefully you can see from this expression why we needed to take the case <span class="math notranslate nohighlight">\(\nu=\mu\)</span> separately. Recalling we set <span class="math notranslate nohighlight">\(P(0)=0\)</span> we can calculate the constant of integration <span class="math notranslate nohighlight">\(C=\mu/(\nu(\nu-\mu))\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
-<p>Substitue in the expression for <span class="math notranslate nohighlight">\(C\)</span> and rearrange to find the final solution,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0cf2e93c-620b-470d-af8e-2c1657df94eb">
-<span class="eqno">(64)<a class="headerlink" href="#equation-0cf2e93c-620b-470d-af8e-2c1657df94eb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>Substitute in the expression for <span class="math notranslate nohighlight">\(C\)</span> and rearrange to find the final solution,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8f93c7fa-b5e8-4f45-aaeb-f2712a21bf2a">
+<span class="eqno">(80)<a class="headerlink" href="#equation-8f93c7fa-b5e8-4f45-aaeb-f2712a21bf2a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 P(t)=\frac{kr}{\mu\nu}\left(1+\frac{\mu}{\nu-\mu}e^{-nu t}-\frac{\nu}{\nu-\mu}e^{-\mu t}\right).
 \end{equation}\]</div>
 </div>
 <p>In either case we see that as <span class="math notranslate nohighlight">\(t\to\infty\)</span>, <span class="math notranslate nohighlight">\(P\to kr/(\mu\nu)\)</span>. The figure below shows the time-course of the system for some example parameter values.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
 <img src='singlegene.png' height="300" alt="Time-course of single gene model">
-<p><em>Figure: Time-course of single gene model, with <span class="math notranslate nohighlight">\(r=1\)</span>, <span class="math notranslate nohighlight">\(\mu=0.5\)</span>, <span class="math notranslate nohighlight">\(\nu=0.25\)</span>, <span class="math notranslate nohighlight">\(k=0.1\)</span> and <span class="math notranslate nohighlight">\(M(0)=P(0)=0\)</span>.</em></p>
-<p>So, in this model, even when we started with 0 concentrations of both mRNA and protein, both eventually tend towards equilibrium values, with the speed of that approach largely dictated by the mRNA degradation rate.</p>
+<p class="sd-card-text"><em>Figure: Time-course of single gene model, with <span class="math notranslate nohighlight">\(r=1\)</span>, <span class="math notranslate nohighlight">\(\mu=0.5\)</span>, <span class="math notranslate nohighlight">\(\nu=0.25\)</span>, <span class="math notranslate nohighlight">\(k=0.1\)</span> and <span class="math notranslate nohighlight">\(M(0)=P(0)=0\)</span>.</em></p>
 </div>
-<div class="section" id="key-points">
-<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+</div>
+<p>So, in this model, even when we started with 0 concentrations of both mRNA and protein, both eventually tend towards equilibrium values, with the speed of that approach largely dictated by the mRNA degradation rate.</p>
+</section>
+<section id="key-points">
+<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p>We can model the dynamics of cells, genes and proteins in much the same way as we modelled larger populations.</p></li>
 <li><p>In a simple model of gene expression, the equations are linear and can be solved with integrating factors.</p></li>
 <li><p>Even when both concentrations start at 0, they will approach a non-zero equilibrium.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -526,7 +565,7 @@ P(t)=\frac{kr}{\mu\nu}\left(1+\frac{\mu}{\nu-\mu}e^{-nu t}-\frac{\nu}{\nu-\mu}e^
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -534,44 +573,108 @@ P(t)=\frac{kr}{\mu\nu}\left(1+\frac{\mu}{\nu-\mu}e^{-nu t}-\frac{\nu}{\nu-\mu}e^
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch14.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">14 - A model of cancer growth <a name="chapter13"></a></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch16.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">16 - Oscillating transcription and autoregulation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-guide-to-cells-and-genetic-networks">A quick guide to cells and genetic networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-model">A first model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-courses">Time-courses</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">3 key points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ch14.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">14 - A model of cancer growth <a name="chapter13"></a></p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="ch16.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">16 - Modelling an autoregulatory gene</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
+          </div>
+          <footer class="bd-footer-content">
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Alex Best<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
-      </div>
-    </div>
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alex Best
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

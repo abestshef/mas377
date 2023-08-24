@@ -1,403 +1,401 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>13 - A within-host HIV model &#8212; MAS377 Mathematical Biology</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch13';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="14 - A model of cancer growth" href="ch14.html" />
     <link rel="prev" title="11-12 Project Week" href="ch11.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">MAS377 Mathematical Biology</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   MAS377 Mathematical Biology
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="ch1.html">
-   1 - Simple population models
-   <a name="chapter1">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch2.html">
-   2 - Bifurcations and introducing competition
-   <a name="chapter2">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch3.html">
-   3 - Competition continued
-   <a name="chapter3">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch4.html">
-   4 - Predator-Prey models
-   <a name="chapter4">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch5.html">
-   5 - Epidemics in human populations
-   <a name="chapter5">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch6.html">
-   6 - The SIR model with demographics
-   <a name="chapter6">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch7.html">
-   7 - Vaccination and disease in the wild
-   <a name="chapter7">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch8.html">
-   8 Adaptive dynamics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch9.html">
-   9 - A within-host Covid model
-   <a name="chapter8">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch10.html">
-   10 - Computer lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch11.html">
-   11-12 Project Week
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   13 - A within-host HIV model
-   <a name="chapter9">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch14.html">
-   14 - A model of cancer growth
-   <a name="chapter13">
-   </a>
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch15.html">
-   15 - Introducing gene models
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch16.html">
-   16 - Modelling an autoregulatory gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch17.html">
-   17 - Computer lab
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch18.html">
-   18 - More modelling of an autoregulation gene
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch19.html">
-   19 - Longer negative feedback circuits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ch20.html">
-   20 - A two gene toggle switch
-  </a>
- </li>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Topics in Mathematical Biology
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1.html">1 - Single population models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2.html">2 - Bifurcations and introducing competition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3.html">3 - Competition continued</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4.html">4 - Predator-Prey models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5.html">5 - Epidemics in human populations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6.html">6 - The SIR model with demographics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13 - A within-host HIV model <a name="chapter9"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch14.html">14 - A model of cancer growth <a name="chapter13"></a></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch15.html">15 - Introducing gene models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch16.html">16 - Oscillating transcription and autoregulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch18.html">17 - More modelling of an autoregulation gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch17.html">18 - Computer lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch19.html">19 - Longer negative feedback circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch20.html">20 - A two gene toggle switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="level4.html">4th year information</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/ch13.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch13.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch13.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/ch13.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch13.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>13 - A within-host HIV model <a name="chapter9"></a></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#case-study-hiv">
-   Case study: HIV
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pre-treatment-model">
-   A (pre-treatment) model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#treatment">
-   Treatment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-points">
-   3 key points
-  </a>
- </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-hiv">Case study: HIV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pre-treatment-model">A (pre-treatment) model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment">Treatment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">3 key points</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>13 - A within-host HIV model <a name="chapter9"></a></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#case-study-hiv">
-   Case study: HIV
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-pre-treatment-model">
-   A (pre-treatment) model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#treatment">
-   Treatment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#key-points">
-   3 key points
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="a-within-host-hiv-model-a-name-chapter9-a">
-<h1>13 - A within-host HIV model <a name="chapter9"></a><a class="headerlink" href="#a-within-host-hiv-model-a-name-chapter9-a" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="case-study-hiv">
-<h2>Case study: HIV<a class="headerlink" href="#case-study-hiv" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-within-host-hiv-model-a-name-chapter9-a">
+<h1>13 - A within-host HIV model <a name="chapter9"></a><a class="headerlink" href="#a-within-host-hiv-model-a-name-chapter9-a" title="Permalink to this heading">#</a></h1>
+<section id="case-study-hiv">
+<h2>Case study: HIV<a class="headerlink" href="#case-study-hiv" title="Permalink to this heading">#</a></h2>
 <p>Human immunodeficiency virus (HIV) infects immune cells called ‘CD4<span class="math notranslate nohighlight">\(^+\)</span> T-cells’, which form an important part of the human immune system. HIV enters these T-cells, begins to replicate and then releases new virus particles in to the bloodstream. Immediately after infection, the virus grows rapidly and produces flu-like symptoms in the patient. After a few months, these symptoms disappear and the virus concentration reduces to a lower, but steady, level. This ‘asymptomatic period’ can last for years, with the virus density staying roughly constant, and the concentration of T-cells very slowly dropping. Eventually, the T-cell density becomes so low that the patient’s immune system is no longer effective, a condition called aquired immunodeficiency syndrome (AIDS). The patient is then at risk from life-threatening opportunistic infections. In the mid-1990s, much work was being done to explore the dynamics of HIV and to produce potential treatments, including the development of mathematical models led by Perelson and Nelson.</p>
-</div>
-<div class="section" id="a-pre-treatment-model">
-<h2>A (pre-treatment) model<a class="headerlink" href="#a-pre-treatment-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="a-pre-treatment-model">
+<h2>A (pre-treatment) model<a class="headerlink" href="#a-pre-treatment-model" title="Permalink to this heading">#</a></h2>
 <p>As with the epidemic models, let’s start by establishing our variables and drawing a schematic of what is happening in this system. The variables that we want to keep track of (before treatment, at least), are:</p>
 <ul class="simple">
 <li><p>Healthy T-cells (<span class="math notranslate nohighlight">\(T\)</span>)</p></li>
@@ -406,75 +404,175 @@
 </ul>
 <p>We will only keep track of the concentration of virus particles in the bloodstream, not the ‘intracellular’ concentrations. Our schematic should look like this:</p>
 <p>Healthy T-cells are produced at some constant rate <span class="math notranslate nohighlight">\(s\)</span> by the body, but also decay at some rate <span class="math notranslate nohighlight">\(d\)</span>. These healthy cells become infected through contact with virus, in a mass-action manner, with coefficient <span class="math notranslate nohighlight">\(k\)</span>. These infected T-cells then decay at some rate <span class="math notranslate nohighlight">\(\delta\)</span>. New virus particles are produced when infected T-cells die, with <span class="math notranslate nohighlight">\(N\)</span> giving the average number of virus particles produced by each cell. The virus then also decays at some rate <span class="math notranslate nohighlight">\(c\)</span>. The system can therefore be expressed with the following set of ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9b0d8d4-5b5a-47e0-a94b-a7a7f94fd55e">
-<span class="eqno">(36)<a class="headerlink" href="#equation-a9b0d8d4-5b5a-47e0-a94b-a7a7f94fd55e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bc7502ab-bdd2-49f5-b9da-379f8493b224">
+<span class="eqno">(42)<a class="headerlink" href="#equation-bc7502ab-bdd2-49f5-b9da-379f8493b224" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dT}{dt} &amp;= s-dT-kVT\label{hiv1}\\
 \frac{dT^*}{dt} &amp;= kVT-\delta T^*\label{hiv2}\\
 \frac{dV}{dt} &amp;= N\delta T^*-cV\label{hiv3}
 \end{align}\]</div>
-<p>It is easy to see that there is an HIV-free equilibrium for <span class="math notranslate nohighlight">\((T,T^*,V)=(s/d,0,0)\)</span>. We have not covered how to assess stability in a three-dimensional system in this module. In fact, the trace-determinant conditions we have used in previous models are a special case of stability criteria called <em>Routh-Hurwitz conditions</em>. We will not cover these here, but using them we can find that the HIV-free equilibrium is stable if <span class="math notranslate nohighlight">\(c&gt;kNs/d\)</span>. In other words, the decay rate of the virus must be high, and the infection rate and production rate (i.e. <span class="math notranslate nohighlight">\(N\)</span>) must be low.</p>
+<p>Looking at the equations, we can see that there is an HIV-free equilibrium for <span class="math notranslate nohighlight">\((T,T^*,V)=(s/d,0,0)\)</span>. We have another example here of a 3-dimensional system. As we saw in the free-living parasite model, assessing stability here can be a bit more complicated, often reying on using the <em>Routh-Hurwitz criteria</em>. As it turns out, for the HIV-free equilibrium things simplify fairly nicely to the point that we can actually directly calculate one of the eigenvalues, and then just use the trace-determinant conditions (themselves the Routh-Hurwitz criteria for a 2-dimensional system) to determine the sign of the other two.</p>
+<p>The general Jacobian is,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{ccc}
+-d-kV &amp; 0 &amp; -kT\\
+kV &amp; -\delta &amp; kT\\
+0 &amp; N\delta &amp; -c
+\end{array}
+\right).
+\end{align*}\]</div>
+<p>Subsituting in the equilibrium values this becomes,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+J=&amp;\left(
+\begin{array}{ccc}
+-d &amp; 0 &amp; -ks/d\\
+0 &amp; -\delta &amp; ks/d\\
+0 &amp; N\delta &amp; -c
+\end{array}
+\right).
+\end{align*}\]</div>
+<p>To find the eigenvalues we want to write out the <em>characteristic equation</em> - the determinant of the matrix of <span class="math notranslate nohighlight">\( (J-\lambda I_3)\)</span>, where <span class="math notranslate nohighlight">\(I_3\)</span> is the identity matrix. The characteristic equation is,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+(-d-\lambda)\left[(-\delta-\lambda)(-c-\lambda)-\frac{ksN\delta}{d}\right]=0\\
+\end{equation*}\]</div>
+<p>This is already partly factorised, making our life much easier. The first bracket tells us that one eigenvalue is <span class="math notranslate nohighlight">\( \lambda=-d\lt0\)</span>. To find the remaining two eigenvalues we look at what is inside the square bracket, wich can be re-written as,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\lambda^2+(c+\delta)\lambda+\delta c-\frac{ksN\delta}{d}=0\\
+\end{equation*}\]</div>
+<p>We could use the quadratic formula to solve for the eigenvalues explicitly, but we can also note that this is just the characteristic equation for a two dimensional system, with <span class="math notranslate nohighlight">\( -(c+\delta)\)</span> being the trace and <span class="math notranslate nohighlight">\( \delta c-\frac{ksN\delta}{d}\)</span> being the determinant. We can then see that we definitely have a negative trace, and that the determinant is positive - meaning the equilibrium is stable - if <span class="math notranslate nohighlight">\( c\gt ksN/d\)</span>. In other words, the decay rate of the virus must be high, and the infection rate and production rate must be low.</p>
 <p>Of course, when a patient is to undergo treatment, they will not be HIV-free! We are therefore more interested in the pre-treatment infected steady-state. Setting the equations for <span class="math notranslate nohighlight">\(dT^*/dt\)</span> and <span class="math notranslate nohighlight">\(dV/dt\)</span> to zero, yields,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2f213f8-671b-42d8-9768-90b5b9fa7274">
-<span class="eqno">(37)<a class="headerlink" href="#equation-f2f213f8-671b-42d8-9768-90b5b9fa7274" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2f88ac12-8cec-46bd-8e9d-dfc2eb356c0c">
+<span class="eqno">(43)<a class="headerlink" href="#equation-2f88ac12-8cec-46bd-8e9d-dfc2eb356c0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 N\delta T^*_0=cV_0 \text{ and } kV_0T_0=\delta T^*_0 \implies T_0=\frac{c}{Nk} 
 \end{equation}\]</div>
 <p>Solving dT/dt=0, then gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c8a64dd-389f-4688-9eb5-73bc517cac7b">
-<span class="eqno">(38)<a class="headerlink" href="#equation-3c8a64dd-389f-4688-9eb5-73bc517cac7b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b3939c41-dd66-4a9c-9357-4ea6588ef857">
+<span class="eqno">(44)<a class="headerlink" href="#equation-b3939c41-dd66-4a9c-9357-4ea6588ef857" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V_0=\frac{sN}{c}-\frac{d}{k} 
 \end{equation}\]</div>
 <p>and, by substituting back in,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d32b84e5-0b8a-4b1c-b6df-0acc12056096">
-<span class="eqno">(39)<a class="headerlink" href="#equation-d32b84e5-0b8a-4b1c-b6df-0acc12056096" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f645ba13-d732-4f40-964c-ed71533c7d0d">
+<span class="eqno">(45)<a class="headerlink" href="#equation-f645ba13-d732-4f40-964c-ed71533c7d0d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^*_0=\frac{kV_0T_0}{\delta} 
 \end{equation}\]</div>
-</div>
-<div class="section" id="treatment">
-<h2>Treatment<a class="headerlink" href="#treatment" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="treatment">
+<h2>Treatment<a class="headerlink" href="#treatment" title="Permalink to this heading">#</a></h2>
 <p>Assume a patient arrives with their virus and T-cell concentrations at the pre-treatment steady state. We then wish to put them on a course of treatment. One of the most effective early treatments for HIV was using ‘protease inhibitors’. These drugs did not prevent infection, but meant that any new virus produced inside infected T-cells were non-infectious. The system therefore becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-959f2c0a-f109-40f0-841e-5e5b36d487f8">
-<span class="eqno">(40)<a class="headerlink" href="#equation-959f2c0a-f109-40f0-841e-5e5b36d487f8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-899f5e19-20af-4f5c-a94a-df38dc33c981">
+<span class="eqno">(46)<a class="headerlink" href="#equation-899f5e19-20af-4f5c-a94a-df38dc33c981" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dT}{dt} = s-dT-kV_IT\label{hiv11}\\
 &amp;\frac{dT^*}{dt} = kV_IT-\delta T^*\label{hiv12}\\
 &amp;\frac{dV_I}{dt} = -cV_I\label{hiv13}\\
 &amp;\frac{dV_{NI}}{dt} = N\delta T^*-cV_{NI}\label{hiv14}
 \end{align}\]</div>
 <p>In the early stages of treatment, it is reasonable for us to assume that the number of healthy T-cells stays roughly constant at it’s pre-treatment level <span class="math notranslate nohighlight">\(T(t)=T_0\)</span>, so dT/dt can be ignored. We also know that before treatment, all virus particles were of the infective type, such that <span class="math notranslate nohighlight">\(V_I(0)=V_0\)</span> and <span class="math notranslate nohighlight">\(V_{NI}(0)=0\)</span>. Given this, it is easy to show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ce098fb-cd9f-4164-a89b-171df793a4be">
-<span class="eqno">(41)<a class="headerlink" href="#equation-4ce098fb-cd9f-4164-a89b-171df793a4be" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4ead3794-bc96-44e7-a18f-3c684f63723e">
+<span class="eqno">(47)<a class="headerlink" href="#equation-4ead3794-bc96-44e7-a18f-3c684f63723e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V_I(t)=V_0e^{-ct}\label{vt}
 \end{equation}\]</div>
-<p>Given that <span class="math notranslate nohighlight">\(T(t)=T_0\)</span>, we now find we have a linear equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41e46bd8-6ae6-4422-a802-673f244decf3">
-<span class="eqno">(42)<a class="headerlink" href="#equation-41e46bd8-6ae6-4422-a802-673f244decf3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<p>Given that <span class="math notranslate nohighlight">\(latex T(t)=T_0\)</span>, we now find that <span class="math notranslate nohighlight">\( dT^*/dt\)</span> is also now linear,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-115b945f-a07a-4bd3-98e5-e5e6dc264f5b">
+<span class="eqno">(48)<a class="headerlink" href="#equation-115b945f-a07a-4bd3-98e5-e5e6dc264f5b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dT^*}{dt} +\delta T^*= kV_IT_0
 \end{equation}\]</div>
-<p>This can be solved using the standard method of an integrating factor:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a96fc777-3c92-45e4-b1c4-b1b9d46b13cf">
-<span class="eqno">(43)<a class="headerlink" href="#equation-a96fc777-3c92-45e4-b1c4-b1b9d46b13cf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-T^*(t)=\frac{kT_0V_0}{\delta(\delta-c)}\left(\delta e^{-ct}-ce^{-\delta t}\right)
+<p>It may not initally be obvious that this is linear, since the right-hand side had <span class="math notranslate nohighlight">\( V_I\times T_0\)</span>. However, <span class="math notranslate nohighlight">\( T_0\)</span> is a constant and we already have an expression for <span class="math notranslate nohighlight">\( V_I=V_0e^{-ct}\)</span>. This can therefore be solved using an integrating factor. Let’s go through the working for this.</p>
+<p>Taking an integrating factor of <span class="math notranslate nohighlight">\( e^{\delta t}\)</span> we can write this as,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4dc8186c-9705-43ee-afdc-36ba04928e91">
+<span class="eqno">(49)<a class="headerlink" href="#equation-4dc8186c-9705-43ee-afdc-36ba04928e91" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{d}{dt}\left[T^*e^{\delta t}\right] = kV_0T_0e^{-ct}e^{\delta t}
 \end{equation}\]</div>
+<p>Integrating both sides with respect to <span class="math notranslate nohighlight">\( t\)</span> we then get,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9f06639e-ee30-48ab-bab0-dd362a33d283">
+<span class="eqno">(50)<a class="headerlink" href="#equation-9f06639e-ee30-48ab-bab0-dd362a33d283" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T^*e^{\delta t} = \frac{kV_0T_0}{\delta-c}e^{-ct}e^{\delta t}+C
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\( C\)</span> is a constant of integration. After rearranging we reach our initial result,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-45d625e5-b1bd-431f-9f38-7c9abd9e1749">
+<span class="eqno">(51)<a class="headerlink" href="#equation-45d625e5-b1bd-431f-9f38-7c9abd9e1749" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T^* = \frac{kV_0T_0}{\delta-c}e^{-ct}+Ce^{-\delta t}.
+\end{equation}\]</div>
+<p>Earlier we found the pre-treatment equilibrium for <span class="math notranslate nohighlight">\( T^*_0=kV_0T_0/\delta\)</span>, so we can say that when <span class="math notranslate nohighlight">\( t=0\)</span> we have,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-30b20855-bfbf-4a43-a24d-2cb26d43053e">
+<span class="eqno">(52)<a class="headerlink" href="#equation-30b20855-bfbf-4a43-a24d-2cb26d43053e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{kV_0T_0}{\delta} = \frac{kV_0T_0}{\delta-c}+C.
+\end{equation}\]</div>
+<p>We then rearrange to find the constant,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6b32c784-9e6e-4f09-9a7b-c7afca67c39a">
+<span class="eqno">(53)<a class="headerlink" href="#equation-6b32c784-9e6e-4f09-9a7b-c7afca67c39a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C=\frac{-ckV_0T_0}{\delta(\delta-c)}
+\end{equation}\]</div>
+<p>and then substitute back in to get our final solution,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-63911933-3fbb-409b-85a5-55d5da1ee671">
+<span class="eqno">(54)<a class="headerlink" href="#equation-63911933-3fbb-409b-85a5-55d5da1ee671" title="Permalink to this equation">#</a></span>\[\begin{equation}
+T^*(t)=\frac{kT_0V_0}{\delta(\delta-c)}\left(\delta e^{-ct}-ce^{-\delta t}\right).
+\end{equation}\]</div>
+<p>Phew! Now it’s your turn….</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Using similar methods show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e650e644-56bf-4246-a92e-83309d825763">
-<span class="eqno">(44)<a class="headerlink" href="#equation-e650e644-56bf-4246-a92e-83309d825763" title="Permalink to this equation">¶</a></span>\[\begin{equation}
-V_{NI}(t)=\frac{cV_0}{c-\delta}\left(\frac{c}{c-\delta}\left(e^{-\delta t}-e^{-ct}\right)-\delta te^{-ct}\right)
+<div class="amsmath math notranslate nohighlight" id="equation-a6600add-2693-4d82-8c73-374a6c716254">
+<span class="eqno">(55)<a class="headerlink" href="#equation-a6600add-2693-4d82-8c73-374a6c716254" title="Permalink to this equation">#</a></span>\[\begin{equation}
+V_{NI}(t)=\frac{cV_0}{\delta-c}\left(\frac{c}{\delta-c}\left(e^{-\delta t}-e^{-ct}\right)+\delta te^{-ct}\right)
 \end{equation}\]</div>
 </div>
-<p>This can be added to the soluion for <span class="math notranslate nohighlight">\(V_I(t)\)</span> to find the overall density of virus particles in the bloodstream at any time point after treatment has begun. After estimating the values of each of the model parameters, Perelson and his colleagues plotted the model’s predictions against data of individual patient’s virus concentrations. The figure below shows that the model provides a remarkably good fit.</p>
-<img src='perelson.jpg' height="300" alt="Plots of HIV concentrations from patients and model predictions.">
-<p><em>Figure: Virus concentrations in the bloodstream of three patients compared to the model predictions. Taken from Perelson &amp; Nelson (1999).</em></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Click for solution<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Firstly we can write this equation out in the correct form for using an integrating factor,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4f21e998-e803-4410-82f1-f429434df02a">
+<span class="eqno">(56)<a class="headerlink" href="#equation-4f21e998-e803-4410-82f1-f429434df02a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{dV_{NI}}{dt}+cV_{NI} = N\delta T^*=\frac{NkT_0V_0}{\delta-c}\left(\delta e^{-ct}-ce^{-\delta t}\right).
+\end{equation}\]</div>
+<p class="sd-card-text">The integrating factor is therefore <span class="math notranslate nohighlight">\( e^{ct}\)</span>, which leads us to,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d9e83f8e-4288-4ed9-a686-4341d52fdf51">
+<span class="eqno">(57)<a class="headerlink" href="#equation-d9e83f8e-4288-4ed9-a686-4341d52fdf51" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int\frac{d}{dt}\left(V_{NI}e^{ct}\right)dt = \int\frac{NkT_0V_0}{\delta-c}\left(\delta-ce^{-\delta t+ct}\right)dt.
+\end{equation}\]</div>
+<p class="sd-card-text">Computing these two integrals we find,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-81fe91bf-52a1-4e97-bde9-9d19117a46f4">
+<span class="eqno">(58)<a class="headerlink" href="#equation-81fe91bf-52a1-4e97-bde9-9d19117a46f4" title="Permalink to this equation">#</a></span>\[\begin{align}
+V_{NI}e^{ct} &amp;= \frac{NkT_0V_0}{\delta-c}\left(\delta t-\frac{c}{c-\delta}e^{-\delta t+ct}\right)+A\\
+\implies V_{NI}&amp;=\frac{NkT_0V_0}{\delta-c}\left(\delta te^{-ct}-\frac{c}{c-\delta}e^{-\delta t}\right)+Ae^{-ct}
+\end{align}\]</div>
+<p class="sd-card-text">where <span class="math notranslate nohighlight">\( A\)</span> is the constant of integration.</p>
+<p class="sd-card-text">At the start of treatment we’d have <span class="math notranslate nohighlight">\( V_{NI}(0)=0\)</span>. Substituting this in tells us,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1d327d3b-8545-4523-9a65-6df6717fda10">
+<span class="eqno">(59)<a class="headerlink" href="#equation-1d327d3b-8545-4523-9a65-6df6717fda10" title="Permalink to this equation">#</a></span>\[\begin{equation}
+A=\frac{NkT_0V_0}{\delta-c}\left(\frac{c}{c-\delta}\right),
+\end{equation}\]</div>
+<p class="sd-card-text">and so we have (after a little rearranging),</p>
+<div class="amsmath math notranslate nohighlight" id="equation-93589d4c-0455-40f0-ab01-88d53c390b76">
+<span class="eqno">(60)<a class="headerlink" href="#equation-93589d4c-0455-40f0-ab01-88d53c390b76" title="Permalink to this equation">#</a></span>\[\begin{equation}
+V_{NI}=\frac{NkT_0V_0}{\delta-c}\left(\delta te^{-ct}+\frac{c}{\delta-c}(e^{-\delta t}-e^{-ct})\right).
+\end{equation}\]</div>
+<p class="sd-card-text">Finally we use our assumption that <span class="math notranslate nohighlight">\( T_0=c/(Nk)\)</span> to reach the final solution.</p>
 </div>
-<div class="section" id="key-points">
-<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
+</details><p>This can be added to the soluion for <span class="math notranslate nohighlight">\(V_I(t)\)</span> to find the overall density of virus particles in the bloodstream at any time point after treatment has begun. After estimating the values of each of the model parameters, Perelson and his colleagues plotted the model’s predictions against data of individual patient’s virus concentrations. The figure below shows that the model provides a remarkably good fit.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<img src='perelson.jpg' height="300" alt="Plots of HIV concentrations from patients and model predictions.">
+<p class="sd-card-text"><em>Figure: Virus concentrations in the bloodstream of three patients compared to the model predictions. Taken from Perelson &amp; Nelson (1999).</em></p>
+</div>
+</div>
+</section>
+<section id="key-points">
+<h2>3 key points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
 <li><p>A patient will only be disease-free if the virus decay rate is high, and its infection rate and burst size is low.</p></li>
 <li><p>Under a simplifying assumption the treatment model becomes linear, so we can solve the model explicitly.</p></li>
 <li><p>The treatment model predicts exponential decay of the virus, and matches well to real data.</p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -488,7 +586,7 @@ V_{NI}(t)=\frac{cV_0}{c-\delta}\left(\frac{c}{c-\delta}\left(e^{-\delta t}-e^{-c
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -496,44 +594,108 @@ V_{NI}(t)=\frac{cV_0}{c-\delta}\left(\frac{c}{c-\delta}\left(e^{-\delta t}-e^{-c
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="ch11.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">11-12 Project Week</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch11.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">11-12 Project Week</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="ch14.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="ch14.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">14 - A model of cancer growth <a name="chapter13"></a></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Alex Best<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
       </div>
-    </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+</div>
 
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-hiv">Case study: HIV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pre-treatment-model">A (pre-treatment) model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#treatment">Treatment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points">3 key points</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alex Best
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
