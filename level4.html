@@ -165,13 +165,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch14.html">14 - A model of cancer growth <a name="chapter13"></a></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch15.html">15 - Introducing gene models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch16.html">16 - Modelling an autoregulatory gene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch16.html">16 - Oscillating transcription and autoregulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch18.html">17 - More modelling of an autoregulation gene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch17.html">18 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch19.html">19 - Longer negative feedback circuits</a></li>
@@ -223,6 +229,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/master/level4.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -231,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -248,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flevel4.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Flevel4.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -374,6 +411,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-choices">Project Choices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-infectious-disease-in-the-decline-of-red-squirrels-in-the-uk-alex-best">The role of infectious disease in the decline of Red squirrels in the UK (Alex Best)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disease-dynamics-with-free-living-parasites-alex-best">Disease dynamics with free-living parasites (Alex Best)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-neuronal-dynamics-alexander-fletcher">Modelling neuronal dynamics (Alexander Fletcher)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-delays-in-gene-regulation-alexander-fletcher">Modelling delays in gene regulation (Alexander Fletcher)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segregation-patterns-in-animal-space-use-from-resource-sharing-jonathan-potts">Segregation patterns in animal space use from resource sharing (Jonathan Potts)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-formation-in-spatial-models-of-ecosystems-jonathan-potts">Pattern formation in spatial models of ecosystems (Jonathan Potts)</a></li>
 </ul>
@@ -391,7 +430,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="th-year-information">
 <h1>4th year information<a class="headerlink" href="#th-year-information" title="Permalink to this heading">#</a></h1>
-<p>This webpage summarises some important details for students in their 4th year taking MAS61024 <em>Further Topics in Mathematical Biology</em>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This webpage summarises some important details only for students in their 4th year taking MAS61024 <em>Further Topics in Mathematical Biology</em>.</p>
+</div>
 <p>The MAS61024 version of the module is worth 15 credits - 5 more than the 3rd year version, therefore requiring additional work (roughly 50 hours extra). Importantly, 4th year students will undertake all of the same learning activities and assessments as the 3rd year students. This means students should:</p>
 <ul class="simple">
 <li><p>Attend all scheduled lectures and computer labs.</p></li>
@@ -426,6 +468,16 @@ document.write(`
 <section id="disease-dynamics-with-free-living-parasites-alex-best">
 <h3>Disease dynamics with free-living parasites (Alex Best)<a class="headerlink" href="#disease-dynamics-with-free-living-parasites-alex-best" title="Permalink to this heading">#</a></h3>
 <p>Classic models for infectious disease spread assume that infection is spread through direct contact between infected and susceptible hosts. In many cases, however, parasites can be ‘free-living’, meaning they survive outside of hosts for some time before being picked up at a later point by susceptible hosts. This assumption requires a different model set-up, and can lead to rather different long-term dynamics, in particular sustained cycles. In this project you will develop models where there are free-living parasites and explore the possible dynamics that can occur. You will use a combination of analysis of ordinary differential equations and numerical simulations.</p>
+</section>
+<hr class="docutils" />
+<section id="modelling-neuronal-dynamics-alexander-fletcher">
+<h3>Modelling neuronal dynamics (Alexander Fletcher)<a class="headerlink" href="#modelling-neuronal-dynamics-alexander-fletcher" title="Permalink to this heading">#</a></h3>
+<p>Neurons are arguably the most important type of cell in the nervous system. They maintain a negatively charged electrical potential across their membrane, as a result of the flow of charged ions through ion pumps and ion channels in the membrane. When a neuron’s membrane potential reaches a certain threshold, the opening and closing of different ion channels creates an action potential or ‘spike’. Neurons encode information in the timing and frequency of their spikes and they communicate this information to other neurons through synapses. Understanding how this happens is one of the greatest frontiers of neuroscience. In this project, you will study and compare one- and two-variable ODE models of neuronal dynamics, focusing on how individual neurons generate action potentials, using a combination of analytic and numerical techniques.</p>
+</section>
+<hr class="docutils" />
+<section id="modelling-delays-in-gene-regulation-alexander-fletcher">
+<h3>Modelling delays in gene regulation (Alexander Fletcher)<a class="headerlink" href="#modelling-delays-in-gene-regulation-alexander-fletcher" title="Permalink to this heading">#</a></h3>
+<p>Gene regulatory networks (GRNs) play a major role in a large number of normal life processes, including cell differentiation, metabolism, the cell cycle, and signal transduction. A common method for mathematically modelling GRN is to represent them by concentrations of different mRNAs and proteins, and to write the dynamics as a system of ODEs using the law of mass action for individual reactions. However, transcription and translation during gene expression can take place over non-negligible time periods, motivating the use of delay differential equations (DDEs) with constant or distributed delays instead of ODEs, which can exhibit richer dynamics such as oscillatory gene expression. In this project, you will study and compare the dynamics of ODE and DDE models of one- and two-variable GRNs, using a combination of analytic and numerical techniques.</p>
 </section>
 <hr class="docutils" />
 <section id="segregation-patterns-in-animal-space-use-from-resource-sharing-jonathan-potts">
@@ -502,6 +554,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-choices">Project Choices</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-role-of-infectious-disease-in-the-decline-of-red-squirrels-in-the-uk-alex-best">The role of infectious disease in the decline of Red squirrels in the UK (Alex Best)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disease-dynamics-with-free-living-parasites-alex-best">Disease dynamics with free-living parasites (Alex Best)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-neuronal-dynamics-alexander-fletcher">Modelling neuronal dynamics (Alexander Fletcher)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelling-delays-in-gene-regulation-alexander-fletcher">Modelling delays in gene regulation (Alexander Fletcher)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segregation-patterns-in-animal-space-use-from-resource-sharing-jonathan-potts">Segregation patterns in animal space use from resource sharing (Jonathan Potts)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern-formation-in-spatial-models-of-ecosystems-jonathan-potts">Pattern formation in spatial models of ecosystems (Jonathan Potts)</a></li>
 </ul>
