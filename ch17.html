@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>18 - Computer lab &#8212; MAS377 Mathematical Biology</title>
+    <title>18 - Computer lab 2 &#8212; MAS377 Mathematical Biology</title>
   
   
   
@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch17';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -166,7 +168,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab 1</a></li>
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -174,7 +182,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch15.html">15 - Introducing gene models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch16.html">16 - Oscillating transcription and autoregulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch18.html">17 - More modelling of an autoregulation gene</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">18 - Computer lab</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18 - Computer lab 2</a></li>
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="ch19.html">19 - Longer negative feedback circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch20.html">20 - A two gene toggle switch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="level4.html">4th year information</a></li>
@@ -232,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob//_sources//ch17.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/main/_sources//ch17.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +392,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -390,11 +405,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>18 - Computer lab</h1>
+    <h1>18 - Computer lab 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18 - Computer lab 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-gene-model">1 - A simple gene model#</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-auto-regulatory-genetic-circuit">2 - An auto-regulatory genetic circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-two-gene-circuit">3: A two-gene circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#go-wild">4: Go wild!</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -404,9 +433,329 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="computer-lab">
-<h1>18 - Computer lab<a class="headerlink" href="#computer-lab" title="Permalink to this heading">#</a></h1>
-<p>In this session we will explore genetic circuit models in more detail using some provided python code. Link to follow.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="computer-lab-2">
+<h1>18 - Computer lab 2<a class="headerlink" href="#computer-lab-2" title="Permalink to this heading">#</a></h1>
+<p><strong>To use the code, click the rocket icon at the top of the page, and then click Colab</strong>. This will take you to a live version of this page where you can run the code.</p>
+<p>In this lab you will see how we can use scientific computing approaches to gain further insight into problems in mathematical biology. This lab will focus on gene regulatory models.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
+<p>Hopefully after the first lab most of you are now comfortable with how to perform some programming tasks in python. If you do not feel confident I suggest starting with the first lab on epidemic models instead.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-simple-gene-model">
+<h1>1 - A simple gene model#<a class="headerlink" href="#a-simple-gene-model" title="Permalink to this heading">#</a></h1>
+<p>First we shall explore code for our first gene regulatory model, where <span class="math notranslate nohighlight">\(M\)</span> represents mRNA concentration and <span class="math notranslate nohighlight">\(P\)</span> protein concentration, given by the following ODEs,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dM}{dt} &amp;= R(t)-\mu M\\
+\frac{dP}{dt} &amp;= kM-\nu P.
+\end{eqnarray*}\]</div>
+<p>The parameter <span class="math notranslate nohighlight">\(R(t)\)</span> controls the transcription rate of mRNA by DNA, <span class="math notranslate nohighlight">\(k\)</span> is the translation rate of mRNA into protein, and <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\nu\)</span> are the respective degradation rates.</p>
+<p>The code below assumes <span class="math notranslate nohighlight">\(R(t)=r\)</span>, where <span class="math notranslate nohighlight">\(r\)</span> is some positive constant. This is the model we analysed in the lecture. Try varying some of the parameter values and initial concentrations and see how the time-courses change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#These are the modules we need to run some of our commands</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1"># These make the plots look nicer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>
+
+<span class="c1"># This function contains our ODEs</span>
+<span class="k">def</span> <span class="nf">disease</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">mdot</span><span class="o">=</span><span class="n">r</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pdot</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">nu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">mdot</span><span class="p">,</span> <span class="n">pdot</span>
+
+<span class="c1"># We need to choose values for all of our model parameters</span>
+<span class="n">r</span><span class="o">=</span><span class="mi">2</span>        <span class="c1"># Transcription rate</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">2</span>      <span class="c1"># Translation rate</span>
+<span class="n">mu</span><span class="o">=</span><span class="mi">1</span>     <span class="c1"># mRNA degradation</span>
+<span class="n">nu</span><span class="o">=</span><span class="mi">1</span>     <span class="c1"># protein degradation</span>
+
+<span class="c1"># Now we specify time-points to run the model for and initial conditions for S0 and I0</span>
+<span class="n">ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">501</span><span class="p">)</span>
+<span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># The magic happens when we send it all to the solve_ivp function</span>
+<span class="n">xsol</span><span class="o">=</span><span class="n">solve_ivp</span><span class="p">(</span><span class="n">disease</span><span class="p">,[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span><span class="n">x0</span><span class="p">,</span><span class="n">t_eval</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
+
+<span class="c1"># And now we plot the output</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;mRNA&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Protein&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentrations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure1.png&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mRNA&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Protein&#39;</span><span class="p">)</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure2.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Protein&#39;)
+</pre></div>
+</div>
+<img alt="_images/ab5b970777cae5d75569cc548b4d09f2c69ea9b7e5a09bb3fa8064801240b52d.png" src="_images/ab5b970777cae5d75569cc548b4d09f2c69ea9b7e5a09bb3fa8064801240b52d.png" />
+<img alt="_images/60b3e78e11838ca6ae1d017fb19a523820074ee103dfb19814c61a1da5b5df39.png" src="_images/60b3e78e11838ca6ae1d017fb19a523820074ee103dfb19814c61a1da5b5df39.png" />
+</div>
+</div>
+<p>Here we assumed constant production of mRNA. In fact, this transcription often varies over time. We shall now explore two different varations of this model with time-vraying transcription rates.</p>
+<p>Copy and paste all the code above into the cell below. Now alter the equations to take <span class="math notranslate nohighlight">\(R(t)=r_0(1+\sin(\omega t))\)</span>, such that the transcription of mRNA oscillates over time. You can implement a sine function by using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>What happens to the resulting dynamics? How does this depend on <span class="math notranslate nohighlight">\(r_0\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>?</p>
+<p><em>Challenge: you can still calculate explicit solutions for <span class="math notranslate nohighlight">\(M(t)\)</span> and (with more difficulty) <span class="math notranslate nohighlight">\(P(t)\)</span> with this function for <span class="math notranslate nohighlight">\(R(t)\)</span>. Can you write down these solutions?</em></p>
+<p>Now let’s take a ‘step’ function, such that mRNA transcription is either ‘on’ or ‘off’. Accounting for step functions in programming can be awkward. One solution is that inside your ODE function, state the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">=</span><span class="p">(</span><span class="n">r</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(and be sure to set the transcription rate as R in your equation). At each time-point that the ODE is checked, it will look at whether the rounded time-point is odd or even. If it is even the transcription rate is <span class="math notranslate nohighlight">\(r\)</span> and otherwise it is 0. This gives a function ‘jumping’ between <span class="math notranslate nohighlight">\(r\)</span> and 0 each integer time unit.</p>
+<p>You may well find this initial plot is a bit ‘messy’. This is because standard numerical ODE solvers can struggle with systems like this. Try adding the following statement to the end of the function where you call solve_ivp:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;Radau&#39;</span>
+</pre></div>
+</div>
+<p>You should now see a rather smoother solution.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="an-auto-regulatory-genetic-circuit">
+<h1>2 - An auto-regulatory genetic circuit<a class="headerlink" href="#an-auto-regulatory-genetic-circuit" title="Permalink to this heading">#</a></h1>
+<p>Let’s extend our model to include feedbacks. In particular, we will assume that the concentration of protein impacts the transcription of mRNA. The system can now be given by,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dM}{dt} &amp;= f(P)-\mu M\\
+\frac{dP}{dt} &amp;= kM-\nu P.
+\end{eqnarray*}\]</div>
+<p>In the previous lecture we found how the gradient <span class="math notranslate nohighlight">\(f'(P^*)\)</span> at an equilibrium value <span class="math notranslate nohighlight">\(P^*\)</span> is important to the nature and stability of the system. In particular, we focussed on an <em>auto-repressive</em> system (negative feedback) where <span class="math notranslate nohighlight">\(f'(P)&lt;0\)</span>, such that increased protein leads to lower mRNA transcription. This system is programmed into the code below assuming <span class="math notranslate nohighlight">\(f(P)=A^2/(A^2+P^2)\)</span>. Vary the parameter values and initial conditions to see how the time-course and phase portrait change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#These are the modules we need to run some of our commands</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1"># These make the plots look nicer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>
+
+<span class="c1"># This function contains our ODEs</span>
+<span class="k">def</span> <span class="nf">disease</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">mdot</span><span class="o">=</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pdot</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">nu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">mdot</span><span class="p">,</span> <span class="n">pdot</span>
+
+<span class="c1"># We need to choose values for all of our model parameters</span>
+<span class="n">A</span><span class="o">=</span><span class="mf">0.5</span>        <span class="c1"># Transcription rate</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">2</span>      <span class="c1"># Translation rate</span>
+<span class="n">mu</span><span class="o">=</span><span class="mi">1</span>     <span class="c1"># mRNA degradation</span>
+<span class="n">nu</span><span class="o">=</span><span class="mi">1</span>     <span class="c1"># protein degradation</span>
+
+<span class="c1"># Now we specify time-points to run the model for and initial conditions for S0 and I0</span>
+<span class="n">ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">501</span><span class="p">)</span>
+<span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># The magic happens when we send it all to the solve_ivp function</span>
+<span class="n">xsol</span><span class="o">=</span><span class="n">solve_ivp</span><span class="p">(</span><span class="n">disease</span><span class="p">,[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span><span class="n">x0</span><span class="p">,</span><span class="n">t_eval</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
+
+<span class="c1"># Calculate nullclines for plotting</span>
+<span class="n">pp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<span class="n">nullp</span><span class="o">=</span><span class="n">pp</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="n">k</span>
+<span class="n">nullm</span><span class="o">=</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">pp</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># And now we plot the output</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;mRNA&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Protein&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentrations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure1.png&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span><span class="n">nullp</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span><span class="n">nullm</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Protein&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;mRNA&#39;</span><span class="p">)</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure2.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;mRNA&#39;)
+</pre></div>
+</div>
+<img alt="_images/4e7b190b30d7bd2f3f33b5a8f6ee7f7946a464dd228691ca553a59791bd619ee.png" src="_images/4e7b190b30d7bd2f3f33b5a8f6ee7f7946a464dd228691ca553a59791bd619ee.png" />
+<img alt="_images/d3f6721e6dcaf8ddedbc8f1b24af47c68e49e875a60462b6796ce51b2298653c.png" src="_images/d3f6721e6dcaf8ddedbc8f1b24af47c68e49e875a60462b6796ce51b2298653c.png" />
+</div>
+</div>
+<p>Now we will explore what happens with an <em>auto-activating</em> system, or with a positive feedback. The ODEs are the same but we now take a function <span class="math notranslate nohighlight">\(f(P)\)</span> that has a positive gradient. This is a sneak-preview of our next lecture’s content! A good function form to take here is <span class="math notranslate nohighlight">\(f(P)=\alpha+P^4/(P^4+A^4)\)</span>. It will helpful to skecth this out on a piece of paper - or even programme it into python (in the menu above go to ‘Insert’ and ‘Code cell’ to add a cell to do this) - to see what this looks like.</p>
+<p>The code below currently has no parameter value sincluded (and if you try to run it you will get an error). Take the following set of parameter values: <span class="math notranslate nohighlight">\(k=2,\mu=1,\nu=2,\alpha=0,A=0.75\)</span>. Now gradually increase the value of <span class="math notranslate nohighlight">\(\alpha\)</span> in steps of 0.1. What happens to the system as <span class="math notranslate nohighlight">\(\alpha\)</span> changes?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#These are the modules we need to run some of our commands</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1"># These make the plots look nicer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>
+
+<span class="c1"># This function contains our ODEs</span>
+<span class="k">def</span> <span class="nf">disease</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">mdot</span><span class="o">=</span><span class="n">alpha</span><span class="o">+</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pdot</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">nu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">mdot</span><span class="p">,</span> <span class="n">pdot</span>
+
+<span class="c1"># We need to choose values for all of our model parameters</span>
+<span class="n">alpha</span><span class="o">=</span>
+<span class="n">A</span><span class="o">=</span>        <span class="c1"># Transcription rate</span>
+<span class="n">k</span><span class="o">=</span>      <span class="c1"># Translation rate</span>
+<span class="n">mu</span><span class="o">=</span>     <span class="c1"># mRNA degradation</span>
+<span class="n">nu</span><span class="o">=</span>     <span class="c1"># protein degradation</span>
+
+<span class="c1"># Now we specify time-points to run the model for and initial conditions for S0 and I0</span>
+<span class="n">ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">501</span><span class="p">)</span>
+<span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">]</span>
+
+<span class="c1"># The magic happens when we send it all to the solve_ivp function</span>
+<span class="n">xsol</span><span class="o">=</span><span class="n">solve_ivp</span><span class="p">(</span><span class="n">disease</span><span class="p">,[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span><span class="n">x0</span><span class="p">,</span><span class="n">t_eval</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
+
+<span class="c1"># Calculate nullclines for plotting</span>
+<span class="n">pp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<span class="n">nullp</span><span class="o">=</span><span class="n">pp</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="n">k</span>
+<span class="n">nullm</span><span class="o">=</span><span class="n">alpha</span><span class="o">/</span><span class="n">mu</span><span class="o">+</span><span class="n">pp</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="n">pp</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># And now we plot the output</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;mRNA&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Protein&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentrations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure1.png&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span><span class="n">nullp</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span><span class="n">nullm</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Protein&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;mRNA&#39;</span><span class="p">)</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure2.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+    <span class="n">alpha</span><span class="o">=</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this system we find bistability and switching of states. Initially there is only one equilibrium at <span class="math notranslate nohighlight">\((M^*,P^*)=(0,0)\)</span>. As <span class="math notranslate nohighlight">\(\alpha\)</span> increases, two new equilibria appear (a saddle-node bifurcation). There is then bistability between two equilbiria - one with low expression and one with high expression - but for the small initial conditions we have chosen we remain at the low expression state. As <span class="math notranslate nohighlight">\(\alpha\)</span> increases further there is another saddle-node bifurcation where the two lower equilbiria are lost, and we return to just having one equilibrium but for high expression. Overall, then, we have seen how a cell’s state might change from low to high expression of a gene due to some external change.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-two-gene-circuit">
+<h1>3: A two-gene circuit<a class="headerlink" href="#a-two-gene-circuit" title="Permalink to this heading">#</a></h1>
+<p>We will finally look at a two-gene toggle switch, where there is <em>cross-repression</em>, such that the production of gene 1 represses the transcription of gene 2, and vice versa. The model of the two genes can be given as follows:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+\frac{dM_1}{dt} &amp;= f(P_2)-\mu M_1\\
+\frac{dP_1}{dt} &amp;= kM_1-\nu P_1\\
+\frac{dM_2}{dt} &amp;= f(P_1)-\mu M_2\\
+\frac{dP_2}{dt} &amp;= kM_2-\nu P_2.
+\end{eqnarray*}\]</div>
+<p>Notice that for simplicity we have assumed the two genes have the same rates for all processes - this can be relaxed.</p>
+<p>With the parameters given, the system tends to a state where the two genes are in balance, with both being expressed at intermediate (and equal) amounts. Now try reducing the value of <span class="math notranslate nohighlight">\(\nu\)</span>, the degradation rate of protein.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#These are the modules we need to run some of our commands</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1"># These make the plots look nicer</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">})</span>
+
+<span class="c1"># This function contains our ODEs</span>
+<span class="k">def</span> <span class="nf">disease</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">m1dot</span><span class="o">=</span><span class="n">A</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">p1dot</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">nu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">m2dot</span><span class="o">=</span><span class="n">A</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="o">-</span><span class="n">mu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">p2dot</span><span class="o">=</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">nu</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">m1dot</span><span class="p">,</span> <span class="n">p1dot</span><span class="p">,</span> <span class="n">m2dot</span><span class="p">,</span> <span class="n">p2dot</span>
+
+<span class="c1"># We need to choose values for all of our model parameters</span>
+<span class="n">A</span><span class="o">=</span><span class="mf">0.75</span>        <span class="c1"># Transcription rate</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">1</span>      <span class="c1"># Translation rate</span>
+<span class="n">mu</span><span class="o">=</span><span class="mi">1</span>     <span class="c1"># mRNA degradation</span>
+<span class="n">nu</span><span class="o">=</span><span class="mi">2</span>     <span class="c1"># protein degradation</span>
+
+<span class="c1"># Now we specify time-points to run the model for and initial conditions for S0 and I0</span>
+<span class="n">ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">501</span><span class="p">)</span>
+<span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># The magic happens when we send it all to the solve_ivp function</span>
+<span class="n">xsol</span><span class="o">=</span><span class="n">solve_ivp</span><span class="p">(</span><span class="n">disease</span><span class="p">,[</span><span class="n">ts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">ts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span><span class="n">x0</span><span class="p">,</span><span class="n">t_eval</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
+
+<span class="c1"># Calculate nullclines for plotting</span>
+<span class="n">pp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<span class="n">nullp</span><span class="o">=</span><span class="n">pp</span><span class="o">*</span><span class="n">nu</span><span class="o">/</span><span class="n">k</span>
+<span class="n">nullm</span><span class="o">=</span><span class="n">alpha</span><span class="o">/</span><span class="n">mu</span><span class="o">+</span><span class="n">pp</span><span class="o">**</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">mu</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">**</span><span class="mi">4</span><span class="o">+</span><span class="n">pp</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># And now we plot the output</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Protein 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Protein 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentrations&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">])</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure1.png&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="n">xsol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1">#plt.plot(pp,nullp,&#39;r&#39;)</span>
+<span class="c1">#plt.plot(pp,nullm,&#39;b&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Protein 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Protein 2&#39;</span><span class="p">)</span>
+<span class="c1">#To save your figure delete the &#39;#&#39; in the front of the line below. To find the saved file, click on the folder icon in the left-hand column of the screen.</span>
+<span class="c1">#plt.savefig(&#39;myfigure2.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Protein 2&#39;)
+</pre></div>
+</div>
+<img alt="_images/71959272a893ac8497413a97b17e224e3b27824efb61d4fdb4edef72a52dfbab.png" src="_images/71959272a893ac8497413a97b17e224e3b27824efb61d4fdb4edef72a52dfbab.png" />
+<img alt="_images/69d48b6467442ec077fa470cf75b91d15f56c24b0ec8e895f72cdd9e2e47e81d.png" src="_images/69d48b6467442ec077fa470cf75b91d15f56c24b0ec8e895f72cdd9e2e47e81d.png" />
+</div>
+</div>
+<p>You should see that as you reduce the value of <span class="math notranslate nohighlight">\(\nu\)</span>, such that the protein takes longer to degrade and therefore remains in the cell longer, that the system shifts to a state of one gene being ‘on’ (with high expression) and the other being ‘off’ (with low, though not zero, expression). Which gene is switched on will depend on the initial values you use. Try to show this more clearly by running the model for two different sets of initial conditions, plotted on the same graph.</p>
+<p>Now try altering the values such that the two genes can have different degradation and translation rates. What sorts of changes do you see?</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="go-wild">
+<h1>4: Go wild!<a class="headerlink" href="#go-wild" title="Permalink to this heading">#</a></h1>
+<p>If you have completed all of the suggested activities above, why not try to code up some of the other models we have seen in this module. Perhaps the within-host Covid or HIV models, or the wildlife epidemic model? Think about adding in or taking out different mechanisms to see how the behaviour of each one changes. Remember, all models are wrong but some are useful, so be creative!</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -467,6 +816,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">18 - Computer lab 2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-gene-model">1 - A simple gene model#</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#an-auto-regulatory-genetic-circuit">2 - An auto-regulatory genetic circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-two-gene-circuit">3: A two-gene circuit</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#go-wild">4: Go wild!</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
