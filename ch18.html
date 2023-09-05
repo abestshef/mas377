@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch18.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch18.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch18.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch18.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -428,8 +422,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="more-modelling-of-an-autoregulation-gene">
 <h1>17 - More modelling of an autoregulation gene<a class="headerlink" href="#more-modelling-of-an-autoregulation-gene" title="Permalink to this heading">#</a></h1>
 <p>Last time we introduced the general model for an auto-regulatory circuit for mRNA and protein dynamics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35079058-664f-42a3-8ad4-7516e2d6d4fa">
-<span class="eqno">(93)<a class="headerlink" href="#equation-35079058-664f-42a3-8ad4-7516e2d6d4fa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-74a21213-447b-478b-9a11-b0bbb696a2f8">
+<span class="eqno">(93)<a class="headerlink" href="#equation-74a21213-447b-478b-9a11-b0bbb696a2f8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dM}{dt} &amp;= f(P) - \mu M\\
 \frac{dP}{dt} &amp;= kM - \nu P
 \end{align}\]</div>
@@ -438,8 +432,8 @@ document.write(`
 <h2>Auto-activation: a positive feedback<a class="headerlink" href="#auto-activation-a-positive-feedback" title="Permalink to this heading">#</a></h2>
 <p>If the protein product of a gene acts to increase the rate of transcription, we describe it as a <em>transcriptional activator</em>. The feedback circuit is described as <em>auto-activation</em>. In this case, <span class="math notranslate nohighlight">\(f'(P)\geq0\)</span>, i.e. <span class="math notranslate nohighlight">\(f(P)\)</span> is an increasing function.</p>
 <p>The equation for steady state values of <span class="math notranslate nohighlight">\(P\)</span> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2fe99afe-a5b8-4a0c-b872-5da26d68e907">
-<span class="eqno">(94)<a class="headerlink" href="#equation-2fe99afe-a5b8-4a0c-b872-5da26d68e907" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-66939243-30bf-40d0-8b9d-3afd2b11bdc3">
+<span class="eqno">(94)<a class="headerlink" href="#equation-66939243-30bf-40d0-8b9d-3afd2b11bdc3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\mu\nu}{k}P=f(P)
 \end{equation}\]</div>
 <p>We know that <span class="math notranslate nohighlight">\(f(P)\)</span> is increasing and bounded above, so what can we conclude about the number of equilibrium? Depending on how weird and wonderful we make <span class="math notranslate nohighlight">\(f(P)\)</span>, there must be at least one, and there can be any odd number of equilibria, but realistically we’d expect one or three.</p>
@@ -479,8 +473,8 @@ k &amp; -\nu
 <section id="an-example-transcription-function">
 <h2>An example transcription function<a class="headerlink" href="#an-example-transcription-function" title="Permalink to this heading">#</a></h2>
 <p>You will have noticed we sketched our <span class="math notranslate nohighlight">\(f(P)\)</span> nullclines in a sigmoidal shape. We saw something similar with the spruce budworm, predator-prey and within-host Covid-19 models. In this biological context they are often called Hill functions. The general formula for such a curve is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf10869f-086b-4421-8155-ea2f7f51797e">
-<span class="eqno">(95)<a class="headerlink" href="#equation-bf10869f-086b-4421-8155-ea2f7f51797e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4f032455-d928-410b-803e-d908b307b04b">
+<span class="eqno">(95)<a class="headerlink" href="#equation-4f032455-d928-410b-803e-d908b307b04b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(P)=\alpha+\beta\frac{P^n}{\theta^n+P^n},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are all positive constants.</p>

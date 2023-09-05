@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch13.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch13.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch13.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch13.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -441,8 +435,8 @@ document.write(`
 </ul>
 <p>We will only keep track of the concentration of virus particles in the bloodstream, not the ‘intracellular’ concentrations. Our schematic should look like this:</p>
 <p>Healthy T-cells are produced at some constant rate <span class="math notranslate nohighlight">\(s\)</span> by the body, but also decay at some rate <span class="math notranslate nohighlight">\(d\)</span>. These healthy cells become infected through contact with virus, in a mass-action manner, with coefficient <span class="math notranslate nohighlight">\(k\)</span>. These infected T-cells then decay at some rate <span class="math notranslate nohighlight">\(\delta\)</span>. New virus particles are produced when infected T-cells die, with <span class="math notranslate nohighlight">\(N\)</span> giving the average number of virus particles produced by each cell. The virus then also decays at some rate <span class="math notranslate nohighlight">\(c\)</span>. The system can therefore be expressed with the following set of ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc7502ab-bdd2-49f5-b9da-379f8493b224">
-<span class="eqno">(42)<a class="headerlink" href="#equation-bc7502ab-bdd2-49f5-b9da-379f8493b224" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-57962451-6a9b-4cda-bf14-08d745ada362">
+<span class="eqno">(42)<a class="headerlink" href="#equation-57962451-6a9b-4cda-bf14-08d745ada362" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dT}{dt} &amp;= s-dT-kVT\label{hiv1}\\
 \frac{dT^*}{dt} &amp;= kVT-\delta T^*\label{hiv2}\\
 \frac{dV}{dt} &amp;= N\delta T^*-cV\label{hiv3}
@@ -482,78 +476,78 @@ J=&amp;\left(
 \end{equation*}\]</div>
 <p>We could use the quadratic formula to solve for the eigenvalues explicitly, but we can also note that this is just the characteristic equation for a two dimensional system, with <span class="math notranslate nohighlight">\( -(c+\delta)\)</span> being the trace and <span class="math notranslate nohighlight">\( \delta c-\frac{ksN\delta}{d}\)</span> being the determinant. We can then see that we definitely have a negative trace, and that the determinant is positive - meaning the equilibrium is stable - if <span class="math notranslate nohighlight">\( c\gt ksN/d\)</span>. In other words, the decay rate of the virus must be high, and the infection rate and production rate must be low.</p>
 <p>Of course, when a patient is to undergo treatment, they will not be HIV-free! We are therefore more interested in the pre-treatment infected steady-state. Setting the equations for <span class="math notranslate nohighlight">\(dT^*/dt\)</span> and <span class="math notranslate nohighlight">\(dV/dt\)</span> to zero, yields,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f88ac12-8cec-46bd-8e9d-dfc2eb356c0c">
-<span class="eqno">(43)<a class="headerlink" href="#equation-2f88ac12-8cec-46bd-8e9d-dfc2eb356c0c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-da349477-f96e-4ad4-9c02-44dc4ee71c01">
+<span class="eqno">(43)<a class="headerlink" href="#equation-da349477-f96e-4ad4-9c02-44dc4ee71c01" title="Permalink to this equation">#</a></span>\[\begin{equation}
 N\delta T^*_0=cV_0 \text{ and } kV_0T_0=\delta T^*_0 \implies T_0=\frac{c}{Nk} 
 \end{equation}\]</div>
 <p>Solving dT/dt=0, then gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3939c41-dd66-4a9c-9357-4ea6588ef857">
-<span class="eqno">(44)<a class="headerlink" href="#equation-b3939c41-dd66-4a9c-9357-4ea6588ef857" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bd2d8bf5-08ff-4b4b-a6b4-6a6230a0459c">
+<span class="eqno">(44)<a class="headerlink" href="#equation-bd2d8bf5-08ff-4b4b-a6b4-6a6230a0459c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V_0=\frac{sN}{c}-\frac{d}{k} 
 \end{equation}\]</div>
 <p>and, by substituting back in,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f645ba13-d732-4f40-964c-ed71533c7d0d">
-<span class="eqno">(45)<a class="headerlink" href="#equation-f645ba13-d732-4f40-964c-ed71533c7d0d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a12037f-010a-4c59-a8b2-0a91f1f0000b">
+<span class="eqno">(45)<a class="headerlink" href="#equation-6a12037f-010a-4c59-a8b2-0a91f1f0000b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^*_0=\frac{kV_0T_0}{\delta} 
 \end{equation}\]</div>
 </section>
 <section id="treatment">
 <h2>Treatment<a class="headerlink" href="#treatment" title="Permalink to this heading">#</a></h2>
 <p>Assume a patient arrives with their virus and T-cell concentrations at the pre-treatment steady state. We then wish to put them on a course of treatment. One of the most effective early treatments for HIV was using ‘protease inhibitors’. These drugs did not prevent infection, but meant that any new virus produced inside infected T-cells were non-infectious. The system therefore becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-899f5e19-20af-4f5c-a94a-df38dc33c981">
-<span class="eqno">(46)<a class="headerlink" href="#equation-899f5e19-20af-4f5c-a94a-df38dc33c981" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b6e7b40d-9488-4f6c-9de7-e026fae33cd0">
+<span class="eqno">(46)<a class="headerlink" href="#equation-b6e7b40d-9488-4f6c-9de7-e026fae33cd0" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dT}{dt} = s-dT-kV_IT\label{hiv11}\\
 &amp;\frac{dT^*}{dt} = kV_IT-\delta T^*\label{hiv12}\\
 &amp;\frac{dV_I}{dt} = -cV_I\label{hiv13}\\
 &amp;\frac{dV_{NI}}{dt} = N\delta T^*-cV_{NI}\label{hiv14}
 \end{align}\]</div>
 <p>In the early stages of treatment, it is reasonable for us to assume that the number of healthy T-cells stays roughly constant at it’s pre-treatment level <span class="math notranslate nohighlight">\(T(t)=T_0\)</span>, so dT/dt can be ignored. We also know that before treatment, all virus particles were of the infective type, such that <span class="math notranslate nohighlight">\(V_I(0)=V_0\)</span> and <span class="math notranslate nohighlight">\(V_{NI}(0)=0\)</span>. Given this, it is easy to show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ead3794-bc96-44e7-a18f-3c684f63723e">
-<span class="eqno">(47)<a class="headerlink" href="#equation-4ead3794-bc96-44e7-a18f-3c684f63723e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-37914d4b-a06d-4a67-a3ca-08a6376370bc">
+<span class="eqno">(47)<a class="headerlink" href="#equation-37914d4b-a06d-4a67-a3ca-08a6376370bc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V_I(t)=V_0e^{-ct}\label{vt}
 \end{equation}\]</div>
 <p>Given that <span class="math notranslate nohighlight">\(latex T(t)=T_0\)</span>, we now find that <span class="math notranslate nohighlight">\( dT^*/dt\)</span> is also now linear,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-115b945f-a07a-4bd3-98e5-e5e6dc264f5b">
-<span class="eqno">(48)<a class="headerlink" href="#equation-115b945f-a07a-4bd3-98e5-e5e6dc264f5b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea2d3f73-4a3a-424e-a268-d4f7c00b46b9">
+<span class="eqno">(48)<a class="headerlink" href="#equation-ea2d3f73-4a3a-424e-a268-d4f7c00b46b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dT^*}{dt} +\delta T^*= kV_IT_0
 \end{equation}\]</div>
 <p>It may not initally be obvious that this is linear, since the right-hand side had <span class="math notranslate nohighlight">\( V_I\times T_0\)</span>. However, <span class="math notranslate nohighlight">\( T_0\)</span> is a constant and we already have an expression for <span class="math notranslate nohighlight">\( V_I=V_0e^{-ct}\)</span>. This can therefore be solved using an integrating factor. Let’s go through the working for this.</p>
 <p>Taking an integrating factor of <span class="math notranslate nohighlight">\( e^{\delta t}\)</span> we can write this as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4dc8186c-9705-43ee-afdc-36ba04928e91">
-<span class="eqno">(49)<a class="headerlink" href="#equation-4dc8186c-9705-43ee-afdc-36ba04928e91" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c41ffe25-85a5-40f0-8c33-1dc7251f9f9a">
+<span class="eqno">(49)<a class="headerlink" href="#equation-c41ffe25-85a5-40f0-8c33-1dc7251f9f9a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{d}{dt}\left[T^*e^{\delta t}\right] = kV_0T_0e^{-ct}e^{\delta t}
 \end{equation}\]</div>
 <p>Integrating both sides with respect to <span class="math notranslate nohighlight">\( t\)</span> we then get,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9f06639e-ee30-48ab-bab0-dd362a33d283">
-<span class="eqno">(50)<a class="headerlink" href="#equation-9f06639e-ee30-48ab-bab0-dd362a33d283" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-67809c95-c23d-4b29-a157-fe03119b5083">
+<span class="eqno">(50)<a class="headerlink" href="#equation-67809c95-c23d-4b29-a157-fe03119b5083" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^*e^{\delta t} = \frac{kV_0T_0}{\delta-c}e^{-ct}e^{\delta t}+C
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\( C\)</span> is a constant of integration. After rearranging we reach our initial result,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-45d625e5-b1bd-431f-9f38-7c9abd9e1749">
-<span class="eqno">(51)<a class="headerlink" href="#equation-45d625e5-b1bd-431f-9f38-7c9abd9e1749" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-029c1989-dce1-4b81-a198-65c83dcfdcdb">
+<span class="eqno">(51)<a class="headerlink" href="#equation-029c1989-dce1-4b81-a198-65c83dcfdcdb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^* = \frac{kV_0T_0}{\delta-c}e^{-ct}+Ce^{-\delta t}.
 \end{equation}\]</div>
 <p>Earlier we found the pre-treatment equilibrium for <span class="math notranslate nohighlight">\( T^*_0=kV_0T_0/\delta\)</span>, so we can say that when <span class="math notranslate nohighlight">\( t=0\)</span> we have,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30b20855-bfbf-4a43-a24d-2cb26d43053e">
-<span class="eqno">(52)<a class="headerlink" href="#equation-30b20855-bfbf-4a43-a24d-2cb26d43053e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-98c561dd-6517-4b71-9dc5-189386841a34">
+<span class="eqno">(52)<a class="headerlink" href="#equation-98c561dd-6517-4b71-9dc5-189386841a34" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{kV_0T_0}{\delta} = \frac{kV_0T_0}{\delta-c}+C.
 \end{equation}\]</div>
 <p>We then rearrange to find the constant,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b32c784-9e6e-4f09-9a7b-c7afca67c39a">
-<span class="eqno">(53)<a class="headerlink" href="#equation-6b32c784-9e6e-4f09-9a7b-c7afca67c39a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e789d7fd-5e4a-45b4-a4bc-5d520f415a9c">
+<span class="eqno">(53)<a class="headerlink" href="#equation-e789d7fd-5e4a-45b4-a4bc-5d520f415a9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C=\frac{-ckV_0T_0}{\delta(\delta-c)}
 \end{equation}\]</div>
 <p>and then substitute back in to get our final solution,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-63911933-3fbb-409b-85a5-55d5da1ee671">
-<span class="eqno">(54)<a class="headerlink" href="#equation-63911933-3fbb-409b-85a5-55d5da1ee671" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e7ebe4d0-1390-481c-a06f-6c1d21e4b349">
+<span class="eqno">(54)<a class="headerlink" href="#equation-e7ebe4d0-1390-481c-a06f-6c1d21e4b349" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^*(t)=\frac{kT_0V_0}{\delta(\delta-c)}\left(\delta e^{-ct}-ce^{-\delta t}\right).
 \end{equation}\]</div>
 <p>Phew! Now it’s your turn….</p>
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Using similar methods show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6600add-2693-4d82-8c73-374a6c716254">
-<span class="eqno">(55)<a class="headerlink" href="#equation-a6600add-2693-4d82-8c73-374a6c716254" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a1acdb64-eb32-4c75-8f22-0a0fabc4c32a">
+<span class="eqno">(55)<a class="headerlink" href="#equation-a1acdb64-eb32-4c75-8f22-0a0fabc4c32a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V_{NI}(t)=\frac{cV_0}{\delta-c}\left(\frac{c}{\delta-c}\left(e^{-\delta t}-e^{-ct}\right)+\delta te^{-ct}\right)
 \end{equation}\]</div>
 </div>
@@ -565,30 +559,30 @@ Click for solution<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Firstly we can write this equation out in the correct form for using an integrating factor,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f21e998-e803-4410-82f1-f429434df02a">
-<span class="eqno">(56)<a class="headerlink" href="#equation-4f21e998-e803-4410-82f1-f429434df02a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a811b6d9-09a3-40cc-9605-a1749f61fb5b">
+<span class="eqno">(56)<a class="headerlink" href="#equation-a811b6d9-09a3-40cc-9605-a1749f61fb5b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dV_{NI}}{dt}+cV_{NI} = N\delta T^*=\frac{NkT_0V_0}{\delta-c}\left(\delta e^{-ct}-ce^{-\delta t}\right).
 \end{equation}\]</div>
 <p class="sd-card-text">The integrating factor is therefore <span class="math notranslate nohighlight">\( e^{ct}\)</span>, which leads us to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9e83f8e-4288-4ed9-a686-4341d52fdf51">
-<span class="eqno">(57)<a class="headerlink" href="#equation-d9e83f8e-4288-4ed9-a686-4341d52fdf51" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dce796e1-01fe-4361-ade7-6ae4e58f53fd">
+<span class="eqno">(57)<a class="headerlink" href="#equation-dce796e1-01fe-4361-ade7-6ae4e58f53fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int\frac{d}{dt}\left(V_{NI}e^{ct}\right)dt = \int\frac{NkT_0V_0}{\delta-c}\left(\delta-ce^{-\delta t+ct}\right)dt.
 \end{equation}\]</div>
 <p class="sd-card-text">Computing these two integrals we find,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81fe91bf-52a1-4e97-bde9-9d19117a46f4">
-<span class="eqno">(58)<a class="headerlink" href="#equation-81fe91bf-52a1-4e97-bde9-9d19117a46f4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-02874457-1d8c-4173-9923-1ae9cda2be4c">
+<span class="eqno">(58)<a class="headerlink" href="#equation-02874457-1d8c-4173-9923-1ae9cda2be4c" title="Permalink to this equation">#</a></span>\[\begin{align}
 V_{NI}e^{ct} &amp;= \frac{NkT_0V_0}{\delta-c}\left(\delta t-\frac{c}{c-\delta}e^{-\delta t+ct}\right)+A\\
 \implies V_{NI}&amp;=\frac{NkT_0V_0}{\delta-c}\left(\delta te^{-ct}-\frac{c}{c-\delta}e^{-\delta t}\right)+Ae^{-ct}
 \end{align}\]</div>
 <p class="sd-card-text">where <span class="math notranslate nohighlight">\( A\)</span> is the constant of integration.</p>
 <p class="sd-card-text">At the start of treatment we’d have <span class="math notranslate nohighlight">\( V_{NI}(0)=0\)</span>. Substituting this in tells us,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1d327d3b-8545-4523-9a65-6df6717fda10">
-<span class="eqno">(59)<a class="headerlink" href="#equation-1d327d3b-8545-4523-9a65-6df6717fda10" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c123f25-7080-454d-80d9-d8d7e5b48148">
+<span class="eqno">(59)<a class="headerlink" href="#equation-8c123f25-7080-454d-80d9-d8d7e5b48148" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A=\frac{NkT_0V_0}{\delta-c}\left(\frac{c}{c-\delta}\right),
 \end{equation}\]</div>
 <p class="sd-card-text">and so we have (after a little rearranging),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93589d4c-0455-40f0-ab01-88d53c390b76">
-<span class="eqno">(60)<a class="headerlink" href="#equation-93589d4c-0455-40f0-ab01-88d53c390b76" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-57325113-e972-44f5-a2f0-689e89c22a38">
+<span class="eqno">(60)<a class="headerlink" href="#equation-57325113-e972-44f5-a2f0-689e89c22a38" title="Permalink to this equation">#</a></span>\[\begin{equation}
 V_{NI}=\frac{NkT_0V_0}{\delta-c}\left(\delta te^{-ct}+\frac{c}{\delta-c}(e^{-\delta t}-e^{-ct})\right).
 \end{equation}\]</div>
 <p class="sd-card-text">Finally we use our assumption that <span class="math notranslate nohighlight">\( T_0=c/(Nk)\)</span> to reach the final solution.</p>

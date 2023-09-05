@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch7.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch7.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch7.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch7.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -445,27 +439,27 @@ document.write(`
 <li><p>We should include the fact that disease causes significant damage to hosts (something we have so far ignored). In particular, we shall assume that infected hosts suffer an additional mortality, or {\em virulence} at rate <span class="math notranslate nohighlight">\(\alpha\)</span>.</p></li>
 </ul>
 <p>Our new SIS model will then be given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4fcf2dbe-4da7-4109-a6a8-61345bbafa28">
-<span class="eqno">(24)<a class="headerlink" href="#equation-4fcf2dbe-4da7-4109-a6a8-61345bbafa28" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1fedaf6a-f9a3-4e05-a5b6-2112d7287be0">
+<span class="eqno">(24)<a class="headerlink" href="#equation-1fedaf6a-f9a3-4e05-a5b6-2112d7287be0" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \end{align}\]</div>
 <p>Prior to European settlement, there were no rabbits in Australia. Initially bred for food, their numbers stayed low until a small number of rabbits were released for hunting purposes on an estate. Within 10 years rabbit numbers were well in to the millions. During this initial growth period, we might actually suppose that our very first population growth model provided a good approximation of rabbit dynamics,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d4609b3-08a8-4efd-96d2-10f40e4391c3">
-<span class="eqno">(25)<a class="headerlink" href="#equation-4d4609b3-08a8-4efd-96d2-10f40e4391c3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4df91221-a677-40e5-819d-315159c2b63a">
+<span class="eqno">(25)<a class="headerlink" href="#equation-4df91221-a677-40e5-819d-315159c2b63a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN}{dt} = bN - dN=rN,\label{rabbit1}
 \end{equation}\]</div>
 <p>predicting exponential growth for <span class="math notranslate nohighlight">\(b&gt;d\)</span> (births greater than deaths).</p>
 <p>A number of control strategies were attempted through the late 19th- and early 20th-centuries targeting rabbits, from shooting to the rabbit-proof fence. In 1950, the myxoma virus was deliberately released in to the rabbit population. From a modelling perspective, the effect of this is to transform the system to the SIS model given above, that is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4502540f-adbe-45bc-ac36-4a5c2ad3a3db">
-<span class="eqno">(26)<a class="headerlink" href="#equation-4502540f-adbe-45bc-ac36-4a5c2ad3a3db" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c10fb637-87a6-44b2-9171-d0cc9696a370">
+<span class="eqno">(26)<a class="headerlink" href="#equation-c10fb637-87a6-44b2-9171-d0cc9696a370" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = b N - \beta SI - d S + \gamma I\\
 &amp;\frac{dI}{dt} = \beta SI - (d+\alpha+\gamma)I.
 \label{rabbit2}
 \end{align}\]</div>
 <p>Our question is, will the introduction of the disease successfully control rabbit numbers? Initially we had exponential growth. What we then need to know is whether introducing the disease can limit this. What are the equilibria of this model? There is a trivial equilibrium at <span class="math notranslate nohighlight">\((S,I)=(0,0)\)</span>. Also, if <span class="math notranslate nohighlight">\(I=0\)</span> then we return to exponential growth when <span class="math notranslate nohighlight">\(b&gt;d\)</span>. But there is also an endemic equilibrium, at,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a50b8156-f7de-4ffe-afd6-44eedb7a80ad">
-<span class="eqno">(27)<a class="headerlink" href="#equation-a50b8156-f7de-4ffe-afd6-44eedb7a80ad" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-439f9ec4-934d-4b22-90d4-fa6a2c24bb30">
+<span class="eqno">(27)<a class="headerlink" href="#equation-439f9ec4-934d-4b22-90d4-fa6a2c24bb30" title="Permalink to this equation">#</a></span>\[\begin{align}
 S^*&amp;=\frac{d+\alpha+\gamma}{\beta},\\
 I^*&amp;=\frac{(b-d)S^* }{\beta S^*-b-\gamma}=\frac{(b-d)(d+\alpha+\gamma)}{\beta(\alpha-(b-d))}.
 \end{align}\]</div>

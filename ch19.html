@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch19.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch19.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch19.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch19.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -439,16 +433,16 @@ document.write(`
 <li><p>Increasing <span class="math notranslate nohighlight">\(Z\)</span> leads to <em>decreased</em> production of <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
 </ul>
 <p>Put together there is therefore a negative feedback in the system (since increasing <span class="math notranslate nohighlight">\(X\)</span> ultimately leads to decreased production of <span class="math notranslate nohighlight">\(X\)</span>). For simplicity we will assume that the degradation rates of all three components are the same, so our model can be written as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b89532e9-3a64-467b-aba7-1b403f6f972b">
-<span class="eqno">(96)<a class="headerlink" href="#equation-b89532e9-3a64-467b-aba7-1b403f6f972b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a257b576-f637-48cc-a257-78802cdba45c">
+<span class="eqno">(96)<a class="headerlink" href="#equation-a257b576-f637-48cc-a257-78802cdba45c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dX}{dt} &amp;= f_1(Z) - \mu X\\
 \frac{dY}{dt} &amp;= f_2(X) - \mu Y\\
 \frac{dZ}{dt} &amp;= f_3(Y) - \mu Z.
 \end{align}\]</div>
 <p>Each of the functions <span class="math notranslate nohighlight">\(f_i\)</span> are non-negative and bounded as we assumed before. Given our assumptions in the bullet points we also have that <span class="math notranslate nohighlight">\(df_1/dZ&lt;0\)</span>, <span class="math notranslate nohighlight">\(df_2/dX&gt;0\)</span> and <span class="math notranslate nohighlight">\(df_3/dY&gt;0\)</span>.</p>
 <p>Equilibria of this system occur where the following three conditions are simultaneously satisfied:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-195e38c4-fd8e-444c-ba1b-25fcca518899">
-<span class="eqno">(97)<a class="headerlink" href="#equation-195e38c4-fd8e-444c-ba1b-25fcca518899" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-51a30a3e-2a9c-446a-8f60-013f27e3653a">
+<span class="eqno">(97)<a class="headerlink" href="#equation-51a30a3e-2a9c-446a-8f60-013f27e3653a" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp; \mu X = f_1(Z)\\
 &amp; \mu Y = f_2(X)\\
 &amp; \mu Z = f_3(Y).
@@ -468,18 +462,18 @@ J=&amp;\left(
 \right),
 \end{align*}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\phi_i\)</span> are the derivatives of <span class="math notranslate nohighlight">\(f_i\)</span> at the equilibrium point. We have seen before that 3-dimensional Jacobians cannot be solved as easily with trace and determinant conditions (reminder: if you want to look into this more, look up the <em>Routh-Hurwitz criteria</em>). However, because we kept this system <em>relatively</em> simple we can actually solve it from first principles, as it were. To do this we find the characteristic equation of the Jacobian,,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fcf5d533-afca-4dbb-8a9a-ff48d3d3741c">
-<span class="eqno">(98)<a class="headerlink" href="#equation-fcf5d533-afca-4dbb-8a9a-ff48d3d3741c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-65230b02-748a-4cc2-a9da-b5e180e3d39f">
+<span class="eqno">(98)<a class="headerlink" href="#equation-65230b02-748a-4cc2-a9da-b5e180e3d39f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 det(J-\lambda I)=(-\mu-\lambda)^3+\phi_1\phi_2\phi_3.
 \end{equation}\]</div>
 <p>We then look for solutions for <span class="math notranslate nohighlight">\(\lambda\)</span> to where this equation equals 0. That is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8d49345-4ff1-4d15-9a42-328079ccf47d">
-<span class="eqno">(99)<a class="headerlink" href="#equation-e8d49345-4ff1-4d15-9a42-328079ccf47d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-113ca34e-ba14-45db-8561-f790974c4b2f">
+<span class="eqno">(99)<a class="headerlink" href="#equation-113ca34e-ba14-45db-8561-f790974c4b2f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 (\mu+\lambda)^3=\phi_1\phi_2\phi_3=-\chi^3&lt;0.
 \end{equation}\]</div>
 <p>Here we have made the product of our three gradients equal to a new parameter <span class="math notranslate nohighlight">\(-\chi^3\)</span>. The minus sign is to remind us that this product is negative (so in fact <span class="math notranslate nohighlight">\(\chi&gt;0\)</span>) and the cubed is to remind us that this is really the composite of three parameters. The solution to this is then,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad79f04e-22ba-49f9-bc40-3c03601ae1c1">
-<span class="eqno">(100)<a class="headerlink" href="#equation-ad79f04e-22ba-49f9-bc40-3c03601ae1c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f8dbfa3e-a09b-4bd7-bf57-b2ef86505218">
+<span class="eqno">(100)<a class="headerlink" href="#equation-f8dbfa3e-a09b-4bd7-bf57-b2ef86505218" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda=(-1)^{1/3}\chi-\mu.
 \end{equation}\]</div>
 <p>Somewhat susprisingly then, we find ourselves needing to find the cubed root of -1 in order to understand a real-world biological problem. Recalling that we can write <span class="math notranslate nohighlight">\(e^{-i\pi}=-1\)</span> (I bet you didn’t expect to see Euler’s relation during this course!), we have that the three possible solutions are,</p>

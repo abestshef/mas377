@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch9';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Topics in Mathematical Biology" href="lab1.html" />
+    <link rel="next" title="10 - Computer lab" href="ch10.html" />
     <link rel="prev" title="8 - Adaptive dynamics" href="ch8.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch9.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch9.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch9.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch9.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,8 +426,8 @@ document.write(`
 <section id="case-study-covid-19">
 <h2>Case study: Covid-19<a class="headerlink" href="#case-study-covid-19" title="Permalink to this heading">#</a></h2>
 <p>We will look at a relatively simple model of virus-cell dynamics that <em>loosely</em> describes the interaction between Covid-19 virus particules and a type of human immune cell callted the T-cell. The model is borrowed from works by Almocera et al. (2018) and Hernandez-Vargas &amp; Velasco-Hernandez (2021). We assume that the virus grows in the body according to classic logistic growth, that it decays at some background rate but is also killed by T-cells. T-cells themselves are produced by the body at some constant, background rate, but also proliferate when they sense virus present. Finally the T-cells also decay. We can write down our model as follows,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-24d231b2-8d10-4e64-aa01-fc7b4655e6cf">
-<span class="eqno">(41)<a class="headerlink" href="#equation-24d231b2-8d10-4e64-aa01-fc7b4655e6cf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff4cdfe9-9e93-448d-8e61-10c22b8d9946">
+<span class="eqno">(41)<a class="headerlink" href="#equation-ff4cdfe9-9e93-448d-8e61-10c22b8d9946" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dV}{dt} &amp;= pV(1-V/K)-\beta VT - \mu V\\
 \frac{dT}{dt} &amp;= s+rT\left(\frac{V^2}{V^2+c^2}\right)-\delta T
 \end{align}\]</div>
@@ -598,11 +592,11 @@ rT^*\frac{2V^*c^2}{(V^{*2}+c^2)^2} &amp; -s/T^*
       </div>
     </a>
     <a class="right-next"
-       href="lab1.html"
+       href="ch10.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Topics in Mathematical Biology</p>
+        <p class="prev-next-title">10 - Computer lab</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

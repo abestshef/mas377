@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch1.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -434,8 +428,8 @@ document.write(`
 <p>Our aim in this course is to model the dynamics of populations over time. By ‘population’ we simply mean some collection of individuals that are subject to the same underlying mechanisms. For example, we may consider the human population of Sheffield, or the tapir population of South America, or the maize crop population of a field in Nigeria. In later chapters we will move to smaller biological scales, considering perhaps less intuitive definitions of populations, such as of cells in the body, or proteins within cells. However, a key message to take from this course is that we can consider any and all biological populations in the same way from a modelling perspective, and subject to the same fundamental of biological mechanisms.</p>
 <p>We will model these dynamics using <em>oridnary differential equations</em>, and our focus will be purely on how the size of a population varies over time. We will not consider where individuals are in space - this would likely require extending our methods to <em>partial differential equation</em> models, and plenty of excellent courses and textbooks can be found to explore such systems. When we talk about the ‘size’ of a population, we might think we mean the number of individuals in the population. However, as we will be using ordinary differential equations we need our variables to be continuous, not discrete. We will therefore instead keep track of a population’s <em>density</em> - the number of individuals within some unit area.</p>
 <p>Introducing our mathematical notation, we might call <span class="math notranslate nohighlight">\(N(t)\)</span> the density of individuals within our population at time <span class="math notranslate nohighlight">\(t\)</span>. We now wish to write down an ordinary differential equation that describes its dynamics - that is what causes the population to increase or decrease. Our first modelling challenge, then, is to decide what mechanisms we should include. Using some biological intuition for the simplest possible population we can think of, we might expect our model to look something like,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81cf782f-2ba5-4919-8014-2796c5d166bb">
-<span class="eqno">(1)<a class="headerlink" href="#equation-81cf782f-2ba5-4919-8014-2796c5d166bb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-68a3d054-4474-4c44-a875-89f738f3234a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-68a3d054-4474-4c44-a875-89f738f3234a" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dN}{dt} &amp;= \textrm{births} -\textrm{deaths}.
 \end{align}\]</div>
 <p>Now to make any mathematical progress we will need to decide on functional forms for each of these mechanisms. This is another important modelling decision, and will depend on the specific biology. There are three main forms we might use:</p>
@@ -445,8 +439,8 @@ document.write(`
 <li><p><em>density-dependent rate</em>,  <span class="math notranslate nohighlight">\(\textrm{births}=b(N)N\)</span>. This would be suitable if the per-capita rate is not fixed but instead varies with the population size, for example if high density means more competition for resources and thus lower growth. The form of this function will again depend on the biology, though there are common functions we tend to use.</p></li>
 </ul>
 <p>For our basic model, per-capita rates for birth and death seem the most obvious choice. Our model is thus,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9c30cbc7-44da-4b71-b000-4117cd7913b2">
-<span class="eqno">(2)<a class="headerlink" href="#equation-9c30cbc7-44da-4b71-b000-4117cd7913b2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-508d4f3d-5f9c-4743-a663-a5a285a92900">
+<span class="eqno">(2)<a class="headerlink" href="#equation-508d4f3d-5f9c-4743-a663-a5a285a92900" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dN}{dt}&amp;= bN - dN \\
 &amp;= rN,
 \end{align}\]</div>
@@ -454,8 +448,8 @@ document.write(`
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Either by <em>separation of variables</em> or <em>integrating factors</em> show that,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1522b22-7ef3-4f31-b846-387b1e34fbd7">
-<span class="eqno">(3)<a class="headerlink" href="#equation-d1522b22-7ef3-4f31-b846-387b1e34fbd7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c7b5e9e3-81ab-4fb7-ab16-c6f5fb4bf087">
+<span class="eqno">(3)<a class="headerlink" href="#equation-c7b5e9e3-81ab-4fb7-ab16-c6f5fb4bf087" title="Permalink to this equation">#</a></span>\[\begin{equation}
 N(t) = N(0)e^{rt},
 \end{equation}\]</div>
 </div>
@@ -467,23 +461,23 @@ Click for solution<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">First we gather all the terms with <span class="math notranslate nohighlight">\(N\)</span> to the left-hand side and everything else on the right-hand side, giving,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e8e7eb1-0393-43a8-b46d-2eaa58bd3603">
-<span class="eqno">(4)<a class="headerlink" href="#equation-2e8e7eb1-0393-43a8-b46d-2eaa58bd3603" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03417f04-6756-441e-a050-91ac0a90ba45">
+<span class="eqno">(4)<a class="headerlink" href="#equation-03417f04-6756-441e-a050-91ac0a90ba45" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN}{N} = rdt.
 \end{equation}\]</div>
 <p class="sd-card-text">Then we integrate both sides, giving,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-92ed2c51-39dd-44a9-9300-6f6545ab05ad">
-<span class="eqno">(5)<a class="headerlink" href="#equation-92ed2c51-39dd-44a9-9300-6f6545ab05ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc9831dc-ee92-46d0-9152-c5328511f47d">
+<span class="eqno">(5)<a class="headerlink" href="#equation-bc9831dc-ee92-46d0-9152-c5328511f47d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \ln(N) = rt+C,
 \end{equation}\]</div>
 <p class="sd-card-text">where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration. If we then take the exponential of both sides we get,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-92eea750-9679-4e32-a7e2-68b9621417ad">
-<span class="eqno">(6)<a class="headerlink" href="#equation-92eea750-9679-4e32-a7e2-68b9621417ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6fea1e26-0ae7-4766-8ea1-7f60937b0025">
+<span class="eqno">(6)<a class="headerlink" href="#equation-6fea1e26-0ae7-4766-8ea1-7f60937b0025" title="Permalink to this equation">#</a></span>\[\begin{equation}
 N(t) = e^{rt+C}=C_1e^{rt},
 \end{equation}\]</div>
 <p class="sd-card-text">where <span class="math notranslate nohighlight">\(C_1=e^{C}\)</span>. To replace this constant we use the initial condition that at time <span class="math notranslate nohighlight">\(t=0\)</span> we have a density of <span class="math notranslate nohighlight">\(N(0)\)</span>. Substituting these values in we find that <span class="math notranslate nohighlight">\(C_1=N(0)\)</span>, leaving us with the final solution,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-496a6a23-9e5d-4563-8f68-34c69221c964">
-<span class="eqno">(7)<a class="headerlink" href="#equation-496a6a23-9e5d-4563-8f68-34c69221c964" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ffe20795-d6d6-4c3c-85dd-9f36f13349d6">
+<span class="eqno">(7)<a class="headerlink" href="#equation-ffe20795-d6d6-4c3c-85dd-9f36f13349d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 N(t) = N(0)e^{rt},
 \end{equation}\]</div>
 <p class="sd-card-text">as required.</p>
@@ -500,8 +494,8 @@ N(t) = N(0)e^{rt},
 r(N) = r_0\left(1 - \frac{N}{K}\right),
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(r_0\)</span> (the <em>basic reproductive rate</em>) and <span class="math notranslate nohighlight">\(K\)</span> (the carrying capacity) are positive constants. Our ordinary differential equation for the dynamics of our population is then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16e13021-b843-42e8-a6c7-45e3be2553be">
-<span class="eqno">(8)<a class="headerlink" href="#equation-16e13021-b843-42e8-a6c7-45e3be2553be" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2dd50ce2-09a4-47e8-a5cd-3c1de26417dd">
+<span class="eqno">(8)<a class="headerlink" href="#equation-2dd50ce2-09a4-47e8-a5cd-3c1de26417dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right).
 \end{equation}\]</div>
 <p>This equation is known as the <em>logistic growth equation</em> and is an example of <em>intra-specific competition</em>.</p>
@@ -515,8 +509,8 @@ r(N) = r_0\left(1 - \frac{N}{K}\right),
 \frac{dn}{dt}=\frac{d(N/K)}{dt}=\frac{1}{K}\frac{dN}{dt}=r_0n(1 - n).
 \]</div>
 <p>We can also note that a natural time scale for the dynamics is <span class="math notranslate nohighlight">\(1/r_0\)</span>, such that we can take a new non-dimensional time variable, <span class="math notranslate nohighlight">\(\tau = r_0t\)</span>, and the final non-dimensional model equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d787a011-48e5-4906-9c93-b990ba1d1ab7">
-<span class="eqno">(9)<a class="headerlink" href="#equation-d787a011-48e5-4906-9c93-b990ba1d1ab7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-edbfae35-cc6e-4da7-acb0-431398cc32f1">
+<span class="eqno">(9)<a class="headerlink" href="#equation-edbfae35-cc6e-4da7-acb0-431398cc32f1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dn}{d\tau}=\frac{dn}{d(r_0t)}=\frac{1}{r_0}\frac{dn}{dt}=n(1 - n).\label{logeq}
 \end{equation}\]</div>
 <p>As you can see, by using two simple substitutions we have arrived at a very simple equation.</p>
@@ -524,19 +518,19 @@ r(N) = r_0\left(1 - \frac{N}{K}\right),
 <section id="model-analysis">
 <h2>Model analysis<a class="headerlink" href="#model-analysis" title="Permalink to this heading">#</a></h2>
 <p>Even though this equation is non-linear (we have an <span class="math notranslate nohighlight">\(n^2\)</span> term), we can still find an explicit solution for it. By separation of variables, we can write this as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f091874a-9e87-4c59-924f-a36308815b81">
-<span class="eqno">(10)<a class="headerlink" href="#equation-f091874a-9e87-4c59-924f-a36308815b81" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-be107800-4c99-4b01-a53d-2f4e07344c4e">
+<span class="eqno">(10)<a class="headerlink" href="#equation-be107800-4c99-4b01-a53d-2f4e07344c4e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int\frac{dn}{n(1-n)} = \int r_0 d\tau,
 \end{equation}\]</div>
 <p>If we use <em>partial fractions</em> to rewrite the fraction on the left-hand side as the sum of two terms, we reach an initial solution of,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a664f5f-4b33-4985-b22d-f916292ae1aa">
-<span class="eqno">(11)<a class="headerlink" href="#equation-7a664f5f-4b33-4985-b22d-f916292ae1aa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dbdfed9b-5848-4d8e-a4bd-8e5f7e0f88d7">
+<span class="eqno">(11)<a class="headerlink" href="#equation-dbdfed9b-5848-4d8e-a4bd-8e5f7e0f88d7" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\ln(n)-\ln(1-n) = r_0\tau+C,\\
 \implies &amp;\frac{n}{1-n}=e^Ce^{r_0\tau},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration and <span class="math notranslate nohighlight">\(\ln\)</span> denotes the <em>natural logarithm</em>. Letting the initial condition be <span class="math notranslate nohighlight">\(n(0)=n_0\)</span> and rearranging, we arrive at the final solution,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5e2506d0-1178-4392-9d26-33fb285cd6fc">
-<span class="eqno">(12)<a class="headerlink" href="#equation-5e2506d0-1178-4392-9d26-33fb285cd6fc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5ed671a6-f76c-451f-b129-003738a6b68a">
+<span class="eqno">(12)<a class="headerlink" href="#equation-5ed671a6-f76c-451f-b129-003738a6b68a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 n(\tau) = \frac{n_0}{n_0+(1-n_0)e^{-\tau}}.
 \end{equation}\]</div>
 <p>(Alternatively a suitable substitution can be chosen to evaluate the integrals. It is often true in mathematical mdoelling that there are multiple ways to arrive at a solution, and embracing this diversity of approach can be very useful).</p>
@@ -576,18 +570,18 @@ Click for solution<div class="sd-summary-down docutils">
 <section id="case-study-spruce-budworm">
 <h2>Case study: spruce budworm<a class="headerlink" href="#case-study-spruce-budworm" title="Permalink to this heading">#</a></h2>
 <p>Spruce budworm is an insect that lives in spruce and fir forests in the USA and Canada. (This example is borrowed from the classic Mathematical Biology textbook by J. D. Murray, with a few tweaks). While they mostly exist at low numbers, there are periodic explosions of budworm populations that devestate the forests. Let us assume that on their own, the budworm populaitons follow the logistic growth model we have just studied. An additional feature of budworm dynamics is that they are predated by birds. We might then describe the dynamcis of budworm by the following equation,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9fc2c5c5-08a2-4aa7-b985-499741e58bda">
-<span class="eqno">(13)<a class="headerlink" href="#equation-9fc2c5c5-08a2-4aa7-b985-499741e58bda" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d31d826c-0f58-4d88-8999-c889b89a5f51">
+<span class="eqno">(13)<a class="headerlink" href="#equation-d31d826c-0f58-4d88-8999-c889b89a5f51" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-P(N),
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(P(N)\)</span> describes the rate of predation (note that we do not explicitly consider the bird population dynamics). What should <span class="math notranslate nohighlight">\(P(N)\)</span> look like? Should it be constant, a fixed per-capita rate, or some other density-dependent fucntion? First, we might reasonably assume that as more food becomes available, the more the birds will eat, so predation should increase with budworm density. However, we should also note that birds cannot eat an infinite amount, and that the rate of predation should therefore saturate at high budworm densities. We therefore need a density-dependent function. We might then give an explicit model as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89af3cab-7584-44c5-b86b-cbf2c022244f">
-<span class="eqno">(14)<a class="headerlink" href="#equation-89af3cab-7584-44c5-b86b-cbf2c022244f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cf9bbcf0-3cc6-4543-a9c4-23aeed2dbb48">
+<span class="eqno">(14)<a class="headerlink" href="#equation-cf9bbcf0-3cc6-4543-a9c4-23aeed2dbb48" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN}{dt}=r_0N\left(1 - \frac{N}{K}\right)-\frac{\rho N}{N+A}
 \end{equation}\]</div>
 <p>This form for the predation function is a very commonly used one in mathematical biology models. What are the possible outcomes of this model? We might start by finding equilibria as before, but we will quickly find ourselves bogged down. Instead, let’s take a qualitative approach and use curve-sketching to explore the possible outcomes. The above model can be written as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16f4bdaf-ba7e-46c5-ae90-ba8953ff8e9b">
-<span class="eqno">(15)<a class="headerlink" href="#equation-16f4bdaf-ba7e-46c5-ae90-ba8953ff8e9b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b19cae1-0836-41bd-a62c-f3d79733554d">
+<span class="eqno">(15)<a class="headerlink" href="#equation-0b19cae1-0836-41bd-a62c-f3d79733554d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dN}{dt}=N\left[r(N)-p(N)\right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(r(N)=r_0(1-N/K)\)</span> and <span class="math notranslate nohighlight">\(p(N)=\rho/(N+A)\)</span>. We know that an equilibrium occurs where <span class="math notranslate nohighlight">\(r(N)-p(N)=0\)</span>, which will be when the two curves cross. Below we sketch these two curves, <span class="math notranslate nohighlight">\(r(N)\)</span> and <span class="math notranslate nohighlight">\(p(N)\)</span>, in the three possible combinations,</p>

@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch6.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch6.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch6.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch6.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -437,8 +431,8 @@ document.write(`
 </div>
 </div>
 <p>We will make the simplifying assumption that the birth rate and death rate are equal, so that the population would be at equilibrium in the absence of disease (this is a rather questionable assumption for many ecological populations, but perhaps reasonable for modern human populations). This gives the equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52f62a60-5eee-44a1-8a58-4ae51090e615">
-<span class="eqno">(22)<a class="headerlink" href="#equation-52f62a60-5eee-44a1-8a58-4ae51090e615" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dc19e2c6-7fda-4f80-bf77-50dc396ddd58">
+<span class="eqno">(22)<a class="headerlink" href="#equation-dc19e2c6-7fda-4f80-bf77-50dc396ddd58" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = \mu N - \beta SI - \mu S\\
 &amp;\frac{dI}{dt} = \beta SI - (\gamma +\mu)I\\
 &amp;\frac{dR}{dt} = \gamma I-\mu R
@@ -458,8 +452,8 @@ document.write(`
 </ul>
 <p>Disease is <strong>endemic</strong>.</p>
 <p>Let’s look again at that last equilibrium,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94f67161-70d2-43c4-80f4-13f4885f92fd">
-<span class="eqno">(23)<a class="headerlink" href="#equation-94f67161-70d2-43c4-80f4-13f4885f92fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-943ccd4e-e81b-4fd5-9d0e-b61afd8f5b38">
+<span class="eqno">(23)<a class="headerlink" href="#equation-943ccd4e-e81b-4fd5-9d0e-b61afd8f5b38" title="Permalink to this equation">#</a></span>\[\begin{equation}
  I^*=\frac{\mu}{\beta}\left(\dfrac{N}{S^*}-1\right)=\frac{\mu}{\beta}\left(\frac{\beta N}{\gamma+\mu}-1\right)=\frac{\mu}{\beta}\left(R_0-1\right).
  \end{equation}\]</div>
 <p>We now have two important terms from epidemiology. An <em>epidemic</em> occurs when a disease initially spreads through a population. A disease is <em>endemic</em> when it remains at a steady level within the population.</p>

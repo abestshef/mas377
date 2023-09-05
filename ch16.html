@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch16.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch16.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch16.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch16.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -440,8 +434,8 @@ document.write(`
 <h2>Oscillating transcription<a class="headerlink" href="#oscillating-transcription" title="Permalink to this heading">#</a></h2>
 <p>In our last model we allowed that the transcription rate, <span class="math notranslate nohighlight">\(latex R(t)\)</span>, might depend on time but then just assumed it was constant. What if we instead assume we have an oscillating transcription rate? We will often find that we end up with expressions that are too complicated to integrate explicitly (and in that case we would probably just numerically integrate it on a computer), but if we take a sinusoidal function we can make some progress.</p>
 <p>Let’s take the transcription function <span class="math notranslate nohighlight">\(R(t)=r_0(1+\delta\sin(\omega t))\)</span>. This has average input <span class="math notranslate nohighlight">\(r_0\)</span>, but varies between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(2r_0\)</span>, with the period depending on <span class="math notranslate nohighlight">\(\omega\)</span>. Returning to our earlier expression, we now need to solve,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e401a7b-af13-4bab-89d7-6be00170cb6f">
-<span class="eqno">(81)<a class="headerlink" href="#equation-6e401a7b-af13-4bab-89d7-6be00170cb6f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ad120e2d-f6bf-49f9-bee6-6ef32ea8c4be">
+<span class="eqno">(81)<a class="headerlink" href="#equation-ad120e2d-f6bf-49f9-bee6-6ef32ea8c4be" title="Permalink to this equation">#</a></span>\[\begin{align}
 M(t)&amp;=e^{-\mu t}\int e^{\mu t}r_0\left[1+\delta\sin(\omega t)\right]dt\\
 &amp;=r_0e^{-\mu t}\left[\int e^{\mu t}dt+\delta\int e^{\mu t}\sin(\omega t)dt\right].
 \end{align}\]</div>
@@ -449,8 +443,8 @@ M(t)&amp;=e^{-\mu t}\int e^{\mu t}r_0\left[1+\delta\sin(\omega t)\right]dt\\
 <div class="tip admonition">
 <p class="admonition-title">Have a go</p>
 <p>Show that the initial solution for <span class="math notranslate nohighlight">\(latex M(t)\)</span> is given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1d34a82-a168-4b3f-9e0b-b5086d010736">
-<span class="eqno">(82)<a class="headerlink" href="#equation-c1d34a82-a168-4b3f-9e0b-b5086d010736" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2d7c4e03-8877-4036-ae7a-d0d660a73eaa">
+<span class="eqno">(82)<a class="headerlink" href="#equation-2d7c4e03-8877-4036-ae7a-d0d660a73eaa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r_0e^{-\mu t}\left[\frac{1}{\mu}e^{\mu t}+\frac{\delta e^{\mu t}}{\mu^2+\omega^2}(\mu\sin(\omega t)-\omega \cos(\omega t))+C\right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\( C\)</span> is a constant of integration.</p>
@@ -491,8 +485,8 @@ I&amp;=\frac{e^{\mu t}}{\omega^2}\left[-\omega\cos(\omega t)+\mu\sin(\omega t)\r
 \implies I&amp;=\frac{e^{\mu t}}{\mu^2+\omega^2}\left[\mu\sin(\omega t)-\omega\cos(\omega t)\right].
 \end{align*}\]</div>
 <p class="sd-card-text">Now we can put this together with the solution to the more straightforward integral (and remembering our constant of integration) to find,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82659ee5-538e-46b0-a955-1c8e47e06460">
-<span class="eqno">(83)<a class="headerlink" href="#equation-82659ee5-538e-46b0-a955-1c8e47e06460" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-71dca3c6-844a-4298-8437-8c073c23983e">
+<span class="eqno">(83)<a class="headerlink" href="#equation-71dca3c6-844a-4298-8437-8c073c23983e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r_0e^{-\mu t}\left[\frac{1}{\mu}e^{\mu t}+\frac{\delta e^{\mu t}}{\mu^2+\omega^2}(\mu\sin(\omega t)-\omega \cos(\omega t))+C\right].
 \end{equation}\]</div>
 </div>
@@ -502,18 +496,18 @@ r_0e^{-\mu t}\left[\frac{1}{\mu}e^{\mu t}+\frac{\delta e^{\mu t}}{\mu^2+\omega^2
 C=\frac{\delta\omega}{\mu^2+\omega^2}-\frac{1}{\mu},
 \end{equation*}\]</div>
 <p>which leads us to the final - somewhat long - solution,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6da2fb3d-a824-4502-8baa-b7fba68edc41">
-<span class="eqno">(84)<a class="headerlink" href="#equation-6da2fb3d-a824-4502-8baa-b7fba68edc41" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6d03f7fc-5276-42ee-a17b-85b0859c287c">
+<span class="eqno">(84)<a class="headerlink" href="#equation-6d03f7fc-5276-42ee-a17b-85b0859c287c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M(t)=r_0\left[\frac{1}{\mu}+\frac{\delta}{\mu^2+\omega^2}(\mu\sin(\omega t)-\omega \cos(\omega t))+\left(\frac{\delta\omega}{\mu^2+\omega^2}-\frac{1}{\mu}\right)e^{-\mu t}\right].
 \end{equation}\]</div>
 <p>As long as this is, it can readily be broken into three parts - a constant term, an oscillating term and an exponentially decaying term. After a long time we can assume the exponentially decaying term stops having much effect, meaning the solution reduces to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ae4dd2da-c858-40f0-aeec-8c8b95c66419">
-<span class="eqno">(85)<a class="headerlink" href="#equation-ae4dd2da-c858-40f0-aeec-8c8b95c66419" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b1417ba8-0857-4130-b3f0-9cb16766d28e">
+<span class="eqno">(85)<a class="headerlink" href="#equation-b1417ba8-0857-4130-b3f0-9cb16766d28e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_{long-time}(t)=r_0\left[\frac{1}{\mu}+\frac{\delta}{\mu^2+\omega^2}(\mu\sin(\omega t)-\omega \cos(\omega t))\right].
 \end{equation}\]</div>
 <p>Using a few more results about trigonometric functions we can reduce this a bit further to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d4f8b10c-d051-471c-9a1c-2bd6c60f4893">
-<span class="eqno">(86)<a class="headerlink" href="#equation-d4f8b10c-d051-471c-9a1c-2bd6c60f4893" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1f098796-e92a-4ab3-8a45-04868919d386">
+<span class="eqno">(86)<a class="headerlink" href="#equation-1f098796-e92a-4ab3-8a45-04868919d386" title="Permalink to this equation">#</a></span>\[\begin{equation}
 M_{long-time}(t)=r_0\left[\frac{1}{\mu}+\frac{\delta}{\sqrt{\mu^2+\omega^2}}\cos(\omega t-\theta)\right],
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\( \theta=tan^{-1}(\omega/\mu)\)</span>. This then tells us that, in the long-term, the mRNA concentration oscillates around the value of <span class="math notranslate nohighlight">\( r_0/\mu\)</span> (the same value as in the constant case), with the same period as the inputted transcription rate (because the ‘time’ term in the cosine is <span class="math notranslate nohighlight">\( \omega t\)</span>)), but delayed behind the input by amount <span class="math notranslate nohighlight">\(latex \theta\)</span>. We can follow a similar approach to get an expression for <span class="math notranslate nohighlight">\( P(t)\)</span> as well if we wish but we won’t cover that here. A time-course of these dynamics is shown below, showing the regular fluctuations in expression.</p>
@@ -527,8 +521,8 @@ M_{long-time}(t)=r_0\left[\frac{1}{\mu}+\frac{\delta}{\sqrt{\mu^2+\omega^2}}\cos
 <section id="modelling-autoregulation">
 <h2>Modelling autoregulation<a class="headerlink" href="#modelling-autoregulation" title="Permalink to this heading">#</a></h2>
 <p>In those first examples of gene models, transcription of mRNA was due to some external resource. However, many genes encode transcription factors that directly regulate the rate of transcription of the coding gene. This produces a small feedback circuit. Representing the concentrations of mRNA and protein by <span class="math notranslate nohighlight">\(M(t)\)</span> and <span class="math notranslate nohighlight">\(P(t)\)</span> again, we can now write,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3aa4feb-15bc-4b93-9a0c-a06669d0ce7b">
-<span class="eqno">(87)<a class="headerlink" href="#equation-f3aa4feb-15bc-4b93-9a0c-a06669d0ce7b" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c0ce0d2d-33ba-4383-a37c-5cd242a498b7">
+<span class="eqno">(87)<a class="headerlink" href="#equation-c0ce0d2d-33ba-4383-a37c-5cd242a498b7" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dM}{dt} &amp;= f(P) - \mu M\\
 \frac{dP}{dt} &amp;= kM - \nu P.
 \end{align}\]</div>
@@ -540,8 +534,8 @@ M_{long-time}(t)=r_0\left[\frac{1}{\mu}+\frac{\delta}{\sqrt{\mu^2+\omega^2}}\cos
 <section id="nullclines">
 <h3>Nullclines<a class="headerlink" href="#nullclines" title="Permalink to this heading">#</a></h3>
 <p>The nullclines of the system are given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76d69af8-d7a9-475b-aa86-2f68fb09f6a5">
-<span class="eqno">(88)<a class="headerlink" href="#equation-76d69af8-d7a9-475b-aa86-2f68fb09f6a5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1ecf7c38-eba4-4cb1-b3fe-eb6e1485ae95">
+<span class="eqno">(88)<a class="headerlink" href="#equation-1ecf7c38-eba4-4cb1-b3fe-eb6e1485ae95" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dM}{dt}=0 \implies M=f(P)/\mu\\
 &amp; \frac{dP}{dt}=0\implies M=\nu P/k
 \end{align}\]</div>
@@ -550,8 +544,8 @@ M_{long-time}(t)=r_0\left[\frac{1}{\mu}+\frac{\delta}{\sqrt{\mu^2+\omega^2}}\cos
 <section id="equilibria">
 <h3>Equilibria<a class="headerlink" href="#equilibria" title="Permalink to this heading">#</a></h3>
 <p>Putting the two nullcline equations equal to one another, we find a single equation for the possible equilibrium values of <span class="math notranslate nohighlight">\(P\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a0b5ead-1435-4b13-b05e-705324cd8e73">
-<span class="eqno">(89)<a class="headerlink" href="#equation-6a0b5ead-1435-4b13-b05e-705324cd8e73" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3169fb23-cd28-46ab-8624-11a27f54993d">
+<span class="eqno">(89)<a class="headerlink" href="#equation-3169fb23-cd28-46ab-8624-11a27f54993d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\mu\nu}{k}P^*=f(P^*).
 \end{equation}\]</div>
 <p>In that case we can then find <span class="math notranslate nohighlight">\(M^*=\nu P^*/k\)</span> to be the corresponding equilibrium for <span class="math notranslate nohighlight">\(M\)</span>. We can therefore focus our attention on determining the nature of any solutions for <span class="math notranslate nohighlight">\(P^*\)</span> for different forms of the function <span class="math notranslate nohighlight">\(f(P)\)</span>.</p>
@@ -580,8 +574,8 @@ k &amp; -\nu
 <h2>Auto-repression: a negative feedback<a class="headerlink" href="#auto-repression-a-negative-feedback" title="Permalink to this heading">#</a></h2>
 <p>If the protein product of a gene acts to reduce the rate of transcription, we describe it as a <em>transcriptional repressor</em>. The feedback circuit is described as <em>auto-repression</em>. In this case, <span class="math notranslate nohighlight">\(f'(P)\leq 0\)</span>, i.e. <span class="math notranslate nohighlight">\(f(P)\)</span> is a decreasing function.</p>
 <p>Recall the equation for steady state values of <span class="math notranslate nohighlight">\(P^*\)</span> is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-228177b1-f353-4d86-98f1-ce1b38402193">
-<span class="eqno">(90)<a class="headerlink" href="#equation-228177b1-f353-4d86-98f1-ce1b38402193" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0020d318-1ff5-4917-aa7e-aa726bcf3ee1">
+<span class="eqno">(90)<a class="headerlink" href="#equation-0020d318-1ff5-4917-aa7e-aa726bcf3ee1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\mu\nu}{k}P^*=f(P^*).
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(f(P)\)</span> is strictly decreasing, this has a unique solution for <span class="math notranslate nohighlight">\(P^*&gt; 0\)</span>, as shown graphically below.</p>
@@ -592,14 +586,14 @@ k &amp; -\nu
 </div>
 </div>
 <p>We therefore have one unique equilibrium. Let us call the value of <span class="math notranslate nohighlight">\(f'(P^*)=\phi&lt;0\)</span> at the equilibrium. As such we can say that <span class="math notranslate nohighlight">\(det(J)=\mu\nu-k\phi\)</span> is positive, meaning the equilibrium is stable. Whether the equilibrium is a node or a spiral then depends on the value of,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eecb5e64-94e1-482e-8eab-6a9cf006ac51">
-<span class="eqno">(91)<a class="headerlink" href="#equation-eecb5e64-94e1-482e-8eab-6a9cf006ac51" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-91034dfa-2bdd-4628-90ae-7476af84216a">
+<span class="eqno">(91)<a class="headerlink" href="#equation-91034dfa-2bdd-4628-90ae-7476af84216a" title="Permalink to this equation">#</a></span>\[\begin{align}
 tr^2-4det &amp;= (\mu+\nu)^2-4\nu\mu+4k\phi\\
 &amp;=(\mu-\nu)^2+4k\phi.
 \end{align}\]</div>
 <p>Firstly, we can see in the special case that <span class="math notranslate nohighlight">\(\mu=\nu\)</span> (the two degradation rates are equal), we just have <span class="math notranslate nohighlight">\(4k\phi&lt;0\)</span>, meaning we will have a stable spiral. More generally, there is a critical value,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7106dde5-076a-4f90-bc47-076644b56b0e">
-<span class="eqno">(92)<a class="headerlink" href="#equation-7106dde5-076a-4f90-bc47-076644b56b0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d3a0e15e-7299-4c5d-8899-c19612788bbd">
+<span class="eqno">(92)<a class="headerlink" href="#equation-d3a0e15e-7299-4c5d-8899-c19612788bbd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \phi_c=-\frac{(\mu-\nu)^2}{4k},
 \end{equation}\]</div>
 <p>such that,</p>

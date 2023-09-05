@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch4.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch4.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch4.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch4.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -430,8 +424,8 @@ document.write(`
 <section id="a-first-model">
 <h2>A first model<a class="headerlink" href="#a-first-model" title="Permalink to this heading">#</a></h2>
 <p>Of course, species in the natural world do not just engage in friendly competition for resources. Nature is ‘red in tooth and claw’, with many species relying on others as a primary food source: foxes and rabbits; lions and zebras; ladybirds and aphids. Such predator-prey interactions will have a similar structure to the competition models we considered above, but now one species benefits from the interaction. Calling the prey density <span class="math notranslate nohighlight">\(N\)</span> and the predator density <span class="math notranslate nohighlight">\(P\)</span>, the simplest model would look like this:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-741fe6ff-6258-4f70-a5ba-02a27be3a7ba">
-<span class="eqno">(18)<a class="headerlink" href="#equation-741fe6ff-6258-4f70-a5ba-02a27be3a7ba" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-81476061-171b-4dea-8c9e-717a5b1b4357">
+<span class="eqno">(18)<a class="headerlink" href="#equation-81476061-171b-4dea-8c9e-717a5b1b4357" title="Permalink to this equation">#</a></span>\[\begin{align}
  \frac{dN}{dt} &amp; =N(a-b P) \\
 \frac{dP}{dt} &amp; =P(-c+dN).
  \end{align}\]</div>
@@ -479,8 +473,8 @@ ad/b &amp; 0
 <section id="a-more-realistic-model">
 <h2>A more realistic model<a class="headerlink" href="#a-more-realistic-model" title="Permalink to this heading">#</a></h2>
 <p>While it is nice to have demonstrated the existence of cycles, these are not structurally stable, which suggests something may not be quite right. From our previous models we might already think of two additions to make the model more realistic. One is that we ignored any density-dependence, meaning prey in particular could grow to infinite levels. Another is that we assumed predation was linearly dependent on prey density, whereas we previously argued it should be saturating. Including these assumptions modifies the model to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5bc67a0-5134-434d-b49e-2e9276911819">
-<span class="eqno">(19)<a class="headerlink" href="#equation-c5bc67a0-5134-434d-b49e-2e9276911819" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7677abaa-042e-40b8-9a6f-c722a78c9edf">
+<span class="eqno">(19)<a class="headerlink" href="#equation-7677abaa-042e-40b8-9a6f-c722a78c9edf" title="Permalink to this equation">#</a></span>\[\begin{align}
  \frac{dN}{dt} &amp; =N\left(a-\frac{b P}{N+A}-\alpha N\right) \\
 \frac{dP}{dt} &amp; =P\left(-c+\frac{dN}{N+A}\right).
  \end{align}\]</div>

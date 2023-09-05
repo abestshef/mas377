@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch8.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch8.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch8.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch8.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -437,8 +431,8 @@ document.write(`
 <section id="resident-dynamics">
 <h2>Resident dynamics<a class="headerlink" href="#resident-dynamics" title="Permalink to this heading">#</a></h2>
 <p>We will think about evolution in the context of infectious disease - my own area of research. In particular we will consider how a parasite might evolve to best exploit its host. We start by writing down the population dynamics of the resident strain in the absence of the mutant. We will take a variation of our wildlife disease model:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-650c68a0-a68c-4888-9a59-e41cfc173901">
-<span class="eqno">(28)<a class="headerlink" href="#equation-650c68a0-a68c-4888-9a59-e41cfc173901" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-74a58795-b217-4137-ad40-1a540c4f8994">
+<span class="eqno">(28)<a class="headerlink" href="#equation-74a58795-b217-4137-ad40-1a540c4f8994" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dS}{dt} &amp;= (b-qH)S-dS-\beta SI\\
 \frac{dI}{dt} &amp;= \beta SI-(d+\alpha)I,
 \end{align}\]</div>
@@ -456,36 +450,36 @@ document.write(`
 <p>Let us assume that initially all individuals in the population are the resident strain. Our focus will be on the fitness of a mutant strain, with a small difference in some trait (in fact we will usually assume two traits vary as we expect there to be a <em>trade-off</em>: if a strain is ‘stronger’ in one area we expect it o pay for this by being ‘weaker’ in another. These two traits will be linked by some defined trade-off function, meaning we can ultimatly reduce it down to thinking about what happens to just one trait). We will assume that mutants arise very rarely, meaning we can assume that the resident has reached an equilibrium of its population dynamics. This is called a <em>separation of timescales</em> assumption; the population dynamics are ‘fast’ and the adaptive dynamics are ‘slow’. We will also assume that the mutant is initially rare, meaning it has a very small density (initially) relative to the resident.</p>
 <p>The mutant’s growth rate depends both on its own strategy and on the ‘environment’, by which we mean the ecological conditions created by the current resident. Let us say that the current resident has some strategy <span class="math notranslate nohighlight">\(x\)</span>. We can write the fitness of this resident - that is its growth rate - as <span class="math notranslate nohighlight">\(r(x,E_x)\)</span>, where <span class="math notranslate nohighlight">\(E_x\)</span> represents the environment. In this case we would have <span class="math notranslate nohighlight">\(r=0\)</span> (because we have assumed the resident is at equilibrium). Now consider a mutant type with strategy <span class="math notranslate nohighlight">\(x_m\)</span> invading a resident environment. Now its fitness is <span class="math notranslate nohighlight">\(r(x_m,E_x)\)</span>. In all likelihood <span class="math notranslate nohighlight">\(r\neq0\)</span>. If <span class="math notranslate nohighlight">\(r&gt;0\)</span> then the mutant population will grow, meaning the mutant can invade the current resident, whereas if <span class="math notranslate nohighlight">\(r&lt;0\)</span> it will die out.</p>
 <p>Assuming mutations are very small we can take a Taylor expansion of the mutant’s fitness as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3abd3c39-a977-4c9c-8a6e-9f0473d1b95b">
-<span class="eqno">(29)<a class="headerlink" href="#equation-3abd3c39-a977-4c9c-8a6e-9f0473d1b95b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-eb2328b3-6fd0-467a-bb25-778fd9c4c14b">
+<span class="eqno">(29)<a class="headerlink" href="#equation-eb2328b3-6fd0-467a-bb25-778fd9c4c14b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r(x_m,E_x)=r(x,E_x)+\frac{\partial r}{\partial x_m}\Bigg|_{x_m=x}(x_m-x).
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(r(x,E_x)=0\)</span>, the direction of selection is entirely dictated by the fitness gradient, <span class="math notranslate nohighlight">\([\partial r/\partial x_m]_{x_m=x}\)</span>. If the mutant has a trait value <span class="math notranslate nohighlight">\(x_m&gt;x\)</span> then for that mutant to invade there must be a positive fitness gradient.</p>
 <p>We can picture there being a sequence of these invasions by mutants. Where the mutant is successful it will go on to replace the existing population and itself become the new resident. This resident population will then be invaded by new mutants, and so on. Given small mutations, we can now think of the dynamics of the evolving trait as being a dynamical system in its own right; the <em>adaptive dynamics</em>. If we define an evolutionary timescale, <span class="math notranslate nohighlight">\(T&gt;&gt;t\)</span> (with <span class="math notranslate nohighlight">\(t\)</span> the ecological timescale), then the change in the trait value <span class="math notranslate nohighlight">\(x\)</span> will be given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5d05d413-668a-4c74-a7aa-a3d14d2b7b9c">
-<span class="eqno">(30)<a class="headerlink" href="#equation-5d05d413-668a-4c74-a7aa-a3d14d2b7b9c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4e02fe23-07d7-493a-b8c2-e28c38be1837">
+<span class="eqno">(30)<a class="headerlink" href="#equation-4e02fe23-07d7-493a-b8c2-e28c38be1837" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dx}{dT}=\mu \frac{\partial r}{\partial x_m}\Bigg|_{x_m=x}.
 \end{equation}\]</div>
 <p>The parameter <span class="math notranslate nohighlight">\(\mu&gt;0\)</span> contains information about how quickly new mutants appear (it is beyond the scope of this course to consider this in detail, so we shall just assume it is a constant). Of course, since the fitness gradient will depend on the resident equilibrium, we can see how the separation of timescales assumption works. We first have to solve the population dynamics to its equilibrium, then solve the adaptive dynamics. Note that <span class="math notranslate nohighlight">\(\mu\)</span> only scales the ‘speed’ of evolution. Therefore if only one organism is evolving (so relative speeds do not matter) we will generally only need to focus on the fitness gradient.</p>
 <p>Given this definition, we might then expect to look for ‘equilibria’ of these adaptive dynamics. That is, we would expect evolution of the trait <span class="math notranslate nohighlight">\(x\)</span> to continue until a point is reached where the fitness gradient is zero. This is indeed what we do, but things are a little more complicated and there is some new terminology associated with it. Firstly, an ‘equilibrium’ of adaptive dynamics is known as a <em>singular strategy</em>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cd3a559-36c2-47b3-a37d-f7e6ef03ff0b">
-<span class="eqno">(31)<a class="headerlink" href="#equation-8cd3a559-36c2-47b3-a37d-f7e6ef03ff0b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f8d0ba16-1480-415a-962e-aa0e5f40306a">
+<span class="eqno">(31)<a class="headerlink" href="#equation-f8d0ba16-1480-415a-962e-aa0e5f40306a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dx}{dT}\propto\frac{\partial r}{\partial x_m}\Big|_{x_m=x}= 0.
 \end{equation}\]</div>
 <p>What can happen at such a singular strategy? Perhaps confusingly, there are now two different types of stability we need to consider.</p>
 <section id="evolutionary-stability">
 <h3>Evolutionary stability<a class="headerlink" href="#evolutionary-stability" title="Permalink to this heading">#</a></h3>
 <p>Evoluitionary stability is not really ‘stability’ in a traditional mathematical sense at all, but relates to a long-standing ecological idea of the <em>Evolutionarily Stable Strategy (ESS)</em>. In fact this term simply asks, if the strategy is adopted by the current resident, can it be invaded by any (nearby) mutants? In other words, it asks whether the strategy is a local fitness maximum or not. Mathematically, this is given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba527360-4143-4390-a74e-d9cf2c2e2aa7">
-<span class="eqno">(32)<a class="headerlink" href="#equation-ba527360-4143-4390-a74e-d9cf2c2e2aa7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9bac744e-bee2-4cee-b260-c46936a58e7e">
+<span class="eqno">(32)<a class="headerlink" href="#equation-9bac744e-bee2-4cee-b260-c46936a58e7e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial^2 r}{\partial x_m^2}\Big|_{x_m=x}&lt;0
 \end{equation}\]</div>
 </section>
 <section id="convergence-stability">
 <h3>Convergence stability<a class="headerlink" href="#convergence-stability" title="Permalink to this heading">#</a></h3>
 <p>Of course, just because a strategy is uninvadible that does not mean that it will be reached through evolution. Instead we need to assess whether the strategy is locally attracting. This term is called convergence stability and is a more direct counterpart of classic stability.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c80887fb-bd5c-48d6-80fe-c4f0bf985b88">
-<span class="eqno">(33)<a class="headerlink" href="#equation-c80887fb-bd5c-48d6-80fe-c4f0bf985b88" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c239bbac-a674-4e3d-93f8-ed9f56b0c286">
+<span class="eqno">(33)<a class="headerlink" href="#equation-c239bbac-a674-4e3d-93f8-ed9f56b0c286" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{d}{dx}\left(\frac{\partial r}{\partial x_m}\Big|_{x_m=x}\right)=\frac{\partial^2 r}{\partial x_m^2}\Big|_{x_m=x}+\frac{\partial^2 r}{\partial x_m\partial x}\Big|_{x_m=x}&lt;0
 \end{equation}\]</div>
 <p>Note that this is the sum of the evolutionary stability condition and an additional second derivative.</p>
@@ -532,8 +526,8 @@ r(x_m,E_x)=r(x,E_x)+\frac{\partial r}{\partial x_m}\Bigg|_{x_m=x}(x_m-x).
 <h2>The evolution of parasite virulence<a class="headerlink" href="#the-evolution-of-parasite-virulence" title="Permalink to this heading">#</a></h2>
 <p>For our infectious disease model we will assume here that it is the parasite that is able to evolve, and in particular that it can evolve its transmission, <span class="math notranslate nohighlight">\(\beta\)</span>. We might well expect a disease to ‘want’ to infect and spread as quickly as possible. A classic assumption is that there is a transmission-virulence (mortality) trade-off for parasites. The argument is that for a parasite to increase its transmission rate it must grow more quickly, and this faster growth is likely to cause greater damage and hence greater virulence. As such we might define a trade-off function <span class="math notranslate nohighlight">\(\alpha=\alpha(\beta)\)</span> which is an increasing function.</p>
 <p>We shall assume that we have parameter values such that <span class="math notranslate nohighlight">\(R_0&gt;1\)</span> and the endemic equilibrium is stable. How do we define the fitness for the parasite? In this model we do not track explicitly the number of parasites, but rather the number of host individuals infected with parasites. However, it is reasonable to say that this number of infected hosts is the key to the disease being successful, and therefore we will take the growth rate of infected hosts to be the fitness of the parasite. The dynamics of the mutant parasite are given by,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-058867c9-5887-43f3-9f8a-ef493063876c">
-<span class="eqno">(34)<a class="headerlink" href="#equation-058867c9-5887-43f3-9f8a-ef493063876c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4061f0ff-00fc-4127-8283-2e194212c7b6">
+<span class="eqno">(34)<a class="headerlink" href="#equation-4061f0ff-00fc-4127-8283-2e194212c7b6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dI_m}{dt}=\beta_m S_eI_m - (\alpha(\beta_m)+d)I_m.
 \end{equation}\]</div>
 <p>If we had any terms with mutant densities higher than first order we could set these to be 0, since the mutant is assumed to be rare. As we can see, that is not the case here. As such the fitness for the mutant parasite, i.e. its growth rate, will be,</p>
@@ -542,14 +536,14 @@ r(x_m,E_x)=r(x,E_x)+\frac{\partial r}{\partial x_m}\Bigg|_{x_m=x}(x_m-x).
 {r=\beta_m S_e - (\alpha(\beta_m)+d)}
 \end{equation*}\]</div>
 <p>The next step is to find the fitness gradient. We take the derivative of <span class="math notranslate nohighlight">\(r\)</span> with respect to <span class="math notranslate nohighlight">\(\beta_m\)</span> and then substitute in <span class="math notranslate nohighlight">\(\beta_m=\beta\)</span>. Now the fitness gradient gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c8e1710-1b3e-4935-97e3-9d6b35fa48a8">
-<span class="eqno">(35)<a class="headerlink" href="#equation-1c8e1710-1b3e-4935-97e3-9d6b35fa48a8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ddd19349-2a0c-4a92-9f12-c11464789cfa">
+<span class="eqno">(35)<a class="headerlink" href="#equation-ddd19349-2a0c-4a92-9f12-c11464789cfa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial r}{\partial\beta_m}\Big|_{\beta_m=\beta}= S_e - \alpha'(\beta)
 \end{equation}\]</div>
 <p>If this fitness gradient is positive the parasite will increase the transmission rate, and hence also increase its virulence; if the fitness gradient is negative the parasite will reduce the transmission rate, and hence also decrease the virulence. Which occurs obviously depends on the steepness of the transmission-virulence trade-off <span class="math notranslate nohighlight">\(\alpha(\beta)\)</span>. Where the two terms are equal we will have a singular strategy.</p>
 <p>What are the stability conditions at a singular point? Firstly we have evolutionary stability,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42b98229-26f1-408a-9743-f746e9f7ee0a">
-<span class="eqno">(36)<a class="headerlink" href="#equation-42b98229-26f1-408a-9743-f746e9f7ee0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-beb73e42-c483-462f-866e-0bfbd52a3335">
+<span class="eqno">(36)<a class="headerlink" href="#equation-beb73e42-c483-462f-866e-0bfbd52a3335" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial^2 r}{\partial\beta_m^2}\Big|_{\beta_m=\beta} = - \alpha''(\beta)
 \end{equation}\]</div>
 <p>So we have that the singular strategy will be evolutionarily stable whenever the curvature of the trade-off at the singular strategy is positive  - this means that increased transmission is ‘increasingly costly’ in terms of virulence. For convergence stability we have the sum of the last term and,</p>
@@ -575,24 +569,24 @@ r(x_m,E_x)=r(x,E_x)+\frac{\partial r}{\partial x_m}\Bigg|_{x_m=x}(x_m-x).
 <h2>How does optimal parasite virulence vary?<a class="headerlink" href="#how-does-optimal-parasite-virulence-vary" title="Permalink to this heading">#</a></h2>
 <p>Let us assume we have chosen parameters and a trade-off such that we predict a singular strategy that is a Continuously Stable Strategy (CSS). Now let us ask what would happen if we changed the system by increasing the host’s birth rate, <span class="math notranslate nohighlight">\(b\)</span>. What would we expect to happen? Should the parasite increase or decrease its transmission (and therefore virulence)?</p>
 <p>The answer, in fact, is neither. Changing the host’s birth rate will have no effect on parasite evolution. This may initially seem puzzling. After all, we have changed the environment (we would presume by increasing the size of the host population), and we know that the host birth rate appears in the population dynamics. Let’s look at the parasite’s fitness gradient, which is the driver of evolution,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-44c34e78-5115-46e1-ab88-7194ab233f04">
-<span class="eqno">(37)<a class="headerlink" href="#equation-44c34e78-5115-46e1-ab88-7194ab233f04" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ee2ae1f7-5c52-4d15-b0d9-66e289e01bfc">
+<span class="eqno">(37)<a class="headerlink" href="#equation-ee2ae1f7-5c52-4d15-b0d9-66e289e01bfc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial r}{\partial\beta_m}\Big|_{\beta_m=\beta}= S_e - \alpha'(\beta)=\frac{\alpha(\beta)+d}{\beta}-\alpha'(\beta).
 \end{equation}\]</div>
 <p>As we can see, the host birth rate does not appear anywhere in the fitness gradient, and this is why it does not impact parasite evolution. Parasite evolution is simply determined by how infective the mutant is compared to the resident and how much more quickly it dies. We might have expected increasing the birth rate to lead to more infections since there are more hosts. However, it is only the number of susceptible hosts that matters, and we showed in the first lecture that its density depends entirely on the infection.</p>
 <p>Now let us ask how parasite evolution might depend on the (natural) death rate, <span class="math notranslate nohighlight">\(d\)</span>. As we can see, this parameter does appear in the parasite’s fitness since it partly controls the susceptible density. Let’s make our lives easier by choosing a functional form for the trade-off as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a1f9be4e-4461-47f5-96f1-3e6feb13848f">
-<span class="eqno">(38)<a class="headerlink" href="#equation-a1f9be4e-4461-47f5-96f1-3e6feb13848f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2448fdf2-bf56-4e74-96eb-38266630ecbf">
+<span class="eqno">(38)<a class="headerlink" href="#equation-2448fdf2-bf56-4e74-96eb-38266630ecbf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \alpha(\beta)=\alpha_{\text{min}}+\beta^2
 \end{equation}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\alpha&quot;(\beta)&gt;0\)</span> we know from the previous lecture that this will produce a CSS which is both evolutionarily stable and convergence stable. The fitness now becomes,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d97fffc2-fc02-45b4-9184-4d9648c96cf8">
-<span class="eqno">(39)<a class="headerlink" href="#equation-d97fffc2-fc02-45b4-9184-4d9648c96cf8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a62dbdbe-c04c-4a6b-8db7-1c2ef30fd676">
+<span class="eqno">(39)<a class="headerlink" href="#equation-a62dbdbe-c04c-4a6b-8db7-1c2ef30fd676" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial r}{\partial\beta_m}\Big|_{\beta_m=\beta}= S_e - \alpha'(\beta)=\frac{\alpha_{\text{min}}+\beta^2+d}{\beta}-2\beta.
 \end{equation}\]</div>
 <p>We can solve this to find the singular strategy,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-581ecaa0-f980-4a11-95a7-89c7a8a5add8">
-<span class="eqno">(40)<a class="headerlink" href="#equation-581ecaa0-f980-4a11-95a7-89c7a8a5add8" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b2721ae4-19be-45ec-96c7-450d17e3bb03">
+<span class="eqno">(40)<a class="headerlink" href="#equation-b2721ae4-19be-45ec-96c7-450d17e3bb03" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial r}{\partial\beta_m}\Big|_{\beta_m=\beta} &amp;= 0\\
 \implies \frac{\alpha_{\text{min}}+\beta^2+d}{\beta}-2\beta &amp;=0\\
 \implies \beta&amp;=\sqrt{\alpha_{\text{min}}+d}

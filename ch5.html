@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch5.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch5.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch5.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch5.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -441,8 +435,8 @@ document.write(`
 </div>
 <p>Before a disease emerges, all individuals in the population are <em>susceptible</em>. Once exposed to the disease, individuals may then become <em>infected</em> (and also <em>infectious</em>). Finally, individuals will eventually fight off the disease to become <em>recovered</em> and <em>immune</em>.</p>
 <p>This is the SIR model, and has been central to our understanding of disease dynamics in human populations since it was first proposed by Kermack and McKendrick in 1927. Disease is transmitted by ‘direct contact’ between infected and susceptible hosts and is a mass action process. When hosts have recovered, they gain immunity and cannot be infected again (this is a key aspect of vertebrate - and especially human - immune systems, but is not necessarily true of invertebrates, plants, etc. We will consider models more appropriate for such populations later). <span class="math notranslate nohighlight">\(\beta\)</span> controls the rate at which contacts between <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(I\)</span> hosts cause infection, and <span class="math notranslate nohighlight">\(\gamma\)</span> is the rate of recovery. In this initial example we have not included any birth or death processes, as we assume that infection happens at a much faster timescale than demography. By considering our schematic diagram above we can write down the dynamics of our system as a set of ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b148e16-cf9b-45ec-bd3d-7b214ff31cdd">
-<span class="eqno">(20)<a class="headerlink" href="#equation-6b148e16-cf9b-45ec-bd3d-7b214ff31cdd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-99da6119-9506-44de-ae11-9b9170dd59e8">
+<span class="eqno">(20)<a class="headerlink" href="#equation-99da6119-9506-44de-ae11-9b9170dd59e8" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dS}{dt} = -\beta SI\label{si1}\\ 
 &amp;\frac{dI}{dt} = \beta SI - \gamma I\label{si2}\\
 &amp;\frac{dR}{dt} = \gamma I
@@ -460,8 +454,8 @@ document.write(`
 <p>Again, despite the simplicity of this model (two variables and two parameters), there exists no explicit solution. However, we can explore the qualitative behaviour of the model by identifying {equilibria} of the system and their stability.</p>
 <p>Considering the model, the only steady-state is when <span class="math notranslate nohighlight">\(I=0\)</span> (and <span class="math notranslate nohighlight">\(S\)</span> may take any value <span class="math notranslate nohighlight">\(&lt;N\)</span>). This implies that in the long-run, we would expect the population to reach a point with no infected hosts i.e. the system will become <em>disease-free</em>. In the long-run this is often the case with emerging diseases - they will eventually burn out - but it is still important for us to know whether there can be an <em>epidemic</em>, when an initially small amount of infection causes a large outbreak of disease in the population (even if it eventually tends to zero).</p>
 <p>For an epidemic to occur, we need to have <span class="math notranslate nohighlight">\(dI/dt&gt;0\)</span> initially. Before an outbreak, the initial densities are <span class="math notranslate nohighlight">\(S(0)\approx N,I(0)\approx0\)</span>. This gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a587d8e1-ea81-4db8-bfa1-e5dfac8b2bc2">
-<span class="eqno">(21)<a class="headerlink" href="#equation-a587d8e1-ea81-4db8-bfa1-e5dfac8b2bc2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a2270d32-79d0-4704-8e6f-6476b2e224de">
+<span class="eqno">(21)<a class="headerlink" href="#equation-a2270d32-79d0-4704-8e6f-6476b2e224de" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{dI}{dt}=(\beta N-\gamma)I
 \end{equation}\]</div>
 <ul class="simple">

@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch20.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch20.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch20.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch20.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -432,8 +426,8 @@ document.write(`
 <section id="general-model-form">
 <h2>General model form<a class="headerlink" href="#general-model-form" title="Permalink to this heading">#</a></h2>
 <p>If we assume (for simplicity) that the two mRNAs have the same degradation rate as each other, that the two proteins have the same degradation rate as each other, and that the functions describing the two transcription and translation terms are identical, then we can represent the cross-repression circuit by the following four ODEs:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd82d91d-466a-4ffb-9fec-b12e57cadd15">
-<span class="eqno">(101)<a class="headerlink" href="#equation-bd82d91d-466a-4ffb-9fec-b12e57cadd15" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6ec87b0c-0ebe-479f-9390-9899c17bd586">
+<span class="eqno">(101)<a class="headerlink" href="#equation-6ec87b0c-0ebe-479f-9390-9899c17bd586" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{dm_1}{dt} &amp;= f(p_2)-\mu m_1\\
 \frac{dp_1}{dt} &amp;= km_1- \nu p_1\\
 \frac{dm_2}{dt} &amp;= f(p_1)-\mu m_2\\
@@ -444,8 +438,8 @@ document.write(`
 <section id="stability-analysis">
 <h2>Stability analysis<a class="headerlink" href="#stability-analysis" title="Permalink to this heading">#</a></h2>
 <p>One particular issue with having a four-dimensional system is that it is impossible to sketch out a phase portrait. Instead we will proceed by linearising around equilibria to assess stability. If we set each of the four ODEs to 0, we reach the following expresisons for equilibria,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f8d4c7d4-c1cb-4904-9d9d-c144271013e9">
-<span class="eqno">(102)<a class="headerlink" href="#equation-f8d4c7d4-c1cb-4904-9d9d-c144271013e9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-41ffc2c8-d5c8-4a18-9567-30f1e9469c76">
+<span class="eqno">(102)<a class="headerlink" href="#equation-41ffc2c8-d5c8-4a18-9567-30f1e9469c76" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{\mu\nu}{k}p_1=f(p_2)\\
 &amp;\frac{\mu\nu}{k}p_2=f(p_1).
 \end{align}\]</div>
@@ -481,19 +475,19 @@ k &amp; -\nu &amp; 0 &amp; 0 \\
 \end{align*}\]</div>
 </div>
 </details><p>Last time we saw that with a 3x3 Jacobian, if it is not too complicated, we can still assess stability by writing out the characteristic equation. The same holds here with our 4x4 Jacobian. Thankfully we have a large number of 0s, and we can find that the characteristic equation reduces to,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7942e82e-4a26-4287-a34f-fd3b066700cd">
-<span class="eqno">(103)<a class="headerlink" href="#equation-7942e82e-4a26-4287-a34f-fd3b066700cd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7ea096f8-fc81-4033-b512-46abfb789c0e">
+<span class="eqno">(103)<a class="headerlink" href="#equation-7ea096f8-fc81-4033-b512-46abfb789c0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 det(J-\lambda I)=(\nu+\lambda)^2(\mu+\lambda)^2-k^2\phi_1\phi_2.
 \end{equation}\]</div>
 <p>Similarly to last time let us take <span class="math notranslate nohighlight">\(\chi=\sqrt{\phi_1\phi_2}\)</span>. Then we are looking for solutions of,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e4d8d58-6a77-4a0c-a116-3101b123b19c">
-<span class="eqno">(104)<a class="headerlink" href="#equation-3e4d8d58-6a77-4a0c-a116-3101b123b19c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf8c2d08-46e5-4160-b28f-27cb7e79f2c6">
+<span class="eqno">(104)<a class="headerlink" href="#equation-bf8c2d08-46e5-4160-b28f-27cb7e79f2c6" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;(\nu+\lambda)(\mu+\lambda)=\pm k\chi,\\
 \implies &amp; \lambda^2+(\mu+\nu)\lambda+\mu\nu\pm k\chi=0
 \end{align}\]</div>
 <p>We are therefore reduced to a quadratic equation, which we can solve in the standard way, finding,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-07acd4d8-2a72-4311-9bac-ae557aeec3e1">
-<span class="eqno">(105)<a class="headerlink" href="#equation-07acd4d8-2a72-4311-9bac-ae557aeec3e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-91b05261-9bae-4f1e-b807-59fe7e356434">
+<span class="eqno">(105)<a class="headerlink" href="#equation-91b05261-9bae-4f1e-b807-59fe7e356434" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda = \frac{-(\mu+\nu)\pm\sqrt{(\mu+\nu)^2-4\mu\nu\pm 4k\chi}}{2}
 \end{equation}\]</div>
 <p>These eigevalues may or may not be complex. The important aspect for stabiltiy is what happens to the real parts of the eigenvalues. Provided <span class="math notranslate nohighlight">\(k\chi&lt;\mu\nu\)</span>, we must have negative real parts for all four eigenvalues (because the square root is definitely no bigger than <span class="math notranslate nohighlight">\(\mu+\nu\)</span>). However, if <span class="math notranslate nohighlight">\(k\chi&gt;\mu\nu\)</span> and we take the ‘+’ term outside the square root and the ‘+’ term inside the square root, the eigenvalue will be positive (and entirely real).</p>
@@ -514,14 +508,14 @@ det(J-\lambda I)=(\nu+\lambda)^2(\mu+\lambda)^2-k^2\phi_1\phi_2.
 <section id="linking-to-the-equilibria">
 <h2>Linking to the equilibria<a class="headerlink" href="#linking-to-the-equilibria" title="Permalink to this heading">#</a></h2>
 <p>The challenge now is to work out how each of these cases for stability links to the equilibria we identified earlier. Consider the curves we sketched out in the first figure. Let us think about the respective slopes of the red and blue curves,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3418927-8d4a-45bf-8ad8-4d4795c4b29d">
-<span class="eqno">(106)<a class="headerlink" href="#equation-b3418927-8d4a-45bf-8ad8-4d4795c4b29d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a4d429c6-cd70-4df4-83d8-d3d7883409c7">
+<span class="eqno">(106)<a class="headerlink" href="#equation-a4d429c6-cd70-4df4-83d8-d3d7883409c7" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\frac{dp_2}{dp_1}=\frac{\mu\nu}{k\phi_2}\\
 &amp;\frac{dp_2}{dp_1}=\frac{k\phi_1}{\mu\nu}.
 \end{align}\]</div>
 <p>In our first case (one equilibrium), we see the red curve is steeper (more negative) at the crossing point, meaning,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9c344316-08c5-413e-a409-9379433c27a3">
-<span class="eqno">(107)<a class="headerlink" href="#equation-9c344316-08c5-413e-a409-9379433c27a3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f584d3fd-f07d-4f28-9799-2386720b30e5">
+<span class="eqno">(107)<a class="headerlink" href="#equation-f584d3fd-f07d-4f28-9799-2386720b30e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\mu\nu}{k\phi}&lt;\frac{k\phi}{\mu\nu}\implies(\mu\nu)^2&gt;(k\phi)^2\implies\mu\nu&gt;k\chi.
 \end{equation}\]</div>
 <p>(Notice we know that <span class="math notranslate nohighlight">\(\phi_1=\phi_2=\phi\)</span> at this equilibrium because of the symmetry. We also change the sign in the inequality because <span class="math notranslate nohighlight">\(\phi&lt;0\)</span>.) We know from above that <span class="math notranslate nohighlight">\(\mu\nu&gt;k\chi\)</span> means that the equilibrium is stable.</p>

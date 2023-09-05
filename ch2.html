@@ -168,13 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch7.html">7 - Vaccination and disease in the wild</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch8.html">8 - Adaptive dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch9.html">9 - A within-host Covid model <a name="chapter8"></a></a></li>
-<li class="toctree-l1"><a class="reference internal" href="lab1.html">Topics in Mathematical Biology</a></li>
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="ch10.html">10 - Computer lab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch11.html">11-12 Project Week</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="ch13.html">13 - A within-host HIV model <a name="chapter9"></a></a></li>
@@ -240,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/mas377/_sources/blob/master/ch2.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/abestshef/mas377/blob/_sources//ch2.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources" target="_blank"
+      <li><a href="https://github.com/abestshef/mas377" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/abestshef/mas377/_sources/issues/new?title=Issue%20on%20page%20%2Fch2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/abestshef/mas377/issues/new?title=Issue%20on%20page%20%2Fch2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -483,14 +477,14 @@ document.write(`
 <li><p>The two types of squirrel compete at a rate proportional to the product of their populations (the more there are, the more likely they are to want to eat the same nuts). This is an example of <em>inter-specific competition</em>.</p></li>
 </ol>
 <p>We also assume that the carrying capacity for the two types of squirrel can be different (e.g. one species will eat a wider variety of food than the other), and that the two species can have different susceptibilities to competition (e.g. one species is more timid than the other). Without inter-specific competition, we could model the two populations using two logistic growth equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2397d981-5282-4609-b575-e049eb6dfbf8">
-<span class="eqno">(16)<a class="headerlink" href="#equation-2397d981-5282-4609-b575-e049eb6dfbf8" title="Permalink to this equation">#</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-8a84f2c2-a36d-43b5-839a-611b44a2e61b">
+<span class="eqno">(16)<a class="headerlink" href="#equation-8a84f2c2-a36d-43b5-839a-611b44a2e61b" title="Permalink to this equation">#</a></span>\[\begin{align} 
  \frac{dR}{dt} &amp; =R(a-R) \\
  \frac{dG}{dt} &amp; =G(c-G),
  \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(G\)</span> represent the respective population levels of red and grey squirrels. Note that we have already done a little non-dimensionalising here, and that <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are thus the respective relative carrying capacities. To include competition between the species, we add an additional term to each equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d82714a8-c7ed-4c13-9b37-5ea58cd9e4a1">
-<span class="eqno">(17)<a class="headerlink" href="#equation-d82714a8-c7ed-4c13-9b37-5ea58cd9e4a1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-36c5460a-b3dc-449f-865b-4a63e1b81576">
+<span class="eqno">(17)<a class="headerlink" href="#equation-36c5460a-b3dc-449f-865b-4a63e1b81576" title="Permalink to this equation">#</a></span>\[\begin{align}
  \frac{dR}{dt} &amp; =R(a-R-bG) \\
 \frac{dG}{dt} &amp; =G(c-dR-G), 
  \end{align}\]</div>
