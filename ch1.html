@@ -534,13 +534,13 @@ r(N) = r_0\left(1 - \frac{N}{K}\right),
 <p>Even though this equation is non-linear (we have an <span class="math notranslate nohighlight">\(n^2\)</span> term), we can still find an explicit solution for it. By separation of variables, we can write this as,</p>
 <div class="amsmath math notranslate nohighlight" id="equation-fe828b2a-2a6c-405e-aa6d-b653788eb33d">
 <span class="eqno">(10)<a class="headerlink" href="#equation-fe828b2a-2a6c-405e-aa6d-b653788eb33d" title="Permalink to this equation">#</a></span>\[\begin{equation}
-\int\frac{dn}{n(1-n)} = \int r_0 d\tau,
+\int\frac{dn}{n(1-n)} = \int d\tau,
 \end{equation}\]</div>
 <p>If we use <em>partial fractions</em> to rewrite the fraction on the left-hand side as the sum of two terms, we reach an initial solution of,</p>
 <div class="amsmath math notranslate nohighlight" id="equation-b3e8c736-ed9c-4130-9060-e1bfa96a69aa">
 <span class="eqno">(11)<a class="headerlink" href="#equation-b3e8c736-ed9c-4130-9060-e1bfa96a69aa" title="Permalink to this equation">#</a></span>\[\begin{align}
-&amp;\ln(n)-\ln(1-n) = r_0\tau+C,\\
-\implies &amp;\frac{n}{1-n}=e^Ce^{r_0\tau},
+&amp;\ln(n)-\ln(1-n) = \tau+C,\\
+\implies &amp;\frac{n}{1-n}=e^Ce^{\tau},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant of integration and <span class="math notranslate nohighlight">\(\ln\)</span> denotes the <em>natural logarithm</em>. Letting the initial condition be <span class="math notranslate nohighlight">\(n(0)=n_0\)</span> and rearranging, we arrive at the final solution,</p>
 <div class="amsmath math notranslate nohighlight" id="equation-e74c6445-70b4-432a-9c13-a8d0da79e1c8">
@@ -841,4 +841,5 @@ By Alex Best
   <footer class="bd-footer">
   </footer>
   </body>
+
 </html>
