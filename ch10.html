@@ -509,7 +509,7 @@ print(&quot;The 10th number in the Fibonacci sequence is&quot;, y[9])
 <span class="c1"># We need to choose values for all of our model parameters</span>
 <span class="n">N0</span><span class="o">=</span><span class="mi">500000</span>         <span class="c1"># Total population size</span>
 <span class="n">GAMMA</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">14</span>        <span class="c1"># Recovery rate (1/14 means it takes 14 days for hosts to recover)</span>
-<span class="n">R0</span><span class="o">=</span><span class="mf">0.7</span>              <span class="c1"># I will decide on an R0, then use that to calculate what the transmission must be</span>
+<span class="n">R0</span><span class="o">=</span><span class="mf">2.5</span>              <span class="c1"># I will decide on an R0, then use that to calculate what the transmission must be</span>
 <span class="n">BETA</span><span class="o">=</span><span class="n">R0</span><span class="o">*</span><span class="n">GAMMA</span><span class="o">/</span><span class="n">N0</span>  <span class="c1"># Transmission</span>
 
 <span class="c1"># Now we specify time-points to run the model for and initial conditions for S0 and I0</span>
@@ -1588,4 +1588,5 @@ By Alex Best
   <footer class="bd-footer">
   </footer>
   </body>
+
 </html>
